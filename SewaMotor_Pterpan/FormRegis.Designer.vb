@@ -257,6 +257,7 @@ Partial Class FormRegis
         Me.Controls.Add(Me.groupBox1)
         Me.Controls.Add(Me.menuStrip1)
         Me.Name = "FormRegis"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()

@@ -26,21 +26,21 @@ Partial Class FormDetailMotor
         Me.label9 = New System.Windows.Forms.Label()
         Me.txtStatus = New System.Windows.Forms.TextBox()
         Me.label7 = New System.Windows.Forms.Label()
-        Me.comboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbWaktu = New System.Windows.Forms.ComboBox()
         Me.label1 = New System.Windows.Forms.Label()
-        Me.textBox5 = New System.Windows.Forms.TextBox()
+        Me.txtWaktu = New System.Windows.Forms.TextBox()
         Me.linkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.label6 = New System.Windows.Forms.Label()
         Me.label3 = New System.Windows.Forms.Label()
-        Me.textBox4 = New System.Windows.Forms.TextBox()
+        Me.txtHarga = New System.Windows.Forms.TextBox()
         Me.label4 = New System.Windows.Forms.Label()
         Me.txtPlat = New System.Windows.Forms.TextBox()
         Me.label5 = New System.Windows.Forms.Label()
         Me.txtMerek = New System.Windows.Forms.TextBox()
-        Me.button5 = New System.Windows.Forms.Button()
-        Me.button4 = New System.Windows.Forms.Button()
-        Me.button3 = New System.Windows.Forms.Button()
-        Me.button2 = New System.Windows.Forms.Button()
+        Me.btnLast = New System.Windows.Forms.Button()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnPrev = New System.Windows.Forms.Button()
+        Me.btnFirst = New System.Windows.Forms.Button()
         Me.button1 = New System.Windows.Forms.Button()
         Me.txtKode = New System.Windows.Forms.TextBox()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,6 +49,8 @@ Partial Class FormDetailMotor
         Me.loginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.label2 = New System.Windows.Forms.Label()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txthiddenharga = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.menuStrip1.SuspendLayout()
         Me.groupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -79,20 +81,20 @@ Partial Class FormDetailMotor
         'label7
         '
         Me.label7.AutoSize = True
-        Me.label7.Location = New System.Drawing.Point(12, 113)
+        Me.label7.Location = New System.Drawing.Point(12, 116)
         Me.label7.Name = "label7"
         Me.label7.Size = New System.Drawing.Size(37, 13)
         Me.label7.TabIndex = 22
         Me.label7.Text = "Status"
         '
-        'comboBox1
+        'cbWaktu
         '
-        Me.comboBox1.FormattingEnabled = True
-        Me.comboBox1.Items.AddRange(New Object() {"Hari", "Minggu", "Bulan", "Tahun"})
-        Me.comboBox1.Location = New System.Drawing.Point(370, 107)
-        Me.comboBox1.Name = "comboBox1"
-        Me.comboBox1.Size = New System.Drawing.Size(77, 21)
-        Me.comboBox1.TabIndex = 21
+        Me.cbWaktu.FormattingEnabled = True
+        Me.cbWaktu.Items.AddRange(New Object() {"Hari", "Minggu", "Bulan", "Tahun"})
+        Me.cbWaktu.Location = New System.Drawing.Point(370, 107)
+        Me.cbWaktu.Name = "cbWaktu"
+        Me.cbWaktu.Size = New System.Drawing.Size(77, 21)
+        Me.cbWaktu.TabIndex = 21
         '
         'label1
         '
@@ -103,12 +105,12 @@ Partial Class FormDetailMotor
         Me.label1.TabIndex = 1
         Me.label1.Text = "Kode"
         '
-        'textBox5
+        'txtWaktu
         '
-        Me.textBox5.Location = New System.Drawing.Point(329, 107)
-        Me.textBox5.Name = "textBox5"
-        Me.textBox5.Size = New System.Drawing.Size(35, 20)
-        Me.textBox5.TabIndex = 20
+        Me.txtWaktu.Location = New System.Drawing.Point(329, 107)
+        Me.txtWaktu.Name = "txtWaktu"
+        Me.txtWaktu.Size = New System.Drawing.Size(35, 20)
+        Me.txtWaktu.TabIndex = 20
         '
         'linkLabel1
         '
@@ -138,12 +140,12 @@ Partial Class FormDetailMotor
         Me.label3.TabIndex = 11
         Me.label3.Text = "Merk"
         '
-        'textBox4
+        'txtHarga
         '
-        Me.textBox4.Location = New System.Drawing.Point(347, 144)
-        Me.textBox4.Name = "textBox4"
-        Me.textBox4.Size = New System.Drawing.Size(100, 20)
-        Me.textBox4.TabIndex = 18
+        Me.txtHarga.Location = New System.Drawing.Point(347, 144)
+        Me.txtHarga.Name = "txtHarga"
+        Me.txtHarga.Size = New System.Drawing.Size(100, 20)
+        Me.txtHarga.TabIndex = 18
         '
         'label4
         '
@@ -164,11 +166,11 @@ Partial Class FormDetailMotor
         'label5
         '
         Me.label5.AutoSize = True
-        Me.label5.Location = New System.Drawing.Point(289, 147)
+        Me.label5.Location = New System.Drawing.Point(278, 147)
         Me.label5.Name = "label5"
-        Me.label5.Size = New System.Drawing.Size(36, 13)
+        Me.label5.Size = New System.Drawing.Size(63, 13)
         Me.label5.TabIndex = 13
-        Me.label5.Text = "Harga"
+        Me.label5.Text = "Total Harga"
         '
         'txtMerek
         '
@@ -177,41 +179,41 @@ Partial Class FormDetailMotor
         Me.txtMerek.Size = New System.Drawing.Size(146, 20)
         Me.txtMerek.TabIndex = 16
         '
-        'button5
+        'btnLast
         '
-        Me.button5.Location = New System.Drawing.Point(158, 150)
-        Me.button5.Name = "button5"
-        Me.button5.Size = New System.Drawing.Size(32, 26)
-        Me.button5.TabIndex = 14
-        Me.button5.Text = ">|"
-        Me.button5.UseVisualStyleBackColor = True
+        Me.btnLast.Location = New System.Drawing.Point(164, 180)
+        Me.btnLast.Name = "btnLast"
+        Me.btnLast.Size = New System.Drawing.Size(32, 26)
+        Me.btnLast.TabIndex = 14
+        Me.btnLast.Text = ">|"
+        Me.btnLast.UseVisualStyleBackColor = True
         '
-        'button4
+        'btnNext
         '
-        Me.button4.Location = New System.Drawing.Point(120, 150)
-        Me.button4.Name = "button4"
-        Me.button4.Size = New System.Drawing.Size(32, 26)
-        Me.button4.TabIndex = 14
-        Me.button4.Text = ">"
-        Me.button4.UseVisualStyleBackColor = True
+        Me.btnNext.Location = New System.Drawing.Point(126, 180)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(32, 26)
+        Me.btnNext.TabIndex = 14
+        Me.btnNext.Text = ">"
+        Me.btnNext.UseVisualStyleBackColor = True
         '
-        'button3
+        'btnPrev
         '
-        Me.button3.Location = New System.Drawing.Point(82, 150)
-        Me.button3.Name = "button3"
-        Me.button3.Size = New System.Drawing.Size(32, 26)
-        Me.button3.TabIndex = 14
-        Me.button3.Text = "<"
-        Me.button3.UseVisualStyleBackColor = True
+        Me.btnPrev.Location = New System.Drawing.Point(88, 180)
+        Me.btnPrev.Name = "btnPrev"
+        Me.btnPrev.Size = New System.Drawing.Size(32, 26)
+        Me.btnPrev.TabIndex = 14
+        Me.btnPrev.Text = "<"
+        Me.btnPrev.UseVisualStyleBackColor = True
         '
-        'button2
+        'btnFirst
         '
-        Me.button2.Location = New System.Drawing.Point(44, 150)
-        Me.button2.Name = "button2"
-        Me.button2.Size = New System.Drawing.Size(32, 26)
-        Me.button2.TabIndex = 14
-        Me.button2.Text = "|<"
-        Me.button2.UseVisualStyleBackColor = True
+        Me.btnFirst.Location = New System.Drawing.Point(50, 180)
+        Me.btnFirst.Name = "btnFirst"
+        Me.btnFirst.Size = New System.Drawing.Size(32, 26)
+        Me.btnFirst.TabIndex = 14
+        Me.btnFirst.Text = "|<"
+        Me.btnFirst.UseVisualStyleBackColor = True
         '
         'button1
         '
@@ -267,25 +269,27 @@ Partial Class FormDetailMotor
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.txthiddenharga)
         Me.groupBox1.Controls.Add(Me.dateTimePicker1)
         Me.groupBox1.Controls.Add(Me.label9)
         Me.groupBox1.Controls.Add(Me.txtStatus)
+        Me.groupBox1.Controls.Add(Me.Label8)
         Me.groupBox1.Controls.Add(Me.label7)
-        Me.groupBox1.Controls.Add(Me.comboBox1)
+        Me.groupBox1.Controls.Add(Me.cbWaktu)
         Me.groupBox1.Controls.Add(Me.label1)
-        Me.groupBox1.Controls.Add(Me.textBox5)
+        Me.groupBox1.Controls.Add(Me.txtWaktu)
         Me.groupBox1.Controls.Add(Me.linkLabel1)
         Me.groupBox1.Controls.Add(Me.label6)
         Me.groupBox1.Controls.Add(Me.label3)
-        Me.groupBox1.Controls.Add(Me.textBox4)
+        Me.groupBox1.Controls.Add(Me.txtHarga)
         Me.groupBox1.Controls.Add(Me.label4)
         Me.groupBox1.Controls.Add(Me.txtPlat)
         Me.groupBox1.Controls.Add(Me.label5)
         Me.groupBox1.Controls.Add(Me.txtMerek)
-        Me.groupBox1.Controls.Add(Me.button5)
-        Me.groupBox1.Controls.Add(Me.button4)
-        Me.groupBox1.Controls.Add(Me.button3)
-        Me.groupBox1.Controls.Add(Me.button2)
+        Me.groupBox1.Controls.Add(Me.btnLast)
+        Me.groupBox1.Controls.Add(Me.btnNext)
+        Me.groupBox1.Controls.Add(Me.btnPrev)
+        Me.groupBox1.Controls.Add(Me.btnFirst)
         Me.groupBox1.Controls.Add(Me.button1)
         Me.groupBox1.Controls.Add(Me.txtKode)
         Me.groupBox1.Location = New System.Drawing.Point(12, 36)
@@ -294,6 +298,22 @@ Partial Class FormDetailMotor
         Me.groupBox1.TabIndex = 25
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Detail Motor"
+        '
+        'txthiddenharga
+        '
+        Me.txthiddenharga.Location = New System.Drawing.Point(70, 144)
+        Me.txthiddenharga.Name = "txthiddenharga"
+        Me.txthiddenharga.Size = New System.Drawing.Size(146, 20)
+        Me.txthiddenharga.TabIndex = 28
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(14, 146)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(36, 13)
+        Me.Label8.TabIndex = 22
+        Me.Label8.Text = "Harga"
         '
         'FormDetailMotor
         '
@@ -304,6 +324,7 @@ Partial Class FormDetailMotor
         Me.Controls.Add(Me.label2)
         Me.Controls.Add(Me.groupBox1)
         Me.Name = "FormDetailMotor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormDetailMotor"
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
@@ -318,21 +339,21 @@ Partial Class FormDetailMotor
     Private WithEvents label9 As Label
     Private WithEvents txtStatus As TextBox
     Private WithEvents label7 As Label
-    Private WithEvents comboBox1 As ComboBox
+    Private WithEvents cbWaktu As ComboBox
     Private WithEvents label1 As Label
-    Private WithEvents textBox5 As TextBox
+    Private WithEvents txtWaktu As TextBox
     Private WithEvents linkLabel1 As LinkLabel
     Private WithEvents label6 As Label
     Private WithEvents label3 As Label
-    Private WithEvents textBox4 As TextBox
+    Private WithEvents txtHarga As TextBox
     Private WithEvents label4 As Label
     Private WithEvents txtPlat As TextBox
     Private WithEvents label5 As Label
     Private WithEvents txtMerek As TextBox
-    Private WithEvents button5 As Button
-    Private WithEvents button4 As Button
-    Private WithEvents button3 As Button
-    Private WithEvents button2 As Button
+    Private WithEvents btnLast As Button
+    Private WithEvents btnNext As Button
+    Private WithEvents btnPrev As Button
+    Private WithEvents btnFirst As Button
     Private WithEvents button1 As Button
     Private WithEvents txtKode As TextBox
     Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
@@ -341,4 +362,6 @@ Partial Class FormDetailMotor
     Private WithEvents loginToolStripMenuItem As ToolStripMenuItem
     Private WithEvents label2 As Label
     Private WithEvents groupBox1 As GroupBox
+    Friend WithEvents txthiddenharga As TextBox
+    Private WithEvents Label8 As Label
 End Class

@@ -25,4 +25,8 @@
         txtPlat.DataBindings.Add("Text", edit.getBS(), "no_mesin")
 
     End Sub
+
+    Private Sub groupBox1_Enter(sender As Object, e As EventArgs) Handles groupBox1.Enter
+        Me.Close()
+    End Sub
 End Class

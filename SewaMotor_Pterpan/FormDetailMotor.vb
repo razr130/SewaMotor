@@ -19,14 +19,30 @@
         txtPlat.DataBindings.Clear()
 
 
-        txtKode.DataBindings.Add("Text", edit.getBS(), "jenis")
-        txtMerek.DataBindings.Add("Text", edit.getBS(), "harga")
-        txtStatus.DataBindings.Add("Text", edit.getBS(), "merek")
-        txtPlat.DataBindings.Add("Text", edit.getBS(), "no_mesin")
+        txtKode.DataBindings.Add("Text", edit.getBS(), "id_motor")
+        txtMerek.DataBindings.Add("Text", edit.getBS(), "merek")
+        txtStatus.DataBindings.Add("Text", edit.getBS(), "status")
+        txtPlat.DataBindings.Add("Text", edit.getBS(), "plat")
 
     End Sub
 
-    Private Sub groupBox1_Enter(sender As Object, e As EventArgs) Handles groupBox1.Enter
-        Me.Close()
+    Private Sub FormDetailMotor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim brs = edit.getBS().Find("id_motor", idmotor)
+        If brs < 0 Then
+            txtKode.Text = ""
+            txtMerek.Text = ""
+            txtPlat.Text = ""
+            txtStatus.Text = ""
+
+        Else
+            edit.getBS().Position = brs
+            bind()
+
+        End If
+        If txtStatus.Text = "0" Then
+            txtStatus.Text = "Tersedia"
+        Else
+            txtStatus.Text = "Tidak tersedia"
+        End If
     End Sub
 End Class

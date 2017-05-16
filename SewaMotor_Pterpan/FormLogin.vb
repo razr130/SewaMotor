@@ -38,9 +38,12 @@ Public Class FormLogin
 
 
         SendKeys.Send("{ENTER}")
+        Me.Close()
+
     End Sub
 
     Private Sub FormLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtUsername.Text = ""
+        txtPassword.Text = ""
     End Sub
 End Class

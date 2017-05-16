@@ -29,13 +29,6 @@ Partial Class FormListPelanggan
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnUbah = New System.Windows.Forms.Button()
         Me.dgvPelanggan = New System.Windows.Forms.DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.no_ktp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.notelp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ttl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.alamat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SewaMotorDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SewaMotorDataSet = New SewaMotor_Pterpan.SewaMotorDataSet()
         Me.loginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -102,67 +95,13 @@ Partial Class FormListPelanggan
         '
         Me.dgvPelanggan.AllowUserToAddRows = False
         Me.dgvPelanggan.AllowUserToDeleteRows = False
-        Me.dgvPelanggan.AutoGenerateColumns = False
+        Me.dgvPelanggan.AllowUserToOrderColumns = True
         Me.dgvPelanggan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPelanggan.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.no_ktp, Me.nama, Me.notelp, Me.email, Me.ttl, Me.alamat})
-        Me.dgvPelanggan.DataSource = Me.SewaMotorDataSetBindingSource
         Me.dgvPelanggan.Location = New System.Drawing.Point(11, 55)
         Me.dgvPelanggan.Name = "dgvPelanggan"
         Me.dgvPelanggan.ReadOnly = True
         Me.dgvPelanggan.Size = New System.Drawing.Size(661, 261)
         Me.dgvPelanggan.TabIndex = 15
-        '
-        'id
-        '
-        Me.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.id.DataPropertyName = "id"
-        Me.id.HeaderText = "ID"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Width = 43
-        '
-        'no_ktp
-        '
-        Me.no_ktp.DataPropertyName = "no_ktp"
-        Me.no_ktp.HeaderText = "Nomor KTP"
-        Me.no_ktp.Name = "no_ktp"
-        Me.no_ktp.ReadOnly = True
-        '
-        'nama
-        '
-        Me.nama.DataPropertyName = "nama"
-        Me.nama.HeaderText = "Nama"
-        Me.nama.Name = "nama"
-        Me.nama.ReadOnly = True
-        '
-        'notelp
-        '
-        Me.notelp.DataPropertyName = "notelp"
-        Me.notelp.HeaderText = "No Telp"
-        Me.notelp.Name = "notelp"
-        Me.notelp.ReadOnly = True
-        Me.notelp.Width = 75
-        '
-        'email
-        '
-        Me.email.DataPropertyName = "email"
-        Me.email.HeaderText = "Email"
-        Me.email.Name = "email"
-        Me.email.ReadOnly = True
-        '
-        'ttl
-        '
-        Me.ttl.DataPropertyName = "ttl"
-        Me.ttl.HeaderText = "Tgl Lahir"
-        Me.ttl.Name = "ttl"
-        Me.ttl.ReadOnly = True
-        '
-        'alamat
-        '
-        Me.alamat.DataPropertyName = "alamat"
-        Me.alamat.HeaderText = "Alamat"
-        Me.alamat.Name = "alamat"
-        Me.alamat.ReadOnly = True
         '
         'SewaMotorDataSetBindingSource
         '
@@ -210,7 +149,7 @@ Partial Class FormListPelanggan
         Me.label2.Size = New System.Drawing.Size(0, 13)
         Me.label2.TabIndex = 26
         '
-        'FormDaftarPelanggan
+        'FormListPelanggan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -218,7 +157,7 @@ Partial Class FormListPelanggan
         Me.Controls.Add(Me.groupDaftarPelanggan)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.label2)
-        Me.Name = "FormDaftarPelanggan"
+        Me.Name = "FormListPelanggan"
         Me.Text = "FormDaftarPelanggan"
         Me.groupDaftarPelanggan.ResumeLayout(False)
         Me.groupDaftarPelanggan.PerformLayout()
@@ -243,13 +182,6 @@ Partial Class FormListPelanggan
     Private WithEvents btnUbah As Button
     Friend WithEvents SewaMotorDataSetBindingSource As BindingSource
     Friend WithEvents SewaMotorDataSet As SewaMotorDataSet
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents no_ktp As DataGridViewTextBoxColumn
-    Friend WithEvents nama As DataGridViewTextBoxColumn
-    Friend WithEvents notelp As DataGridViewTextBoxColumn
-    Friend WithEvents email As DataGridViewTextBoxColumn
-    Friend WithEvents ttl As DataGridViewTextBoxColumn
-    Friend WithEvents alamat As DataGridViewTextBoxColumn
     Friend WithEvents txtCari As TextBox
     Private WithEvents label1 As Label
 End Class

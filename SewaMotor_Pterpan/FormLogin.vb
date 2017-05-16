@@ -14,7 +14,7 @@ Public Class FormLogin
             txtUsername.Focus()
         End If
 
-
+        user.getBS.Filter = "email='" & txtUsername.Text & "'"
         Dim ada As Integer
             ada = user.getBS.Find("password", txtPassword.Text)
             If ada >= 0 Then

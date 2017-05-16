@@ -87,10 +87,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDaftarPelanggan.Designer.vb">
-      <DependentUpon>FormDaftarPelanggan.vb</DependentUpon>
+    <Compile Include="FormListPelanggan.Designer.vb">
+      <DependentUpon>FormListPelanggan.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormDaftarPelanggan.vb">
+    <Compile Include="FormListPelanggan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDetailMotor.Designer.vb">
@@ -103,6 +103,12 @@
       <DependentUpon>FormEditMotor.vb</DependentUpon>
     </Compile>
     <Compile Include="FormEditMotor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditPelanggan.Designer.vb">
+      <DependentUpon>FormEditPelanggan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditPelanggan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.vb">
@@ -145,17 +151,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SewaMotorDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SewaMotorDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Tabel.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormDaftarPelanggan.resx">
-      <DependentUpon>FormDaftarPelanggan.vb</DependentUpon>
+    <EmbeddedResource Include="FormListPelanggan.resx">
+      <DependentUpon>FormListPelanggan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetailMotor.resx">
       <DependentUpon>FormDetailMotor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditMotor.resx">
       <DependentUpon>FormEditMotor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditPelanggan.resx">
+      <DependentUpon>FormEditPelanggan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
@@ -187,6 +201,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="SewaMotorDataSet.xsc">
+      <DependentUpon>SewaMotorDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SewaMotorDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SewaMotorDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SewaMotorDataSet.xss">
+      <DependentUpon>SewaMotorDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

@@ -238,6 +238,7 @@ Partial Class FormTambahMotor
         Me.Controls.Add(Me.groupBox1)
         Me.Controls.Add(Me.menuStrip1)
         Me.Name = "FormTambahMotor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormTambahMotor"
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()

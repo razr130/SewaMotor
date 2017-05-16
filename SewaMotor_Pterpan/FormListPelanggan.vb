@@ -8,6 +8,10 @@
     End Sub
     Private Sub FormDaftarPelanggan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvPelanggan.DataSource = pelanggan.getBS()
+        If dgvPelanggan.Columns.Count > 0 Then
+            dgvPelanggan.Columns(6).Visible = False
+        End If
+
     End Sub
 
     '/////BUTTON/////

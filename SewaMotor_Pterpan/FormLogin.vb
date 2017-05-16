@@ -46,4 +46,9 @@ Public Class FormLogin
         txtUsername.Text = ""
         txtPassword.Text = ""
     End Sub
+
+    Private Sub loginToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles loginToolStripMenuItem.Click
+        FormLogInKaryawan.Show()
+        Me.Close()
+    End Sub
 End Class

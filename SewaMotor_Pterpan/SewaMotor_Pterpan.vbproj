@@ -123,6 +123,12 @@
     <Compile Include="FormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormLogInKaryawan.Designer.vb">
+      <DependentUpon>FormLogInKaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogInKaryawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormRegis.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogInKaryawan.resx">
+      <DependentUpon>FormLogInKaryawan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegis.resx">
       <DependentUpon>FormRegis.vb</DependentUpon>

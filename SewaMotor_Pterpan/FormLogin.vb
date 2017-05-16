@@ -22,8 +22,8 @@ Public Class FormLogin
 
                 Me.Visible = False
                 Dim nama As New FormUtama(txtUsername.Text)
-                nama.ShowDialog()
-                Me.Visible = True
+            nama.Show()
+            Me.Visible = True
                 txtUsername.Text = ""
                 txtPassword.Text = ""
                 Me.Close()
@@ -38,7 +38,7 @@ Public Class FormLogin
 
 
         SendKeys.Send("{ENTER}")
-        Me.Close()
+
 
     End Sub
 

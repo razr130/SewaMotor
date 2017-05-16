@@ -34,6 +34,7 @@ Partial Class FormUtama
         Me.dgvMotor = New System.Windows.Forms.DataGridView()
         Me.lblHalo = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.btnList = New System.Windows.Forms.Button()
         Me.menuStrip1.SuspendLayout()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -143,6 +144,16 @@ Partial Class FormUtama
         Me.btnRefresh.Text = "Refresh"
         Me.btnRefresh.UseVisualStyleBackColor = True
         '
+        'btnList
+        '
+        Me.btnList.Location = New System.Drawing.Point(258, 379)
+        Me.btnList.Name = "btnList"
+        Me.btnList.Size = New System.Drawing.Size(103, 23)
+        Me.btnList.TabIndex = 8
+        Me.btnList.Text = "List Pelanggan"
+        Me.btnList.UseVisualStyleBackColor = True
+        Me.btnList.Visible = False
+        '
         'FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -152,6 +163,7 @@ Partial Class FormUtama
         Me.Controls.Add(Me.txtCari)
         Me.Controls.Add(Me.label1)
         Me.Controls.Add(Me.btnRefresh)
+        Me.Controls.Add(Me.btnList)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUbah)
         Me.Controls.Add(Me.btnTambah)
@@ -180,4 +192,5 @@ Partial Class FormUtama
     Private WithEvents dgvMotor As DataGridView
     Friend WithEvents lblHalo As Label
     Private WithEvents btnRefresh As Button
+    Private WithEvents btnList As Button
 End Class

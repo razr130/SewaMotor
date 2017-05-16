@@ -15,6 +15,7 @@
             btnTambah.Visible = True
             btnUbah.Visible = True
             btnDelete.Visible = True
+            btnList.Visible = True
 
         End If
 
@@ -101,5 +102,11 @@
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         Dim edit As New FormDetailMotor(idmotor)
         edit.ShowDialog()
+    End Sub
+
+    Private Sub btnList_Click(sender As Object, e As EventArgs) Handles btnList.Click
+        FormListPelanggan.Show()
+        Me.Close()
+
     End Sub
 End Class

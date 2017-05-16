@@ -1,6 +1,15 @@
 ﻿Public Class FormTambahMotor
     Private tambah As New Tabel("Motor")
+    Public titipnama As String
+    Public Sub New(titip As String)
 
+        ' This call is required by the designer.
+        titipnama = titip
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
 
     Private Sub btnBatal2_Click(sender As Object, e As EventArgs) Handles btnBatal2.Click
         Me.Close()
@@ -15,6 +24,8 @@
         txtStatus.Clear()
         txtPlat.Clear()
 
+        Dim panggil As New FormUtama(titipnama)
+        panggil.Show()
 
         Me.Close()
 

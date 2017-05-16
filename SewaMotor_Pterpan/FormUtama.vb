@@ -46,14 +46,15 @@
 
     Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles logOutToolStripMenuItem.Click
 
-        Me.Close()
-        FormLogin.ShowDialog()
 
+        FormLogin.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        FormTambahMotor.ShowDialog()
-
+        Dim panggil As New FormTambahMotor(namaAkun)
+        panggil.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click

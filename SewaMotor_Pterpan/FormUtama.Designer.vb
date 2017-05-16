@@ -158,6 +158,7 @@ Partial Class FormUtama
         Me.Controls.Add(Me.dgvMotor)
         Me.Controls.Add(Me.menuStrip1)
         Me.Name = "FormUtama"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormUtama"
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()

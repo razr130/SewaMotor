@@ -140,6 +140,7 @@ Partial Class FormLogin
         Me.Controls.Add(Me.btnLogIn)
         Me.Controls.Add(Me.menuStrip1)
         Me.Name = "FormLogin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormLogin"
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()

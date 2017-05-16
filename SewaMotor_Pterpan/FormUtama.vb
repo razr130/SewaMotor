@@ -2,16 +2,23 @@
     Private namaAkun As String
     Private motor As New Tabel("Motor")
     Public idmotor As Integer
+    Public role As Integer
     Public Sub New(ByVal namaakun As String)
         InitializeComponent()
 
         Me.namaAkun = namaakun
 
     End Sub
+    Public Sub New(namaakun As String, ByVal role As Integer)
+        InitializeComponent()
+
+        Me.role = role
+        Me.namaAkun = namaakun
+    End Sub
     Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        lblHalo.Text = "Log in sebagai :  " & namaAkun
-        If namaAkun = "admin" Then
+        lblHalo.Text = "Log in sebagai :  " & namaAkun & role.ToString()
+        If role > 0 Then
             btnTambah.Visible = True
             btnUbah.Visible = True
             btnDelete.Visible = True
@@ -58,7 +65,7 @@
         Me.Close()
     End Sub
 
-    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs)
         MsgBox("kontol")
     End Sub
 

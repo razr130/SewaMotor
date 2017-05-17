@@ -20,7 +20,9 @@
 
             Me.Visible = False
             role = karyawan.getBS.Current("role")
-            Dim nama As New FormUtama(txtUsername.Text, role)
+            Dim nama As New FormUtama()
+            nama.username = txtUsername.Text
+            nama.role = role
             nama.Show()
             Me.Visible = True
             txtUsername.Text = ""

@@ -43,10 +43,10 @@ Partial Class FormTambahKaryawan
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
-        Me.txtSesi = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.CbHariKerja = New System.Windows.Forms.ComboBox()
+        Me.cbSesi = New System.Windows.Forms.ComboBox()
         Me.groupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.menuStrip1.SuspendLayout()
@@ -97,6 +97,7 @@ Partial Class FormTambahKaryawan
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.cbSesi)
         Me.groupBox1.Controls.Add(Me.CbHariKerja)
         Me.groupBox1.Controls.Add(Me.GroupBox2)
         Me.groupBox1.Controls.Add(Me.txtAlamat)
@@ -110,7 +111,6 @@ Partial Class FormTambahKaryawan
         Me.groupBox1.Controls.Add(Me.txtPass)
         Me.groupBox1.Controls.Add(Me.label2)
         Me.groupBox1.Controls.Add(Me.txtNama)
-        Me.groupBox1.Controls.Add(Me.txtSesi)
         Me.groupBox1.Controls.Add(Me.txtNoTelp)
         Me.groupBox1.Controls.Add(Me.btnBatal)
         Me.groupBox1.Controls.Add(Me.btnDaftar)
@@ -243,13 +243,6 @@ Partial Class FormTambahKaryawan
         Me.SqlConnection1.ConnectionString = "Data Source=.\SQLEXPRESS;Initial Catalog=SewaMotor;Integrated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
-        'txtSesi
-        '
-        Me.txtSesi.Location = New System.Drawing.Point(119, 239)
-        Me.txtSesi.Name = "txtSesi"
-        Me.txtSesi.Size = New System.Drawing.Size(30, 20)
-        Me.txtSesi.TabIndex = 20
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -276,6 +269,15 @@ Partial Class FormTambahKaryawan
         Me.CbHariKerja.Name = "CbHariKerja"
         Me.CbHariKerja.Size = New System.Drawing.Size(121, 21)
         Me.CbHariKerja.TabIndex = 24
+        '
+        'cbSesi
+        '
+        Me.cbSesi.FormattingEnabled = True
+        Me.cbSesi.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbSesi.Location = New System.Drawing.Point(119, 239)
+        Me.cbSesi.Name = "cbSesi"
+        Me.cbSesi.Size = New System.Drawing.Size(35, 21)
+        Me.cbSesi.TabIndex = 24
         '
         'FormTambahKaryawan
         '
@@ -320,5 +322,5 @@ Partial Class FormTambahKaryawan
     Friend WithEvents CbHariKerja As ComboBox
     Private WithEvents Label7 As Label
     Private WithEvents Label6 As Label
-    Private WithEvents txtSesi As TextBox
+    Friend WithEvents cbSesi As ComboBox
 End Class

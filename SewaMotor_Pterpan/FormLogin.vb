@@ -3,6 +3,7 @@ Imports System.Data.SqlClient
 Public Class FormLogin
     Private user As New Tabel("Pelanggan")
 
+
     Private Sub lnkRegis_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkRegis.LinkClicked
         FormRegis.ShowDialog()
     End Sub
@@ -18,15 +19,18 @@ Public Class FormLogin
         Dim ada As Integer
             ada = user.getBS.Find("password", txtPassword.Text)
             If ada >= 0 Then
-                MessageBox.Show("Selamat datang di... tunggu, apa nama perusahaan ini ?")
+            MessageBox.Show("Selamat datang")
 
-                Me.Visible = False
-                Dim nama As New FormUtama(txtUsername.Text)
+            Me.Visible = False
+            Dim nama As New FormUtama()
+            nama.username = txtUsername.Text
             nama.Show()
             Me.Visible = True
                 txtUsername.Text = ""
-                txtPassword.Text = ""
-                Me.Close()
+            txtPassword.Text = ""
+
+
+            Me.Close()
             Else
                 MessageBox.Show("Access Denied")
                 txtPassword.Clear()

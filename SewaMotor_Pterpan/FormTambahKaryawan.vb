@@ -16,9 +16,10 @@
 
     '/////BUTTON/////
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
-        Me.Close()
+
         Dim back As New FormListKaryawan()
         back.Show()
+        Me.Close()
     End Sub
     Private Sub btnDaftar_Click(sender As Object, e As EventArgs) Handles btnDaftar.Click
         If txtEmail.Text = "" Or txtPass.Text = "" Or txtNama.Text = "" Or txtAlamat.Text = "" Or txtNoTelp.Text = "" Or (radioKaryawan.Checked = False And radioAdmin.Checked = False) Or (radioKaryawan.Checked = True And radioAdmin.Checked = True) Then
@@ -32,7 +33,7 @@
                                 '" & txtPass.Text & "',
                                 '" & Role() & "',
                                 '" & CbHariKerja.Text & "',
-                                '" & txtSesi.Text & "')",
+                                '" & cbSesi.Text & "')",
                            "Data Karyawan berhasil ditambah")
             Dim back As New FormListKaryawan()
             back.Show()

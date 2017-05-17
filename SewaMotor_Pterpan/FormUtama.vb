@@ -2,22 +2,37 @@
     Private namaAkun As String
     Private motor As New Tabel("Motor")
     Public idmotor As Integer
-    Public role As Integer
-    Public Sub New(ByVal namaakun As String)
+
+
+
+    Private _username As String
+    Public Property username() As String
+        Get
+            Return _username
+        End Get
+        Set(ByVal value As String)
+            _username = value
+        End Set
+    End Property
+    Private _role As Integer
+    Public Property role() As Integer
+        Get
+            Return _role
+        End Get
+        Set(ByVal value As Integer)
+            _role = value
+        End Set
+    End Property
+    Public Sub New()
         InitializeComponent()
 
-        Me.namaAkun = namaakun
+        'Me.namaAkun = namaAkun
 
     End Sub
-    Public Sub New(namaakun As String, ByVal role As Integer)
-        InitializeComponent()
 
-        Me.role = role
-        Me.namaAkun = namaakun
-    End Sub
     Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        lblHalo.Text = "Log in sebagai :  " & namaAkun
+        lblHalo.Text = "Log in sebagai :  " & username
         If role > 0 Then
             btnTambah.Visible = True
             btnUbah.Visible = True
@@ -37,17 +52,7 @@
 
         End If
 
-        'While dgvMotor.RowCount > 0
-        '    Do
-        '        If dgvMotor.Item(5, dgvMotor.CurrentRow.Index).Value = 0 Then
-        '            dgvMotor.Item(5, dgvMotor.CurrentRow.Index).Value = "Tersedia"
-        '        Else
-        '            dgvMotor.Item(5, dgvMotor.CurrentRow.Index).Value = "Tidak Tersedia"
-        '        End If
-        '    Loop
 
-
-        'End While
 
 
     End Sub
@@ -58,14 +63,12 @@
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        Dim panggil As New FormTambahMotor(namaAkun)
+        Dim panggil As New FormTambahMotor()
         panggil.Show()
         Me.Close()
     End Sub
 
-    Private Sub btnRefresh_Click(sender As Object, e As EventArgs)
-        MsgBox("kontol")
-    End Sub
+
 
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value

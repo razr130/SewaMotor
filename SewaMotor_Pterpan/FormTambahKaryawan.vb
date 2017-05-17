@@ -34,7 +34,6 @@
                            "Data Karyawan berhasil ditambah")
             Dim back As New FormListKaryawan()
             back.Show()
-
             Me.Close()
         End If
     End Sub

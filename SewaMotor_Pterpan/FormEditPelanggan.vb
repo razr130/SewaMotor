@@ -68,4 +68,8 @@
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
         Me.Close()
     End Sub
+
+    Private Sub groupBox1_Enter(sender As Object, e As EventArgs) Handles groupBox1.Enter
+
+    End Sub
 End Class

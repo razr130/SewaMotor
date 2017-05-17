@@ -17,7 +17,7 @@
     End Sub
     Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        lblHalo.Text = "Log in sebagai :  " & namaAkun & role.ToString()
+        lblHalo.Text = "Log in sebagai :  " & namaAkun
         If role > 0 Then
             btnTambah.Visible = True
             btnUbah.Visible = True
@@ -123,7 +123,7 @@
     End Sub
 
     Private Sub ListKaryawanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListKaryawanToolStripMenuItem.Click
-        Dim list As New FormListKaryawan(role)
+        Dim list As New FormListKaryawan(role, namaAkun)
         list.ShowDialog()
 
 

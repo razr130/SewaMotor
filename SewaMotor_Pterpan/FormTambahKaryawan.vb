@@ -24,12 +24,12 @@
         If txtEmail.Text = "" Or txtPass.Text = "" Or txtNama.Text = "" Or txtAlamat.Text = "" Or txtNoTelp.Text = "" Or (radioKaryawan.Checked = False And radioAdmin.Checked = False) Or (radioKaryawan.Checked = True And radioAdmin.Checked = True) Then
             MsgBox("Harap Diisi Semua")
         Else
-            tambah.isiDataTable("INSERT INTO Karyawan VALUES(
+            tambah.isiDataTable("INSERT INTO Karyawan(nama,alamat,no_telp,email,password,role) VALUES(
+                                '" & txtEmail.Text & "',
+                                '" & txtAlamat.Text & "',
+                                '" & txtNoTelp.Text & "',
                                 '" & txtEmail.Text & "',
                                 '" & txtPass.Text & "',
-                                '" & txtNama.Text & "',
-                                '" & txtNoTelp.Text & "',
-                                '" & txtAlamat.Text & "',
                                 '" & Role() & "')",
                            "Data Karyawan berhasil ditambah")
             Dim back As New FormListKaryawan()

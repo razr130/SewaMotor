@@ -2,6 +2,8 @@
     Private karyawan As New Tabel("Karyawan")
     Private idKaryawan As Integer
     Private role As Integer
+    Private namaakun As String
+
 
 
 
@@ -10,11 +12,12 @@
         InitializeComponent()
     End Sub
 
-    Public Sub New(ByVal roleKaryawan As Integer)
+    Public Sub New(ByVal roleKaryawan As Integer, namaakun As String)
 
         ' This call is required by the designer.
         InitializeComponent()
         Me.role = roleKaryawan
+        Me.namaakun = namaakun
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -33,6 +36,7 @@
                 dgvKaryawan.Columns(5).Visible = False
             End If
         End If
+        MsgBox(role.ToString)
     End Sub
 
     '/////BUTTON/////
@@ -103,5 +107,9 @@
         End If
     End Sub
 
-
+    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click
+        Dim panggil As New FormUtama(namaakun, role)
+        panggil.Show()
+        Me.Close()
+    End Sub
 End Class

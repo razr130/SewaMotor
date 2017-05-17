@@ -23,6 +23,7 @@ Partial Class FormLogInKaryawan
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.loginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblPassword = New System.Windows.Forms.Label()
@@ -30,7 +31,6 @@ Partial Class FormLogInKaryawan
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.btnLogIn = New System.Windows.Forms.Button()
-        Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,6 +42,12 @@ Partial Class FormLogInKaryawan
         Me.menuStrip1.Size = New System.Drawing.Size(363, 24)
         Me.menuStrip1.TabIndex = 17
         Me.menuStrip1.Text = "menuStrip1"
+        '
+        'homeToolStripMenuItem
+        '
+        Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
+        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.homeToolStripMenuItem.Text = "Home"
         '
         'katalogToolStripMenuItem
         '
@@ -98,14 +104,9 @@ Partial Class FormLogInKaryawan
         Me.btnLogIn.Text = "Login"
         Me.btnLogIn.UseVisualStyleBackColor = True
         '
-        'homeToolStripMenuItem
-        '
-        Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
-        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.homeToolStripMenuItem.Text = "Home"
-        '
         'FormLogInKaryawan
         '
+        Me.AcceptButton = Me.btnLogIn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(363, 146)
@@ -116,6 +117,7 @@ Partial Class FormLogInKaryawan
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.btnLogIn)
         Me.Name = "FormLogInKaryawan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormLogInKaryawan"
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()

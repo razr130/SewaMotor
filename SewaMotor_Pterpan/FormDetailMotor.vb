@@ -2,12 +2,14 @@
     Private idmotor As Integer
     Dim edit As New Tabel("Motor")
     Public harga As Integer
+
     Public Sub New(id As Integer)
 
 
 
         InitializeComponent()
         idmotor = id
+
 
 
     End Sub
@@ -106,5 +108,10 @@
     Private Sub btnLast_Click(sender As Object, e As EventArgs) Handles btnLast.Click
         edit.getBS().MoveLast()
         bind()
+    End Sub
+
+    Private Sub linkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkLabel1.LinkClicked
+
+        Me.Close()
     End Sub
 End Class

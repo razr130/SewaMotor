@@ -115,7 +115,7 @@ Partial Class FormDetailMotor
         'linkLabel1
         '
         Me.linkLabel1.AutoSize = True
-        Me.linkLabel1.Location = New System.Drawing.Point(15, 251)
+        Me.linkLabel1.Location = New System.Drawing.Point(14, 237)
         Me.linkLabel1.Name = "linkLabel1"
         Me.linkLabel1.Size = New System.Drawing.Size(58, 13)
         Me.linkLabel1.TabIndex = 10
@@ -217,7 +217,7 @@ Partial Class FormDetailMotor
         '
         'button1
         '
-        Me.button1.Location = New System.Drawing.Point(169, 222)
+        Me.button1.Location = New System.Drawing.Point(169, 232)
         Me.button1.Name = "button1"
         Me.button1.Size = New System.Drawing.Size(154, 23)
         Me.button1.TabIndex = 14

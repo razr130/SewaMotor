@@ -106,7 +106,8 @@
     Private Sub dgvMotor_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvMotor.CellMouseDoubleClick
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         Dim edit As New FormDetailMotor(idmotor)
-        edit.ShowDialog()
+        edit.Show()
+
     End Sub
 
     Private Sub btnList_Click(sender As Object, e As EventArgs) Handles btnList.Click

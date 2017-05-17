@@ -43,6 +43,7 @@ Partial Class FormEditKaryawan
         Me.btnBatal = New System.Windows.Forms.Button()
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtRole = New System.Windows.Forms.TextBox()
         Me.menuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.groupBox1.SuspendLayout()
@@ -85,7 +86,7 @@ Partial Class FormEditKaryawan
         '
         Me.GroupBox2.Controls.Add(Me.radioKaryawan)
         Me.GroupBox2.Controls.Add(Me.radioAdmin)
-        Me.GroupBox2.Location = New System.Drawing.Point(162, 71)
+        Me.GroupBox2.Location = New System.Drawing.Point(135, 71)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(152, 43)
         Me.GroupBox2.TabIndex = 23
@@ -215,6 +216,7 @@ Partial Class FormEditKaryawan
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.txtRole)
         Me.groupBox1.Controls.Add(Me.GroupBox2)
         Me.groupBox1.Controls.Add(Me.txtAlamat)
         Me.groupBox1.Controls.Add(Me.label3)
@@ -234,6 +236,14 @@ Partial Class FormEditKaryawan
         Me.groupBox1.TabIndex = 17
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Edit Karyawan"
+        '
+        'txtRole
+        '
+        Me.txtRole.Enabled = False
+        Me.txtRole.Location = New System.Drawing.Point(293, 89)
+        Me.txtRole.Name = "txtRole"
+        Me.txtRole.Size = New System.Drawing.Size(21, 20)
+        Me.txtRole.TabIndex = 24
         '
         'FormEditKaryawan
         '
@@ -276,4 +286,5 @@ Partial Class FormEditKaryawan
     Private WithEvents btnBatal As Button
     Private WithEvents btnSimpan As Button
     Private WithEvents groupBox1 As GroupBox
+    Friend WithEvents txtRole As TextBox
 End Class

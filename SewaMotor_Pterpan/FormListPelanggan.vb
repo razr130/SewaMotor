@@ -70,4 +70,11 @@
         End If
     End Sub
 
+    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub katalogToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles katalogToolStripMenuItem.Click
+
+    End Sub
 End Class

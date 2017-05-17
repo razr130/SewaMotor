@@ -36,7 +36,6 @@
                 dgvKaryawan.Columns(5).Visible = False
             End If
         End If
-        MsgBox(role.ToString)
     End Sub
 
     '/////BUTTON/////
@@ -92,9 +91,10 @@
     End Sub
     Private Sub Edit()
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value
-        'Dim editkaryawan As New FormEditKaryawan(idKaryawan)
-        'editkaryawan.ShowDialog()
+        Dim editkaryawan As New FormEditKaryawan(idKaryawan)
+        editkaryawan.ShowDialog()
         dgvKaryawan.DataSource = karyawan.getBS()
+        Me.Close()
     End Sub
     Private Sub Delete()
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value

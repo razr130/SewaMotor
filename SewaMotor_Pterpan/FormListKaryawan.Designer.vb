@@ -24,6 +24,7 @@ Partial Class FormListKaryawan
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.groupDaftarPelanggan = New System.Windows.Forms.GroupBox()
+        Me.btnTambah = New System.Windows.Forms.Button()
         Me.lblCari = New System.Windows.Forms.Label()
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -36,7 +37,6 @@ Partial Class FormListKaryawan
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.label2 = New System.Windows.Forms.Label()
-        Me.btnTambah = New System.Windows.Forms.Button()
         Me.groupDaftarPelanggan.SuspendLayout()
         CType(Me.dgvKaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SewaMotorDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,15 +54,24 @@ Partial Class FormListKaryawan
         Me.groupDaftarPelanggan.Controls.Add(Me.dgvKaryawan)
         Me.groupDaftarPelanggan.Location = New System.Drawing.Point(12, 27)
         Me.groupDaftarPelanggan.Name = "groupDaftarPelanggan"
-        Me.groupDaftarPelanggan.Size = New System.Drawing.Size(684, 351)
+        Me.groupDaftarPelanggan.Size = New System.Drawing.Size(568, 351)
         Me.groupDaftarPelanggan.TabIndex = 31
         Me.groupDaftarPelanggan.TabStop = False
         Me.groupDaftarPelanggan.Text = "Daftar Karyawan"
         '
+        'btnTambah
+        '
+        Me.btnTambah.Location = New System.Drawing.Point(11, 322)
+        Me.btnTambah.Name = "btnTambah"
+        Me.btnTambah.Size = New System.Drawing.Size(75, 23)
+        Me.btnTambah.TabIndex = 20
+        Me.btnTambah.Text = "Tambah"
+        Me.btnTambah.UseVisualStyleBackColor = True
+        '
         'lblCari
         '
         Me.lblCari.AutoSize = True
-        Me.lblCari.Location = New System.Drawing.Point(275, 32)
+        Me.lblCari.Location = New System.Drawing.Point(159, 32)
         Me.lblCari.Name = "lblCari"
         Me.lblCari.Size = New System.Drawing.Size(81, 13)
         Me.lblCari.TabIndex = 19
@@ -70,7 +79,7 @@ Partial Class FormListKaryawan
         '
         'txtCari
         '
-        Me.txtCari.Location = New System.Drawing.Point(366, 29)
+        Me.txtCari.Location = New System.Drawing.Point(250, 29)
         Me.txtCari.Name = "txtCari"
         Me.txtCari.Size = New System.Drawing.Size(306, 20)
         Me.txtCari.TabIndex = 14
@@ -102,7 +111,7 @@ Partial Class FormListKaryawan
         Me.dgvKaryawan.Location = New System.Drawing.Point(11, 55)
         Me.dgvKaryawan.Name = "dgvKaryawan"
         Me.dgvKaryawan.ReadOnly = True
-        Me.dgvKaryawan.Size = New System.Drawing.Size(661, 261)
+        Me.dgvKaryawan.Size = New System.Drawing.Size(545, 261)
         Me.dgvKaryawan.TabIndex = 15
         '
         'SewaMotorDataSetBindingSource
@@ -127,7 +136,7 @@ Partial Class FormListKaryawan
         Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.loginToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(629, 24)
+        Me.menuStrip1.Size = New System.Drawing.Size(588, 24)
         Me.menuStrip1.TabIndex = 30
         Me.menuStrip1.Text = "menuStrip1"
         '
@@ -151,20 +160,11 @@ Partial Class FormListKaryawan
         Me.label2.Size = New System.Drawing.Size(0, 13)
         Me.label2.TabIndex = 29
         '
-        'btnTambah
-        '
-        Me.btnTambah.Location = New System.Drawing.Point(11, 322)
-        Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(75, 23)
-        Me.btnTambah.TabIndex = 20
-        Me.btnTambah.Text = "Tambah"
-        Me.btnTambah.UseVisualStyleBackColor = True
-        '
         'FormListKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(629, 411)
+        Me.ClientSize = New System.Drawing.Size(588, 411)
         Me.Controls.Add(Me.groupDaftarPelanggan)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.label2)

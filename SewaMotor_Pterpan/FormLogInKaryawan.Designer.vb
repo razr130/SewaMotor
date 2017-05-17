@@ -23,7 +23,6 @@ Partial Class FormLogInKaryawan
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.loginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblPassword = New System.Windows.Forms.Label()
@@ -31,6 +30,7 @@ Partial Class FormLogInKaryawan
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.btnLogIn = New System.Windows.Forms.Button()
+        Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,12 +42,6 @@ Partial Class FormLogInKaryawan
         Me.menuStrip1.Size = New System.Drawing.Size(363, 24)
         Me.menuStrip1.TabIndex = 17
         Me.menuStrip1.Text = "menuStrip1"
-        '
-        'homeToolStripMenuItem
-        '
-        Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
-        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.homeToolStripMenuItem.Text = "Home"
         '
         'katalogToolStripMenuItem
         '
@@ -104,6 +98,12 @@ Partial Class FormLogInKaryawan
         Me.btnLogIn.Text = "Login"
         Me.btnLogIn.UseVisualStyleBackColor = True
         '
+        'homeToolStripMenuItem
+        '
+        Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
+        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.homeToolStripMenuItem.Text = "Home"
+        '
         'FormLogInKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -125,7 +125,6 @@ Partial Class FormLogInKaryawan
     End Sub
 
     Private WithEvents menuStrip1 As MenuStrip
-    Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Private WithEvents loginToolStripMenuItem As ToolStripMenuItem
     Private WithEvents lblPassword As Label
@@ -133,4 +132,5 @@ Partial Class FormLogInKaryawan
     Private WithEvents txtPassword As TextBox
     Private WithEvents txtUsername As TextBox
     Private WithEvents btnLogIn As Button
+    Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
 End Class

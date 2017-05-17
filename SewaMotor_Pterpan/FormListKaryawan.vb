@@ -1,16 +1,37 @@
 ﻿Public Class FormListKaryawan
     Private karyawan As New Tabel("Karyawan")
     Private idKaryawan As Integer
+    Private role As Integer
 
     '/////LOAD/////
     Public Sub New()
         InitializeComponent()
     End Sub
+
+    Public Sub New(ByVal roleKaryawan As Integer)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+        Me.role = roleKaryawan
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
+
     Private Sub FormListKaryawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvKaryawan.DataSource = karyawan.getBS()
         If dgvKaryawan.Columns.Count > 0 Then
-            dgvKaryawan.Columns(4).Visible = False
-            dgvKaryawan.Columns(5).Visible = False
+            'jika Super admin yg login maka all visible,
+            If karyawan.getBS.Current("role") = 1 Then 'SuperAdm00n
+                dgvKaryawan.Columns(4).Visible = False
+            ElseIf karyawan.getBS.Current("role") = 2 Then 'Adm00n
+                dgvKaryawan.Columns(4).Visible = False
+            ElseIf karyawan.getBS.Current("role") = 3 Then 'Karyaw00n
+                dgvKaryawan.Columns(4).Visible = False
+                dgvKaryawan.Columns(5).Visible = False
+            End If
+
+
         End If
     End Sub
 
@@ -20,6 +41,9 @@
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Delete()
+    End Sub
+    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+        Add()
     End Sub
 
     '/////TextBox/////
@@ -55,6 +79,10 @@
         End If
 
     End Sub
+    Private Sub Add()
+        'Dim editkaryawan As New FormEditkaryawan()
+        'editkaryawan.ShowDialog()
+    End Sub
     Private Sub Edit()
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value
         'Dim editkaryawan As New FormEditkaryawan(idKaryawan)
@@ -70,5 +98,6 @@
             karyawan.isiDataTable("DELETE FROM karyawan WHERE id=" & idKaryawan, "karyawan " & namakaryawan & " berhasil dihapus!")
         End If
     End Sub
+
 
 End Class

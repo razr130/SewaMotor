@@ -112,8 +112,23 @@
     End Sub
 
     Private Sub btnList_Click(sender As Object, e As EventArgs) Handles btnList.Click
-        FormListPelanggan.Show()
+        Dim list As New FormListPelanggan()
+        list.ShowDialog()
         Me.Close()
 
+    End Sub
+
+    Private Sub ListPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListPelangganToolStripMenuItem.Click
+        Dim list As New FormListPelanggan()
+        list.ShowDialog()
+        Me.Close()
+    End Sub
+
+    Private Sub ListKaryawanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListKaryawanToolStripMenuItem.Click
+        Dim list As New FormListKaryawan(role)
+        list.ShowDialog()
+
+
+        Me.Close()
     End Sub
 End Class

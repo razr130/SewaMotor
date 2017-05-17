@@ -34,13 +34,16 @@ Partial Class FormUtama
         Me.dgvMotor = New System.Windows.Forms.DataGridView()
         Me.lblHalo = New System.Windows.Forms.Label()
         Me.btnList = New System.Windows.Forms.Button()
+        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menuStrip1
         '
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(575, 24)
@@ -144,6 +147,25 @@ Partial Class FormUtama
         Me.btnList.UseVisualStyleBackColor = True
         Me.btnList.Visible = False
         '
+        'ToolsToolStripMenuItem
+        '
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.ToolsToolStripMenuItem.Text = "Tools"
+        '
+        'ListPelangganToolStripMenuItem
+        '
+        Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
+        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
+        '
+        'ListKaryawanToolStripMenuItem
+        '
+        Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
+        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
+        '
         'FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -181,4 +203,7 @@ Partial Class FormUtama
     Private WithEvents dgvMotor As DataGridView
     Friend WithEvents lblHalo As Label
     Private WithEvents btnList As Button
+    Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
 End Class

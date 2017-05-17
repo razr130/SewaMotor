@@ -87,6 +87,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormEditKaryawan.Designer.vb">
+      <DependentUpon>FormEditKaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditKaryawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormListKaryawan.Designer.vb">
       <DependentUpon>FormListKaryawan.vb</DependentUpon>
     </Compile>
@@ -136,6 +142,12 @@
       <DependentUpon>FormRegis.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormTambahKaryawan.Designer.vb">
+      <DependentUpon>FormTambahKaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahKaryawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormTambahMotor.Designer.vb">
       <DependentUpon>FormTambahMotor.vb</DependentUpon>
     </Compile>
@@ -171,6 +183,9 @@
     <Compile Include="Tabel.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormEditKaryawan.resx">
+      <DependentUpon>FormEditKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListKaryawan.resx">
       <DependentUpon>FormListKaryawan.vb</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegis.resx">
       <DependentUpon>FormRegis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahKaryawan.resx">
+      <DependentUpon>FormTambahKaryawan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahMotor.resx">
       <DependentUpon>FormTambahMotor.vb</DependentUpon>

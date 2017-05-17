@@ -39,4 +39,8 @@
         SendKeys.Send("{ENTER}")
 
     End Sub
+
+    Private Sub ListKaryawanToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

@@ -43,4 +43,9 @@
     Private Sub ListKaryawanToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub loginToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles loginToolStripMenuItem.Click
+        FormLogin.Show()
+        Me.Close()
+    End Sub
 End Class

@@ -28,6 +28,11 @@
         txtPlat.DataBindings.Add("Text", edit.getBS(), "plat")
         txthiddenharga.DataBindings.Add("Text", edit.getBS(), "harga")
 
+        If txtStatus.Text = "0" Then
+            txtStatus.Text = "Tersedia"
+        Else
+            txtStatus.Text = "Tidak tersedia"
+        End If
 
 
     End Sub
@@ -44,11 +49,6 @@
             edit.getBS().Position = brs
             bind()
 
-        End If
-        If txtStatus.Text = "0" Then
-            txtStatus.Text = "Tersedia"
-        Else
-            txtStatus.Text = "Tidak tersedia"
         End If
 
         If cbWaktu.Items.Count > 0 Then

@@ -3,6 +3,8 @@
     Private idKaryawan As Integer
     Private role As Integer
 
+
+
     '/////LOAD/////
     Public Sub New()
         InitializeComponent()
@@ -30,8 +32,6 @@
                 dgvKaryawan.Columns(4).Visible = False
                 dgvKaryawan.Columns(5).Visible = False
             End If
-
-
         End If
     End Sub
 
@@ -80,13 +80,17 @@
 
     End Sub
     Private Sub Add()
-        'Dim editkaryawan As New FormEditkaryawan()
-        'editkaryawan.ShowDialog()
+        Dim addkaryawan As New FormTambahKaryawan()
+        addkaryawan.ShowDialog()
+        InitializeComponent()
+        dgvKaryawan.DataSource = karyawan.getBS()
+        Me.Close()
     End Sub
     Private Sub Edit()
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value
-        'Dim editkaryawan As New FormEditkaryawan(idKaryawan)
+        'Dim editkaryawan As New FormEditKaryawan(idKaryawan)
         'editkaryawan.ShowDialog()
+        dgvKaryawan.DataSource = karyawan.getBS()
     End Sub
     Private Sub Delete()
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value

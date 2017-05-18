@@ -134,7 +134,7 @@
     End Sub
 
     Private Sub btnSewa_Click(sender As Object, e As EventArgs) Handles btnSewa.Click
-        Dim result As Integer = MessageBox.Show("message", "caption", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Apakah anda yakin ingin memesan motor merek " & txtMerek.Text & " untuk tanggal " & dtsewa.Value.Date.Day.ToString() & " ?", "Konfirmasi", MessageBoxButtons.YesNo)
 
         If result = DialogResult.Yes Then
             tanggal = DateTime.Now
@@ -221,7 +221,7 @@
         ElseIf result = DialogResult.No Then
 
 
-            MsgBox(tglkembali.ToString)
+
         End If
     End Sub
 End Class

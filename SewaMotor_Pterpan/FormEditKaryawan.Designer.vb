@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormEditKaryawan
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormEditKaryawan
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,7 +43,10 @@ Partial Class FormEditKaryawan
         Me.btnBatal = New System.Windows.Forms.Button()
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtRole = New System.Windows.Forms.TextBox()
+        Me.cbHariKerja = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cbSesi = New System.Windows.Forms.ComboBox()
         Me.menuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.groupBox1.SuspendLayout()
@@ -86,7 +89,7 @@ Partial Class FormEditKaryawan
         '
         Me.GroupBox2.Controls.Add(Me.radioKaryawan)
         Me.GroupBox2.Controls.Add(Me.radioAdmin)
-        Me.GroupBox2.Location = New System.Drawing.Point(135, 71)
+        Me.GroupBox2.Location = New System.Drawing.Point(162, 71)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(152, 43)
         Me.GroupBox2.TabIndex = 23
@@ -198,7 +201,7 @@ Partial Class FormEditKaryawan
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(239, 229)
+        Me.btnBatal.Location = New System.Drawing.Point(239, 277)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(75, 23)
         Me.btnBatal.TabIndex = 9
@@ -207,7 +210,7 @@ Partial Class FormEditKaryawan
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(158, 229)
+        Me.btnSimpan.Location = New System.Drawing.Point(158, 277)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 8
@@ -216,9 +219,12 @@ Partial Class FormEditKaryawan
         '
         'groupBox1
         '
-        Me.groupBox1.Controls.Add(Me.txtRole)
+        Me.groupBox1.Controls.Add(Me.cbSesi)
         Me.groupBox1.Controls.Add(Me.GroupBox2)
+        Me.groupBox1.Controls.Add(Me.cbHariKerja)
+        Me.groupBox1.Controls.Add(Me.Label7)
         Me.groupBox1.Controls.Add(Me.txtAlamat)
+        Me.groupBox1.Controls.Add(Me.Label6)
         Me.groupBox1.Controls.Add(Me.label3)
         Me.groupBox1.Controls.Add(Me.label4)
         Me.groupBox1.Controls.Add(Me.label1)
@@ -232,24 +238,52 @@ Partial Class FormEditKaryawan
         Me.groupBox1.Controls.Add(Me.btnSimpan)
         Me.groupBox1.Location = New System.Drawing.Point(12, 27)
         Me.groupBox1.Name = "groupBox1"
-        Me.groupBox1.Size = New System.Drawing.Size(348, 258)
+        Me.groupBox1.Size = New System.Drawing.Size(348, 311)
         Me.groupBox1.TabIndex = 17
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Edit Karyawan"
         '
-        'txtRole
+        'cbHariKerja
         '
-        Me.txtRole.Enabled = False
-        Me.txtRole.Location = New System.Drawing.Point(293, 89)
-        Me.txtRole.Name = "txtRole"
-        Me.txtRole.Size = New System.Drawing.Size(21, 20)
-        Me.txtRole.TabIndex = 24
+        Me.cbHariKerja.FormattingEnabled = True
+        Me.cbHariKerja.Items.AddRange(New Object() {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"})
+        Me.cbHariKerja.Location = New System.Drawing.Point(119, 212)
+        Me.cbHariKerja.Name = "cbHariKerja"
+        Me.cbHariKerja.Size = New System.Drawing.Size(121, 21)
+        Me.cbHariKerja.TabIndex = 28
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(20, 242)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(25, 13)
+        Me.Label6.TabIndex = 26
+        Me.Label6.Text = "sesi"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(20, 216)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(53, 13)
+        Me.Label7.TabIndex = 25
+        Me.Label7.Text = "Hari Kerja"
+        '
+        'cbSesi
+        '
+        Me.cbSesi.FormattingEnabled = True
+        Me.cbSesi.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbSesi.Location = New System.Drawing.Point(119, 239)
+        Me.cbSesi.Name = "cbSesi"
+        Me.cbSesi.Size = New System.Drawing.Size(35, 21)
+        Me.cbSesi.TabIndex = 27
         '
         'FormEditKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(370, 295)
+        Me.ClientSize = New System.Drawing.Size(370, 350)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupBox1)
         Me.Name = "FormEditKaryawan"
@@ -286,5 +320,8 @@ Partial Class FormEditKaryawan
     Private WithEvents btnBatal As Button
     Private WithEvents btnSimpan As Button
     Private WithEvents groupBox1 As GroupBox
-    Friend WithEvents txtRole As TextBox
+    Friend WithEvents cbSesi As ComboBox
+    Friend WithEvents cbHariKerja As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
 End Class

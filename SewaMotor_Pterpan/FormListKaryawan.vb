@@ -92,8 +92,8 @@
     End Sub
     Private Sub Edit()
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value
-        'Dim editkaryawan As New FormEditKaryawan(idKaryawan)
-        'editkaryawan.ShowDialog()
+        Dim editkaryawan As New FormEditKaryawan(idKaryawan)
+        editkaryawan.ShowDialog()
         dgvKaryawan.DataSource = karyawan.getBS()
     End Sub
     Private Sub Delete()

@@ -28,12 +28,16 @@ Partial Class FormTambahKaryawan
         Me.label2 = New System.Windows.Forms.Label()
         Me.btnDaftar = New System.Windows.Forms.Button()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbSesi = New System.Windows.Forms.ComboBox()
+        Me.CbHariKerja = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.radioKaryawan = New System.Windows.Forms.RadioButton()
         Me.radioAdmin = New System.Windows.Forms.RadioButton()
         Me.txtAlamat = New System.Windows.Forms.TextBox()
         Me.label3 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.label5 = New System.Windows.Forms.Label()
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.txtNama = New System.Windows.Forms.TextBox()
@@ -43,10 +47,6 @@ Partial Class FormTambahKaryawan
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.CbHariKerja = New System.Windows.Forms.ComboBox()
-        Me.cbSesi = New System.Windows.Forms.ComboBox()
         Me.groupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.menuStrip1.SuspendLayout()
@@ -121,6 +121,24 @@ Partial Class FormTambahKaryawan
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Tambah Karyawan"
         '
+        'cbSesi
+        '
+        Me.cbSesi.FormattingEnabled = True
+        Me.cbSesi.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbSesi.Location = New System.Drawing.Point(119, 239)
+        Me.cbSesi.Name = "cbSesi"
+        Me.cbSesi.Size = New System.Drawing.Size(35, 21)
+        Me.cbSesi.TabIndex = 24
+        '
+        'CbHariKerja
+        '
+        Me.CbHariKerja.FormattingEnabled = True
+        Me.CbHariKerja.Items.AddRange(New Object() {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"})
+        Me.CbHariKerja.Location = New System.Drawing.Point(119, 212)
+        Me.CbHariKerja.Name = "CbHariKerja"
+        Me.CbHariKerja.Size = New System.Drawing.Size(121, 21)
+        Me.CbHariKerja.TabIndex = 24
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.radioKaryawan)
@@ -170,6 +188,15 @@ Partial Class FormTambahKaryawan
         Me.label3.TabIndex = 13
         Me.label3.Text = "Nama Lengkap"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(20, 216)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(53, 13)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Hari Kerja"
+        '
         'label4
         '
         Me.label4.AutoSize = True
@@ -178,6 +205,15 @@ Partial Class FormTambahKaryawan
         Me.label4.Size = New System.Drawing.Size(39, 13)
         Me.label4.TabIndex = 14
         Me.label4.Text = "Alamat"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(20, 242)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(25, 13)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "sesi"
         '
         'label5
         '
@@ -242,42 +278,6 @@ Partial Class FormTambahKaryawan
         '
         Me.SqlConnection1.ConnectionString = "Data Source=.\SQLEXPRESS;Initial Catalog=SewaMotor;Integrated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 242)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(25, 13)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "sesi"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 216)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(53, 13)
-        Me.Label7.TabIndex = 14
-        Me.Label7.Text = "Hari Kerja"
-        '
-        'CbHariKerja
-        '
-        Me.CbHariKerja.FormattingEnabled = True
-        Me.CbHariKerja.Items.AddRange(New Object() {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"})
-        Me.CbHariKerja.Location = New System.Drawing.Point(119, 212)
-        Me.CbHariKerja.Name = "CbHariKerja"
-        Me.CbHariKerja.Size = New System.Drawing.Size(121, 21)
-        Me.CbHariKerja.TabIndex = 24
-        '
-        'cbSesi
-        '
-        Me.cbSesi.FormattingEnabled = True
-        Me.cbSesi.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.cbSesi.Location = New System.Drawing.Point(119, 239)
-        Me.cbSesi.Name = "cbSesi"
-        Me.cbSesi.Size = New System.Drawing.Size(35, 21)
-        Me.cbSesi.TabIndex = 24
         '
         'FormTambahKaryawan
         '

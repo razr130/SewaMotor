@@ -21,7 +21,8 @@
             txtEmail.Text = ""
             txtNoTelp.Text = ""
             txtAlamat.Text = ""
-            txtRole.Text = ""
+            cbHariKerja.Text = ""
+            cbSesi.Text = ""
         Else
             edit.getBS().Position = brs
             bind()
@@ -34,11 +35,13 @@
         Else
             edit.isiDataTable("UPDATE INTO Karyawan SET
                                 email='" & txtEmail.Text & "',
-                                password'" & txtPass.Text & "',
-                                nama'" & txtNama.Text & "',
-                                '" & txtNoTelp.Text & "',
-                                '" & txtAlamat.Text & "',
-                                '" & Role() & "'",
+                                password='" & txtPass.Text & "',
+                                nama='" & txtNama.Text & "',
+                                no_telp='" & txtNoTelp.Text & "',
+                                alamat='" & txtAlamat.Text & "',
+                                role='" & Role() & "',
+                                hari_kerja='" & cbHariKerja.Text & "',
+                                sesi_kerja='" & cbSesi.Text & "'",
                            "Data Karyawan berhasil ditambah")
             Dim back As New FormListKaryawan()
             back.Show()
@@ -51,7 +54,7 @@
         txtNama.DataBindings.Clear()
         txtAlamat.DataBindings.Clear()
         txtNoTelp.DataBindings.Clear()
-        txtRole.DataBindings.Clear()
+        cbHariKerja.DataBindings.Clear()
     End Sub
 
     Private Sub bind()
@@ -61,12 +64,13 @@
         txtNama.DataBindings.Add("text", edit.getBS(), "nama")
         txtAlamat.DataBindings.Add("text", edit.getBS(), "alamat")
         txtNoTelp.DataBindings.Add("text", edit.getBS(), "no_telp")
-        txtRole.DataBindings.Add("text", edit.getBS(), "role")
-        If txtRole.Text = "2" Then
+        cbHariKerja.DataBindings.Add("text", edit.getBS(), "hari_kerja")
+        cbSesi.DataBindings.Add("text", edit.getBS(), "sesi_kerja")
+        If edit.getBS().Current("role") = 2 Then
             radioAdmin.Checked = True
             radioKaryawan.Checked = False
-        ElseIf txtRole.Text = "3" Then
-            radioAdmin.Checked = True
+        Else
+            radioAdmin.Checked = False
             radioKaryawan.Checked = True
 
         End If
@@ -99,5 +103,9 @@
             radioAdmin.Checked = False
             radioKaryawan.Checked = True
         End If
+    End Sub
+
+    Private Sub txtRole_TextChanged(sender As Object, e As EventArgs)
+
     End Sub
 End Class

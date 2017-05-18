@@ -26,6 +26,9 @@ Partial Class FormUtama
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -34,9 +37,7 @@ Partial Class FormUtama
         Me.dgvMotor = New System.Windows.Forms.DataGridView()
         Me.lblHalo = New System.Windows.Forms.Label()
         Me.btnList = New System.Windows.Forms.Button()
-        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -68,6 +69,25 @@ Partial Class FormUtama
         Me.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem"
         Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.logOutToolStripMenuItem.Text = "Logout"
+        '
+        'ToolsToolStripMenuItem
+        '
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.ToolsToolStripMenuItem.Text = "Tools"
+        '
+        'ListPelangganToolStripMenuItem
+        '
+        Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
+        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
+        '
+        'ListKaryawanToolStripMenuItem
+        '
+        Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
+        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
         '
         'txtCari
         '
@@ -147,24 +167,11 @@ Partial Class FormUtama
         Me.btnList.UseVisualStyleBackColor = True
         Me.btnList.Visible = False
         '
-        'ToolsToolStripMenuItem
+        'ListOrderToolStripMenuItem
         '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem})
-        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
-        Me.ToolsToolStripMenuItem.Text = "Tools"
-        '
-        'ListPelangganToolStripMenuItem
-        '
-        Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
-        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
-        '
-        'ListKaryawanToolStripMenuItem
-        '
-        Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
-        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
+        Me.ListOrderToolStripMenuItem.Name = "ListOrderToolStripMenuItem"
+        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListOrderToolStripMenuItem.Text = "List Order"
         '
         'FormUtama
         '
@@ -206,4 +213,5 @@ Partial Class FormUtama
     Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
 End Class

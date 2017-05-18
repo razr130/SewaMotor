@@ -160,9 +160,9 @@
             End If
 
             Dim ada As Integer
-                ada = customer.getBS.Find("email", nama)
+            ada = customer.getBS.Find("email", nama)
 
-                customer.getBS.Filter = "email='" & nama & "'"
+            customer.getBS.Filter = "email='" & nama & "'"
             karyawan.getBS.Filter = "hari_kerja='" & hari & "' AND sesi_kerja=" & sesi
             If ada >= 0 Then
 
@@ -173,8 +173,8 @@
             End If
 
 
-            ElseIf result = DialogResult.No Then
+        ElseIf result = DialogResult.No Then
 
-            End If
+        End If
     End Sub
 End Class

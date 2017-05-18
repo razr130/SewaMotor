@@ -22,7 +22,7 @@ Partial Class FormDetailMotor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.dateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtsewa = New System.Windows.Forms.DateTimePicker()
         Me.label9 = New System.Windows.Forms.Label()
         Me.txtStatus = New System.Windows.Forms.TextBox()
         Me.label7 = New System.Windows.Forms.Label()
@@ -41,7 +41,7 @@ Partial Class FormDetailMotor
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnPrev = New System.Windows.Forms.Button()
         Me.btnFirst = New System.Windows.Forms.Button()
-        Me.button1 = New System.Windows.Forms.Button()
+        Me.btnSewa = New System.Windows.Forms.Button()
         Me.txtKode = New System.Windows.Forms.TextBox()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,12 +55,12 @@ Partial Class FormDetailMotor
         Me.groupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dateTimePicker1
+        'dtsewa
         '
-        Me.dateTimePicker1.Location = New System.Drawing.Point(247, 57)
-        Me.dateTimePicker1.Name = "dateTimePicker1"
-        Me.dateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.dateTimePicker1.TabIndex = 27
+        Me.dtsewa.Location = New System.Drawing.Point(247, 57)
+        Me.dtsewa.Name = "dtsewa"
+        Me.dtsewa.Size = New System.Drawing.Size(200, 20)
+        Me.dtsewa.TabIndex = 27
         '
         'label9
         '
@@ -215,14 +215,14 @@ Partial Class FormDetailMotor
         Me.btnFirst.Text = "|<"
         Me.btnFirst.UseVisualStyleBackColor = True
         '
-        'button1
+        'btnSewa
         '
-        Me.button1.Location = New System.Drawing.Point(169, 232)
-        Me.button1.Name = "button1"
-        Me.button1.Size = New System.Drawing.Size(154, 23)
-        Me.button1.TabIndex = 14
-        Me.button1.Text = "Sewa Sekarang"
-        Me.button1.UseVisualStyleBackColor = True
+        Me.btnSewa.Location = New System.Drawing.Point(169, 232)
+        Me.btnSewa.Name = "btnSewa"
+        Me.btnSewa.Size = New System.Drawing.Size(154, 23)
+        Me.btnSewa.TabIndex = 14
+        Me.btnSewa.Text = "Sewa Sekarang"
+        Me.btnSewa.UseVisualStyleBackColor = True
         '
         'txtKode
         '
@@ -270,7 +270,7 @@ Partial Class FormDetailMotor
         'groupBox1
         '
         Me.groupBox1.Controls.Add(Me.txthiddenharga)
-        Me.groupBox1.Controls.Add(Me.dateTimePicker1)
+        Me.groupBox1.Controls.Add(Me.dtsewa)
         Me.groupBox1.Controls.Add(Me.label9)
         Me.groupBox1.Controls.Add(Me.txtStatus)
         Me.groupBox1.Controls.Add(Me.Label8)
@@ -290,7 +290,7 @@ Partial Class FormDetailMotor
         Me.groupBox1.Controls.Add(Me.btnNext)
         Me.groupBox1.Controls.Add(Me.btnPrev)
         Me.groupBox1.Controls.Add(Me.btnFirst)
-        Me.groupBox1.Controls.Add(Me.button1)
+        Me.groupBox1.Controls.Add(Me.btnSewa)
         Me.groupBox1.Controls.Add(Me.txtKode)
         Me.groupBox1.Location = New System.Drawing.Point(12, 36)
         Me.groupBox1.Name = "groupBox1"
@@ -335,7 +335,7 @@ Partial Class FormDetailMotor
 
     End Sub
 
-    Private WithEvents dateTimePicker1 As DateTimePicker
+    Private WithEvents dtsewa As DateTimePicker
     Private WithEvents label9 As Label
     Private WithEvents txtStatus As TextBox
     Private WithEvents label7 As Label
@@ -354,7 +354,7 @@ Partial Class FormDetailMotor
     Private WithEvents btnNext As Button
     Private WithEvents btnPrev As Button
     Private WithEvents btnFirst As Button
-    Private WithEvents button1 As Button
+    Private WithEvents btnSewa As Button
     Private WithEvents txtKode As TextBox
     Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem

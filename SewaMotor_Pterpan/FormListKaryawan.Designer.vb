@@ -37,6 +37,7 @@ Partial Class FormListKaryawan
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.label2 = New System.Windows.Forms.Label()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.groupDaftarPelanggan.SuspendLayout()
         CType(Me.dgvKaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SewaMotorDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,6 +47,7 @@ Partial Class FormListKaryawan
         '
         'groupDaftarPelanggan
         '
+        Me.groupDaftarPelanggan.Controls.Add(Me.btnClose)
         Me.groupDaftarPelanggan.Controls.Add(Me.btnTambah)
         Me.groupDaftarPelanggan.Controls.Add(Me.lblCari)
         Me.groupDaftarPelanggan.Controls.Add(Me.txtCari)
@@ -160,6 +162,15 @@ Partial Class FormListKaryawan
         Me.label2.Size = New System.Drawing.Size(0, 13)
         Me.label2.TabIndex = 29
         '
+        'btnClose
+        '
+        Me.btnClose.Location = New System.Drawing.Point(481, 322)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 23)
+        Me.btnClose.TabIndex = 21
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
+        '
         'FormListKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -196,4 +207,5 @@ Partial Class FormListKaryawan
     Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Private WithEvents label2 As Label
     Friend WithEvents btnTambah As Button
+    Friend WithEvents btnClose As Button
 End Class

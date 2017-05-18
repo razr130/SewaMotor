@@ -1,15 +1,27 @@
 ﻿Public Class FormDetailMotor
     Private idmotor As Integer
     Dim edit As New Tabel("Motor")
+    Dim pesan As New Tabel("Pesan")
+    Dim detail As New Tabel("Oder_Detail")
+    Dim customer As New Tabel("Pelanggan")
+    Dim karyawan As New Tabel("Karyawan")
     Public harga As Integer
+    Private nama As String
+    Private sesi As Integer
+    Private hari As String
+    Public id As Integer
+    Public id_karyawan As Integer
+    Public tanggal As System.DateTime
+    Public hargaall As Integer
 
-    Public Sub New(id As Integer)
+
+    Public Sub New(id As Integer, username As String)
 
 
 
         InitializeComponent()
         idmotor = id
-
+        nama = username
 
 
     End Sub
@@ -56,6 +68,7 @@
         If cbWaktu.Items.Count > 0 Then
             cbWaktu.SelectedIndex = 0
         End If
+
     End Sub
 
     Private Sub textBox5_TextChanged(sender As Object, e As EventArgs) Handles txtWaktu.TextChanged
@@ -71,7 +84,7 @@
                 txtHarga.Text = harga * Integer.Parse(txtWaktu.Text) * 365
             End If
         End If
-
+        hargaall = Integer.Parse(txtHarga.Text)
     End Sub
 
     Private Sub cbWaktu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWaktu.SelectedIndexChanged
@@ -113,5 +126,55 @@
     Private Sub linkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkLabel1.LinkClicked
 
         Me.Close()
+    End Sub
+
+    Private Sub btnSewa_Click(sender As Object, e As EventArgs) Handles btnSewa.Click
+        Dim result As Integer = MessageBox.Show("message", "caption", MessageBoxButtons.YesNo)
+
+        If result = DialogResult.Yes Then
+            tanggal = DateTime.Now
+            If tanggal.DayOfWeek = 1 Then
+                hari = "Senin"
+            ElseIf tanggal.DayOfWeek = 2 Then
+                hari = "Selasa"
+            ElseIf tanggal.DayOfWeek = 3 Then
+                hari = "Rabu"
+            ElseIf tanggal.DayOfWeek = 4 Then
+                hari = "Kamis"
+            ElseIf tanggal.DayOfWeek = 5 Then
+                hari = "Jumat"
+            ElseIf tanggal.DayOfWeek = 6 Then
+                hari = "Sabtu"
+            ElseIf tanggal.DayOfWeek = 7 Then
+                hari = "Minggu"
+            End If
+
+            If tanggal.Hour >= 7 And tanggal.Hour < 11 Then
+                sesi = 1
+            ElseIf tanggal.Hour >= 11 And tanggal.Hour < 15 Then
+                sesi = 2
+            ElseIf tanggal.Hour >= 15 And tanggal.Hour < 19 Then
+                sesi = 3
+            ElseIf tanggal.Hour >= 19 And tanggal.Hour < 22 Then
+                sesi = 4
+            End If
+
+            Dim ada As Integer
+                ada = customer.getBS.Find("email", nama)
+
+                customer.getBS.Filter = "email='" & nama & "'"
+            karyawan.getBS.Filter = "hari_kerja='" & hari & "' AND sesi_kerja=" & sesi
+            If ada >= 0 Then
+
+                id = customer.getBS.Current("id")
+                id_karyawan = karyawan.getBS.Current("id_karyawan")
+                'pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.Date.ToString & "'," & 0 & "," & hargaall & ")", "Berhasil pesan")
+                MsgBox(tanggal.Date.ToString)
+            End If
+
+
+            ElseIf result = DialogResult.No Then
+
+            End If
     End Sub
 End Class

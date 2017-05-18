@@ -65,7 +65,7 @@
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         Dim panggil As New FormTambahMotor()
         panggil.Show()
-        Me.Close()
+
     End Sub
 
 
@@ -73,7 +73,7 @@
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         Dim edit As New FormEditMotor(idmotor)
-        edit.ShowDialog()
+        edit.Show()
 
     End Sub
 
@@ -102,13 +102,11 @@
 
     End Sub
 
-    Private Sub dgvMotor_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMotor.CellContentClick
 
-    End Sub
 
     Private Sub dgvMotor_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvMotor.CellMouseDoubleClick
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
-        Dim edit As New FormDetailMotor(idmotor)
+        Dim edit As New FormDetailMotor(idmotor, username)
         edit.Show()
 
     End Sub
@@ -128,9 +126,9 @@
 
     Private Sub ListKaryawanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListKaryawanToolStripMenuItem.Click
         Dim list As New FormListKaryawan(role, namaAkun)
-        list.ShowDialog()
+        list.Show()
 
 
-        Me.Close()
+
     End Sub
 End Class

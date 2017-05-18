@@ -168,8 +168,8 @@
 
                 id = customer.getBS.Current("id")
                 id_karyawan = karyawan.getBS.Current("id_karyawan")
-                'pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.Date.ToString & "'," & 0 & "," & hargaall & ")", "Berhasil pesan")
-                MsgBox(tanggal.Date.ToString)
+                pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.Date.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ")", "Berhasil pesan")
+                'MsgBox(tanggal.Date.ToString("yyyy-MM-dd"))
             End If
 
 

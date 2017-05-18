@@ -127,8 +127,9 @@
     Private Sub ListKaryawanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListKaryawanToolStripMenuItem.Click
         Dim list As New FormListKaryawan(role, namaAkun)
         list.Show()
-
-
-
+    End Sub
+    Private Sub ListOrderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListOrderToolStripMenuItem.Click
+        Dim list As New FormListOrder()
+        list.Show()
     End Sub
 End Class

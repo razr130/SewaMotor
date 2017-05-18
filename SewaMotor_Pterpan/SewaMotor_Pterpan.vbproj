@@ -99,6 +99,12 @@
     <Compile Include="FormListKaryawan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormListOrder.Designer.vb">
+      <DependentUpon>FormListOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormListOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormListPelanggan.Designer.vb">
       <DependentUpon>FormListPelanggan.vb</DependentUpon>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormListKaryawan.resx">
       <DependentUpon>FormListKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListOrder.resx">
+      <DependentUpon>FormListOrder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListPelanggan.resx">
       <DependentUpon>FormListPelanggan.vb</DependentUpon>

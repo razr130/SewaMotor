@@ -46,12 +46,22 @@
         txtPlat.DataBindings.Add("Text", edit.getBS(), "plat")
         txthiddenharga.DataBindings.Add("Text", edit.getBS(), "harga")
 
+        txtKode.Enabled = False
+        txtMerek.Enabled = False
+        txtStatus.Enabled = False
+        txtPlat.Enabled = False
+        txthiddenharga.Enabled = False
+
         If txtStatus.Text = "0" Then
             txtStatus.Text = "Tersedia"
         Else
             txtStatus.Text = "Tidak tersedia"
         End If
-
+        If txtStatus.Text = "Tidak tersedia" Then
+            btnSewa.Enabled = False
+        Else
+            btnSewa.Enabled = True
+        End If
 
     End Sub
 

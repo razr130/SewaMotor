@@ -35,14 +35,18 @@ Partial Class FormTambahKaryawan
         Me.label3 = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
         Me.label5 = New System.Windows.Forms.Label()
+        Me.txtPass = New System.Windows.Forms.TextBox()
         Me.txtNama = New System.Windows.Forms.TextBox()
         Me.txtNoTelp = New System.Windows.Forms.TextBox()
-        Me.txtPass = New System.Windows.Forms.TextBox()
         Me.toolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.CbHariKerja = New System.Windows.Forms.ComboBox()
+        Me.cbSesi = New System.Windows.Forms.ComboBox()
         Me.groupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.menuStrip1.SuspendLayout()
@@ -59,7 +63,7 @@ Partial Class FormTambahKaryawan
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(239, 229)
+        Me.btnBatal.Location = New System.Drawing.Point(234, 277)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(75, 23)
         Me.btnBatal.TabIndex = 9
@@ -84,7 +88,7 @@ Partial Class FormTambahKaryawan
         '
         'btnDaftar
         '
-        Me.btnDaftar.Location = New System.Drawing.Point(158, 229)
+        Me.btnDaftar.Location = New System.Drawing.Point(153, 277)
         Me.btnDaftar.Name = "btnDaftar"
         Me.btnDaftar.Size = New System.Drawing.Size(75, 23)
         Me.btnDaftar.TabIndex = 8
@@ -93,11 +97,15 @@ Partial Class FormTambahKaryawan
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.cbSesi)
+        Me.groupBox1.Controls.Add(Me.CbHariKerja)
         Me.groupBox1.Controls.Add(Me.GroupBox2)
         Me.groupBox1.Controls.Add(Me.txtAlamat)
         Me.groupBox1.Controls.Add(Me.label3)
+        Me.groupBox1.Controls.Add(Me.Label7)
         Me.groupBox1.Controls.Add(Me.label4)
         Me.groupBox1.Controls.Add(Me.label1)
+        Me.groupBox1.Controls.Add(Me.Label6)
         Me.groupBox1.Controls.Add(Me.label5)
         Me.groupBox1.Controls.Add(Me.txtEmail)
         Me.groupBox1.Controls.Add(Me.txtPass)
@@ -108,7 +116,7 @@ Partial Class FormTambahKaryawan
         Me.groupBox1.Controls.Add(Me.btnDaftar)
         Me.groupBox1.Location = New System.Drawing.Point(12, 27)
         Me.groupBox1.Name = "groupBox1"
-        Me.groupBox1.Size = New System.Drawing.Size(348, 258)
+        Me.groupBox1.Size = New System.Drawing.Size(348, 317)
         Me.groupBox1.TabIndex = 15
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Tambah Karyawan"
@@ -180,6 +188,14 @@ Partial Class FormTambahKaryawan
         Me.label5.TabIndex = 15
         Me.label5.Text = "no.telp"
         '
+        'txtPass
+        '
+        Me.txtPass.Location = New System.Drawing.Point(115, 45)
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtPass.Size = New System.Drawing.Size(199, 20)
+        Me.txtPass.TabIndex = 5
+        '
         'txtNama
         '
         Me.txtNama.Location = New System.Drawing.Point(119, 134)
@@ -193,14 +209,6 @@ Partial Class FormTambahKaryawan
         Me.txtNoTelp.Name = "txtNoTelp"
         Me.txtNoTelp.Size = New System.Drawing.Size(195, 20)
         Me.txtNoTelp.TabIndex = 20
-        '
-        'txtPass
-        '
-        Me.txtPass.Location = New System.Drawing.Point(115, 45)
-        Me.txtPass.Name = "txtPass"
-        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txtPass.Size = New System.Drawing.Size(199, 20)
-        Me.txtPass.TabIndex = 5
         '
         'toolStripMenuItem1
         '
@@ -235,11 +243,47 @@ Partial Class FormTambahKaryawan
         Me.SqlConnection1.ConnectionString = "Data Source=.\SQLEXPRESS;Initial Catalog=SewaMotor;Integrated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(20, 242)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(25, 13)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "sesi"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(20, 216)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(53, 13)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Hari Kerja"
+        '
+        'CbHariKerja
+        '
+        Me.CbHariKerja.FormattingEnabled = True
+        Me.CbHariKerja.Items.AddRange(New Object() {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"})
+        Me.CbHariKerja.Location = New System.Drawing.Point(119, 212)
+        Me.CbHariKerja.Name = "CbHariKerja"
+        Me.CbHariKerja.Size = New System.Drawing.Size(121, 21)
+        Me.CbHariKerja.TabIndex = 24
+        '
+        'cbSesi
+        '
+        Me.cbSesi.FormattingEnabled = True
+        Me.cbSesi.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cbSesi.Location = New System.Drawing.Point(119, 239)
+        Me.cbSesi.Name = "cbSesi"
+        Me.cbSesi.Size = New System.Drawing.Size(35, 21)
+        Me.cbSesi.TabIndex = 24
+        '
         'FormTambahKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(373, 298)
+        Me.ClientSize = New System.Drawing.Size(373, 356)
         Me.Controls.Add(Me.groupBox1)
         Me.Controls.Add(Me.menuStrip1)
         Me.Name = "FormTambahKaryawan"
@@ -275,4 +319,8 @@ Partial Class FormTambahKaryawan
     Friend WithEvents radioKaryawan As RadioButton
     Friend WithEvents radioAdmin As RadioButton
     Friend WithEvents SqlConnection1 As SqlClient.SqlConnection
+    Friend WithEvents CbHariKerja As ComboBox
+    Private WithEvents Label7 As Label
+    Private WithEvents Label6 As Label
+    Friend WithEvents cbSesi As ComboBox
 End Class

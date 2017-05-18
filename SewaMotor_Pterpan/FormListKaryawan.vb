@@ -36,6 +36,7 @@
                 dgvKaryawan.Columns(5).Visible = False
             End If
         End If
+
     End Sub
 
     '/////BUTTON/////
@@ -84,17 +85,16 @@
     End Sub
     Private Sub Add()
         Dim addkaryawan As New FormTambahKaryawan()
-        addkaryawan.ShowDialog()
+        addkaryawan.Show()
         InitializeComponent()
         dgvKaryawan.DataSource = karyawan.getBS()
         Me.Close()
     End Sub
     Private Sub Edit()
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value
-        Dim editkaryawan As New FormEditKaryawan(idKaryawan)
-        editkaryawan.ShowDialog()
+        'Dim editkaryawan As New FormEditKaryawan(idKaryawan)
+        'editkaryawan.ShowDialog()
         dgvKaryawan.DataSource = karyawan.getBS()
-        Me.Close()
     End Sub
     Private Sub Delete()
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value
@@ -108,8 +108,12 @@
     End Sub
 
     Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click
-        Dim panggil As New FormUtama(namaakun, role)
+        Dim panggil As New FormUtama()
         panggil.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
 End Class

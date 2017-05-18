@@ -51,6 +51,8 @@ Partial Class FormDetailMotor
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.txthiddenharga = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtJumlah = New System.Windows.Forms.TextBox()
         Me.menuStrip1.SuspendLayout()
         Me.groupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -142,7 +144,7 @@ Partial Class FormDetailMotor
         '
         'txtHarga
         '
-        Me.txtHarga.Location = New System.Drawing.Point(347, 144)
+        Me.txtHarga.Location = New System.Drawing.Point(347, 161)
         Me.txtHarga.Name = "txtHarga"
         Me.txtHarga.Size = New System.Drawing.Size(100, 20)
         Me.txtHarga.TabIndex = 18
@@ -166,7 +168,7 @@ Partial Class FormDetailMotor
         'label5
         '
         Me.label5.AutoSize = True
-        Me.label5.Location = New System.Drawing.Point(278, 147)
+        Me.label5.Location = New System.Drawing.Point(278, 164)
         Me.label5.Name = "label5"
         Me.label5.Size = New System.Drawing.Size(63, 13)
         Me.label5.TabIndex = 13
@@ -269,6 +271,7 @@ Partial Class FormDetailMotor
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.txtJumlah)
         Me.groupBox1.Controls.Add(Me.txthiddenharga)
         Me.groupBox1.Controls.Add(Me.dtsewa)
         Me.groupBox1.Controls.Add(Me.label9)
@@ -284,6 +287,7 @@ Partial Class FormDetailMotor
         Me.groupBox1.Controls.Add(Me.txtHarga)
         Me.groupBox1.Controls.Add(Me.label4)
         Me.groupBox1.Controls.Add(Me.txtPlat)
+        Me.groupBox1.Controls.Add(Me.Label10)
         Me.groupBox1.Controls.Add(Me.label5)
         Me.groupBox1.Controls.Add(Me.txtMerek)
         Me.groupBox1.Controls.Add(Me.btnLast)
@@ -314,6 +318,22 @@ Partial Class FormDetailMotor
         Me.Label8.Size = New System.Drawing.Size(36, 13)
         Me.Label8.TabIndex = 22
         Me.Label8.Text = "Harga"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(367, 137)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(40, 13)
+        Me.Label10.TabIndex = 13
+        Me.Label10.Text = "Jumlah"
+        '
+        'txtJumlah
+        '
+        Me.txtJumlah.Location = New System.Drawing.Point(417, 134)
+        Me.txtJumlah.Name = "txtJumlah"
+        Me.txtJumlah.Size = New System.Drawing.Size(30, 20)
+        Me.txtJumlah.TabIndex = 29
         '
         'FormDetailMotor
         '
@@ -364,4 +384,6 @@ Partial Class FormDetailMotor
     Private WithEvents groupBox1 As GroupBox
     Friend WithEvents txthiddenharga As TextBox
     Private WithEvents Label8 As Label
+    Private WithEvents Label10 As Label
+    Friend WithEvents txtJumlah As TextBox
 End Class

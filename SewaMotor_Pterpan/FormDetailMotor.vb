@@ -15,7 +15,8 @@
     Public hargaall As Integer
     Public idorder As Integer
     Public tglkembali As System.DateTime
-    Public jumlah As Integer = 0
+
+    Public iddetail As Integer
 
 
     Public Sub New(id As Integer, username As String)
@@ -81,11 +82,11 @@
             If cbWaktu.SelectedItem = "Hari" Then
                 txtHarga.Text = harga * Integer.Parse(txtWaktu.Text)
             ElseIf cbWaktu.SelectedItem = "Minggu" Then
-                txtHarga.Text = harga * Integer.Parse(txtWaktu.Text) * 7
+                txtHarga.Text = harga * Integer.Parse(txtWaktu.Text) * 7 * Integer.Parse(txtJumlah.Text)
             ElseIf cbWaktu.SelectedItem = "Bulan" Then
-                txtHarga.Text = harga * Integer.Parse(txtWaktu.Text) * 30
+                txtHarga.Text = harga * Integer.Parse(txtWaktu.Text) * 30 * Integer.Parse(txtJumlah.Text)
             ElseIf cbWaktu.SelectedItem = "Tahun" Then
-                txtHarga.Text = harga * Integer.Parse(txtWaktu.Text) * 365
+                txtHarga.Text = harga * Integer.Parse(txtWaktu.Text) * 365 * Integer.Parse(txtJumlah.Text)
             End If
         End If
         hargaall = Integer.Parse(txtHarga.Text)
@@ -165,11 +166,14 @@
 
             Dim ada, adaorder As Integer
             ada = customer.getBS.Find("email", nama)
-            adaorder = pesan.getBS.Find("tgl_order", tanggal.Date.ToString("yyyy-MM-dd"))
+
             customer.getBS.Filter = "email='" & nama & "'"
             karyawan.getBS.Filter = "hari_kerja='" & hari & "' AND sesi_kerja=" & sesi
             If ada >= 0 Then
+                pesan.getBS.Filter = "id=" & id
+                adaorder = pesan.getBS.Find("tgl_order", tanggal.Date.ToString("yyyy-MM-dd"))
                 If adaorder < 0 Then
+                    MsgBox("bikin baru")
                     id = customer.getBS.Current("id")
                     id_karyawan = karyawan.getBS.Current("id_karyawan")
                     pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.Date.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ")", "Berhasil pesan")
@@ -185,12 +189,13 @@
                     ElseIf cbWaktu.SelectedItem = "Tahun" Then
                         tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text) * 365)
                     End If
-                    jumlah += 1
-                    MsgBox("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & jumlah & ")")
 
-                    detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & jumlah & ")", "Berhasil tambah")
+                    MsgBox("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & Integer.Parse(txtJumlah.Text) & ")")
+
+                    detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & Integer.Parse(txtJumlah.Text) & ")", "Berhasil tambah")
 
                 Else
+                    MsgBox("nambah baru")
                     idorder = pesan.getBS.Current("no_order")
                     If cbWaktu.SelectedItem = "Hari" Then
                         tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))
@@ -201,10 +206,12 @@
                     ElseIf cbWaktu.SelectedItem = "Tahun" Then
                         tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text) * 365)
                     End If
-                    jumlah += 1
-                    MsgBox("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & jumlah & ")")
 
-                    detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & jumlah & ")", "Berhasil tambah")
+                    MsgBox("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & Integer.Parse(txtJumlah.Text) & ")")
+
+                    detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & Integer.Parse(txtJumlah.Text) & ")", "Berhasil tambah")
+
+
 
                 End If
                 'MsgBox(tanggal.Date.ToString("yyyy-MM-dd"))

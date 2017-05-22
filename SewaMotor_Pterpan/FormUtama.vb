@@ -132,4 +132,10 @@
         Dim list As New FormListOrder()
         list.Show()
     End Sub
+
+    Private Sub btnPengembalian_Click(sender As Object, e As EventArgs) Handles btnPengembalian.Click
+        Dim kembali As New FormKembali
+        kembali.Show()
+        Me.Close()
+    End Sub
 End Class

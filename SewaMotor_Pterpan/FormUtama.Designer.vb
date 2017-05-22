@@ -29,6 +29,7 @@ Partial Class FormUtama
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -37,7 +38,7 @@ Partial Class FormUtama
         Me.dgvMotor = New System.Windows.Forms.DataGridView()
         Me.lblHalo = New System.Windows.Forms.Label()
         Me.btnList = New System.Windows.Forms.Button()
-        Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnPengembalian = New System.Windows.Forms.Button()
         Me.menuStrip1.SuspendLayout()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,20 +75,26 @@ Partial Class FormUtama
         '
         Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
         '
         'ListPelangganToolStripMenuItem
         '
         Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
-        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
         '
         'ListKaryawanToolStripMenuItem
         '
         Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
-        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
+        '
+        'ListOrderToolStripMenuItem
+        '
+        Me.ListOrderToolStripMenuItem.Name = "ListOrderToolStripMenuItem"
+        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.ListOrderToolStripMenuItem.Text = "List Order"
         '
         'txtCari
         '
@@ -167,17 +174,21 @@ Partial Class FormUtama
         Me.btnList.UseVisualStyleBackColor = True
         Me.btnList.Visible = False
         '
-        'ListOrderToolStripMenuItem
+        'btnPengembalian
         '
-        Me.ListOrderToolStripMenuItem.Name = "ListOrderToolStripMenuItem"
-        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ListOrderToolStripMenuItem.Text = "List Order"
+        Me.btnPengembalian.Location = New System.Drawing.Point(443, 379)
+        Me.btnPengembalian.Name = "btnPengembalian"
+        Me.btnPengembalian.Size = New System.Drawing.Size(115, 23)
+        Me.btnPengembalian.TabIndex = 14
+        Me.btnPengembalian.Text = "Pengembalian"
+        Me.btnPengembalian.UseVisualStyleBackColor = True
         '
         'FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(575, 422)
+        Me.Controls.Add(Me.btnPengembalian)
         Me.Controls.Add(Me.lblHalo)
         Me.Controls.Add(Me.txtCari)
         Me.Controls.Add(Me.label1)
@@ -214,4 +225,5 @@ Partial Class FormUtama
     Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnPengembalian As Button
 End Class

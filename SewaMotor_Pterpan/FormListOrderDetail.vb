@@ -1,5 +1,5 @@
 ﻿Public Class FormListOrderDetail
-    Dim order As New Tabel("Order_Detail", "lalala")
+    Dim order As New Tabel("SELECT * FROM Order_Detail")
 
 
     Public Sub New()

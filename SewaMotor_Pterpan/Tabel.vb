@@ -25,7 +25,7 @@ Public Class Tabel
         conn = New SqlConnection(My.Settings.StrConn)
         isiDataTable()
     End Sub
-    Public Sub New(namaTabel As String, strSql As String)
+    Public Sub New(strSql As String)
         Me.namaTabel = namaTabel
         conn = New SqlConnection(My.Settings.StrConn)
         eksekusiSQL(strSql)

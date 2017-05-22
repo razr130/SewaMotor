@@ -93,6 +93,12 @@
     <Compile Include="FormEditKaryawan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormKembali.Designer.vb">
+      <DependentUpon>FormKembali.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormKembali.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormListKaryawan.Designer.vb">
       <DependentUpon>FormListKaryawan.vb</DependentUpon>
     </Compile>
@@ -198,6 +204,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormEditKaryawan.resx">
       <DependentUpon>FormEditKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKembali.resx">
+      <DependentUpon>FormKembali.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListKaryawan.resx">
       <DependentUpon>FormListKaryawan.vb</DependentUpon>

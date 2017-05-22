@@ -25,16 +25,17 @@ Public Class Tabel
         conn = New SqlConnection(My.Settings.StrConn)
         isiDataTable()
     End Sub
-    Public Sub New(strSql As String)
+    Public Sub New(namaTabel As String, strSql As String)
         Me.namaTabel = namaTabel
         conn = New SqlConnection(My.Settings.StrConn)
-        eksekusiSQL(strSql)
+        isiDataTable(strSql, "lel")
     End Sub
 
 
     Public Sub isiDataTable(strSql As String, pesan As String)
         Me.conn.Open()
         Dim cmd As New SqlCommand(strSql, Me.conn)
+        MsgBox(strSql)
         Dim da As New SqlDataAdapter()
         da.SelectCommand = cmd
 
@@ -47,7 +48,7 @@ Public Class Tabel
             MsgBox(pesan)
         End If
         Me.conn.Close()
-        isiDataTable()
+        'isiDataTable()
         Me.bs.DataSource = dt
     End Sub
 

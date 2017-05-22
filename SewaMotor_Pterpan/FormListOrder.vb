@@ -24,7 +24,9 @@
     End Sub
 
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
-        Edit()
+        idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value
+        MsgBox(idOrder)
+        Detail()
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -45,17 +47,20 @@
     Public Sub Add()
 
     End Sub
-    Public Sub Edit()
+    Public Sub Detail()
         '//Pick Row ID
         idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value
 
         '//LOAD EDITFORM
+        Dim detailOrder As New FormListOrderDetail(idOrder)
+        detailOrder.ShowDialog()
+
     End Sub
     Public Sub Delete()
 
     End Sub
 
     Private Sub dgvOrder_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvOrder.CellContentDoubleClick
-        Edit()
+        Detail()
     End Sub
 End Class

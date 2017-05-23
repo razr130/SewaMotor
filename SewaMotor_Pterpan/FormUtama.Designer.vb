@@ -176,12 +176,13 @@ Partial Class FormUtama
         '
         'btnPengembalian
         '
-        Me.btnPengembalian.Location = New System.Drawing.Point(443, 379)
+        Me.btnPengembalian.Location = New System.Drawing.Point(367, 379)
         Me.btnPengembalian.Name = "btnPengembalian"
         Me.btnPengembalian.Size = New System.Drawing.Size(115, 23)
         Me.btnPengembalian.TabIndex = 14
         Me.btnPengembalian.Text = "Pengembalian"
         Me.btnPengembalian.UseVisualStyleBackColor = True
+        Me.btnPengembalian.Visible = False
         '
         'FormUtama
         '

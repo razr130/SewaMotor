@@ -38,6 +38,7 @@
             btnUbah.Visible = True
             btnDelete.Visible = True
             btnList.Visible = True
+            btnPengembalian.Visible = True
 
         End If
 

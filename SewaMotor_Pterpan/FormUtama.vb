@@ -1,6 +1,6 @@
 ﻿Public Class FormUtama
     Private namaAkun As String
-    Private motor As New Tabel("Motor")
+    Public motor As New Tabel("Motor")
     Public idmotor As Integer
 
 
@@ -139,4 +139,6 @@
         kembali.Show()
         Me.Close()
     End Sub
+
+
 End Class

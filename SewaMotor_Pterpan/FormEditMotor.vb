@@ -46,7 +46,7 @@
     End Sub
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-        edit.isiDataTable("UPDATE Motor SET jenis='" & txtJenis.Text & "', harga='" & txtHarga.Text & "', merek='" & txtMerk.Text & "', no_mesin='" & txtNoMesin.Text & "', no_rangka='" & txtNoRangka.Text & "', plat='" & txtPlat.Text & "' WHERE id_motor=" & idmotor, "Berhasil diupdate")
+        edit.isiDataTable("UPDATE Motor SET jenis='" & txtJenis.Text & "', harga='" & txtHarga.Text & "', merek='" & txtMerk.Text & "', no_mesin='" & txtNoMesin.Text & "', no_rangka='" & txtNoRangka.Text & "',status=" & txtStatus.Text & ",plat='" & txtPlat.Text & "' WHERE id_motor=" & idmotor, "Berhasil diupdate")
         txtJenis.Text = ""
         txtHarga.Text = ""
         txtMerk.Text = ""
@@ -54,6 +54,10 @@
         txtNoRangka.Text = ""
         txtPlat.Text = ""
         txtStatus.Text = ""
+        Dim utama As New FormUtama
+        utama.dgvMotor.DataSource = Nothing
+        utama.dgvMotor.DataSource = utama.motor.getBS
+        Me.Close()
     End Sub
 
     Private Sub btnBatal2_Click(sender As Object, e As EventArgs) Handles btnBatal2.Click

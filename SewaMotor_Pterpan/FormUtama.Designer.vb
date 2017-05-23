@@ -219,7 +219,6 @@ Partial Class FormUtama
     Private WithEvents btnDelete As Button
     Private WithEvents btnUbah As Button
     Private WithEvents btnTambah As Button
-    Private WithEvents dgvMotor As DataGridView
     Friend WithEvents lblHalo As Label
     Private WithEvents btnList As Button
     Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
@@ -227,4 +226,5 @@ Partial Class FormUtama
     Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnPengembalian As Button
+    Public WithEvents dgvMotor As DataGridView
 End Class

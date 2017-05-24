@@ -140,5 +140,11 @@
         Me.Close()
     End Sub
 
+    Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanPenyewaanToolStripMenuItem.Click
+        Dim laporan As New FormLaporan
+        laporan.Show()
+        Me.Close()
 
+
+    End Sub
 End Class

@@ -39,13 +39,15 @@ Partial Class FormUtama
         Me.lblHalo = New System.Windows.Forms.Label()
         Me.btnList = New System.Windows.Forms.Button()
         Me.btnPengembalian = New System.Windows.Forms.Button()
+        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menuStrip1
         '
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(575, 24)
@@ -75,25 +77,25 @@ Partial Class FormUtama
         '
         Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
         '
         'ListPelangganToolStripMenuItem
         '
         Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
-        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
         '
         'ListKaryawanToolStripMenuItem
         '
         Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
-        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
         '
         'ListOrderToolStripMenuItem
         '
         Me.ListOrderToolStripMenuItem.Name = "ListOrderToolStripMenuItem"
-        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ListOrderToolStripMenuItem.Text = "List Order"
         '
         'txtCari
@@ -184,6 +186,19 @@ Partial Class FormUtama
         Me.btnPengembalian.UseVisualStyleBackColor = True
         Me.btnPengembalian.Visible = False
         '
+        'ReportToolStripMenuItem
+        '
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem})
+        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
+        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.ReportToolStripMenuItem.Text = "Report"
+        '
+        'LaporanPenyewaanToolStripMenuItem
+        '
+        Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
+        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
+        '
         'FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -227,4 +242,6 @@ Partial Class FormUtama
     Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnPengembalian As Button
     Public WithEvents dgvMotor As DataGridView
+    Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
 End Class

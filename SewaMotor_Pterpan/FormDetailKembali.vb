@@ -6,6 +6,7 @@
     Private tanggal As System.DateTime
     Private titip As String
     Private terlambat As System.TimeSpan
+    Private terlambat2 As Integer
     Private date1 As System.DateTime
     Private date2 As System.DateTime
 
@@ -39,11 +40,11 @@
         txtTglPengembalian.DataBindings.Clear()
 
         txtMerekMotor.DataBindings.Add("Text", kembali.getBS(), "merek")
-        txtTglKembali.DataBindings.Add("Text", kembali.getBS(), "tgl_sewa")
+        txtTglKembali.DataBindings.Add("Text", kembali.getBS(), "tgl_kembali")
 
         titip = txtTglKembali.Text
         txtTglKembali.Text = titip.Substring(0, 10)
-        txtTglPengembalian.Text = tanggal.Date.ToString("yyyy-MM-dd")
+        txtTglPengembalian.Text = tanggal.Date.ToString("dd/MM/yyyy")
         cbDenda.DataSource = denda.getDT
         cbDenda.DisplayMember = "nama_denda"
         cbDenda.ValueMember = "id_denda"
@@ -78,8 +79,17 @@
         If DirectCast(cbDenda.SelectedItem, DataRowView).Item("nama_denda") = "Terlambat" Then
             date1 = gdvKembali.Item(5, gdvKembali.CurrentRow.Index).Value
             date2 = tanggal
-            MsgBox(date1.ToString & " " & date2.ToString)
+            terlambat = date2.Subtract(date1)
+            terlambat2 = Math.Floor(terlambat.TotalDays)
+            'MsgBox(terlambat2.ToString)
+            txtJumlahDenda.Text = terlambat2
         Else
+            txtJumlahDenda.Text = ""
         End If
+    End Sub
+
+    Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+        denda.isiDataTable("INSERT INTO jenis_denda(no_detail,id_denda,jumlah) VALUES(" & gdvKembali.Item(1, gdvKembali.CurrentRow.Index).Value & ",(SELECT id_denda FROM Denda WHERE nama_denda = '" & DirectCast(cbDenda.SelectedItem, DataRowView).Item("nama_denda") & "')," & txtJumlahDenda.Text & ")", "Informasi denda ditambah")
+
     End Sub
 End Class

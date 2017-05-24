@@ -23,4 +23,8 @@
         id = dgvDenda.Item(0, dgvDenda.CurrentRow.Index).Value
         denda.isiDataTable("DELETE FROM Denda WHERE id_denda=" & id, "Berhasil Delete")
     End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
 End Class

@@ -239,12 +239,13 @@
                 End If
 
             Else
-                    MsgBox("Tidak ada karyawan yang bekerja hari ini")
+                MsgBox("Tidak ada karyawan yang bekerja hari ini")
             End If
         ElseIf result = DialogResult.No Then
 
 
 
         End If
+        Me.Close()
     End Sub
 End Class

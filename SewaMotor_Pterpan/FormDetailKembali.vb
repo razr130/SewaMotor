@@ -54,6 +54,7 @@ Public Class FormDetailKembali
             gdvKembali.Columns(0).Visible = False
             gdvKembali.Columns(6).Visible = False
             gdvKembali.Columns(7).Visible = False
+            gdvKembali.Columns(8).Visible = False
 
 
         End If
@@ -76,17 +77,11 @@ Public Class FormDetailKembali
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
 
-        motor.getBS.Filter = "merek='" & gdvKembali.Item(2, gdvKembali.CurrentRow.Index).Value & "'"
-        Dim idmotor As Integer
-        idmotor = motor.getBS.Current("id_motor")
-        motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & idmotor, "")
-    End Sub
-
-    Private Sub txtTotalAll_MouseHover(sender As Object, e As EventArgs)
+        motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & gdvKembali.Item(8, gdvKembali.CurrentRow.Index).Value, "")
 
     End Sub
 
-    Private Sub txtTotalAll_Click(sender As Object, e As EventArgs)
-        txtTotalAll.Text = hargatotal2.ToString
-    End Sub
+
+
+
 End Class

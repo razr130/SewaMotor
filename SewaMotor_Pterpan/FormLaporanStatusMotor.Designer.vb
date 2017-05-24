@@ -29,23 +29,37 @@ Partial Class FormLaporan
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.loginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MotorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetSewaMotor2 = New SewaMotor_Pterpan.DataSetSewaMotor2()
+        Me.MotorTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.MotorTableAdapter()
         Me.PesanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SewaMotorDataSet = New SewaMotor_Pterpan.SewaMotorDataSet()
-        Me.OrderTableAdapter = New SewaMotor_Pterpan.SewaMotorDataSetTableAdapters.OrderTableAdapter()
+        Me.PesanTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.PesanTableAdapter()
+        Me.Oder_DetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Oder_DetailTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.Oder_DetailTableAdapter()
         Me.menuStrip1.SuspendLayout()
+        CType(Me.MotorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetSewaMotor2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PesanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SewaMotorDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ReportViewer1
         '
-        ReportDataSource1.Name = "LaporanOrderByMotor_DataSet"
-        ReportDataSource1.Value = Me.PesanBindingSource
+        ReportDataSource1.Name = "TestDataSet"
+        ReportDataSource1.Value = Me.MotorBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.Report2.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(21, 70)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportStatusMotor.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(12, 27)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(552, 291)
+        Me.ReportViewer1.ShowBackButton = False
+        Me.ReportViewer1.ShowExportButton = False
+        Me.ReportViewer1.ShowFindControls = False
+        Me.ReportViewer1.ShowPageNavigationControls = False
+        Me.ReportViewer1.ShowPrintButton = False
+        Me.ReportViewer1.ShowRefreshButton = False
+        Me.ReportViewer1.ShowStopButton = False
+        Me.ReportViewer1.ShowZoomControl = False
+        Me.ReportViewer1.Size = New System.Drawing.Size(861, 296)
         Me.ReportViewer1.TabIndex = 0
         '
         'menuStrip1
@@ -53,7 +67,7 @@ Partial Class FormLaporan
         Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.loginToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(656, 24)
+        Me.menuStrip1.Size = New System.Drawing.Size(886, 24)
         Me.menuStrip1.TabIndex = 37
         Me.menuStrip1.Text = "menuStrip1"
         '
@@ -76,33 +90,53 @@ Partial Class FormLaporan
         Me.loginToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.loginToolStripMenuItem.Text = "Logout"
         '
+        'MotorBindingSource
+        '
+        Me.MotorBindingSource.DataMember = "Motor"
+        Me.MotorBindingSource.DataSource = Me.DataSetSewaMotor2
+        '
+        'DataSetSewaMotor2
+        '
+        Me.DataSetSewaMotor2.DataSetName = "DataSetSewaMotor2"
+        Me.DataSetSewaMotor2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MotorTableAdapter
+        '
+        Me.MotorTableAdapter.ClearBeforeFill = True
+        '
         'PesanBindingSource
         '
         Me.PesanBindingSource.DataMember = "Pesan"
-        Me.PesanBindingSource.DataSource = Me.SewaMotorDataSet
+        Me.PesanBindingSource.DataSource = Me.DataSetSewaMotor2
         '
-        'SewaMotorDataSet
+        'PesanTableAdapter
         '
-        Me.SewaMotorDataSet.DataSetName = "SewaMotorDataSet"
-        Me.SewaMotorDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.PesanTableAdapter.ClearBeforeFill = True
         '
-        'OrderTableAdapter
+        'Oder_DetailBindingSource
         '
-        Me.OrderTableAdapter.ClearBeforeFill = True
+        Me.Oder_DetailBindingSource.DataMember = "Oder_Detail"
+        Me.Oder_DetailBindingSource.DataSource = Me.DataSetSewaMotor2
+        '
+        'Oder_DetailTableAdapter
+        '
+        Me.Oder_DetailTableAdapter.ClearBeforeFill = True
         '
         'FormLaporan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(656, 444)
+        Me.ClientSize = New System.Drawing.Size(886, 332)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "FormLaporan"
         Me.Text = "FormLaporan"
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
+        CType(Me.MotorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetSewaMotor2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PesanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SewaMotorDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -113,7 +147,11 @@ Partial Class FormLaporan
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Private WithEvents loginToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SewaMotorDataSet As SewaMotorDataSet
-    Friend WithEvents OrderTableAdapter As SewaMotorDataSetTableAdapters.OrderTableAdapter
+    Friend WithEvents MotorBindingSource As BindingSource
+    Friend WithEvents DataSetSewaMotor2 As DataSetSewaMotor2
+    Friend WithEvents MotorTableAdapter As DataSetSewaMotor2TableAdapters.MotorTableAdapter
     Friend WithEvents PesanBindingSource As BindingSource
+    Friend WithEvents Oder_DetailBindingSource As BindingSource
+    Friend WithEvents PesanTableAdapter As DataSetSewaMotor2TableAdapters.PesanTableAdapter
+    Friend WithEvents Oder_DetailTableAdapter As DataSetSewaMotor2TableAdapters.Oder_DetailTableAdapter
 End Class

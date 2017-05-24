@@ -66,19 +66,19 @@ Public Class Tabel
         Me.conn.Close()
         Me.bs.DataSource = dt
     End Sub
-    Public Function eksekusiSQL(strSql As String) As Boolean
-        Dim berubah As Integer = 0
-        Me.conn.Open()
-        Dim cmd As New SqlCommand(strSql, Me.conn)
-        Try
-            berubah = cmd.ExecuteNonQuery()
-        Catch ex As Exception
-            MessageBox.Show("Ada Kesalahan : " + ex.Message)
-        End Try
-        Me.conn.Close()
-        isiDataTable()
-        Return berubah > 0
-    End Function
+    'Public Function eksekusiSQL(strSql As String) As Boolean
+    '    Dim berubah As Integer = 0
+    '    Me.conn.Open()
+    '    Dim cmd As New SqlCommand(strSql, Me.conn)
+    '    Try
+    '        berubah = cmd.ExecuteNonQuery()
+    '    Catch ex As Exception
+    '        MessageBox.Show("Ada Kesalahan : " + ex.Message)
+    '    End Try
+    '    Me.conn.Close()
+    '    isiDataTable()
+    '    Return berubah > 0
+    'End Function
 
 
 End Class

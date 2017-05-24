@@ -49,11 +49,12 @@ Partial Class FormDetailKembali
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnOK = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtTotalAll = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtHargaSewa = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnSimpan = New System.Windows.Forms.Button()
+        Me.btnSelesai = New System.Windows.Forms.Button()
         Me.menuStrip1.SuspendLayout()
         CType(Me.gdvKembali, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -274,61 +275,71 @@ Partial Class FormDetailKembali
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Denda"
         '
-        'TextBox1
+        'txtTotalAll
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(85, 577)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox1.TabIndex = 8
+        Me.txtTotalAll.Enabled = False
+        Me.txtTotalAll.Location = New System.Drawing.Point(143, 577)
+        Me.txtTotalAll.Name = "txtTotalAll"
+        Me.txtTotalAll.Size = New System.Drawing.Size(121, 20)
+        Me.txtTotalAll.TabIndex = 8
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(9, 580)
+        Me.Label9.Location = New System.Drawing.Point(12, 580)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(72, 13)
+        Me.Label9.Size = New System.Drawing.Size(128, 13)
         Me.Label9.TabIndex = 7
-        Me.Label9.Text = "Total Harga : "
+        Me.Label9.Text = "Total Harga Seluruhnya : "
         '
-        'TextBox2
+        'txtHargaSewa
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(85, 543)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox2.TabIndex = 8
+        Me.txtHargaSewa.Enabled = False
+        Me.txtHargaSewa.Location = New System.Drawing.Point(143, 543)
+        Me.txtHargaSewa.Name = "txtHargaSewa"
+        Me.txtHargaSewa.Size = New System.Drawing.Size(121, 20)
+        Me.txtHargaSewa.TabIndex = 8
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(7, 546)
+        Me.Label10.Location = New System.Drawing.Point(10, 546)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(75, 13)
+        Me.Label10.Size = New System.Drawing.Size(131, 13)
         Me.Label10.TabIndex = 7
-        Me.Label10.Text = "Harga Sewa : "
+        Me.Label10.Text = "Harga Sewa Seluruhnya : "
         '
-        'Button1
+        'btnSimpan
         '
-        Me.Button1.Location = New System.Drawing.Point(173, 617)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Simpan"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSimpan.Location = New System.Drawing.Point(157, 617)
+        Me.btnSimpan.Name = "btnSimpan"
+        Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
+        Me.btnSimpan.TabIndex = 10
+        Me.btnSimpan.Text = "Simpan"
+        Me.btnSimpan.UseVisualStyleBackColor = True
+        '
+        'btnSelesai
+        '
+        Me.btnSelesai.Location = New System.Drawing.Point(238, 617)
+        Me.btnSelesai.Name = "btnSelesai"
+        Me.btnSelesai.Size = New System.Drawing.Size(75, 23)
+        Me.btnSelesai.TabIndex = 10
+        Me.btnSelesai.Text = "Selesai"
+        Me.btnSelesai.UseVisualStyleBackColor = True
         '
         'FormDetailKembali
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(456, 498)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(456, 341)
+        Me.Controls.Add(Me.btnSelesai)
+        Me.Controls.Add(Me.btnSimpan)
         Me.Controls.Add(Me.cbDenda)
         Me.Controls.Add(Me.txtTglPengembalian)
         Me.Controls.Add(Me.txtJumlahDenda)
         Me.Controls.Add(Me.txtTglKembali)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtHargaSewa)
+        Me.Controls.Add(Me.txtTotalAll)
         Me.Controls.Add(Me.txtMerekMotor)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -347,6 +358,7 @@ Partial Class FormDetailKembali
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FormDetailKembali"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "FormDetailKembali"
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
@@ -384,9 +396,10 @@ Partial Class FormDetailKembali
     Friend WithEvents Label8 As Label
     Friend WithEvents btnOK As Button
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtTotalAll As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtHargaSewa As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnSimpan As Button
+    Friend WithEvents btnSelesai As Button
 End Class

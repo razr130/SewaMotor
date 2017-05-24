@@ -50,10 +50,13 @@ Public Class Tabel
         Me.conn.Close()
         'isiDataTable()
         Me.bs.DataSource = dt
+
+
     End Sub
 
     Private Sub isiDataTable()
         Me.conn.Open()
+
         Dim cmd As New SqlCommand("SELECT * FROM " & Me.namaTabel, Me.conn)
         Dim da As New SqlDataAdapter()
         da.SelectCommand = cmd

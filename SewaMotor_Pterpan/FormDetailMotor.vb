@@ -13,6 +13,7 @@
     Public id_karyawan As Integer
     Public tanggal As System.DateTime
     Public hargaall As Integer
+    Public hargacurrent As Integer
     Public idorder As Integer
     Public tglkembali As System.DateTime
 
@@ -207,20 +208,7 @@
                             detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES((SELECT no_order from pesan where id = " & id & " AND tgl_order ='" & tanggal.Date.ToString("yyyy-MM-dd") & "')," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & 1 & ")", "Berhasil tambah")
                             edit.isiDataTable("UPDATE Motor SET status=" & 1 & " WHERE id_motor=" & idmotor, "")
 
-                            'pesan.getBS.Filter = "id=" & id
-                            'Dim adapokoknya As Integer
-                            'adapokoknya = pesan.getBS.Find("tgl_order", tanggal.Date.ToString("yyyy-MM-dd"))
-                            'MsgBox("idnya : " & id & " Index adapokoknya : " & adapokoknya.ToString)
-                            'If adapokoknya >= 0 Then
 
-
-                            'idorder = pesan.getBS.Current("no_order")
-
-
-
-                            'MsgBox("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & Integer.Parse(txtJumlah.Text) & ")")
-
-                            'End If
                         Else
                             MsgBox("nambah baru")
                             idorder = pesan.getBS.Current("no_order")
@@ -234,15 +222,17 @@
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text) * 365)
                             End If
 
-                            'MsgBox("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES(" & idorder & "," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & Integer.Parse(txtJumlah.Text) & ")")
-
+                            pesan.getBS.Filter = "id=" & id & " AND tgl_order='" & tanggal.Date.ToString("yyyy-MM-dd") & "'"
+                            hargacurrent = pesan.getBS.Current("total_harga")
+                            hargaall = hargaall + hargacurrent
                             detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES((SELECT no_order from pesan where id = " & id & " AND tgl_order ='" & tanggal.Date.ToString("yyyy-MM-dd") & "')," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & 1 & ")", "Berhasil tambah")
+                            pesan.isiDataTable("UPDATE Pesan SET total_harga=" & hargaall & " WHERE id=" & id & " AND tgl_order='" & tanggal.Date.ToString("yyyy-MM-dd") & "'", "")
                             edit.isiDataTable("UPDATE Motor SET status=" & 1 & " WHERE id_motor=" & idmotor, "")
 
 
 
                         End If
-                        'MsgBox(tanggal.Date.ToString("yyyy-MM-dd"))
+
                     End If
                 Else
                     MsgBox("Tidak ada karyawan yang bekerja sesi ini")

@@ -107,6 +107,12 @@
     <Compile Include="FormDetailKembali.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormEditDenda.Designer.vb">
+      <DependentUpon>FormEditDenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditDenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditKaryawan.Designer.vb">
       <DependentUpon>FormEditKaryawan.vb</DependentUpon>
     </Compile>
@@ -129,6 +135,12 @@
       <DependentUpon>FormLaporanSewaMotor.vb</DependentUpon>
     </Compile>
     <Compile Include="FormLaporanSewaMotor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListDenda.Designer.vb">
+      <DependentUpon>FormListDenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormListDenda.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormListKaryawan.Designer.vb">
@@ -192,6 +204,12 @@
       <DependentUpon>FormRegis.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormTambahDenda.Designer.vb">
+      <DependentUpon>FormTambahDenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahDenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormTambahKaryawan.Designer.vb">
       <DependentUpon>FormTambahKaryawan.vb</DependentUpon>
     </Compile>
@@ -240,6 +258,9 @@
     <EmbeddedResource Include="FormDetailKembali.resx">
       <DependentUpon>FormDetailKembali.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEditDenda.resx">
+      <DependentUpon>FormEditDenda.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditKaryawan.resx">
       <DependentUpon>FormEditKaryawan.vb</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLaporanSewaMotor.resx">
       <DependentUpon>FormLaporanSewaMotor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListDenda.resx">
+      <DependentUpon>FormListDenda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListKaryawan.resx">
       <DependentUpon>FormListKaryawan.vb</DependentUpon>
@@ -281,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegis.resx">
       <DependentUpon>FormRegis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahDenda.resx">
+      <DependentUpon>FormTambahDenda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahKaryawan.resx">
       <DependentUpon>FormTambahKaryawan.vb</DependentUpon>

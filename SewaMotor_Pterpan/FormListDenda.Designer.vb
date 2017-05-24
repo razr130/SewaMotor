@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormUtama
+Partial Class FormListDenda
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,6 +22,7 @@ Partial Class FormUtama
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.dgvDenda = New System.Windows.Forms.DataGridView()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,27 +33,29 @@ Partial Class FormUtama
         Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.txtCari = New System.Windows.Forms.TextBox()
-        Me.label1 = New System.Windows.Forms.Label()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnUbah = New System.Windows.Forms.Button()
+        Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
-        Me.dgvMotor = New System.Windows.Forms.DataGridView()
-        Me.lblHalo = New System.Windows.Forms.Label()
-        Me.btnPengembalian = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnDenda = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        CType(Me.dgvDenda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuStrip1.SuspendLayout()
-        CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'dgvDenda
+        '
+        Me.dgvDenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDenda.Location = New System.Drawing.Point(12, 40)
+        Me.dgvDenda.Name = "dgvDenda"
+        Me.dgvDenda.Size = New System.Drawing.Size(302, 258)
+        Me.dgvDenda.TabIndex = 0
         '
         'menuStrip1
         '
         Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(575, 24)
-        Me.menuStrip1.TabIndex = 3
+        Me.menuStrip1.Size = New System.Drawing.Size(328, 24)
+        Me.menuStrip1.TabIndex = 4
         Me.menuStrip1.Text = "menuStrip1"
         '
         'homeToolStripMenuItem
@@ -112,149 +115,76 @@ Partial Class FormUtama
         Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
         '
-        'txtCari
+        'btnEdit
         '
-        Me.txtCari.Location = New System.Drawing.Point(96, 100)
-        Me.txtCari.Name = "txtCari"
-        Me.txtCari.Size = New System.Drawing.Size(462, 20)
-        Me.txtCari.TabIndex = 12
-        '
-        'label1
-        '
-        Me.label1.AutoSize = True
-        Me.label1.Location = New System.Drawing.Point(23, 103)
-        Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(67, 13)
-        Me.label1.TabIndex = 11
-        Me.label1.Text = "Cari Merek : "
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Location = New System.Drawing.Point(177, 379)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
-        Me.btnDelete.TabIndex = 8
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
-        Me.btnDelete.Visible = False
-        '
-        'btnUbah
-        '
-        Me.btnUbah.Location = New System.Drawing.Point(96, 379)
-        Me.btnUbah.Name = "btnUbah"
-        Me.btnUbah.Size = New System.Drawing.Size(75, 23)
-        Me.btnUbah.TabIndex = 9
-        Me.btnUbah.Text = "Ubah"
-        Me.btnUbah.UseVisualStyleBackColor = True
-        Me.btnUbah.Visible = False
+        Me.btnEdit.Location = New System.Drawing.Point(93, 309)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(75, 23)
+        Me.btnEdit.TabIndex = 5
+        Me.btnEdit.Text = "Edit"
+        Me.btnEdit.UseVisualStyleBackColor = True
         '
         'btnTambah
         '
-        Me.btnTambah.Location = New System.Drawing.Point(15, 379)
+        Me.btnTambah.Location = New System.Drawing.Point(12, 309)
         Me.btnTambah.Name = "btnTambah"
         Me.btnTambah.Size = New System.Drawing.Size(75, 23)
-        Me.btnTambah.TabIndex = 10
+        Me.btnTambah.TabIndex = 5
         Me.btnTambah.Text = "Tambah"
         Me.btnTambah.UseVisualStyleBackColor = True
-        Me.btnTambah.Visible = False
         '
-        'dgvMotor
+        'btnClose
         '
-        Me.dgvMotor.AllowUserToAddRows = False
-        Me.dgvMotor.AllowUserToDeleteRows = False
-        Me.dgvMotor.AllowUserToOrderColumns = True
-        Me.dgvMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvMotor.Location = New System.Drawing.Point(15, 165)
-        Me.dgvMotor.Name = "dgvMotor"
-        Me.dgvMotor.ReadOnly = True
-        Me.dgvMotor.Size = New System.Drawing.Size(543, 199)
-        Me.dgvMotor.TabIndex = 6
+        Me.btnClose.Location = New System.Drawing.Point(255, 309)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(59, 23)
+        Me.btnClose.TabIndex = 5
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
-        'lblHalo
+        'btnDelete
         '
-        Me.lblHalo.AutoSize = True
-        Me.lblHalo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHalo.Location = New System.Drawing.Point(22, 44)
-        Me.lblHalo.Name = "lblHalo"
-        Me.lblHalo.Size = New System.Drawing.Size(59, 24)
-        Me.lblHalo.TabIndex = 13
-        Me.lblHalo.Text = "Halo, "
+        Me.btnDelete.Location = New System.Drawing.Point(174, 309)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.TabIndex = 5
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
         '
-        'btnPengembalian
-        '
-        Me.btnPengembalian.Location = New System.Drawing.Point(258, 379)
-        Me.btnPengembalian.Name = "btnPengembalian"
-        Me.btnPengembalian.Size = New System.Drawing.Size(115, 23)
-        Me.btnPengembalian.TabIndex = 14
-        Me.btnPengembalian.Text = "Pengembalian"
-        Me.btnPengembalian.UseVisualStyleBackColor = True
-        Me.btnPengembalian.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 137)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(94, 20)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Pilih Motor : "
-        '
-        'btnDenda
-        '
-        Me.btnDenda.Location = New System.Drawing.Point(379, 379)
-        Me.btnDenda.Name = "btnDenda"
-        Me.btnDenda.Size = New System.Drawing.Size(85, 23)
-        Me.btnDenda.TabIndex = 14
-        Me.btnDenda.Text = "Denda"
-        Me.btnDenda.UseVisualStyleBackColor = True
-        Me.btnDenda.Visible = False
-        '
-        'FormUtama
+        'FormListDenda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(575, 422)
-        Me.Controls.Add(Me.btnDenda)
-        Me.Controls.Add(Me.btnPengembalian)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.lblHalo)
-        Me.Controls.Add(Me.txtCari)
-        Me.Controls.Add(Me.label1)
-        Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.btnUbah)
+        Me.ClientSize = New System.Drawing.Size(328, 344)
         Me.Controls.Add(Me.btnTambah)
-        Me.Controls.Add(Me.dgvMotor)
+        Me.Controls.Add(Me.btnDelete)
+        Me.Controls.Add(Me.btnClose)
+        Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.menuStrip1)
-        Me.Name = "FormUtama"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormUtama"
+        Me.Controls.Add(Me.dgvDenda)
+        Me.Name = "FormListDenda"
+        Me.Text = "FormListDenda"
+        CType(Me.dgvDenda, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
-        CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents dgvDenda As DataGridView
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents txtCari As TextBox
-    Private WithEvents label1 As Label
-    Private WithEvents btnDelete As Button
-    Private WithEvents btnUbah As Button
-    Private WithEvents btnTambah As Button
-    Friend WithEvents lblHalo As Label
     Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents btnPengembalian As Button
-    Public WithEvents dgvMotor As DataGridView
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btnDenda As Button
+    Friend WithEvents btnEdit As Button
+    Friend WithEvents btnTambah As Button
+    Friend WithEvents btnClose As Button
+    Friend WithEvents btnDelete As Button
 End Class

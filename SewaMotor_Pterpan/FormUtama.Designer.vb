@@ -30,6 +30,8 @@ Partial Class FormUtama
         Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -39,8 +41,7 @@ Partial Class FormUtama
         Me.lblHalo = New System.Windows.Forms.Label()
         Me.btnList = New System.Windows.Forms.Button()
         Me.btnPengembalian = New System.Windows.Forms.Button()
-        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.menuStrip1.SuspendLayout()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -77,26 +78,39 @@ Partial Class FormUtama
         '
         Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
         '
         'ListPelangganToolStripMenuItem
         '
         Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
-        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
         '
         'ListKaryawanToolStripMenuItem
         '
         Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
-        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
         '
         'ListOrderToolStripMenuItem
         '
         Me.ListOrderToolStripMenuItem.Name = "ListOrderToolStripMenuItem"
-        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ListOrderToolStripMenuItem.Text = "List Order"
+        '
+        'ReportToolStripMenuItem
+        '
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem})
+        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
+        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.ReportToolStripMenuItem.Text = "Report"
+        '
+        'LaporanPenyewaanToolStripMenuItem
+        '
+        Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
+        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
         '
         'txtCari
         '
@@ -150,17 +164,17 @@ Partial Class FormUtama
         Me.dgvMotor.AllowUserToDeleteRows = False
         Me.dgvMotor.AllowUserToOrderColumns = True
         Me.dgvMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvMotor.Location = New System.Drawing.Point(15, 137)
+        Me.dgvMotor.Location = New System.Drawing.Point(15, 165)
         Me.dgvMotor.Name = "dgvMotor"
         Me.dgvMotor.ReadOnly = True
-        Me.dgvMotor.Size = New System.Drawing.Size(543, 227)
+        Me.dgvMotor.Size = New System.Drawing.Size(543, 199)
         Me.dgvMotor.TabIndex = 6
         '
         'lblHalo
         '
         Me.lblHalo.AutoSize = True
         Me.lblHalo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHalo.Location = New System.Drawing.Point(53, 44)
+        Me.lblHalo.Location = New System.Drawing.Point(22, 44)
         Me.lblHalo.Name = "lblHalo"
         Me.lblHalo.Size = New System.Drawing.Size(59, 24)
         Me.lblHalo.TabIndex = 13
@@ -186,18 +200,15 @@ Partial Class FormUtama
         Me.btnPengembalian.UseVisualStyleBackColor = True
         Me.btnPengembalian.Visible = False
         '
-        'ReportToolStripMenuItem
+        'Label2
         '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem})
-        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
-        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.ReportToolStripMenuItem.Text = "Report"
-        '
-        'LaporanPenyewaanToolStripMenuItem
-        '
-        Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
-        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(12, 137)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(94, 20)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "Pilih Motor : "
         '
         'FormUtama
         '
@@ -205,6 +216,7 @@ Partial Class FormUtama
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(575, 422)
         Me.Controls.Add(Me.btnPengembalian)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblHalo)
         Me.Controls.Add(Me.txtCari)
         Me.Controls.Add(Me.label1)
@@ -244,4 +256,5 @@ Partial Class FormUtama
     Public WithEvents dgvMotor As DataGridView
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label2 As Label
 End Class

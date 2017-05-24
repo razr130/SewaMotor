@@ -243,6 +243,3 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-/SewaMotor_Pterpan/Report1.rdlc
-/SewaMotor_Pterpan/LaporanOrder.vb
-/SewaMotor_Pterpan/LaporanOrder.Designer.vb

@@ -95,6 +95,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSewaMotor2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormDenda.Designer.vb">
+      <DependentUpon>FormDenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormDetailKembali.Designer.vb">
       <DependentUpon>FormDetailKembali.vb</DependentUpon>
     </Compile>
@@ -222,6 +228,9 @@
     <Compile Include="Tabel.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormDenda.resx">
+      <DependentUpon>FormDenda.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDetailKembali.resx">
       <DependentUpon>FormDetailKembali.vb</DependentUpon>
     </EmbeddedResource>

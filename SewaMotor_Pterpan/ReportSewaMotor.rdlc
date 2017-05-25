@@ -2,7 +2,7 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix1">
+      <Tablix Name="TablixLaporanSewaPerMotor">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
@@ -21,7 +21,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.79167in</Width>
+              <Width>1in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -190,14 +190,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox17">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Jenis Denda</Value>
+                              <Value>Keterlambatan</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -206,7 +206,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -330,7 +330,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatDateTime(Fields!tgl_pengembalian.Value,DateFormat.ShortDate)</Value>
+                              <Value>=IIf(IsNothing(Fields!tgl_pengembalian.Value),"-",FormatDateTime(Fields!tgl_pengembalian.Value,DateFormat.ShortDate))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -362,7 +362,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=DateDiff(DateInterval.Day,Fields!tgl_sewa.Value,Fields!tgl_pengembalian.Value) &amp; " hari"</Value>
+                              <Value>=DateDiff(DateInterval.Day,Fields!tgl_sewa.Value,Fields!tgl_kembali.Value) &amp; " hari"</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -387,14 +387,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="id_denda">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(IsNothing(Fields!id_denda.Value),"-",Fields!id_denda.Value)</Value>
+                              <Value>=IIf(IsNothing(Fields!tgl_pengembalian.Value),DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Today),DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value)) &amp; " hari"</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -403,7 +403,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>id_denda</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -415,6 +415,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -523,11 +524,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Order_DetailDataSet</DataSetName>
+        <DataSetName>OrderDetailDataSet</DataSetName>
         <Top>0.80083in</Top>
         <Left>0.24875in</Left>
         <Height>0.75in</Height>
-        <Width>6.48958in</Width>
+        <Width>6.69791in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -554,7 +555,7 @@
         <Top>0.3425in</Top>
         <Left>0.24875in</Left>
         <Height>0.25in</Height>
-        <Width>6.48958in</Width>
+        <Width>5.69791in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -580,106 +581,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSetSewaMotor2">
+    <DataSource Name="SewaMotorDataSource">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>8c3c87eb-6d14-4c40-a2d2-ad2fe9ce3702</rd:DataSourceID>
+      <rd:DataSourceID>da1b8f87-59f0-44d3-ab4d-44673bb1c045</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="MotorDataSet">
+    <DataSet Name="OrderDetailDataSet">
       <Query>
-        <DataSourceName>DataSetSewaMotor2</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="id_motor">
-          <DataField>id_motor</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="jenis">
-          <DataField>jenis</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="merek">
-          <DataField>merek</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="no_mesin">
-          <DataField>no_mesin</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="no_rangka">
-          <DataField>no_rangka</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="status">
-          <DataField>status</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="plat">
-          <DataField>plat</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="harga">
-          <DataField>harga</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DataSetSewaMotor2</rd:DataSetName>
-        <rd:SchemaPath>E:\Task\UKDW\Semester 6\Pemrograman Terintegrasi Terapan\Program\SewaMotor\SewaMotor_Pterpan\DataSetSewaMotor2.xsd</rd:SchemaPath>
-        <rd:TableName>Motor</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>MotorTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="PesanDataSet">
-      <Query>
-        <DataSourceName>DataSetSewaMotor2</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="no_order">
-          <DataField>no_order</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="id">
-          <DataField>id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="id_karyawan">
-          <DataField>id_karyawan</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="tgl_order">
-          <DataField>tgl_order</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="total_denda">
-          <DataField>total_denda</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="total_harga">
-          <DataField>total_harga</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DataSetSewaMotor2</rd:DataSetName>
-        <rd:SchemaPath>E:\Task\UKDW\Semester 6\Pemrograman Terintegrasi Terapan\Program\SewaMotor\SewaMotor_Pterpan\DataSetSewaMotor2.xsd</rd:SchemaPath>
-        <rd:TableName>Pesan</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>PesanTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="Order_DetailDataSet">
-      <Query>
-        <DataSourceName>DataSetSewaMotor2</DataSourceName>
+        <DataSourceName>SewaMotorDataSource</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -711,14 +624,10 @@
           <DataField>jumlah_sewa</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="id_denda">
-          <DataField>id_denda</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataSetSewaMotor2</rd:DataSetName>
-        <rd:SchemaPath>E:\Task\UKDW\Semester 6\Pemrograman Terintegrasi Terapan\Program\SewaMotor\SewaMotor_Pterpan\DataSetSewaMotor2.xsd</rd:SchemaPath>
+        <rd:DataSetName>SewaMotorDataSource</rd:DataSetName>
+        <rd:SchemaPath>E:\Task\UKDW\Semester 6\Pemrograman Terintegrasi Terapan\Program\SewaMotor\SewaMotor_Pterpan\SewaMotorDataSource.xsd</rd:SchemaPath>
         <rd:TableName>Oder_Detail</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

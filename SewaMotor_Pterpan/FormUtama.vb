@@ -29,7 +29,6 @@
         'Me.namaAkun = namaAkun
     End Sub
     Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         lblHalo.Text = "Halo, " & username
         If role > 0 Then
             btnTambah.Visible = True
@@ -43,7 +42,6 @@
         dgvMotor.DataSource = motor.getBS()
 
         If dgvMotor.Columns.Count > 0 Then
-
             dgvMotor.Columns(0).Visible = False
             dgvMotor.Columns(3).Visible = False
             dgvMotor.Columns(4).Visible = False

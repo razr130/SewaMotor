@@ -5,4 +5,9 @@
 
         Me.ReportViewer1.RefreshReport()
     End Sub
+
+    Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles logOutToolStripMenuItem.Click
+        FormLogin.Show()
+        Me.Close()
+    End Sub
 End Class

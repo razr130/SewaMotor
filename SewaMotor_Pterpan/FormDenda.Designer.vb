@@ -40,22 +40,22 @@ Partial Class FormDenda
         'cbDenda
         '
         Me.cbDenda.FormattingEnabled = True
-        Me.cbDenda.Location = New System.Drawing.Point(64, 28)
+        Me.cbDenda.Location = New System.Drawing.Point(64, 32)
         Me.cbDenda.Name = "cbDenda"
-        Me.cbDenda.Size = New System.Drawing.Size(121, 21)
+        Me.cbDenda.Size = New System.Drawing.Size(121, 23)
         Me.cbDenda.TabIndex = 21
         '
         'txtTglPengembalian
         '
         Me.txtTglPengembalian.Enabled = False
-        Me.txtTglPengembalian.Location = New System.Drawing.Point(31, 151)
+        Me.txtTglPengembalian.Location = New System.Drawing.Point(28, 162)
         Me.txtTglPengembalian.Name = "txtTglPengembalian"
         Me.txtTglPengembalian.Size = New System.Drawing.Size(124, 20)
         Me.txtTglPengembalian.TabIndex = 17
         '
         'txtJumlahDenda
         '
-        Me.txtJumlahDenda.Location = New System.Drawing.Point(134, 55)
+        Me.txtJumlahDenda.Location = New System.Drawing.Point(135, 66)
         Me.txtJumlahDenda.Name = "txtJumlahDenda"
         Me.txtJumlahDenda.Size = New System.Drawing.Size(32, 20)
         Me.txtJumlahDenda.TabIndex = 18
@@ -63,7 +63,7 @@ Partial Class FormDenda
         'txtTglKembali
         '
         Me.txtTglKembali.Enabled = False
-        Me.txtTglKembali.Location = New System.Drawing.Point(31, 98)
+        Me.txtTglKembali.Location = New System.Drawing.Point(28, 100)
         Me.txtTglKembali.Name = "txtTglKembali"
         Me.txtTglKembali.Size = New System.Drawing.Size(124, 20)
         Me.txtTglKembali.TabIndex = 19
@@ -71,7 +71,7 @@ Partial Class FormDenda
         'txtMerekMotor
         '
         Me.txtMerekMotor.Enabled = False
-        Me.txtMerekMotor.Location = New System.Drawing.Point(31, 42)
+        Me.txtMerekMotor.Location = New System.Drawing.Point(28, 36)
         Me.txtMerekMotor.Name = "txtMerekMotor"
         Me.txtMerekMotor.Size = New System.Drawing.Size(100, 20)
         Me.txtMerekMotor.TabIndex = 20
@@ -79,45 +79,50 @@ Partial Class FormDenda
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(28, 135)
+        Me.Label6.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(25, 143)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(98, 13)
+        Me.Label6.Size = New System.Drawing.Size(100, 15)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Tgl Dikembalikan : "
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 82)
+        Me.Label5.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(25, 82)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(71, 13)
+        Me.Label5.Size = New System.Drawing.Size(73, 15)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Tgl Kembali : "
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(25, 59)
+        Me.Label8.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(25, 68)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(110, 13)
+        Me.Label8.Size = New System.Drawing.Size(114, 15)
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Jumlah (buah / hari) : "
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(19, 32)
+        Me.Label7.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(19, 37)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(48, 13)
+        Me.Label7.Size = New System.Drawing.Size(47, 15)
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Denda : "
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(31, 26)
+        Me.Label4.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(28, 17)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(46, 13)
+        Me.Label4.Size = New System.Drawing.Size(47, 15)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "Merek : "
         '
@@ -128,27 +133,33 @@ Partial Class FormDenda
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtJumlahDenda)
         Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Location = New System.Drawing.Point(31, 193)
+        Me.GroupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(28, 210)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 165)
+        Me.GroupBox1.Size = New System.Drawing.Size(200, 174)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Denda"
         '
         'btnOK
         '
-        Me.btnOK.Location = New System.Drawing.Point(28, 102)
+        Me.btnOK.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOK.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOK.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnOK.Location = New System.Drawing.Point(28, 118)
         Me.btnOK.Name = "btnOK"
-        Me.btnOK.Size = New System.Drawing.Size(138, 34)
+        Me.btnOK.Size = New System.Drawing.Size(138, 39)
         Me.btnOK.TabIndex = 10
         Me.btnOK.Text = "OK"
-        Me.btnOK.UseVisualStyleBackColor = True
+        Me.btnOK.UseVisualStyleBackColor = False
         '
         'FormDenda
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(254, 370)
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ClientSize = New System.Drawing.Size(254, 403)
         Me.Controls.Add(Me.txtTglPengembalian)
         Me.Controls.Add(Me.txtTglKembali)
         Me.Controls.Add(Me.txtMerekMotor)
@@ -156,6 +167,7 @@ Partial Class FormDenda
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "FormDenda"
         Me.Text = "FormDenda"
         Me.GroupBox1.ResumeLayout(False)

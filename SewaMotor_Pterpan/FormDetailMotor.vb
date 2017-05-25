@@ -103,7 +103,7 @@
         hargaall = Integer.Parse(txtHarga.Text)
     End Sub
 
-    Private Sub cbWaktu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWaktu.SelectedIndexChanged
+    Private Sub cbWaktu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWaktu.SelectedIndexChanged, cbJaminan.SelectedIndexChanged
         harga = Integer.Parse(txthiddenharga.Text)
         If txtWaktu.Text.Length > 0 Then
             If cbWaktu.SelectedItem = "Hari" Then
@@ -193,7 +193,7 @@
                             MsgBox("bikin baru")
 
                             id_karyawan = karyawan.getBS.Current("id_karyawan")
-                            pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.Date.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ")", "Berhasil pesan")
+                            pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.Date.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
 
                             If cbWaktu.SelectedItem = "Hari" Then
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))
@@ -248,4 +248,6 @@
         End If
         Me.Close()
     End Sub
+
+
 End Class

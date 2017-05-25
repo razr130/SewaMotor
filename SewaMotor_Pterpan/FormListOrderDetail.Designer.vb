@@ -96,7 +96,7 @@ Partial Class FormListOrderDetail
         'lblCari
         '
         Me.lblCari.AutoSize = True
-        Me.lblCari.Location = New System.Drawing.Point(159, 32)
+        Me.lblCari.Location = New System.Drawing.Point(182, 28)
         Me.lblCari.Name = "lblCari"
         Me.lblCari.Size = New System.Drawing.Size(63, 15)
         Me.lblCari.TabIndex = 19
@@ -104,7 +104,7 @@ Partial Class FormListOrderDetail
         '
         'txtCari
         '
-        Me.txtCari.Location = New System.Drawing.Point(250, 29)
+        Me.txtCari.Location = New System.Drawing.Point(250, 26)
         Me.txtCari.Name = "txtCari"
         Me.txtCari.Size = New System.Drawing.Size(306, 20)
         Me.txtCari.TabIndex = 14

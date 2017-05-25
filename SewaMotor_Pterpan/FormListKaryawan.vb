@@ -107,7 +107,7 @@
         End If
     End Sub
 
-    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click
+    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim panggil As New FormUtama()
         panggil.Show()
         Me.Close()

@@ -125,6 +125,12 @@
     <Compile Include="FormEditKaryawan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormEditOrderDetail.Designer.vb">
+      <DependentUpon>FormEditOrderDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditOrderDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormFilterLaporan.Designer.vb">
       <DependentUpon>FormFilterLaporan.vb</DependentUpon>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditKaryawan.resx">
       <DependentUpon>FormEditKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditOrderDetail.resx">
+      <DependentUpon>FormEditOrderDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFilterLaporan.resx">
       <DependentUpon>FormFilterLaporan.vb</DependentUpon>

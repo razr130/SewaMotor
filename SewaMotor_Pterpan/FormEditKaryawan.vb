@@ -33,7 +33,7 @@
         If txtEmail.Text = "" Or txtPass.Text = "" Or txtNama.Text = "" Or txtAlamat.Text = "" Or txtNoTelp.Text = "" Or (radioKaryawan.Checked = False And radioAdmin.Checked = False) Or (radioKaryawan.Checked = True And radioAdmin.Checked = True) Then
             MsgBox("Harap Diisi Semua")
         Else
-            edit.isiDataTable("UPDATE INTO Karyawan SET
+            edit.isiDataTable("UPDATE Karyawan SET
                                 email='" & txtEmail.Text & "',
                                 password='" & txtPass.Text & "',
                                 nama='" & txtNama.Text & "',
@@ -41,8 +41,8 @@
                                 alamat='" & txtAlamat.Text & "',
                                 role='" & Role() & "',
                                 hari_kerja='" & cbHariKerja.Text & "',
-                                sesi_kerja='" & cbSesi.Text & "'",
-                           "Data Karyawan berhasil ditambah")
+                                sesi_kerja='" & cbSesi.Text & "' WHERE id_karyawan=" & idKaryawan,
+                           "Data Karyawan berhasil diubah")
             Dim back As New FormListKaryawan()
             back.Show()
             Me.Close()

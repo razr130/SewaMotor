@@ -67,7 +67,7 @@ Partial Class FormListOrderDetail
         Me.groupDaftarPelanggan.Size = New System.Drawing.Size(568, 351)
         Me.groupDaftarPelanggan.TabIndex = 37
         Me.groupDaftarPelanggan.TabStop = False
-        Me.groupDaftarPelanggan.Text = "List Order"
+        Me.groupDaftarPelanggan.Text = "List Order Detail"
         '
         'btnClose
         '

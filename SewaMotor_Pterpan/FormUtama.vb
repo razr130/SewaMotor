@@ -32,7 +32,7 @@
 
     Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        lblHalo.Text = "Log in sebagai :  " & username
+        lblHalo.Text = "Halo, " & username
         If role > 0 Then
             btnTambah.Visible = True
             btnUbah.Visible = True

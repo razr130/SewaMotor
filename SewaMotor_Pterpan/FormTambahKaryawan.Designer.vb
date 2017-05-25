@@ -42,11 +42,18 @@ Partial Class FormTambahKaryawan
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.txtNama = New System.Windows.Forms.TextBox()
         Me.txtNoTelp = New System.Windows.Forms.TextBox()
-        Me.toolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
+        Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.groupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.menuStrip1.SuspendLayout()
@@ -57,18 +64,21 @@ Partial Class FormTambahKaryawan
         Me.label1.AutoSize = True
         Me.label1.Location = New System.Drawing.Point(20, 22)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(35, 13)
+        Me.label1.Size = New System.Drawing.Size(37, 15)
         Me.label1.TabIndex = 0
         Me.label1.Text = "E-mail"
         '
         'btnBatal
         '
-        Me.btnBatal.Location = New System.Drawing.Point(234, 277)
+        Me.btnBatal.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnBatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBatal.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBatal.Location = New System.Drawing.Point(174, 277)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(75, 23)
         Me.btnBatal.TabIndex = 9
         Me.btnBatal.Text = "Batal"
-        Me.btnBatal.UseVisualStyleBackColor = True
+        Me.btnBatal.UseVisualStyleBackColor = False
         '
         'txtEmail
         '
@@ -82,18 +92,21 @@ Partial Class FormTambahKaryawan
         Me.label2.AutoSize = True
         Me.label2.Location = New System.Drawing.Point(20, 48)
         Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(53, 13)
+        Me.label2.Size = New System.Drawing.Size(54, 15)
         Me.label2.TabIndex = 1
         Me.label2.Text = "Password"
         '
         'btnDaftar
         '
-        Me.btnDaftar.Location = New System.Drawing.Point(153, 277)
+        Me.btnDaftar.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnDaftar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDaftar.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnDaftar.Location = New System.Drawing.Point(91, 277)
         Me.btnDaftar.Name = "btnDaftar"
         Me.btnDaftar.Size = New System.Drawing.Size(75, 23)
         Me.btnDaftar.TabIndex = 8
         Me.btnDaftar.Text = "Daftar"
-        Me.btnDaftar.UseVisualStyleBackColor = True
+        Me.btnDaftar.UseVisualStyleBackColor = False
         '
         'groupBox1
         '
@@ -114,7 +127,8 @@ Partial Class FormTambahKaryawan
         Me.groupBox1.Controls.Add(Me.txtNoTelp)
         Me.groupBox1.Controls.Add(Me.btnBatal)
         Me.groupBox1.Controls.Add(Me.btnDaftar)
-        Me.groupBox1.Location = New System.Drawing.Point(12, 27)
+        Me.groupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.groupBox1.Location = New System.Drawing.Point(12, 33)
         Me.groupBox1.Name = "groupBox1"
         Me.groupBox1.Size = New System.Drawing.Size(348, 317)
         Me.groupBox1.TabIndex = 15
@@ -127,7 +141,7 @@ Partial Class FormTambahKaryawan
         Me.cbSesi.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cbSesi.Location = New System.Drawing.Point(119, 239)
         Me.cbSesi.Name = "cbSesi"
-        Me.cbSesi.Size = New System.Drawing.Size(35, 21)
+        Me.cbSesi.Size = New System.Drawing.Size(35, 23)
         Me.cbSesi.TabIndex = 24
         '
         'CbHariKerja
@@ -136,7 +150,7 @@ Partial Class FormTambahKaryawan
         Me.CbHariKerja.Items.AddRange(New Object() {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"})
         Me.CbHariKerja.Location = New System.Drawing.Point(119, 212)
         Me.CbHariKerja.Name = "CbHariKerja"
-        Me.CbHariKerja.Size = New System.Drawing.Size(121, 21)
+        Me.CbHariKerja.Size = New System.Drawing.Size(121, 23)
         Me.CbHariKerja.TabIndex = 24
         '
         'GroupBox2
@@ -155,7 +169,7 @@ Partial Class FormTambahKaryawan
         Me.radioKaryawan.AutoSize = True
         Me.radioKaryawan.Location = New System.Drawing.Point(72, 19)
         Me.radioKaryawan.Name = "radioKaryawan"
-        Me.radioKaryawan.Size = New System.Drawing.Size(72, 17)
+        Me.radioKaryawan.Size = New System.Drawing.Size(73, 19)
         Me.radioKaryawan.TabIndex = 1
         Me.radioKaryawan.TabStop = True
         Me.radioKaryawan.Text = "Karyawan"
@@ -166,7 +180,7 @@ Partial Class FormTambahKaryawan
         Me.radioAdmin.AutoSize = True
         Me.radioAdmin.Location = New System.Drawing.Point(12, 19)
         Me.radioAdmin.Name = "radioAdmin"
-        Me.radioAdmin.Size = New System.Drawing.Size(54, 17)
+        Me.radioAdmin.Size = New System.Drawing.Size(56, 19)
         Me.radioAdmin.TabIndex = 0
         Me.radioAdmin.TabStop = True
         Me.radioAdmin.Text = "Admin"
@@ -184,7 +198,7 @@ Partial Class FormTambahKaryawan
         Me.label3.AutoSize = True
         Me.label3.Location = New System.Drawing.Point(20, 137)
         Me.label3.Name = "label3"
-        Me.label3.Size = New System.Drawing.Size(80, 13)
+        Me.label3.Size = New System.Drawing.Size(80, 15)
         Me.label3.TabIndex = 13
         Me.label3.Text = "Nama Lengkap"
         '
@@ -193,7 +207,7 @@ Partial Class FormTambahKaryawan
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(20, 216)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(53, 13)
+        Me.Label7.Size = New System.Drawing.Size(56, 15)
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "Hari Kerja"
         '
@@ -202,7 +216,7 @@ Partial Class FormTambahKaryawan
         Me.label4.AutoSize = True
         Me.label4.Location = New System.Drawing.Point(20, 163)
         Me.label4.Name = "label4"
-        Me.label4.Size = New System.Drawing.Size(39, 13)
+        Me.label4.Size = New System.Drawing.Size(42, 15)
         Me.label4.TabIndex = 14
         Me.label4.Text = "Alamat"
         '
@@ -211,7 +225,7 @@ Partial Class FormTambahKaryawan
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(20, 242)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(25, 13)
+        Me.Label6.Size = New System.Drawing.Size(26, 15)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "sesi"
         '
@@ -220,7 +234,7 @@ Partial Class FormTambahKaryawan
         Me.label5.AutoSize = True
         Me.label5.Location = New System.Drawing.Point(20, 189)
         Me.label5.Name = "label5"
-        Me.label5.Size = New System.Drawing.Size(39, 13)
+        Me.label5.Size = New System.Drawing.Size(41, 15)
         Me.label5.TabIndex = 15
         Me.label5.Text = "no.telp"
         '
@@ -246,46 +260,102 @@ Partial Class FormTambahKaryawan
         Me.txtNoTelp.Size = New System.Drawing.Size(195, 20)
         Me.txtNoTelp.TabIndex = 20
         '
-        'toolStripMenuItem1
-        '
-        Me.toolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.toolStripMenuItem1.Name = "toolStripMenuItem1"
-        Me.toolStripMenuItem1.Size = New System.Drawing.Size(49, 20)
-        Me.toolStripMenuItem1.Text = "Login"
-        '
-        'katalogToolStripMenuItem
-        '
-        Me.katalogToolStripMenuItem.Name = "katalogToolStripMenuItem"
-        Me.katalogToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
-        Me.katalogToolStripMenuItem.Text = "Katalog"
-        '
-        'homeToolStripMenuItem
-        '
-        Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
-        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.homeToolStripMenuItem.Text = "Home"
-        '
-        'menuStrip1
-        '
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.toolStripMenuItem1})
-        Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(373, 24)
-        Me.menuStrip1.TabIndex = 14
-        Me.menuStrip1.Text = "menuStrip1"
-        '
         'SqlConnection1
         '
         Me.SqlConnection1.ConnectionString = "Data Source=.\SQLEXPRESS;Initial Catalog=SewaMotor;Integrated Security=True"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
+        'menuStrip1
+        '
+        Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
+        Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.menuStrip1.Name = "menuStrip1"
+        Me.menuStrip1.Size = New System.Drawing.Size(373, 24)
+        Me.menuStrip1.TabIndex = 16
+        Me.menuStrip1.Text = "menuStrip1"
+        '
+        'homeToolStripMenuItem
+        '
+        Me.homeToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.homeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
+        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
+        Me.homeToolStripMenuItem.Text = "Home"
+        '
+        'katalogToolStripMenuItem
+        '
+        Me.katalogToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.katalogToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.katalogToolStripMenuItem.Name = "katalogToolStripMenuItem"
+        Me.katalogToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.katalogToolStripMenuItem.Text = "Katalog"
+        '
+        'logOutToolStripMenuItem
+        '
+        Me.logOutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.logOutToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.logOutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem"
+        Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
+        Me.logOutToolStripMenuItem.Text = "Logout"
+        '
+        'ToolsToolStripMenuItem
+        '
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
+        Me.ToolsToolStripMenuItem.Text = "Tools"
+        '
+        'ListPelangganToolStripMenuItem
+        '
+        Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
+        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
+        '
+        'ListKaryawanToolStripMenuItem
+        '
+        Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
+        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
+        '
+        'ListOrderToolStripMenuItem
+        '
+        Me.ListOrderToolStripMenuItem.Name = "ListOrderToolStripMenuItem"
+        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.ListOrderToolStripMenuItem.Text = "List Order"
+        '
+        'ReportToolStripMenuItem
+        '
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem})
+        Me.ReportToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReportToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
+        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.ReportToolStripMenuItem.Text = "Report"
+        '
+        'LaporanPenyewaanToolStripMenuItem
+        '
+        Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
+        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
+        '
+        'LaporanStatusMotorToolStripMenuItem
+        '
+        Me.LaporanStatusMotorToolStripMenuItem.Name = "LaporanStatusMotorToolStripMenuItem"
+        Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
+        '
         'FormTambahKaryawan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(373, 356)
-        Me.Controls.Add(Me.groupBox1)
         Me.Controls.Add(Me.menuStrip1)
+        Me.Controls.Add(Me.groupBox1)
         Me.Name = "FormTambahKaryawan"
         Me.Text = "FormTambahKaryawan"
         Me.groupBox1.ResumeLayout(False)
@@ -305,10 +375,6 @@ Partial Class FormTambahKaryawan
     Private WithEvents btnDaftar As Button
     Private WithEvents groupBox1 As GroupBox
     Private WithEvents txtPass As TextBox
-    Private WithEvents toolStripMenuItem1 As ToolStripMenuItem
-    Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents txtAlamat As TextBox
     Private WithEvents label3 As Label
     Private WithEvents label4 As Label
@@ -323,4 +389,15 @@ Partial Class FormTambahKaryawan
     Private WithEvents Label7 As Label
     Private WithEvents Label6 As Label
     Friend WithEvents cbSesi As ComboBox
+    Private WithEvents menuStrip1 As MenuStrip
+    Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
+    Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
+    Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
 End Class

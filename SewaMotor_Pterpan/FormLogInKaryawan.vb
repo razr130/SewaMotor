@@ -2,7 +2,7 @@
     Private karyawan As New Tabel("Karyawan")
     Public role As Integer
     Private Sub FormLogInKaryawan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtUsername.Focus()
     End Sub
 
     Private Sub btnLogIn_Click(sender As Object, e As EventArgs) Handles btnLogIn.Click

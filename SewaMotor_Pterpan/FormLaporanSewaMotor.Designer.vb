@@ -63,10 +63,10 @@ Partial Class FormLaporanSewaMotor
         Me.ReportViewer1.Location = New System.Drawing.Point(12, 27)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ShowBackButton = False
+        Me.ReportViewer1.ShowContextMenu = False
         Me.ReportViewer1.ShowExportButton = False
         Me.ReportViewer1.ShowFindControls = False
         Me.ReportViewer1.ShowPageNavigationControls = False
-        Me.ReportViewer1.ShowPrintButton = False
         Me.ReportViewer1.ShowRefreshButton = False
         Me.ReportViewer1.ShowStopButton = False
         Me.ReportViewer1.ShowZoomControl = False

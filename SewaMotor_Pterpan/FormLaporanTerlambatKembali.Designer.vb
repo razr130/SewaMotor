@@ -24,6 +24,8 @@ Partial Class FormLaporanTerlambatKembali
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.ViewTerlambatKembaliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MotorTerlambatDataSet = New SewaMotor_Pterpan.MotorTerlambatDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,13 +38,21 @@ Partial Class FormLaporanTerlambatKembali
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MotorTerlambatDataSet = New SewaMotor_Pterpan.MotorTerlambatDataSet()
-        Me.ViewTerlambatKembaliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ViewTerlambatKembaliTableAdapter = New SewaMotor_Pterpan.MotorTerlambatDataSetTableAdapters.ViewTerlambatKembaliTableAdapter()
-        Me.menuStrip1.SuspendLayout()
-        CType(Me.MotorTerlambatDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewTerlambatKembaliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MotorTerlambatDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'ViewTerlambatKembaliBindingSource
+        '
+        Me.ViewTerlambatKembaliBindingSource.DataMember = "ViewTerlambatKembali"
+        Me.ViewTerlambatKembaliBindingSource.DataSource = Me.MotorTerlambatDataSet
+        '
+        'MotorTerlambatDataSet
+        '
+        Me.MotorTerlambatDataSet.DataSetName = "MotorTerlambatDataSet"
+        Me.MotorTerlambatDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -56,7 +66,6 @@ Partial Class FormLaporanTerlambatKembali
         Me.ReportViewer1.ShowExportButton = False
         Me.ReportViewer1.ShowFindControls = False
         Me.ReportViewer1.ShowPageNavigationControls = False
-        Me.ReportViewer1.ShowPrintButton = False
         Me.ReportViewer1.ShowRefreshButton = False
         Me.ReportViewer1.ShowStopButton = False
         Me.ReportViewer1.ShowZoomControl = False
@@ -146,16 +155,6 @@ Partial Class FormLaporanTerlambatKembali
         Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
         '
-        'MotorTerlambatDataSet
-        '
-        Me.MotorTerlambatDataSet.DataSetName = "MotorTerlambatDataSet"
-        Me.MotorTerlambatDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ViewTerlambatKembaliBindingSource
-        '
-        Me.ViewTerlambatKembaliBindingSource.DataMember = "ViewTerlambatKembali"
-        Me.ViewTerlambatKembaliBindingSource.DataSource = Me.MotorTerlambatDataSet
-        '
         'ViewTerlambatKembaliTableAdapter
         '
         Me.ViewTerlambatKembaliTableAdapter.ClearBeforeFill = True
@@ -170,10 +169,10 @@ Partial Class FormLaporanTerlambatKembali
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "FormLaporanTerlambatKembali"
         Me.Text = "FormLaporanTerlambatKembali"
+        CType(Me.ViewTerlambatKembaliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MotorTerlambatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
-        CType(Me.MotorTerlambatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewTerlambatKembaliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

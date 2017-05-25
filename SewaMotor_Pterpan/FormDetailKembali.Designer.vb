@@ -37,8 +37,6 @@ Partial Class FormDetailKembali
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtTotalAll = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtHargaSewa = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnSimpan = New System.Windows.Forms.Button()
@@ -159,23 +157,6 @@ Partial Class FormDetailKembali
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Nama Karyawan : "
         '
-        'txtTotalAll
-        '
-        Me.txtTotalAll.Enabled = False
-        Me.txtTotalAll.Location = New System.Drawing.Point(151, 385)
-        Me.txtTotalAll.Name = "txtTotalAll"
-        Me.txtTotalAll.Size = New System.Drawing.Size(121, 20)
-        Me.txtTotalAll.TabIndex = 8
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(20, 388)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(128, 13)
-        Me.Label9.TabIndex = 7
-        Me.Label9.Text = "Total Harga Seluruhnya : "
-        '
         'txtHargaSewa
         '
         Me.txtHargaSewa.Enabled = False
@@ -195,7 +176,7 @@ Partial Class FormDetailKembali
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(138, 425)
+        Me.btnSimpan.Location = New System.Drawing.Point(127, 392)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 10
@@ -204,7 +185,7 @@ Partial Class FormDetailKembali
         '
         'btnSelesai
         '
-        Me.btnSelesai.Location = New System.Drawing.Point(219, 425)
+        Me.btnSelesai.Location = New System.Drawing.Point(208, 392)
         Me.btnSelesai.Name = "btnSelesai"
         Me.btnSelesai.Size = New System.Drawing.Size(75, 23)
         Me.btnSelesai.TabIndex = 10
@@ -215,15 +196,13 @@ Partial Class FormDetailKembali
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(456, 463)
+        Me.ClientSize = New System.Drawing.Size(456, 428)
         Me.Controls.Add(Me.btnSelesai)
         Me.Controls.Add(Me.btnSimpan)
         Me.Controls.Add(Me.txtHargaSewa)
-        Me.Controls.Add(Me.txtTotalAll)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtNamaKaryawan)
         Me.Controls.Add(Me.txtNamaCustomer)
@@ -256,8 +235,6 @@ Partial Class FormDetailKembali
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtTotalAll As TextBox
-    Friend WithEvents Label9 As Label
     Friend WithEvents txtHargaSewa As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents btnSimpan As Button

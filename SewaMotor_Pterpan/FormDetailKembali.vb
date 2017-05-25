@@ -13,9 +13,9 @@ Public Class FormDetailKembali
     Private terlambat2 As Integer
     Private date1 As System.DateTime
     Private date2 As System.DateTime
-    Private hargatotal As Integer
-    Private hargatotal2 As Integer
-    Private harga1 As Integer
+    Public hargatotal As Integer
+    Public hargatotal2 As Integer
+    Public harga1 As Integer
     Private id As Integer
     Dim dr As SqlDataReader
 
@@ -54,21 +54,21 @@ Public Class FormDetailKembali
             gdvKembali.Columns(0).Visible = False
             gdvKembali.Columns(6).Visible = False
             gdvKembali.Columns(7).Visible = False
+            gdvKembali.Columns(8).Visible = False
 
 
         End If
-
+        pesan.getBS.Filter = "no_order=" & noorder
+        txtHargaSewa.Text = pesan.getBS.Current("total_harga").ToString
     End Sub
 
     Private Sub gdvKembali_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gdvKembali.CellMouseDoubleClick
         'Me.Height = 691
 
-        Dim denda As New FormDenda(noorder, gdvKembali.Item(5, gdvKembali.CurrentRow.Index).Value, gdvKembali.Item(1, gdvKembali.CurrentRow.Index).Value)
+        Dim denda As New FormDenda(noorder, gdvKembali.Item(5, gdvKembali.CurrentRow.Index).Value, gdvKembali.Item(1, gdvKembali.CurrentRow.Index).Value, Integer.Parse(txtHargaSewa.Text))
         denda.Show()
 
-        pesan.getBS.Filter = "no_order=" & noorder
 
-        txtHargaSewa.Text = pesan.getBS.Current("total_harga").ToString
 
 
     End Sub
@@ -76,13 +76,12 @@ Public Class FormDetailKembali
 
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-        pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargatotal & ", total_harga=" & hargatotal2 & " WHERE no_order=" & noorder, "")
-        detail.isiDataTable("UPDATE Oder_Detail SET tgl_pengembalian='" & tanggal.Date.ToString("yyyy-MM-dd") & "' WHERE no_detalil=" & gdvKembali.Item(1, gdvKembali.CurrentRow.Index).Value, "")
-        motor.getBS.Filter = "merek='" & gdvKembali.Item(2, gdvKembali.CurrentRow.Index).Value & "'"
-        Dim idmotor As Integer
-        idmotor = motor.getBS.Current("id_motor")
-        motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & idmotor, "")
+
+        motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & gdvKembali.Item(8, gdvKembali.CurrentRow.Index).Value, "")
+
     End Sub
+
+
 
 
 End Class

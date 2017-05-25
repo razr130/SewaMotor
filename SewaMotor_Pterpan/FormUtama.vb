@@ -37,7 +37,7 @@
             btnTambah.Visible = True
             btnUbah.Visible = True
             btnDelete.Visible = True
-            btnList.Visible = True
+            btnDenda.Visible = True
             btnPengembalian.Visible = True
 
         End If
@@ -112,12 +112,7 @@
 
     End Sub
 
-    Private Sub btnList_Click(sender As Object, e As EventArgs) Handles btnList.Click
-        Dim list As New FormListPelanggan()
-        list.ShowDialog()
-        Me.Close()
 
-    End Sub
 
     Private Sub ListPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListPelangganToolStripMenuItem.Click
         Dim list As New FormListPelanggan()
@@ -146,5 +141,9 @@
         Me.Close()
 
 
+    End Sub
+
+    Private Sub btnDenda_Click(sender As Object, e As EventArgs) Handles btnDenda.Click
+        FormListDenda.Show()
     End Sub
 End Class

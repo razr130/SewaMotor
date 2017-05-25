@@ -137,6 +137,12 @@
     <Compile Include="FormLaporanSewaMotor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormLaporanTerlambatKembali.Designer.vb">
+      <DependentUpon>FormLaporanTerlambatKembali.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaporanTerlambatKembali.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormListDenda.Designer.vb">
       <DependentUpon>FormListDenda.vb</DependentUpon>
     </Compile>
@@ -228,6 +234,11 @@
     <Compile Include="FormUtama.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MotorTerlambatDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MotorTerlambatDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -249,12 +260,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SewaMotorDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SewaMotorDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SewaMotorDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SewaMotorRejekiJayaMandiri_DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SewaMotorRejekiJayaMandiri_DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Tabel.vb" />
+    <Compile Include="ViewSewaMotorDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewSewaMotorDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormDenda.resx">
@@ -277,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLaporanSewaMotor.resx">
       <DependentUpon>FormLaporanSewaMotor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLaporanTerlambatKembali.resx">
+      <DependentUpon>FormLaporanTerlambatKembali.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListDenda.resx">
       <DependentUpon>FormListDenda.vb</DependentUpon>
@@ -329,7 +353,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="ReportTerlambatKembali.rdlc" />
     <EmbeddedResource Include="ReportSewaMotor.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -346,6 +370,17 @@
     </None>
     <None Include="DataSetSewaMotor2.xss">
       <DependentUpon>DataSetSewaMotor2.xsd</DependentUpon>
+    </None>
+    <None Include="MotorTerlambatDataSet.xsc">
+      <DependentUpon>MotorTerlambatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MotorTerlambatDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MotorTerlambatDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MotorTerlambatDataSet.xss">
+      <DependentUpon>MotorTerlambatDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -368,6 +403,17 @@
     <None Include="SewaMotorDataSet.xss">
       <DependentUpon>SewaMotorDataSet.xsd</DependentUpon>
     </None>
+    <None Include="SewaMotorDataSet1.xsc">
+      <DependentUpon>SewaMotorDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SewaMotorDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SewaMotorDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SewaMotorDataSet1.xss">
+      <DependentUpon>SewaMotorDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="SewaMotorRejekiJayaMandiri_DataSet.xsc">
       <DependentUpon>SewaMotorRejekiJayaMandiri_DataSet.xsd</DependentUpon>
     </None>
@@ -378,6 +424,17 @@
     </None>
     <None Include="SewaMotorRejekiJayaMandiri_DataSet.xss">
       <DependentUpon>SewaMotorRejekiJayaMandiri_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ViewSewaMotorDataSet.xsc">
+      <DependentUpon>ViewSewaMotorDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ViewSewaMotorDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViewSewaMotorDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ViewSewaMotorDataSet.xss">
+      <DependentUpon>ViewSewaMotorDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

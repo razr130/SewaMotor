@@ -98,7 +98,8 @@ Partial Class FormFilterLaporan
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnFilter)
         Me.Name = "FormFilterLaporan"
-        Me.Text = "FormFilterLaporan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "PINJAM"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

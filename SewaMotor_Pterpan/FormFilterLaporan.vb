@@ -32,7 +32,7 @@
 
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
         year = Convert.ToInt32(cbYear.SelectedItem)
-        month = cbYear.SelectedIndex + 1
+        month = cbMonth.SelectedIndex + 1
         Dim laporan As New FormLaporanSewaMotor(month, year)
         laporan.Show()
         Me.Close()

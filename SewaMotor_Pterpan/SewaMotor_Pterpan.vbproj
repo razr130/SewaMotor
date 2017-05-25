@@ -95,6 +95,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSewaMotor2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormCheckout.Designer.vb">
+      <DependentUpon>FormCheckout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCheckout.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormDenda.Designer.vb">
       <DependentUpon>FormDenda.vb</DependentUpon>
     </Compile>
@@ -278,6 +284,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Checkout.rdlc" />
+    <EmbeddedResource Include="FormCheckout.resx">
+      <DependentUpon>FormCheckout.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDenda.resx">
       <DependentUpon>FormDenda.vb</DependentUpon>
     </EmbeddedResource>

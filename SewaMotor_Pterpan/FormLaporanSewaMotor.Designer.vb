@@ -24,6 +24,8 @@ Partial Class FormLaporanSewaMotor
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.Oder_DetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SewaMotorDataSource = New SewaMotor_Pterpan.SewaMotorDataSource()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,13 +38,21 @@ Partial Class FormLaporanSewaMotor
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SewaMotorDataSource = New SewaMotor_Pterpan.SewaMotorDataSource()
-        Me.Oder_DetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Oder_DetailTableAdapter = New SewaMotor_Pterpan.SewaMotorDataSourceTableAdapters.Oder_DetailTableAdapter()
-        Me.menuStrip1.SuspendLayout()
-        CType(Me.SewaMotorDataSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SewaMotorDataSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Oder_DetailBindingSource
+        '
+        Me.Oder_DetailBindingSource.DataMember = "Oder_Detail"
+        Me.Oder_DetailBindingSource.DataSource = Me.SewaMotorDataSource
+        '
+        'SewaMotorDataSource
+        '
+        Me.SewaMotorDataSource.DataSetName = "SewaMotorDataSource"
+        Me.SewaMotorDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -146,16 +156,6 @@ Partial Class FormLaporanSewaMotor
         Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
         '
-        'SewaMotorDataSource
-        '
-        Me.SewaMotorDataSource.DataSetName = "SewaMotorDataSource"
-        Me.SewaMotorDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Oder_DetailBindingSource
-        '
-        Me.Oder_DetailBindingSource.DataMember = "Oder_Detail"
-        Me.Oder_DetailBindingSource.DataSource = Me.SewaMotorDataSource
-        '
         'Oder_DetailTableAdapter
         '
         Me.Oder_DetailTableAdapter.ClearBeforeFill = True
@@ -170,10 +170,10 @@ Partial Class FormLaporanSewaMotor
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "FormLaporanSewaMotor"
         Me.Text = "FormLaporan"
+        CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SewaMotorDataSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
-        CType(Me.SewaMotorDataSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

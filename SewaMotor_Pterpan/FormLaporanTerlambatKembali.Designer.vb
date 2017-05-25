@@ -24,17 +24,7 @@ Partial Class FormLaporanTerlambatKembali
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ViewTerlambatKembaliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MotorTerlambatDataSet = New SewaMotor_Pterpan.MotorTerlambatDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSetSewaMotor2 = New SewaMotor_Pterpan.DataSetSewaMotor2()
-        Me.MotorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MotorTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.MotorTableAdapter()
-        Me.PesanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PesanTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.PesanTableAdapter()
-        Me.Oder_DetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Oder_DetailTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.Oder_DetailTableAdapter()
-        Me.ViewTerlambatKembaliTableAdapter = New SewaMotor_Pterpan.MotorTerlambatDataSetTableAdapters.ViewTerlambatKembaliTableAdapter()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,24 +36,13 @@ Partial Class FormLaporanTerlambatKembali
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.ViewTerlambatKembaliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MotorTerlambatDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetSewaMotor2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MotorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PesanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MotorTerlambatDataSet = New SewaMotor_Pterpan.MotorTerlambatDataSet()
+        Me.ViewTerlambatKembaliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ViewTerlambatKembaliTableAdapter = New SewaMotor_Pterpan.MotorTerlambatDataSetTableAdapters.ViewTerlambatKembaliTableAdapter()
         Me.menuStrip1.SuspendLayout()
+        CType(Me.MotorTerlambatDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewTerlambatKembaliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ViewTerlambatKembaliBindingSource
-        '
-        Me.ViewTerlambatKembaliBindingSource.DataMember = "ViewTerlambatKembali"
-        Me.ViewTerlambatKembaliBindingSource.DataSource = Me.MotorTerlambatDataSet
-        '
-        'MotorTerlambatDataSet
-        '
-        Me.MotorTerlambatDataSet.DataSetName = "MotorTerlambatDataSet"
-        Me.MotorTerlambatDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -83,42 +62,6 @@ Partial Class FormLaporanTerlambatKembali
         Me.ReportViewer1.ShowZoomControl = False
         Me.ReportViewer1.Size = New System.Drawing.Size(1118, 296)
         Me.ReportViewer1.TabIndex = 40
-        '
-        'DataSetSewaMotor2
-        '
-        Me.DataSetSewaMotor2.DataSetName = "DataSetSewaMotor2"
-        Me.DataSetSewaMotor2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MotorBindingSource
-        '
-        Me.MotorBindingSource.DataMember = "Motor"
-        Me.MotorBindingSource.DataSource = Me.DataSetSewaMotor2
-        '
-        'MotorTableAdapter
-        '
-        Me.MotorTableAdapter.ClearBeforeFill = True
-        '
-        'PesanBindingSource
-        '
-        Me.PesanBindingSource.DataMember = "Pesan"
-        Me.PesanBindingSource.DataSource = Me.DataSetSewaMotor2
-        '
-        'PesanTableAdapter
-        '
-        Me.PesanTableAdapter.ClearBeforeFill = True
-        '
-        'Oder_DetailBindingSource
-        '
-        Me.Oder_DetailBindingSource.DataMember = "Oder_Detail"
-        Me.Oder_DetailBindingSource.DataSource = Me.DataSetSewaMotor2
-        '
-        'Oder_DetailTableAdapter
-        '
-        Me.Oder_DetailTableAdapter.ClearBeforeFill = True
-        '
-        'ViewTerlambatKembaliTableAdapter
-        '
-        Me.ViewTerlambatKembaliTableAdapter.ClearBeforeFill = True
         '
         'menuStrip1
         '
@@ -203,6 +146,20 @@ Partial Class FormLaporanTerlambatKembali
         Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
         '
+        'MotorTerlambatDataSet
+        '
+        Me.MotorTerlambatDataSet.DataSetName = "MotorTerlambatDataSet"
+        Me.MotorTerlambatDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ViewTerlambatKembaliBindingSource
+        '
+        Me.ViewTerlambatKembaliBindingSource.DataMember = "ViewTerlambatKembali"
+        Me.ViewTerlambatKembaliBindingSource.DataSource = Me.MotorTerlambatDataSet
+        '
+        'ViewTerlambatKembaliTableAdapter
+        '
+        Me.ViewTerlambatKembaliTableAdapter.ClearBeforeFill = True
+        '
         'FormLaporanTerlambatKembali
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,28 +170,14 @@ Partial Class FormLaporanTerlambatKembali
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "FormLaporanTerlambatKembali"
         Me.Text = "FormLaporanTerlambatKembali"
-        CType(Me.ViewTerlambatKembaliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MotorTerlambatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetSewaMotor2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MotorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PesanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
+        CType(Me.MotorTerlambatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewTerlambatKembaliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ViewTerlambatKembaliBindingSource As BindingSource
-    Friend WithEvents MotorTerlambatDataSet As MotorTerlambatDataSet
-    Friend WithEvents DataSetSewaMotor2 As DataSetSewaMotor2
-    Friend WithEvents MotorBindingSource As BindingSource
-    Friend WithEvents MotorTableAdapter As DataSetSewaMotor2TableAdapters.MotorTableAdapter
-    Friend WithEvents PesanBindingSource As BindingSource
-    Friend WithEvents PesanTableAdapter As DataSetSewaMotor2TableAdapters.PesanTableAdapter
-    Friend WithEvents Oder_DetailBindingSource As BindingSource
-    Friend WithEvents Oder_DetailTableAdapter As DataSetSewaMotor2TableAdapters.Oder_DetailTableAdapter
-    Friend WithEvents ViewTerlambatKembaliTableAdapter As MotorTerlambatDataSetTableAdapters.ViewTerlambatKembaliTableAdapter
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
@@ -247,4 +190,7 @@ Partial Class FormLaporanTerlambatKembali
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
     Private WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents ViewTerlambatKembaliBindingSource As BindingSource
+    Friend WithEvents MotorTerlambatDataSet As MotorTerlambatDataSet
+    Friend WithEvents ViewTerlambatKembaliTableAdapter As MotorTerlambatDataSetTableAdapters.ViewTerlambatKembaliTableAdapter
 End Class

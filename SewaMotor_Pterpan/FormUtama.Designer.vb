@@ -42,6 +42,7 @@ Partial Class FormUtama
         Me.btnPengembalian = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnDenda = New System.Windows.Forms.Button()
+        Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,7 +79,7 @@ Partial Class FormUtama
         '
         Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
         '
         'ListPelangganToolStripMenuItem
@@ -101,7 +102,7 @@ Partial Class FormUtama
         '
         'ReportToolStripMenuItem
         '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem})
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem})
         Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
         Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.ReportToolStripMenuItem.Text = "Report"
@@ -109,7 +110,7 @@ Partial Class FormUtama
         'LaporanPenyewaanToolStripMenuItem
         '
         Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
-        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
         Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
         '
         'txtCari
@@ -210,6 +211,12 @@ Partial Class FormUtama
         Me.btnDenda.UseVisualStyleBackColor = True
         Me.btnDenda.Visible = False
         '
+        'LaporanStatusMotorToolStripMenuItem
+        '
+        Me.LaporanStatusMotorToolStripMenuItem.Name = "LaporanStatusMotorToolStripMenuItem"
+        Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
+        '
         'FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -257,4 +264,5 @@ Partial Class FormUtama
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
     Friend WithEvents btnDenda As Button
+    Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -136,7 +136,7 @@
     End Sub
 
     Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanPenyewaanToolStripMenuItem.Click
-        Dim laporan As New FormLaporan
+        Dim laporan As New FormLaporanSewaMotor
         laporan.Show()
         Me.Close()
 
@@ -145,5 +145,11 @@
 
     Private Sub btnDenda_Click(sender As Object, e As EventArgs) Handles btnDenda.Click
         FormListDenda.Show()
+    End Sub
+
+    Private Sub LaporanStatusMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanStatusMotorToolStripMenuItem.Click
+        Dim laporan As New FormLaporanStatusMotor
+        laporan.Show()
+        Me.Close()
     End Sub
 End Class

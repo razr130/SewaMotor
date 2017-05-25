@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FormLaporanSewaMotor
+Partial Class FormLaporan
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,25 +24,23 @@ Partial Class FormLaporanSewaMotor
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.MotorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetSewaMotor2 = New SewaMotor_Pterpan.DataSetSewaMotor2()
-        Me.PesanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Oder_DetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.loginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MotorTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.MotorTableAdapter()
+        Me.PesanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PesanTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.PesanTableAdapter()
+        Me.Oder_DetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Oder_DetailTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.Oder_DetailTableAdapter()
         CType(Me.MotorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetSewaMotor2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.menuStrip1.SuspendLayout()
         CType(Me.PesanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MotorBindingSource
@@ -55,28 +53,12 @@ Partial Class FormLaporanSewaMotor
         Me.DataSetSewaMotor2.DataSetName = "DataSetSewaMotor2"
         Me.DataSetSewaMotor2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'PesanBindingSource
-        '
-        Me.PesanBindingSource.DataMember = "Pesan"
-        Me.PesanBindingSource.DataSource = Me.DataSetSewaMotor2
-        '
-        'Oder_DetailBindingSource
-        '
-        Me.Oder_DetailBindingSource.DataMember = "Oder_Detail"
-        Me.Oder_DetailBindingSource.DataSource = Me.DataSetSewaMotor2
-        '
         'ReportViewer1
         '
-        ReportDataSource1.Name = "MotorDataSet"
+        ReportDataSource1.Name = "TestDataSet"
         ReportDataSource1.Value = Me.MotorBindingSource
-        ReportDataSource2.Name = "PesanDataSet"
-        ReportDataSource2.Value = Me.PesanBindingSource
-        ReportDataSource3.Name = "Order_DetailDataSet"
-        ReportDataSource3.Value = Me.Oder_DetailBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportSewaMotor.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportStatusMotor.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(12, 27)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ShowBackButton = False
@@ -122,29 +104,39 @@ Partial Class FormLaporanSewaMotor
         '
         Me.MotorTableAdapter.ClearBeforeFill = True
         '
+        'PesanBindingSource
+        '
+        Me.PesanBindingSource.DataMember = "Pesan"
+        Me.PesanBindingSource.DataSource = Me.DataSetSewaMotor2
+        '
         'PesanTableAdapter
         '
         Me.PesanTableAdapter.ClearBeforeFill = True
+        '
+        'Oder_DetailBindingSource
+        '
+        Me.Oder_DetailBindingSource.DataMember = "Oder_Detail"
+        Me.Oder_DetailBindingSource.DataSource = Me.DataSetSewaMotor2
         '
         'Oder_DetailTableAdapter
         '
         Me.Oder_DetailTableAdapter.ClearBeforeFill = True
         '
-        'FormLaporanSewaMotor
+        'FormLaporan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(886, 332)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "FormLaporanSewaMotor"
+        Me.Name = "FormLaporan"
         Me.Text = "FormLaporan"
         CType(Me.MotorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetSewaMotor2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PesanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
+        CType(Me.PesanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

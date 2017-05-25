@@ -23,7 +23,7 @@ Partial Class FormLaporanStatusMotor
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.MotorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetSewaMotor2 = New SewaMotor_Pterpan.DataSetSewaMotor2()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -67,9 +67,9 @@ Partial Class FormLaporanStatusMotor
         '
         'ReportViewer1
         '
-        ReportDataSource1.Name = "TestDataSet"
-        ReportDataSource1.Value = Me.MotorBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        ReportDataSource2.Name = "TestDataSet"
+        ReportDataSource2.Value = Me.MotorBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportStatusMotor.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(12, 27)
         Me.ReportViewer1.Name = "ReportViewer1"

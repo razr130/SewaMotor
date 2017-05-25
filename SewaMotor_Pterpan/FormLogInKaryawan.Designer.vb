@@ -24,8 +24,6 @@ Partial Class FormLogInKaryawan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLogInKaryawan))
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.loginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
@@ -40,29 +38,13 @@ Partial Class FormLogInKaryawan
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.loginToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.loginToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Padding = New System.Windows.Forms.Padding(7, 2, 0, 2)
         Me.menuStrip1.Size = New System.Drawing.Size(343, 24)
         Me.menuStrip1.TabIndex = 17
         Me.menuStrip1.Text = "menuStrip1"
-        '
-        'homeToolStripMenuItem
-        '
-        Me.homeToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.homeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
-        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.homeToolStripMenuItem.Text = "Home"
-        '
-        'katalogToolStripMenuItem
-        '
-        Me.katalogToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.katalogToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.katalogToolStripMenuItem.Name = "katalogToolStripMenuItem"
-        Me.katalogToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
-        Me.katalogToolStripMenuItem.Text = "Katalog"
         '
         'loginToolStripMenuItem
         '
@@ -158,13 +140,11 @@ Partial Class FormLogInKaryawan
     End Sub
 
     Private WithEvents menuStrip1 As MenuStrip
-    Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Private WithEvents loginToolStripMenuItem As ToolStripMenuItem
     Private WithEvents lblPassword As Label
     Private WithEvents lblUsername As Label
     Private WithEvents txtPassword As TextBox
     Private WithEvents txtUsername As TextBox
     Private WithEvents btnLogIn As Button
-    Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -36,8 +36,19 @@
             btnDelete.Visible = True
             btnDenda.Visible = True
             btnPengembalian.Visible = True
+            ReportToolStripMenuItem.Visible = True
 
         End If
+        If role > 0 And role < 3 Then
+            btnTambah.Visible = True
+            btnUbah.Visible = True
+            btnDelete.Visible = True
+            btnDenda.Visible = True
+            btnPengembalian.Visible = True
+            ReportToolStripMenuItem.Visible = True
+            ToolsToolStripMenuItem.Visible = True
+        End If
+
 
         dgvMotor.DataSource = motor.getBS()
 

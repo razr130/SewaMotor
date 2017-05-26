@@ -22,5 +22,8 @@
         End If
     End Function
 
-
+    Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
+        FormUtama.Show()
+        Me.Close()
+    End Sub
 End Class

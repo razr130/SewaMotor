@@ -115,4 +115,13 @@ Public Class FormDetailKembali
         FormUtama.Show()
         Me.Close()
     End Sub
+
+    Public Sub ambilharga()
+        txtNoOrder.DataBindings.Clear()
+        txtNamaCustomer.DataBindings.Clear()
+        txtNamaKaryawan.DataBindings.Clear()
+        '  Dim dendaaa As New FormDenda()
+        txtFinalPrice.Text = FormDenda.txtfinal.Text
+
+    End Sub
 End Class

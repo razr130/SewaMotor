@@ -1,8 +1,9 @@
 ﻿Public Class FormUtama
     '/////CONFIG/////
-    Private namaAkun As String
+    Public namaAkun As String
     Public motor As New Tabel("Motor")
     Public idmotor As Integer
+
 
     Private _username As String
     Public Property username() As String
@@ -29,8 +30,9 @@
         'Me.namaAkun = namaAkun
     End Sub
     Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lblHalo.Text = "Halo, " & username
-        If role > 0 Then
+        lblHalo.Text = "Halo, " & GlobalVariables.UserName
+
+        If GlobalVariables.Role > 0 Then
             btnTambah.Visible = True
             btnUbah.Visible = True
             btnDelete.Visible = True
@@ -39,7 +41,7 @@
             ReportToolStripMenuItem.Visible = True
 
         End If
-        If role > 0 And role < 3 Then
+        If GlobalVariables.Role > 0 And GlobalVariables.Role < 3 Then
             btnTambah.Visible = True
             btnUbah.Visible = True
             btnDelete.Visible = True
@@ -57,28 +59,50 @@
             dgvMotor.Columns(3).Visible = False
             dgvMotor.Columns(4).Visible = False
         End If
+        Me.dgvMotor.Columns(7).DefaultCellStyle.Format = "c"
+
+        dgvMotor.Columns.Add("Status", "Status")
+
+        For baris As Integer = 0 To dgvMotor.Rows.Count - 1
+            dgvMotor.Columns(5).DisplayIndex = 8
+            dgvMotor.Columns(8).DisplayIndex = 5
+            If dgvMotor.Rows(baris).Cells(5).Value = 0 Then
+                dgvMotor.Rows(baris).Cells(8).Value = "Tersedia"
+            Else
+                dgvMotor.Rows(baris).Cells(8).Value = "Tidak tersedia"
+            End If
+            dgvMotor.Columns(5).Visible = False
+        Next
+
     End Sub
 
     '/////BUTON/////
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         Dim panggil As New FormTambahMotor()
         panggil.Show()
+        Me.Close()
     End Sub
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         Dim edit As New FormEditMotor(idmotor)
         edit.Show()
+        Me.Close()
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         motor.isiDataTable("DELETE FROM Motor WHERE id_motor=" & idmotor, "Berhasil Delete")
+        Dim utama As New FormUtama
+        utama.Show()
+        Me.Close()
     End Sub
     Private Sub btnPengembalian_Click(sender As Object, e As EventArgs) Handles btnPengembalian.Click
         Dim kembali As New FormKembali
         kembali.Show()
+        Me.Close()
     End Sub
     Private Sub btnDenda_Click(sender As Object, e As EventArgs) Handles btnDenda.Click
         FormListDenda.Show()
+        Me.Close()
     End Sub
 
     '/////TEXTBOX/////
@@ -92,6 +116,16 @@
                 'motor.getBS().Position = brs
             End If
         End If
+        For baris As Integer = 0 To dgvMotor.Rows.Count - 1
+            dgvMotor.Columns(5).DisplayIndex = 8
+            dgvMotor.Columns(8).DisplayIndex = 5
+            If dgvMotor.Rows(baris).Cells(5).Value = 0 Then
+                dgvMotor.Rows(baris).Cells(8).Value = "Tersedia"
+            Else
+                dgvMotor.Rows(baris).Cells(8).Value = "Tidak tersedia"
+            End If
+            dgvMotor.Columns(5).Visible = False
+        Next
     End Sub
 
     '/////DGV/////
@@ -99,6 +133,7 @@
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         Dim edit As New FormDetailMotor(idmotor, username)
         edit.Show()
+        Me.Close()
     End Sub
 
     '/////TOOLTIP/////

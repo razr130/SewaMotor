@@ -35,6 +35,7 @@ Partial Class FormKembali
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnBatal = New System.Windows.Forms.Button()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,7 +52,7 @@ Partial Class FormKembali
         Me.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnOk.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOk.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnOk.Location = New System.Drawing.Point(165, 110)
+        Me.btnOk.Location = New System.Drawing.Point(126, 105)
         Me.btnOk.Name = "btnOk"
         Me.btnOk.Size = New System.Drawing.Size(75, 23)
         Me.btnOk.TabIndex = 6
@@ -143,6 +144,19 @@ Partial Class FormKembali
         Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
         '
+        'btnBatal
+        '
+        Me.btnBatal.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnBatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBatal.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBatal.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBatal.Location = New System.Drawing.Point(207, 105)
+        Me.btnBatal.Name = "btnBatal"
+        Me.btnBatal.Size = New System.Drawing.Size(75, 23)
+        Me.btnBatal.TabIndex = 6
+        Me.btnBatal.Text = "Batal"
+        Me.btnBatal.UseVisualStyleBackColor = False
+        '
         'FormKembali
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -151,6 +165,7 @@ Partial Class FormKembali
         Me.ClientSize = New System.Drawing.Size(415, 152)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnBatal)
         Me.Controls.Add(Me.btnOk)
         Me.Controls.Add(Me.txtNoNota)
         Me.Name = "FormKembali"
@@ -175,4 +190,5 @@ Partial Class FormKembali
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnBatal As Button
 End Class

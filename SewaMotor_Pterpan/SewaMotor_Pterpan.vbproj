@@ -256,6 +256,11 @@
     <Compile Include="FormUtama.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="InvoiceSewaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceSewaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MotorTerlambatDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -305,7 +310,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Checkout.rdlc" />
     <EmbeddedResource Include="FormCheckout.resx">
       <DependentUpon>FormCheckout.vb</DependentUpon>
     </EmbeddedResource>
@@ -384,6 +388,7 @@
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceSewa.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -407,6 +412,17 @@
     </None>
     <None Include="DataSetSewaMotor2.xss">
       <DependentUpon>DataSetSewaMotor2.xsd</DependentUpon>
+    </None>
+    <None Include="InvoiceSewaDataSet.xsc">
+      <DependentUpon>InvoiceSewaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InvoiceSewaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoiceSewaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvoiceSewaDataSet.xss">
+      <DependentUpon>InvoiceSewaDataSet.xsd</DependentUpon>
     </None>
     <None Include="MotorTerlambatDataSet.xsc">
       <DependentUpon>MotorTerlambatDataSet.xsd</DependentUpon>

@@ -25,7 +25,7 @@ Partial Class FormListOrder
         Me.components = New System.ComponentModel.Container()
         Me.groupDaftarPelanggan = New System.Windows.Forms.GroupBox()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.btnTambah = New System.Windows.Forms.Button()
+        Me.btnCetakNota = New System.Windows.Forms.Button()
         Me.lblCari = New System.Windows.Forms.Label()
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -54,7 +54,7 @@ Partial Class FormListOrder
         'groupDaftarPelanggan
         '
         Me.groupDaftarPelanggan.Controls.Add(Me.btnClose)
-        Me.groupDaftarPelanggan.Controls.Add(Me.btnTambah)
+        Me.groupDaftarPelanggan.Controls.Add(Me.btnCetakNota)
         Me.groupDaftarPelanggan.Controls.Add(Me.lblCari)
         Me.groupDaftarPelanggan.Controls.Add(Me.txtCari)
         Me.groupDaftarPelanggan.Controls.Add(Me.btnDelete)
@@ -80,17 +80,17 @@ Partial Class FormListOrder
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'btnTambah
+        'btnCetakNota
         '
-        Me.btnTambah.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTambah.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnTambah.Location = New System.Drawing.Point(11, 322)
-        Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(75, 23)
-        Me.btnTambah.TabIndex = 20
-        Me.btnTambah.Text = "Tambah"
-        Me.btnTambah.UseVisualStyleBackColor = False
+        Me.btnCetakNota.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnCetakNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCetakNota.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnCetakNota.Location = New System.Drawing.Point(11, 322)
+        Me.btnCetakNota.Name = "btnCetakNota"
+        Me.btnCetakNota.Size = New System.Drawing.Size(75, 23)
+        Me.btnCetakNota.TabIndex = 20
+        Me.btnCetakNota.Text = "Cetak Nota"
+        Me.btnCetakNota.UseVisualStyleBackColor = False
         '
         'lblCari
         '
@@ -262,7 +262,7 @@ Partial Class FormListOrder
 
     Private WithEvents groupDaftarPelanggan As GroupBox
     Friend WithEvents btnClose As Button
-    Friend WithEvents btnTambah As Button
+    Friend WithEvents btnCetakNota As Button
     Private WithEvents lblCari As Label
     Friend WithEvents txtCari As TextBox
     Private WithEvents btnDelete As Button

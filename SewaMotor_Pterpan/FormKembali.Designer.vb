@@ -41,7 +41,7 @@ Partial Class FormKembali
         '
         'txtNoNota
         '
-        Me.txtNoNota.Location = New System.Drawing.Point(181, 79)
+        Me.txtNoNota.Location = New System.Drawing.Point(97, 75)
         Me.txtNoNota.Name = "txtNoNota"
         Me.txtNoNota.Size = New System.Drawing.Size(44, 20)
         Me.txtNoNota.TabIndex = 5
@@ -52,7 +52,7 @@ Partial Class FormKembali
         Me.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnOk.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOk.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnOk.Location = New System.Drawing.Point(126, 105)
+        Me.btnOk.Location = New System.Drawing.Point(42, 105)
         Me.btnOk.Name = "btnOk"
         Me.btnOk.Size = New System.Drawing.Size(75, 23)
         Me.btnOk.TabIndex = 6
@@ -63,7 +63,7 @@ Partial Class FormKembali
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Franklin Gothic Demi", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(122, 53)
+        Me.Label1.Location = New System.Drawing.Point(38, 49)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(172, 20)
         Me.Label1.TabIndex = 7
@@ -75,7 +75,7 @@ Partial Class FormKembali
         Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(415, 24)
+        Me.menuStrip1.Size = New System.Drawing.Size(252, 24)
         Me.menuStrip1.TabIndex = 8
         Me.menuStrip1.Text = "menuStrip1"
         '
@@ -150,7 +150,7 @@ Partial Class FormKembali
         Me.btnBatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBatal.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBatal.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBatal.Location = New System.Drawing.Point(207, 105)
+        Me.btnBatal.Location = New System.Drawing.Point(123, 105)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(75, 23)
         Me.btnBatal.TabIndex = 6
@@ -162,7 +162,7 @@ Partial Class FormKembali
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(415, 152)
+        Me.ClientSize = New System.Drawing.Size(252, 152)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnBatal)

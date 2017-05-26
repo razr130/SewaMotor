@@ -94,7 +94,9 @@ Public Class FormDenda
                 'MsgBox(terlambat2.ToString)
                 txtJumlahDenda.Text = terlambat2
             End If
-
+        ElseIf cbDenda.SelectedItem = "Tidak ada denda" Then
+            txtJumlahDenda.Text = "0"
+            txtJumlahDenda.Enabled = False
         Else
             txtJumlahDenda.Text = ""
         End If
@@ -113,30 +115,31 @@ Public Class FormDenda
         End If
         denda.isiDataTable("INSERT INTO jenis_denda(no_detail,id_denda,jumlah) VALUES(" & iddetail & "," & id & "," & txtJumlahDenda.Text & ")", "Informasi denda ditambah")
         hargatotal = harga1 * Integer.Parse(txtJumlahDenda.Text)
-        MsgBox("harga denda : " & harga1.ToString)
+        'MsgBox("harga denda : " & harga1.ToString)
         hargatotal2 = hargatotal + price
-        MsgBox("harga total : " & hargatotal2.ToString)
+        'MsgBox("harga total : " & hargatotal2.ToString)
 
         detail.isiDataTable("UPDATE Oder_Detail SET tgl_pengembalian='" & tanggal.Date.ToString("yyyy-MM-dd") & "' WHERE no_detalil=" & iddetail, "")
         pesan.getBS.Filter = "no_order=" & idsementara
         If pesan.getBS.Current("total_denda") = 0 Then
-            MsgBox("bikin denda baru")
+            'MsgBox("bikin denda baru")
             pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargatotal & ", total_harga=" & hargatotal2 & " WHERE no_order=" & idsementara, "")
         Else
-            MsgBox("nambah denda")
+            'MsgBox("nambah denda")
             hargatotal3 = pesan.getBS.Current("total_denda")
-            hargatotal4 = pesan.getBS.Current("total_harga")
-            MsgBox(hargatotal3.ToString & " " & hargatotal4.ToString)
+            'hargatotal4 = pesan.getBS.Current("total_harga")
+            'MsgBox(hargatotal3.ToString & " " & hargatotal4.ToString)
             hargadendafinal = hargatotal3 + hargatotal
-            hargatotalfinal = hargatotal2 + hargadendafinal
-
+            hargatotalfinal = price + hargatotal
+            'MsgBox(" = " & hargatotal3.ToString & " + " & hargatotal.ToString)
+            'MsgBox(" = " & price.ToString & " + " & hargatotal.ToString)
             pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargadendafinal & ", total_harga=" & hargatotalfinal & " WHERE no_order=" & idsementara, "")
 
         End If
-        txtfinal.Text = hargatotal2.ToString
-
-        FormDetailKembali.ambilharga()
-        'Me.Close()
+        'txtfinal.Text = hargatotal2.ToString
+        FormDetailKembali.Show()
+        'FormDetailKembali.ambilharga()
+        Me.Close()
 
 
 

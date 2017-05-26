@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormDetailKembali
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormDetailKembali
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.gdvKembali = New System.Windows.Forms.DataGridView()
         Me.txtNoOrder = New System.Windows.Forms.TextBox()
@@ -45,8 +45,6 @@ Partial Class FormDetailKembali
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtFinalPrice = New System.Windows.Forms.TextBox()
         CType(Me.gdvKembali, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -140,7 +138,7 @@ Partial Class FormDetailKembali
         Me.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSimpan.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSimpan.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSimpan.Location = New System.Drawing.Point(146, 362)
+        Me.btnSimpan.Location = New System.Drawing.Point(146, 334)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 10
@@ -153,7 +151,7 @@ Partial Class FormDetailKembali
         Me.btnSelesai.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSelesai.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSelesai.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSelesai.Location = New System.Drawing.Point(227, 362)
+        Me.btnSelesai.Location = New System.Drawing.Point(227, 334)
         Me.btnSelesai.Name = "btnSelesai"
         Me.btnSelesai.Size = New System.Drawing.Size(75, 23)
         Me.btnSelesai.TabIndex = 10
@@ -251,38 +249,18 @@ Partial Class FormDetailKembali
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Motor yang dipinjam : "
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(20, 320)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(125, 15)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Harga Setelah Denda   : "
-        '
-        'txtFinalPrice
-        '
-        Me.txtFinalPrice.Enabled = False
-        Me.txtFinalPrice.Location = New System.Drawing.Point(145, 318)
-        Me.txtFinalPrice.Name = "txtFinalPrice"
-        Me.txtFinalPrice.Size = New System.Drawing.Size(121, 20)
-        Me.txtFinalPrice.TabIndex = 8
-        '
         'FormDetailKembali
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(456, 399)
+        Me.ClientSize = New System.Drawing.Size(456, 370)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.btnSelesai)
         Me.Controls.Add(Me.btnSimpan)
-        Me.Controls.Add(Me.txtFinalPrice)
         Me.Controls.Add(Me.txtHargaSewa)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
@@ -291,7 +269,7 @@ Partial Class FormDetailKembali
         Me.Controls.Add(Me.txtNoOrder)
         Me.Controls.Add(Me.gdvKembali)
         Me.Name = "FormDetailKembali"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormDetailKembali"
         CType(Me.gdvKembali, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)
@@ -323,6 +301,4 @@ Partial Class FormDetailKembali
     Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanKeterlambatanMotorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtFinalPrice As TextBox
 End Class

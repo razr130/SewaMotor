@@ -149,7 +149,7 @@ Partial Class FormDenda
         Me.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnOK.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOK.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnOK.Location = New System.Drawing.Point(28, 142)
+        Me.btnOK.Location = New System.Drawing.Point(28, 115)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(138, 39)
         Me.btnOK.TabIndex = 10
@@ -178,6 +178,7 @@ Partial Class FormDenda
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "FormDenda"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormDenda"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

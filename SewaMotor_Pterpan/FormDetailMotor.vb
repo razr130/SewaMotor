@@ -67,6 +67,9 @@
         If GlobalVariables.Role > 0 Then
             btnSewa.Enabled = False
         End If
+
+        value = Integer.Parse(txthiddenharga.Text)
+        txthiddenharga.Text = FormatCurrency(value)
     End Sub
 
     Private Sub FormDetailMotor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -88,8 +91,7 @@
             cbWaktu.SelectedIndex = 0
         End If
 
-        value = Integer.Parse(txthiddenharga.Text)
-        txthiddenharga.Text = FormatCurrency(value)
+
 
     End Sub
 
@@ -113,7 +115,7 @@
     End Sub
 
     Private Sub cbWaktu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWaktu.SelectedIndexChanged, cbJaminan.SelectedIndexChanged
-        harga = Integer.Parse(txthiddenharga.Text)
+        harga = value
         If txtWaktu.Text.Length > 0 Then
             If cbWaktu.SelectedItem = "Hari" Then
                 txtHarga.Text = harga * Integer.Parse(txtWaktu.Text)
@@ -180,7 +182,7 @@
                 sesi = 2
             ElseIf tanggal.Hour >= 15 And tanggal.Hour < 19 Then
                 sesi = 3
-            ElseIf tanggal.Hour >= 19 And tanggal.Hour < 22 Then
+            ElseIf tanggal.Hour >= 19 And tanggal.Hour < 24 Then
                 sesi = 4
             End If
 
@@ -199,10 +201,10 @@
                         adaorder = pesan.getBS.Find("tgl_order", tanggal.Date.ToString("yyyy-MM-dd"))
                         'MsgBox("Index adaorder : " & adaorder.ToString)
                         If adaorder < 0 Then
-                            MsgBox("bikin baru")
+                            'MsgBox("bikin baru")
 
                             id_karyawan = karyawan.getBS.Current("id_karyawan")
-                            pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,total_denda,total_harga,jaminan) VALUES(" & id & "," & id_karyawan & "," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
+                            pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
 
                             If cbWaktu.SelectedItem = "Hari" Then
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))
@@ -214,7 +216,7 @@
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text) * 365)
                             End If
 
-                            detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES((SELECT no_order from pesan where id = " & id & " AND tgl_order ='" & tanggal.Date.ToString("yyyy-MM-dd") & "')," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & 1 & ")", "Berhasil tambah")
+                            detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES((SELECT no_order from Pesan where id = " & id & " AND tgl_order ='" & tanggal.Date.ToString("yyyy-MM-dd") & "')," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & 1 & ")", "Berhasil tambah")
                             edit.isiDataTable("UPDATE Motor SET status=" & 1 & " WHERE id_motor=" & idmotor, "")
 
 
@@ -245,16 +247,19 @@
                     End If
                 Else
                     MsgBox("Tidak ada karyawan yang bekerja sesi ini")
+                    FormUtama.Show()
                 End If
 
             Else
                 MsgBox("Tidak ada karyawan yang bekerja hari ini")
+                FormUtama.Show()
             End If
         ElseIf result = DialogResult.No Then
 
 
 
         End If
+        FormUtama.Show()
         Me.Close()
     End Sub
 

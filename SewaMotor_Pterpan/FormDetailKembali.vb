@@ -37,8 +37,8 @@ Public Class FormDetailKembali
 
 
         txtNoOrder.DataBindings.Add("Text", kembali.getBS(), "no_order")
-        txtNamaKaryawan.DataBindings.Add("Text", kembali.getBS(), "nama_kar")
-        txtNamaCustomer.DataBindings.Add("Text", kembali.getBS(), "nama")
+        txtNamaKaryawan.DataBindings.Add("Text", kembali.getBS(), "namaKaryawan")
+        txtNamaCustomer.DataBindings.Add("Text", kembali.getBS(), "namaPelanggan")
 
     End Sub
 

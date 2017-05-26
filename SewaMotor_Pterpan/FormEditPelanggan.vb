@@ -56,7 +56,7 @@
         edit.isiDataTable("UPDATE Pelanggan SET 
                             email='" & txtEmail.Text & "', 
                             password='" & txtPass.Text & "', 
-                            nama='" & txtNama.Text & "', 
+                            namaPelanggan='" & txtNama.Text & "', 
                             no_ktp='" & txtNoKTP.Text & "', 
                             ttl='" & DtTglLahir.Value.ToString("yyyy/MM/dd") & "',
                             alamat='" & txtAlamat.Text & "',

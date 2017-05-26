@@ -1,5 +1,6 @@
 ﻿
 Imports System.Data.SqlClient
+Imports GlobalVariables
 Public Class FormLogin
     Private user As New Tabel("Pelanggan")
 
@@ -24,6 +25,7 @@ Public Class FormLogin
             Me.Visible = False
             Dim nama As New FormUtama()
             nama.username = txtUsername.Text
+            GlobalVariables.UserName = txtUsername.Text
             nama.Show()
             Me.Visible = True
                 txtUsername.Text = ""

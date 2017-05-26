@@ -58,6 +58,7 @@ Partial Class FormDetailMotor
         '
         'dtsewa
         '
+        Me.dtsewa.Enabled = False
         Me.dtsewa.Location = New System.Drawing.Point(247, 57)
         Me.dtsewa.Name = "dtsewa"
         Me.dtsewa.Size = New System.Drawing.Size(200, 20)

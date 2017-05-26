@@ -16,6 +16,7 @@
     Public hargacurrent As Integer
     Public idorder As Integer
     Public tglkembali As System.DateTime
+    Dim value As Integer
 
     Public iddetail As Integer
 
@@ -63,7 +64,9 @@
         Else
             btnSewa.Enabled = True
         End If
-
+        If GlobalVariables.Role > 0 Then
+            btnSewa.Enabled = False
+        End If
     End Sub
 
     Private Sub FormDetailMotor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -85,10 +88,13 @@
             cbWaktu.SelectedIndex = 0
         End If
 
+        value = Integer.Parse(txthiddenharga.Text)
+        txthiddenharga.Text = FormatCurrency(value)
+
     End Sub
 
     Private Sub textBox5_TextChanged(sender As Object, e As EventArgs) Handles txtWaktu.TextChanged
-        harga = Integer.Parse(txthiddenharga.Text)
+        harga = value
         If txtWaktu.Text.Length > 0 Then
             If cbWaktu.SelectedItem = "Hari" Then
                 txtHarga.Text = harga * Integer.Parse(txtWaktu.Text)
@@ -99,8 +105,11 @@
             ElseIf cbWaktu.SelectedItem = "Tahun" Then
                 txtHarga.Text = harga * Integer.Parse(txtWaktu.Text) * 365
             End If
+        Else
+            txtHarga.Text = "0"
         End If
         hargaall = Integer.Parse(txtHarga.Text)
+        txtHarga.Text = FormatCurrency(hargaall)
     End Sub
 
     Private Sub cbWaktu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWaktu.SelectedIndexChanged, cbJaminan.SelectedIndexChanged
@@ -140,7 +149,7 @@
     End Sub
 
     Private Sub linkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkLabel1.LinkClicked
-
+        FormUtama.Show()
         Me.Close()
     End Sub
 
@@ -188,12 +197,12 @@
                         pesan.getBS.Filter = "id=" & id
                         'MsgBox(tanggal.Date.ToString("yyyy-MM-dd"))
                         adaorder = pesan.getBS.Find("tgl_order", tanggal.Date.ToString("yyyy-MM-dd"))
-                        MsgBox("Index adaorder : " & adaorder.ToString)
+                        'MsgBox("Index adaorder : " & adaorder.ToString)
                         If adaorder < 0 Then
                             MsgBox("bikin baru")
 
                             id_karyawan = karyawan.getBS.Current("id_karyawan")
-                            pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.Date.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
+                            pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,total_denda,total_harga,jaminan) VALUES(" & id & "," & id_karyawan & "," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
 
                             If cbWaktu.SelectedItem = "Hari" Then
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))
@@ -210,7 +219,7 @@
 
 
                         Else
-                            MsgBox("nambah baru")
+                            'MsgBox("nambah baru")
                             idorder = pesan.getBS.Current("no_order")
                             If cbWaktu.SelectedItem = "Hari" Then
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))

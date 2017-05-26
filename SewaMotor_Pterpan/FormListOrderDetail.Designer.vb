@@ -25,7 +25,6 @@ Partial Class FormListOrderDetail
         Me.components = New System.ComponentModel.Container()
         Me.groupDaftarPelanggan = New System.Windows.Forms.GroupBox()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.btnTambah = New System.Windows.Forms.Button()
         Me.lblCari = New System.Windows.Forms.Label()
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -55,7 +54,6 @@ Partial Class FormListOrderDetail
         'groupDaftarPelanggan
         '
         Me.groupDaftarPelanggan.Controls.Add(Me.btnClose)
-        Me.groupDaftarPelanggan.Controls.Add(Me.btnTambah)
         Me.groupDaftarPelanggan.Controls.Add(Me.lblCari)
         Me.groupDaftarPelanggan.Controls.Add(Me.txtCari)
         Me.groupDaftarPelanggan.Controls.Add(Me.btnDelete)
@@ -81,18 +79,6 @@ Partial Class FormListOrderDetail
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'btnTambah
-        '
-        Me.btnTambah.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTambah.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnTambah.Location = New System.Drawing.Point(11, 322)
-        Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(75, 23)
-        Me.btnTambah.TabIndex = 20
-        Me.btnTambah.Text = "Tambah"
-        Me.btnTambah.UseVisualStyleBackColor = False
-        '
         'lblCari
         '
         Me.lblCari.AutoSize = True
@@ -114,7 +100,7 @@ Partial Class FormListOrderDetail
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(179, 322)
+        Me.btnDelete.Location = New System.Drawing.Point(94, 322)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
         Me.btnDelete.TabIndex = 17
@@ -126,7 +112,7 @@ Partial Class FormListOrderDetail
         Me.btnUbah.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUbah.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUbah.Location = New System.Drawing.Point(98, 322)
+        Me.btnUbah.Location = New System.Drawing.Point(13, 322)
         Me.btnUbah.Name = "btnUbah"
         Me.btnUbah.Size = New System.Drawing.Size(75, 23)
         Me.btnUbah.TabIndex = 18
@@ -271,7 +257,6 @@ Partial Class FormListOrderDetail
 
     Private WithEvents groupDaftarPelanggan As GroupBox
     Friend WithEvents btnClose As Button
-    Friend WithEvents btnTambah As Button
     Private WithEvents lblCari As Label
     Friend WithEvents txtCari As TextBox
     Private WithEvents btnDelete As Button

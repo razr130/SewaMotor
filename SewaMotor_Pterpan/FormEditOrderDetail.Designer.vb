@@ -31,7 +31,6 @@ Partial Class FormEditOrderDetail
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -125,14 +124,6 @@ Partial Class FormEditOrderDetail
         Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.ListOrderToolStripMenuItem.Text = "List Order"
         '
-        'katalogToolStripMenuItem
-        '
-        Me.katalogToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.katalogToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.katalogToolStripMenuItem.Name = "katalogToolStripMenuItem"
-        Me.katalogToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
-        Me.katalogToolStripMenuItem.Text = "Katalog"
-        '
         'ReportToolStripMenuItem
         '
         Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem})
@@ -173,7 +164,7 @@ Partial Class FormEditOrderDetail
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(283, 24)
@@ -333,7 +324,6 @@ Partial Class FormEditOrderDetail
     Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem

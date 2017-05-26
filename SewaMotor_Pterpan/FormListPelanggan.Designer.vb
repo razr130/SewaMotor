@@ -24,6 +24,7 @@ Partial Class FormListPelanggan
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.groupDaftarPelanggan = New System.Windows.Forms.GroupBox()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.label1 = New System.Windows.Forms.Label()
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -34,7 +35,6 @@ Partial Class FormListPelanggan
         Me.label2 = New System.Windows.Forms.Label()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,7 +43,6 @@ Partial Class FormListPelanggan
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnClose = New System.Windows.Forms.Button()
         Me.groupDaftarPelanggan.SuspendLayout()
         CType(Me.dgvPelanggan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SewaMotorDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +65,18 @@ Partial Class FormListPelanggan
         Me.groupDaftarPelanggan.TabIndex = 28
         Me.groupDaftarPelanggan.TabStop = False
         Me.groupDaftarPelanggan.Text = "Daftar Pelanggan"
+        '
+        'btnClose
+        '
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClose.Location = New System.Drawing.Point(597, 322)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 23)
+        Me.btnClose.TabIndex = 30
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = False
         '
         'label1
         '
@@ -141,7 +152,7 @@ Partial Class FormListPelanggan
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(707, 24)
@@ -155,14 +166,6 @@ Partial Class FormListPelanggan
         Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
         Me.homeToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.homeToolStripMenuItem.Text = "Home"
-        '
-        'katalogToolStripMenuItem
-        '
-        Me.katalogToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.katalogToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.katalogToolStripMenuItem.Name = "katalogToolStripMenuItem"
-        Me.katalogToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
-        Me.katalogToolStripMenuItem.Text = "Katalog"
         '
         'logOutToolStripMenuItem
         '
@@ -221,18 +224,6 @@ Partial Class FormListPelanggan
         Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
         '
-        'btnClose
-        '
-        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnClose.Location = New System.Drawing.Point(597, 322)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(75, 23)
-        Me.btnClose.TabIndex = 30
-        Me.btnClose.Text = "Close"
-        Me.btnClose.UseVisualStyleBackColor = False
-        '
         'FormListPelanggan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -267,7 +258,6 @@ Partial Class FormListPelanggan
     Private WithEvents label1 As Label
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem

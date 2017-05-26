@@ -35,7 +35,6 @@ Partial Class FormDetailKembali
         Me.btnSelesai = New System.Windows.Forms.Button()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -158,7 +157,7 @@ Partial Class FormDetailKembali
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(456, 24)
@@ -172,14 +171,6 @@ Partial Class FormDetailKembali
         Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
         Me.homeToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.homeToolStripMenuItem.Text = "Home"
-        '
-        'katalogToolStripMenuItem
-        '
-        Me.katalogToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.katalogToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.katalogToolStripMenuItem.Name = "katalogToolStripMenuItem"
-        Me.katalogToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
-        Me.katalogToolStripMenuItem.Text = "Katalog"
         '
         'logOutToolStripMenuItem
         '
@@ -285,7 +276,6 @@ Partial Class FormDetailKembali
     Friend WithEvents btnSelesai As Button
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem

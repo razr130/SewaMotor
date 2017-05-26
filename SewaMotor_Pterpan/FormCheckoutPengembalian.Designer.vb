@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormCheckout
+Partial Class FormCheckoutPengembalian
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,38 +22,22 @@ Partial Class FormCheckout
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ViewNotaPeminjamanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.InvoiceSewaDataSet = New SewaMotor_Pterpan.InvoiceSewaDataSet()
+        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.ViewNotaPeminjamanTableAdapter = New SewaMotor_Pterpan.InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ViewNotaPeminjamanBindingSource
-        '
-        Me.ViewNotaPeminjamanBindingSource.DataMember = "ViewNotaPeminjaman"
-        Me.ViewNotaPeminjamanBindingSource.DataSource = Me.InvoiceSewaDataSet
-        '
-        'InvoiceSewaDataSet
-        '
-        Me.InvoiceSewaDataSet.DataSetName = "InvoiceSewaDataSet"
-        Me.InvoiceSewaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
         Me.ReportViewer1.AutoSize = True
-        ReportDataSource1.Name = "InvoiceSewaDataSet"
-        ReportDataSource1.Value = Me.ViewNotaPeminjamanBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        ReportDataSource2.Name = "InvoiceSewaDataSet"
+        ReportDataSource2.Value = Nothing
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.InvoiceSewa.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(10, 27)
+        Me.ReportViewer1.Location = New System.Drawing.Point(12, 27)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ShowBackButton = False
         Me.ReportViewer1.ShowExportButton = False
@@ -63,12 +47,8 @@ Partial Class FormCheckout
         Me.ReportViewer1.ShowRefreshButton = False
         Me.ReportViewer1.ShowStopButton = False
         Me.ReportViewer1.ShowZoomControl = False
-        Me.ReportViewer1.Size = New System.Drawing.Size(711, 468)
-        Me.ReportViewer1.TabIndex = 38
-        '
-        'ViewNotaPeminjamanTableAdapter
-        '
-        Me.ViewNotaPeminjamanTableAdapter.ClearBeforeFill = True
+        Me.ReportViewer1.Size = New System.Drawing.Size(802, 468)
+        Me.ReportViewer1.TabIndex = 39
         '
         'menuStrip1
         '
@@ -76,8 +56,8 @@ Partial Class FormCheckout
         Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(729, 24)
-        Me.menuStrip1.TabIndex = 39
+        Me.menuStrip1.Size = New System.Drawing.Size(826, 24)
+        Me.menuStrip1.TabIndex = 40
         Me.menuStrip1.Text = "menuStrip1"
         '
         'homeToolStripMenuItem
@@ -97,19 +77,15 @@ Partial Class FormCheckout
         Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.logOutToolStripMenuItem.Text = "Logout"
         '
-        'FormCheckout
+        'FormCheckoutPengembalian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(729, 507)
+        Me.ClientSize = New System.Drawing.Size(826, 506)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "FormCheckout"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormCheckout"
-        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "FormCheckoutPengembalian"
+        Me.Text = "FormCheckoutPengembalian"
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -118,9 +94,6 @@ Partial Class FormCheckout
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents ViewNotaPeminjamanBindingSource As BindingSource
-    Friend WithEvents InvoiceSewaDataSet As InvoiceSewaDataSet
-    Friend WithEvents ViewNotaPeminjamanTableAdapter As InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem

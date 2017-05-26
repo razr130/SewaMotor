@@ -105,6 +105,12 @@
     <Compile Include="FormCheckout.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormCheckoutPengembalian.Designer.vb">
+      <DependentUpon>FormCheckoutPengembalian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCheckoutPengembalian.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormDenda.Designer.vb">
       <DependentUpon>FormDenda.vb</DependentUpon>
     </Compile>
@@ -312,6 +318,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormCheckout.resx">
       <DependentUpon>FormCheckout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCheckoutPengembalian.resx">
+      <DependentUpon>FormCheckoutPengembalian.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDenda.resx">
       <DependentUpon>FormDenda.vb</DependentUpon>

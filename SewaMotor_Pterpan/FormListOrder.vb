@@ -17,10 +17,13 @@
     Private Sub dgvOrder_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvOrder.CellContentClick
         idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value
     End Sub
+    Private Sub dgvOrder_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvOrder.CellContentDoubleClick
+        Detail()
+    End Sub
 
     '/////BUTTON/////
-    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        Add()
+    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnCetakNota.Click
+        Print()
     End Sub
 
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
@@ -50,7 +53,16 @@
             End If
         End If
     End Sub
-    Public Sub Add()
+    Public Sub Print()
+        '//Pick ROW ID
+        idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value
+        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  namaPelanggan, no_ktp FROM ViewNotaPeminjaman WHERE no_order='" & idOrder & "'")
+        Dim namaPel = infoPelanggan.getBS.Current("namaPelanggan")
+        Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
+
+        '//LOAD INVOICE
+        Dim invoice As New FormCheckout(idOrder, namaPel, noKTP)
+        invoice.ShowDialog()
 
     End Sub
     Public Sub Detail()
@@ -74,7 +86,4 @@
         dgvOrder.Refresh()
     End Sub
 
-    Private Sub dgvOrder_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvOrder.CellContentDoubleClick
-        Detail()
-    End Sub
 End Class

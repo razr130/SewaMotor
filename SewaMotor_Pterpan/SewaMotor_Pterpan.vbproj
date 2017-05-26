@@ -297,11 +297,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SewaMotorDataSource.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SewaMotorRejekiJayaMandiri_DataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SewaMotorRejekiJayaMandiri_DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Tabel.vb" />
     <Compile Include="ViewSewaMotorDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -477,17 +472,6 @@
     </None>
     <None Include="SewaMotorDataSource.xss">
       <DependentUpon>SewaMotorDataSource.xsd</DependentUpon>
-    </None>
-    <None Include="SewaMotorRejekiJayaMandiri_DataSet.xsc">
-      <DependentUpon>SewaMotorRejekiJayaMandiri_DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SewaMotorRejekiJayaMandiri_DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SewaMotorRejekiJayaMandiri_DataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SewaMotorRejekiJayaMandiri_DataSet.xss">
-      <DependentUpon>SewaMotorRejekiJayaMandiri_DataSet.xsd</DependentUpon>
     </None>
     <None Include="ViewSewaMotorDataSet.xsc">
       <DependentUpon>ViewSewaMotorDataSet.xsd</DependentUpon>

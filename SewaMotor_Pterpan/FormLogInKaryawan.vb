@@ -16,7 +16,7 @@
         Dim ada As Integer
         ada = karyawan.getBS.Find("password", txtPassword.Text)
         If ada >= 0 Then
-            MessageBox.Show("Selamat datang di... tunggu, apa nama perusahaan ini ?")
+            MessageBox.Show("Selamat datang :D")
 
             Me.Visible = False
             role = karyawan.getBS.Current("role")

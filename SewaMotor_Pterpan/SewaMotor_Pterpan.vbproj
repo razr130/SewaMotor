@@ -129,12 +129,6 @@
     <Compile Include="FormEditKaryawan.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditOrder.Designer.vb">
-      <DependentUpon>FormEditOrder.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormEditOrder.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormEditOrderDetail.Designer.vb">
       <DependentUpon>FormEditOrderDetail.vb</DependentUpon>
     </Compile>
@@ -326,9 +320,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditKaryawan.resx">
       <DependentUpon>FormEditKaryawan.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormEditOrder.resx">
-      <DependentUpon>FormEditOrder.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditOrderDetail.resx">
       <DependentUpon>FormEditOrderDetail.vb</DependentUpon>

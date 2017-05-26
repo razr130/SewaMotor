@@ -25,7 +25,6 @@
 
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
         idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value
-        MsgBox(idOrder)
         Detail()
     End Sub
 
@@ -54,10 +53,17 @@
         '//LOAD EDITFORM
         Dim detailOrder As New FormListOrderDetail(idOrder)
         detailOrder.ShowDialog()
-
+        MsgBox("Test")
     End Sub
     Public Sub Delete()
-
+        idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value
+        Dim result As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus?", "Peringatan", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            Return
+        ElseIf result = DialogResult.Yes Then
+            order.isiDataTable("DELETE FROM Pesan WHERE no_order=" & idOrder, "berhasil dihapus!")
+        End If
+        dgvOrder.Refresh()
     End Sub
 
     Private Sub dgvOrder_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvOrder.CellContentDoubleClick

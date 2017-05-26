@@ -43,6 +43,7 @@ Partial Class FormListPelanggan
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.groupDaftarPelanggan.SuspendLayout()
         CType(Me.dgvPelanggan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SewaMotorDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +53,7 @@ Partial Class FormListPelanggan
         '
         'groupDaftarPelanggan
         '
+        Me.groupDaftarPelanggan.Controls.Add(Me.btnClose)
         Me.groupDaftarPelanggan.Controls.Add(Me.label1)
         Me.groupDaftarPelanggan.Controls.Add(Me.txtCari)
         Me.groupDaftarPelanggan.Controls.Add(Me.btnDelete)
@@ -219,6 +221,18 @@ Partial Class FormListPelanggan
         Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
         '
+        'btnClose
+        '
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClose.Location = New System.Drawing.Point(597, 322)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 23)
+        Me.btnClose.TabIndex = 30
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = False
+        '
         'FormListPelanggan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -262,4 +276,5 @@ Partial Class FormListPelanggan
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnClose As Button
 End Class

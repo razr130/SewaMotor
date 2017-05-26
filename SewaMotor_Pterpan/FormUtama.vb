@@ -76,7 +76,6 @@
     Private Sub btnPengembalian_Click(sender As Object, e As EventArgs) Handles btnPengembalian.Click
         Dim kembali As New FormKembali
         kembali.Show()
-        Me.Close()
     End Sub
     Private Sub btnDenda_Click(sender As Object, e As EventArgs) Handles btnDenda.Click
         FormListDenda.Show()
@@ -105,8 +104,8 @@
     '/////TOOLTIP/////
     Private Sub ListPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListPelangganToolStripMenuItem.Click
         Dim list As New FormListPelanggan()
-        list.ShowDialog()
-        Me.Close()
+        list.Show()
+
     End Sub
     Private Sub ListKaryawanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListKaryawanToolStripMenuItem.Click
         Dim list As New FormListKaryawan(role, namaAkun)
@@ -119,21 +118,21 @@
     Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanPenyewaanToolStripMenuItem.Click
         Dim laporan As New FormFilterLaporan()
         laporan.Show()
-        Me.Close()
+
     End Sub
     Private Sub LaporanStatusMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanStatusMotorToolStripMenuItem.Click
         Dim laporan As New FormLaporanStatusMotor
         laporan.Show()
-        Me.Close()
+
     End Sub
     Private Sub LaporanKeterlambatanMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanKeterlambatanMotorToolStripMenuItem.Click
         Dim Laporan As New FormLaporanTerlambatKembali
         Laporan.Show()
-        Me.Close()
+
     End Sub
     Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles logOutToolStripMenuItem.Click
         FormLogin.Show()
-        Me.Close()
+
     End Sub
 
 

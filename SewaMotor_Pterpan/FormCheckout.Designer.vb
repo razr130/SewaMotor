@@ -24,27 +24,17 @@ Partial Class FormCheckout
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ViewNotaPeminjamanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.InvoiceSewaDataSet = New SewaMotor_Pterpan.InvoiceSewaDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.ViewNotaPeminjamanTableAdapter = New SewaMotor_Pterpan.InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewNotaPeminjamanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.InvoiceSewaDataSet = New SewaMotor_Pterpan.InvoiceSewaDataSet()
+        Me.ViewNotaPeminjamanTableAdapter = New SewaMotor_Pterpan.InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter()
+        Me.menuStrip1.SuspendLayout()
         CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ViewNotaPeminjamanBindingSource
-        '
-        Me.ViewNotaPeminjamanBindingSource.DataMember = "ViewNotaPeminjaman"
-        Me.ViewNotaPeminjamanBindingSource.DataSource = Me.InvoiceSewaDataSet
-        '
-        'InvoiceSewaDataSet
-        '
-        Me.InvoiceSewaDataSet.DataSetName = "InvoiceSewaDataSet"
-        Me.InvoiceSewaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -52,7 +42,7 @@ Partial Class FormCheckout
         ReportDataSource1.Name = "InvoiceSewaDataSet"
         ReportDataSource1.Value = Me.ViewNotaPeminjamanBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.InvoiceSewa.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportInvoiceSewa.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(10, 27)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ShowBackButton = False
@@ -65,10 +55,6 @@ Partial Class FormCheckout
         Me.ReportViewer1.ShowZoomControl = False
         Me.ReportViewer1.Size = New System.Drawing.Size(711, 468)
         Me.ReportViewer1.TabIndex = 38
-        '
-        'ViewNotaPeminjamanTableAdapter
-        '
-        Me.ViewNotaPeminjamanTableAdapter.ClearBeforeFill = True
         '
         'menuStrip1
         '
@@ -97,6 +83,20 @@ Partial Class FormCheckout
         Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.logOutToolStripMenuItem.Text = "Logout"
         '
+        'ViewNotaPeminjamanBindingSource
+        '
+        Me.ViewNotaPeminjamanBindingSource.DataMember = "ViewNotaPeminjaman"
+        Me.ViewNotaPeminjamanBindingSource.DataSource = Me.InvoiceSewaDataSet
+        '
+        'InvoiceSewaDataSet
+        '
+        Me.InvoiceSewaDataSet.DataSetName = "InvoiceSewaDataSet"
+        Me.InvoiceSewaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ViewNotaPeminjamanTableAdapter
+        '
+        Me.ViewNotaPeminjamanTableAdapter.ClearBeforeFill = True
+        '
         'FormCheckout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -108,10 +108,10 @@ Partial Class FormCheckout
         Me.Name = "FormCheckout"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormCheckout"
-        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
+        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -41,19 +41,27 @@
     End Sub
     '/////FUNCTION/////
     Public Sub Find()
-
+        If txtCari.Text.Length <= 20 Then
+            If txtCari.Text = "" Then
+                order.getBS.Filter = ""
+                dgvOrder.DataSource = order.getBS()
+            Else
+                order.getBS.Filter = "no_order = '" & txtCari.Text & "%'"
+            End If
+        End If
     End Sub
     Public Sub Add()
 
     End Sub
     Public Sub Detail()
         '//Pick Row ID
+
         idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value
 
         '//LOAD EDITFORM
         Dim detailOrder As New FormListOrderDetail(idOrder)
         detailOrder.ShowDialog()
-        MsgBox("Test")
+
     End Sub
     Public Sub Delete()
         idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value

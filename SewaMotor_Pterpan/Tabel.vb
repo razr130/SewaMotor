@@ -35,17 +35,17 @@ Public Class Tabel
     Public Sub isiDataTable(strSql As String, pesan As String)
         Me.conn.Open()
         Dim cmd As New SqlCommand(strSql, Me.conn)
-        MsgBox(strSql)
+        'MsgBox(strSql)
         Dim da As New SqlDataAdapter()
         da.SelectCommand = cmd
 
         If Me.dt Is Nothing Then
             da.Fill(Me.dt)
-            MsgBox(pesan)
+            'MsgBox(pesan)
         Else
             Me.dt.Clear()
             da.Fill(Me.dt)
-            MsgBox(pesan)
+            'MsgBox(pesan)
         End If
         Me.conn.Close()
         'isiDataTable()

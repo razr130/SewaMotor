@@ -90,6 +90,9 @@
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         motor.isiDataTable("DELETE FROM Motor WHERE id_motor=" & idmotor, "Berhasil Delete")
+        Dim utama As New FormUtama
+        utama.Show()
+        Me.Close()
     End Sub
     Private Sub btnPengembalian_Click(sender As Object, e As EventArgs) Handles btnPengembalian.Click
         Dim kembali As New FormKembali

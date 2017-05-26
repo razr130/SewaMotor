@@ -37,15 +37,16 @@ Public Class FormDetailKembali
 
 
         txtNoOrder.DataBindings.Add("Text", kembali.getBS(), "no_order")
-        txtNamaKaryawan.DataBindings.Add("Text", kembali.getBS(), "nama_kar")
-        txtNamaCustomer.DataBindings.Add("Text", kembali.getBS(), "nama")
+        txtNamaKaryawan.DataBindings.Add("Text", kembali.getBS(), "namaKaryawan")
+        txtNamaCustomer.DataBindings.Add("Text", kembali.getBS(), "namaPelanggan")
 
     End Sub
 
 
 
     Private Sub FormDetailKembali_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        kembali.getBS.Filter = "no_order=" & noorder
+        'MsgBox(GlobalVariables.NoNota.ToString)
+        kembali.getBS.Filter = "no_order=" & GlobalVariables.NoNota
         gdvKembali.DataSource = kembali.getBS()
         bind()
 
@@ -58,8 +59,11 @@ Public Class FormDetailKembali
 
 
         End If
-        pesan.getBS.Filter = "no_order=" & noorder
+        pesan.getBS.Filter = "no_order=" & GlobalVariables.NoNota
         txtHargaSewa.Text = pesan.getBS.Current("total_harga").ToString
+
+        harga1 = Integer.Parse(txtHargaSewa.Text)
+        txtHargaSewa.Text = FormatCurrency(harga1)
     End Sub
 
     Private Sub gdvKembali_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gdvKembali.CellMouseDoubleClick
@@ -67,7 +71,7 @@ Public Class FormDetailKembali
 
         Dim denda As New FormDenda(noorder, gdvKembali.Item(5, gdvKembali.CurrentRow.Index).Value, gdvKembali.Item(1, gdvKembali.CurrentRow.Index).Value, Integer.Parse(txtHargaSewa.Text))
         denda.Show()
-
+        Me.Close()
 
 
 
@@ -115,4 +119,13 @@ Public Class FormDetailKembali
         FormUtama.Show()
         Me.Close()
     End Sub
+
+    'Public Sub ambilharga()
+    '    txtNoOrder.DataBindings.Clear()
+    '    txtNamaCustomer.DataBindings.Clear()
+    '    txtNamaKaryawan.DataBindings.Clear()
+    '    '  Dim dendaaa As New FormDenda()
+    '    txtFinalPrice.Text = FormDenda.txtfinal.Text
+
+    'End Sub
 End Class

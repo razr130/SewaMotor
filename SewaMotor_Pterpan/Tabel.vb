@@ -12,6 +12,8 @@ Public Class Tabel
     Private bs As New BindingSource()
     Private namaTabel As String
 
+
+
     Public Function getBS() As BindingSource
         Return Me.bs
     End Function

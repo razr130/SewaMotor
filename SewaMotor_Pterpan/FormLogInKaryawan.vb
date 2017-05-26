@@ -22,7 +22,9 @@
             role = karyawan.getBS.Current("role")
             Dim nama As New FormUtama()
             nama.username = txtUsername.Text
+            GlobalVariables.UserName = txtUsername.Text
             nama.role = role
+            GlobalVariables.Role = role
             nama.Show()
             Me.Visible = True
             txtUsername.Text = ""

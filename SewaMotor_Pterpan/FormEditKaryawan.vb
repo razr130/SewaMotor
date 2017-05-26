@@ -36,7 +36,7 @@
             edit.isiDataTable("UPDATE Karyawan SET
                                 email='" & txtEmail.Text & "',
                                 password='" & txtPass.Text & "',
-                                nama='" & txtNama.Text & "',
+                                namaKaryawan='" & txtNama.Text & "',
                                 no_telp='" & txtNoTelp.Text & "',
                                 alamat='" & txtAlamat.Text & "',
                                 role='" & Role() & "',

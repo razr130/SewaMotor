@@ -22,9 +22,13 @@
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         id = dgvDenda.Item(0, dgvDenda.CurrentRow.Index).Value
         denda.isiDataTable("DELETE FROM Denda WHERE id_denda=" & id, "Berhasil Delete")
+        Dim denda2 As New FormListDenda
+        denda2.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        FormUtama.Show()
         Me.Close()
     End Sub
 End Class

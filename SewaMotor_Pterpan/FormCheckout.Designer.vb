@@ -24,18 +24,27 @@ Partial Class FormCheckout
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.ViewNotaPeminjamanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.InvoiceSewaDataSet = New SewaMotor_Pterpan.InvoiceSewaDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.ViewNotaPeminjamanTableAdapter = New SewaMotor_Pterpan.InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.loginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InvoiceSewaDataSet = New SewaMotor_Pterpan.InvoiceSewaDataSet()
-        Me.ViewNotaPeminjamanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ViewNotaPeminjamanTableAdapter = New SewaMotor_Pterpan.InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter()
-        Me.menuStrip1.SuspendLayout()
-        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'ViewNotaPeminjamanBindingSource
+        '
+        Me.ViewNotaPeminjamanBindingSource.DataMember = "ViewNotaPeminjaman"
+        Me.ViewNotaPeminjamanBindingSource.DataSource = Me.InvoiceSewaDataSet
+        '
+        'InvoiceSewaDataSet
+        '
+        Me.InvoiceSewaDataSet.DataSetName = "InvoiceSewaDataSet"
+        Me.InvoiceSewaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -57,74 +66,62 @@ Partial Class FormCheckout
         Me.ReportViewer1.Size = New System.Drawing.Size(711, 468)
         Me.ReportViewer1.TabIndex = 38
         '
+        'ViewNotaPeminjamanTableAdapter
+        '
+        Me.ViewNotaPeminjamanTableAdapter.ClearBeforeFill = True
+        '
         'menuStrip1
         '
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.loginToolStripMenuItem})
+        Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(788, 24)
+        Me.menuStrip1.Size = New System.Drawing.Size(729, 24)
         Me.menuStrip1.TabIndex = 39
         Me.menuStrip1.Text = "menuStrip1"
         '
         'homeToolStripMenuItem
         '
+        Me.homeToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.homeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
-        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.homeToolStripMenuItem.Text = "Home"
         '
-        'katalogToolStripMenuItem
+        'logOutToolStripMenuItem
         '
-        Me.katalogToolStripMenuItem.Name = "katalogToolStripMenuItem"
-        Me.katalogToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
-        Me.katalogToolStripMenuItem.Text = "Katalog"
-        '
-        'loginToolStripMenuItem
-        '
-        Me.loginToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.loginToolStripMenuItem.Name = "loginToolStripMenuItem"
-        Me.loginToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.loginToolStripMenuItem.Text = "Logout"
-        '
-        'InvoiceSewaDataSet
-        '
-        Me.InvoiceSewaDataSet.DataSetName = "InvoiceSewaDataSet"
-        Me.InvoiceSewaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ViewNotaPeminjamanBindingSource
-        '
-        Me.ViewNotaPeminjamanBindingSource.DataMember = "ViewNotaPeminjaman"
-        Me.ViewNotaPeminjamanBindingSource.DataSource = Me.InvoiceSewaDataSet
-        '
-        'ViewNotaPeminjamanTableAdapter
-        '
-        Me.ViewNotaPeminjamanTableAdapter.ClearBeforeFill = True
+        Me.logOutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.logOutToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.logOutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem"
+        Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
+        Me.logOutToolStripMenuItem.Text = "Logout"
         '
         'FormCheckout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(788, 507)
-        Me.Controls.Add(Me.ReportViewer1)
+        Me.ClientSize = New System.Drawing.Size(729, 507)
         Me.Controls.Add(Me.menuStrip1)
+        Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "FormCheckout"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormCheckout"
+        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
-        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents menuStrip1 As MenuStrip
-    Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents loginToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewNotaPeminjamanBindingSource As BindingSource
     Friend WithEvents InvoiceSewaDataSet As InvoiceSewaDataSet
     Friend WithEvents ViewNotaPeminjamanTableAdapter As InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter
+    Private WithEvents menuStrip1 As MenuStrip
+    Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
+    Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
 End Class

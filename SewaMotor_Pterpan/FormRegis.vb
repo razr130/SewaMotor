@@ -3,7 +3,7 @@
 Public Class FormRegis
     Private regisuser As New Tabel("Pelanggan")
     Private Sub btnDaftar_Click(sender As Object, e As EventArgs) Handles btnDaftar.Click
-        regisuser.isiDataTable("INSERT INTO Pelanggan(nama,ttl,alamat,notelp,email,password,no_ktp) VALUES ('" & txtNama.Text & "','" & DtTglLahir.Text & "','" & txtAlamat.Text & "','" & txtNoTelp.Text & "','" & txtEmail.Text & "','" & txtPass.Text & "','" & txtNoKTP.Text & "')", "Berhasil regis!")
+        regisuser.isiDataTable("INSERT INTO Pelanggan(namaPelanggan,ttl,alamat,notelp,email,password,no_ktp) VALUES ('" & txtNama.Text & "','" & DtTglLahir.Text & "','" & txtAlamat.Text & "','" & txtNoTelp.Text & "','" & txtEmail.Text & "','" & txtPass.Text & "','" & txtNoKTP.Text & "')", "Berhasil regis!")
 
         txtEmail.Clear()
         txtPass.Clear()

@@ -249,5 +249,13 @@
         Me.Close()
     End Sub
 
+    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click
+        FormUtama.Show()
+        Me.Close()
+    End Sub
 
+    Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles logOutToolStripMenuItem.Click
+        FormLogin.Show()
+        Me.Close()
+    End Sub
 End Class

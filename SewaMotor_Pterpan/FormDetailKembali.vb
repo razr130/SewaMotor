@@ -81,7 +81,38 @@ Public Class FormDetailKembali
 
     End Sub
 
+    Private Sub ListPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListPelangganToolStripMenuItem.Click
+        FormListPelanggan.Show()
+        Me.Close()
+    End Sub
 
+    Private Sub ListKaryawanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListKaryawanToolStripMenuItem.Click
+        FormListKaryawan.Show()
+        Me.Close()
+    End Sub
 
+    Private Sub ListOrderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListOrderToolStripMenuItem.Click
+        FormListOrder.Show()
+        Me.Close()
+    End Sub
 
+    Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanPenyewaanToolStripMenuItem.Click
+        Dim laporan As New FormFilterLaporan()
+        laporan.Show()
+    End Sub
+
+    Private Sub LaporanStatusMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanStatusMotorToolStripMenuItem.Click
+        FormLaporanStatusMotor.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub LaporanKeterlambatanMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanKeterlambatanMotorToolStripMenuItem.Click
+        FormLaporanTerlambatKembali.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub btnSelesai_Click(sender As Object, e As EventArgs) Handles btnSelesai.Click
+        FormUtama.Show()
+        Me.Close()
+    End Sub
 End Class

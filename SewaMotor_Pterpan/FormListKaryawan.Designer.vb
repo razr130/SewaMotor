@@ -45,6 +45,7 @@ Partial Class FormListKaryawan
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.groupDaftarPelanggan.SuspendLayout()
         CType(Me.dgvKaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SewaMotorDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -227,7 +228,7 @@ Partial Class FormListKaryawan
         '
         'ReportToolStripMenuItem
         '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem})
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem, Me.LaporanKeterlambatanMotorToolStripMenuItem})
         Me.ReportToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReportToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
@@ -237,14 +238,20 @@ Partial Class FormListKaryawan
         'LaporanPenyewaanToolStripMenuItem
         '
         Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
-        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
         Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
         '
         'LaporanStatusMotorToolStripMenuItem
         '
         Me.LaporanStatusMotorToolStripMenuItem.Name = "LaporanStatusMotorToolStripMenuItem"
-        Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
         Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
+        '
+        'LaporanKeterlambatanMotorToolStripMenuItem
+        '
+        Me.LaporanKeterlambatanMotorToolStripMenuItem.Name = "LaporanKeterlambatanMotorToolStripMenuItem"
+        Me.LaporanKeterlambatanMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
+        Me.LaporanKeterlambatanMotorToolStripMenuItem.Text = "Laporan Keterlambatan Motor"
         '
         'FormListKaryawan
         '
@@ -291,4 +298,5 @@ Partial Class FormListKaryawan
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LaporanKeterlambatanMotorToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -116,4 +116,20 @@
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
+
+    Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanPenyewaanToolStripMenuItem.Click
+        Dim laporan As New FormFilterLaporan()
+        laporan.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub LaporanStatusMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanStatusMotorToolStripMenuItem.Click
+        FormLaporanStatusMotor.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub LaporanKeterlambatanMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanKeterlambatanMotorToolStripMenuItem.Click
+        FormLaporanTerlambatKembali.Show()
+        Me.Close()
+    End Sub
 End Class

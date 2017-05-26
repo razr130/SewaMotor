@@ -48,18 +48,11 @@ Partial Class FormDetailMotor
         Me.txthiddenharga = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbJaminan = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.katalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.groupBox1.SuspendLayout()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -323,10 +316,19 @@ Partial Class FormDetailMotor
         Me.cbJaminan.Size = New System.Drawing.Size(77, 23)
         Me.cbJaminan.TabIndex = 21
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(278, 170)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(63, 15)
+        Me.Label10.TabIndex = 13
+        Me.Label10.Text = "Total Harga"
+        '
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.katalogToolStripMenuItem, Me.logOutToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(488, 24)
@@ -357,63 +359,6 @@ Partial Class FormDetailMotor
         Me.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem"
         Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.logOutToolStripMenuItem.Text = "Logout"
-        '
-        'ToolsToolStripMenuItem
-        '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
-        Me.ToolsToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
-        Me.ToolsToolStripMenuItem.Text = "Tools"
-        '
-        'ListPelangganToolStripMenuItem
-        '
-        Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
-        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
-        '
-        'ListKaryawanToolStripMenuItem
-        '
-        Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
-        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
-        '
-        'ListOrderToolStripMenuItem
-        '
-        Me.ListOrderToolStripMenuItem.Name = "ListOrderToolStripMenuItem"
-        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.ListOrderToolStripMenuItem.Text = "List Order"
-        '
-        'ReportToolStripMenuItem
-        '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem})
-        Me.ReportToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReportToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
-        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.ReportToolStripMenuItem.Text = "Report"
-        '
-        'LaporanPenyewaanToolStripMenuItem
-        '
-        Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
-        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
-        '
-        'LaporanStatusMotorToolStripMenuItem
-        '
-        Me.LaporanStatusMotorToolStripMenuItem.Name = "LaporanStatusMotorToolStripMenuItem"
-        Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(278, 170)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(63, 15)
-        Me.Label10.TabIndex = 13
-        Me.Label10.Text = "Total Harga"
         '
         'FormDetailMotor
         '
@@ -465,13 +410,6 @@ Partial Class FormDetailMotor
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents katalogToolStripMenuItem As ToolStripMenuItem
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
     Private WithEvents cbJaminan As ComboBox
     Private WithEvents Label10 As Label
 End Class

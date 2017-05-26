@@ -29,4 +29,8 @@
         Next
         ReportViewer1.RefreshReport()
     End Sub
+
+    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click
+        Me.Close()
+    End Sub
 End Class

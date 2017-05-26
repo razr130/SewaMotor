@@ -9,9 +9,9 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewNotaPeminjamanTableAdapter" GeneratorDataComponentClassName="ViewNotaPeminjamanTableAdapter" Name="ViewNotaPeminjaman" UserDataComponentName="ViewNotaPeminjamanTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="StrConn (MySettings)" DbObjectName="SewaMotor.dbo.ViewNotaPeminjaman" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="StrConn (MySettings)" DbObjectName="SewaMotor.dbo.ViewNotaPeminjaman" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT no_detalil, no_order, id, namaPelanggan, no_ktp, id_motor, plat, jenis, merek, tgl_sewa, tgl_kembali, id_karyawan, namaKaryawan, total_harga FROM dbo.ViewNotaPeminjaman</CommandText>
                     <Parameters />
                   </DbCommand>

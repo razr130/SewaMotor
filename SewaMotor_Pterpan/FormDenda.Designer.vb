@@ -34,6 +34,7 @@ Partial Class FormDenda
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnOK = New System.Windows.Forms.Button()
+        Me.txtfinal = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -131,6 +132,7 @@ Partial Class FormDenda
         Me.GroupBox1.Controls.Add(Me.cbDenda)
         Me.GroupBox1.Controls.Add(Me.btnOK)
         Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.txtfinal)
         Me.GroupBox1.Controls.Add(Me.txtJumlahDenda)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -147,12 +149,19 @@ Partial Class FormDenda
         Me.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnOK.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOK.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnOK.Location = New System.Drawing.Point(28, 118)
+        Me.btnOK.Location = New System.Drawing.Point(28, 142)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(138, 39)
         Me.btnOK.TabIndex = 10
         Me.btnOK.Text = "OK"
         Me.btnOK.UseVisualStyleBackColor = False
+        '
+        'txtfinal
+        '
+        Me.txtfinal.Location = New System.Drawing.Point(64, 124)
+        Me.txtfinal.Name = "txtfinal"
+        Me.txtfinal.Size = New System.Drawing.Size(85, 20)
+        Me.txtfinal.TabIndex = 18
         '
         'FormDenda
         '
@@ -189,4 +198,5 @@ Partial Class FormDenda
     Friend WithEvents Label4 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnOK As Button
+    Friend WithEvents txtfinal As TextBox
 End Class

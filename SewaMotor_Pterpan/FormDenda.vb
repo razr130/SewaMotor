@@ -20,6 +20,8 @@ Public Class FormDenda
     Public hargatotal2 As Integer
     Public hargatotal3 As Integer
     Public hargatotal4 As Integer
+    Public hargadendafinal As Integer
+    Public hargatotalfinal As Integer
     Public harga1 As Integer
     Public price As Integer
     Dim dr As SqlDataReader
@@ -60,6 +62,14 @@ Public Class FormDenda
         date1 = tgl
         iddetail = nodetail
         price = harga
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    Public Sub New()
+
+        ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
@@ -117,14 +127,16 @@ Public Class FormDenda
             hargatotal3 = pesan.getBS.Current("total_denda")
             hargatotal4 = pesan.getBS.Current("total_harga")
             MsgBox(hargatotal3.ToString & " " & hargatotal4.ToString)
-            hargatotal += hargatotal3
-            hargatotal4 += hargatotal
-            hargatotal2 += hargatotal4
+            hargadendafinal = hargatotal3 + hargatotal
+            hargatotalfinal = hargatotal2 + hargadendafinal
 
-            pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargatotal & ", total_harga=" & hargatotal2 & " WHERE no_order=" & idsementara, "")
+            pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargadendafinal & ", total_harga=" & hargatotalfinal & " WHERE no_order=" & idsementara, "")
 
         End If
-        Me.Close()
+        txtfinal.Text = hargatotal2.ToString
+
+        FormDetailKembali.ambilharga()
+        'Me.Close()
 
 
 

@@ -60,6 +60,7 @@
             dgvMotor.Columns(4).Visible = False
         End If
         Me.dgvMotor.Columns(7).DefaultCellStyle.Format = "c"
+
         dgvMotor.Columns.Add("Status", "Status")
 
         For baris As Integer = 0 To dgvMotor.Rows.Count - 1

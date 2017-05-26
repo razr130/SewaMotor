@@ -44,16 +44,22 @@ Partial Class FormDetailKembali
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtFinalPrice = New System.Windows.Forms.TextBox()
         CType(Me.gdvKembali, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gdvKembali
         '
+        Me.gdvKembali.AllowUserToAddRows = False
+        Me.gdvKembali.AllowUserToDeleteRows = False
         Me.gdvKembali.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gdvKembali.Location = New System.Drawing.Point(12, 161)
+        Me.gdvKembali.Location = New System.Drawing.Point(14, 128)
         Me.gdvKembali.Name = "gdvKembali"
-        Me.gdvKembali.Size = New System.Drawing.Size(434, 171)
+        Me.gdvKembali.ReadOnly = True
+        Me.gdvKembali.Size = New System.Drawing.Size(434, 148)
         Me.gdvKembali.TabIndex = 5
         '
         'txtNoOrder
@@ -67,7 +73,7 @@ Partial Class FormDetailKembali
         'txtNamaCustomer
         '
         Me.txtNamaCustomer.Enabled = False
-        Me.txtNamaCustomer.Location = New System.Drawing.Point(14, 123)
+        Me.txtNamaCustomer.Location = New System.Drawing.Point(84, 67)
         Me.txtNamaCustomer.Name = "txtNamaCustomer"
         Me.txtNamaCustomer.Size = New System.Drawing.Size(115, 20)
         Me.txtNamaCustomer.TabIndex = 6
@@ -75,7 +81,7 @@ Partial Class FormDetailKembali
         'txtNamaKaryawan
         '
         Me.txtNamaKaryawan.Enabled = False
-        Me.txtNamaKaryawan.Location = New System.Drawing.Point(157, 123)
+        Me.txtNamaKaryawan.Location = New System.Drawing.Point(227, 67)
         Me.txtNamaKaryawan.Name = "txtNamaKaryawan"
         Me.txtNamaKaryawan.Size = New System.Drawing.Size(115, 20)
         Me.txtNamaKaryawan.TabIndex = 6
@@ -94,7 +100,7 @@ Partial Class FormDetailKembali
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 103)
+        Me.Label2.Location = New System.Drawing.Point(82, 47)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(99, 15)
         Me.Label2.TabIndex = 7
@@ -104,7 +110,7 @@ Partial Class FormDetailKembali
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(154, 103)
+        Me.Label3.Location = New System.Drawing.Point(224, 47)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(95, 15)
         Me.Label3.TabIndex = 7
@@ -113,7 +119,7 @@ Partial Class FormDetailKembali
         'txtHargaSewa
         '
         Me.txtHargaSewa.Enabled = False
-        Me.txtHargaSewa.Location = New System.Drawing.Point(151, 351)
+        Me.txtHargaSewa.Location = New System.Drawing.Point(145, 292)
         Me.txtHargaSewa.Name = "txtHargaSewa"
         Me.txtHargaSewa.Size = New System.Drawing.Size(121, 20)
         Me.txtHargaSewa.TabIndex = 8
@@ -122,11 +128,11 @@ Partial Class FormDetailKembali
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(18, 354)
+        Me.Label10.Location = New System.Drawing.Point(20, 294)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(131, 15)
+        Me.Label10.Size = New System.Drawing.Size(125, 15)
         Me.Label10.TabIndex = 7
-        Me.Label10.Text = "Harga Sewa Seluruhnya : "
+        Me.Label10.Text = "Harga Sewa Awal         : "
         '
         'btnSimpan
         '
@@ -134,7 +140,7 @@ Partial Class FormDetailKembali
         Me.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSimpan.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSimpan.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSimpan.Location = New System.Drawing.Point(127, 392)
+        Me.btnSimpan.Location = New System.Drawing.Point(146, 362)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 10
@@ -147,7 +153,7 @@ Partial Class FormDetailKembali
         Me.btnSelesai.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSelesai.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSelesai.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSelesai.Location = New System.Drawing.Point(208, 392)
+        Me.btnSelesai.Location = New System.Drawing.Point(227, 362)
         Me.btnSelesai.Name = "btnSelesai"
         Me.btnSelesai.Size = New System.Drawing.Size(75, 23)
         Me.btnSelesai.TabIndex = 10
@@ -235,17 +241,48 @@ Partial Class FormDetailKembali
         Me.LaporanKeterlambatanMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
         Me.LaporanKeterlambatanMotorToolStripMenuItem.Text = "Laporan Keterlambatan Motor"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Franklin Gothic Demi", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(12, 100)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(169, 21)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Motor yang dipinjam : "
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(20, 320)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(125, 15)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "Harga Setelah Denda   : "
+        '
+        'txtFinalPrice
+        '
+        Me.txtFinalPrice.Enabled = False
+        Me.txtFinalPrice.Location = New System.Drawing.Point(145, 318)
+        Me.txtFinalPrice.Name = "txtFinalPrice"
+        Me.txtFinalPrice.Size = New System.Drawing.Size(121, 20)
+        Me.txtFinalPrice.TabIndex = 8
+        '
         'FormDetailKembali
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(456, 428)
+        Me.ClientSize = New System.Drawing.Size(456, 399)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.btnSelesai)
         Me.Controls.Add(Me.btnSimpan)
+        Me.Controls.Add(Me.txtFinalPrice)
         Me.Controls.Add(Me.txtHargaSewa)
         Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
@@ -285,4 +322,7 @@ Partial Class FormDetailKembali
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanKeterlambatanMotorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtFinalPrice As TextBox
 End Class

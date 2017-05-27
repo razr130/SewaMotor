@@ -221,7 +221,7 @@
 
 
                         Else
-                            'MsgBox("nambah baru")
+
                             idorder = pesan.getBS.Current("no_order")
                             If cbWaktu.SelectedItem = "Hari" Then
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))

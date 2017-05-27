@@ -1,6 +1,6 @@
 ﻿
 Imports System.Data.SqlClient
-Imports GlobalVariables
+
 Public Class FormLogin
     Private user As New Tabel("Pelanggan")
 

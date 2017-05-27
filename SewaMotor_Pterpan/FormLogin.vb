@@ -41,11 +41,7 @@ Public Class FormLogin
             Return
         End If
 
-
-
-
         SendKeys.Send("{ENTER}")
-
 
     End Sub
 

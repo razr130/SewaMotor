@@ -69,7 +69,7 @@ Public Class FormDetailKembali
     Private Sub gdvKembali_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gdvKembali.CellMouseDoubleClick
         'Me.Height = 691
 
-        Dim denda As New FormDenda(noorder, gdvKembali.Item(5, gdvKembali.CurrentRow.Index).Value, gdvKembali.Item(1, gdvKembali.CurrentRow.Index).Value, Integer.Parse(txtHargaSewa.Text))
+        Dim denda As New FormDenda(noorder, gdvKembali.Item(5, gdvKembali.CurrentRow.Index).Value, gdvKembali.Item(1, gdvKembali.CurrentRow.Index).Value, harga1)
         denda.Show()
         Me.Close()
 
@@ -82,7 +82,7 @@ Public Class FormDetailKembali
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
 
         motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & gdvKembali.Item(8, gdvKembali.CurrentRow.Index).Value, "")
-
+        MsgBox("Motor " & gdvKembali.Item(2, gdvKembali.CurrentRow.Index).Value) & " sudah berhasil dikembalikan")
     End Sub
 
     Private Sub ListPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListPelangganToolStripMenuItem.Click

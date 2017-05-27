@@ -126,7 +126,11 @@
             ElseIf cbWaktu.SelectedItem = "Tahun" Then
                 txtHarga.Text = harga * Integer.Parse(txtWaktu.Text) * 365
             End If
+            Dim haha As Integer
+            haha = Integer.Parse(txtHarga.Text)
+            txtHarga.Text = FormatCurrency(haha)
         End If
+
     End Sub
 
     Private Sub btnFirst_Click(sender As Object, e As EventArgs) Handles btnFirst.Click
@@ -187,10 +191,10 @@
             End If
 
             Dim ada, adaorder, adakaryawanhari, adakaryawansesi As Integer
-            ada = customer.getBS.Find("email", nama)
+            ada = customer.getBS.Find("email", GlobalVariables.UserName)
             adakaryawanhari = karyawan.getBS.Find("hari_kerja", hari)
             adakaryawansesi = karyawan.getBS.Find("sesi_kerja", sesi)
-            customer.getBS.Filter = "email='" & nama & "'"
+            customer.getBS.Filter = "email='" & GlobalVariables.UserName & "'"
             karyawan.getBS.Filter = "hari_kerja='" & hari & "' AND sesi_kerja=" & sesi
             If adakaryawanhari >= 0 Then
                 If adakaryawansesi >= 0 Then
@@ -201,7 +205,7 @@
                         adaorder = pesan.getBS.Find("tgl_order", tanggal.Date.ToString("yyyy-MM-dd"))
                         'MsgBox("Index adaorder : " & adaorder.ToString)
                         If adaorder < 0 Then
-                            'MsgBox("bikin baru")
+                            MsgBox("bikin baru")
 
                             id_karyawan = karyawan.getBS.Current("id_karyawan")
                             pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
@@ -221,7 +225,7 @@
 
 
                         Else
-
+                            MsgBox("tambah detail")
                             idorder = pesan.getBS.Current("no_order")
                             If cbWaktu.SelectedItem = "Hari" Then
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))

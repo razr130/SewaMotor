@@ -24,6 +24,8 @@ Public Class FormDenda
     Public hargatotalfinal As Integer
     Public harga1 As Integer
     Public price As Integer
+    Public jumlah As Integer
+    Public jumlah2 As Integer
     Dim dr As SqlDataReader
 
 
@@ -78,7 +80,7 @@ Public Class FormDenda
 
     Private Sub FormDenda_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'MsgBox(date1.Date.ToString("yyyy-MM-dd"))
-        kembali.getBS.Filter = "no_order=" & idsementara
+        kembali.getBS.Filter = "no_order=" & GlobalVariables.NoNota
         binddetail()
     End Sub
 
@@ -103,7 +105,7 @@ Public Class FormDenda
     End Sub
 
     Private Sub btnOK_Click_1(sender As Object, e As EventArgs) Handles btnOK.Click
-        Dim ada As Integer
+        Dim ada, adadenda As Integer
         Dim kembali As New FormDetailKembali
         ada = denda.getBS.Find("nama_denda", cbDenda.SelectedItem)
         If ada >= 0 Then
@@ -113,32 +115,37 @@ Public Class FormDenda
             id = denda.getBS.Current("id_denda")
         Else
         End If
-        denda.isiDataTable("INSERT INTO jenis_denda(no_detail,id_denda,jumlah) VALUES(" & iddetail & "," & id & "," & txtJumlahDenda.Text & ")", "Informasi denda ditambah")
+        jenis_denda.getBS.Filter = "id_denda=" & id
+        adadenda = jenis_denda.getBS.Find("no_detail", iddetail)
+        jumlah = jenis_denda.getBS.Current("jumlah")
+        MsgBox(jumlah.ToString)
+        If adadenda >= 0 Then
+            jumlah2 = jumlah + Integer.Parse(txtJumlahDenda.Text)
+            denda.isiDataTable("UPDATE jenis_denda SET jumlah=" & jumlah2 & " WHERE id_denda=" & id & " AND no_detail=" & iddetail, "Informasi denda ditambah")
+
+        Else
+            denda.isiDataTable("INSERT INTO jenis_denda(no_detail,id_denda,jumlah) VALUES(" & iddetail & "," & id & "," & txtJumlahDenda.Text & ")", "Informasi denda ditambah")
+
+        End If
         hargatotal = harga1 * Integer.Parse(txtJumlahDenda.Text)
-        'MsgBox("harga denda : " & harga1.ToString)
         hargatotal2 = hargatotal + price
-        'MsgBox("harga total : " & hargatotal2.ToString)
 
         detail.isiDataTable("UPDATE Oder_Detail SET tgl_pengembalian='" & tanggal.Date.ToString("yyyy-MM-dd") & "' WHERE no_detalil=" & iddetail, "")
         pesan.getBS.Filter = "no_order=" & idsementara
         If pesan.getBS.Current("total_denda") = 0 Then
-            'MsgBox("bikin denda baru")
+
             pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargatotal & ", total_harga=" & hargatotal2 & " WHERE no_order=" & idsementara, "")
         Else
-            'MsgBox("nambah denda")
+
             hargatotal3 = pesan.getBS.Current("total_denda")
-            'hargatotal4 = pesan.getBS.Current("total_harga")
-            'MsgBox(hargatotal3.ToString & " " & hargatotal4.ToString)
             hargadendafinal = hargatotal3 + hargatotal
             hargatotalfinal = price + hargatotal
-            'MsgBox(" = " & hargatotal3.ToString & " + " & hargatotal.ToString)
-            'MsgBox(" = " & price.ToString & " + " & hargatotal.ToString)
+
             pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargadendafinal & ", total_harga=" & hargatotalfinal & " WHERE no_order=" & idsementara, "")
 
         End If
-        'txtfinal.Text = hargatotal2.ToString
+
         FormDetailKembali.Show()
-        'FormDetailKembali.ambilharga()
         Me.Close()
 
 

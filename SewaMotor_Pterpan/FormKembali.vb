@@ -8,7 +8,7 @@
             Dim detail As New FormDetailKembali
             detail.noorder = txtNoNota.Text
             nonota = Integer.Parse(txtNoNota.Text)
-            MsgBox(nonota.ToString)
+            'MsgBox(nonota.ToString)
             GlobalVariables.NoNota = nonota
             detail.Show()
             Me.Close()

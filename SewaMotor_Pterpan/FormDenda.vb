@@ -118,7 +118,7 @@ Public Class FormDenda
         jenis_denda.getBS.Filter = "id_denda=" & id
         adadenda = jenis_denda.getBS.Find("no_detail", iddetail)
         jumlah = jenis_denda.getBS.Current("jumlah")
-        MsgBox(jumlah.ToString)
+        'MsgBox(jumlah.ToString)
         If adadenda >= 0 Then
             jumlah2 = jumlah + Integer.Parse(txtJumlahDenda.Text)
             denda.isiDataTable("UPDATE jenis_denda SET jumlah=" & jumlah2 & " WHERE id_denda=" & id & " AND no_detail=" & iddetail, "Informasi denda ditambah")

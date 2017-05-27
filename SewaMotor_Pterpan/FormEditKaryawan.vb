@@ -61,7 +61,7 @@
         unBind()
         txtEmail.DataBindings.Add("text", edit.getBS(), "email")
         txtPass.DataBindings.Add("text", edit.getBS(), "password")
-        txtNama.DataBindings.Add("text", edit.getBS(), "nama")
+        txtNama.DataBindings.Add("text", edit.getBS(), "namaKaryawan")
         txtAlamat.DataBindings.Add("text", edit.getBS(), "alamat")
         txtNoTelp.DataBindings.Add("text", edit.getBS(), "no_telp")
         cbHariKerja.DataBindings.Add("text", edit.getBS(), "hari_kerja")

@@ -45,7 +45,7 @@
         txtIdPelanggan.DataBindings.Add("text", edit.getBS(), "id")
         txtEmail.DataBindings.Add("text", edit.getBS(), "email")
         txtPass.DataBindings.Add("text", edit.getBS(), "password")
-        txtNama.DataBindings.Add("text", edit.getBS(), "nama")
+        txtNama.DataBindings.Add("text", edit.getBS(), "namaPelanggan")
         txtNoKTP.DataBindings.Add("text", edit.getBS(), "no_ktp")
         DtTglLahir.DataBindings.Add("text", edit.getBS(), "ttl")
         txtAlamat.DataBindings.Add("text", edit.getBS(), "alamat")

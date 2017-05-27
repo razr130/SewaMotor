@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="StrConn (MySettings)" DbObjectName="SewaMotor.dbo.ViewNotaPeminjaman" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT no_detalil, no_order, id, namaPelanggan, no_ktp, id_motor, plat, jenis, merek, tgl_sewa, tgl_kembali, id_karyawan, namaKaryawan, total_harga FROM dbo.ViewNotaPeminjaman</CommandText>
+                    <CommandText>SELECT * FROM dbo.ViewNotaPeminjaman</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -32,6 +32,7 @@
               <Mapping SourceColumn="tgl_kembali" DataSetColumn="tgl_kembali" />
               <Mapping SourceColumn="id_karyawan" DataSetColumn="id_karyawan" />
               <Mapping SourceColumn="namaKaryawan" DataSetColumn="namaKaryawan" />
+              <Mapping SourceColumn="harga" DataSetColumn="harga" />
               <Mapping SourceColumn="total_harga" DataSetColumn="total_harga" />
             </Mappings>
             <Sources />
@@ -44,7 +45,7 @@
   <xs:element name="InvoiceSewaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="InvoiceSewaDataSet" msprop:Generator_UserDSName="InvoiceSewaDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ViewNotaPeminjaman" msprop:Generator_TableClassName="ViewNotaPeminjamanDataTable" msprop:Generator_TableVarName="tableViewNotaPeminjaman" msprop:Generator_TablePropName="ViewNotaPeminjaman" msprop:Generator_RowDeletingName="ViewNotaPeminjamanRowDeleting" msprop:Generator_RowChangingName="ViewNotaPeminjamanRowChanging" msprop:Generator_RowEvHandlerName="ViewNotaPeminjamanRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewNotaPeminjamanRowDeleted" msprop:Generator_UserTableName="ViewNotaPeminjaman" msprop:Generator_RowChangedName="ViewNotaPeminjamanRowChanged" msprop:Generator_RowEvArgName="ViewNotaPeminjamanRowChangeEvent" msprop:Generator_RowClassName="ViewNotaPeminjamanRow">
+        <xs:element name="ViewNotaPeminjaman" msprop:Generator_TableClassName="ViewNotaPeminjamanDataTable" msprop:Generator_TableVarName="tableViewNotaPeminjaman" msprop:Generator_RowChangedName="ViewNotaPeminjamanRowChanged" msprop:Generator_TablePropName="ViewNotaPeminjaman" msprop:Generator_RowDeletingName="ViewNotaPeminjamanRowDeleting" msprop:Generator_RowChangingName="ViewNotaPeminjamanRowChanging" msprop:Generator_RowEvHandlerName="ViewNotaPeminjamanRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewNotaPeminjamanRowDeleted" msprop:Generator_RowClassName="ViewNotaPeminjamanRow" msprop:Generator_UserTableName="ViewNotaPeminjaman" msprop:Generator_RowEvArgName="ViewNotaPeminjamanRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="no_detalil" msprop:Generator_ColumnVarNameInTable="columnno_detalil" msprop:Generator_ColumnPropNameInRow="no_detalil" msprop:Generator_ColumnPropNameInTable="no_detalilColumn" msprop:Generator_UserColumnName="no_detalil" type="xs:int" />
@@ -96,6 +97,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="harga" msprop:Generator_ColumnVarNameInTable="columnharga" msprop:Generator_ColumnPropNameInRow="harga" msprop:Generator_ColumnPropNameInTable="hargaColumn" msprop:Generator_UserColumnName="harga" type="xs:int" minOccurs="0" />
               <xs:element name="total_harga" msprop:Generator_ColumnVarNameInTable="columntotal_harga" msprop:Generator_ColumnPropNameInRow="total_harga" msprop:Generator_ColumnPropNameInTable="total_hargaColumn" msprop:Generator_UserColumnName="total_harga" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

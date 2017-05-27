@@ -82,7 +82,7 @@ Public Class FormDetailKembali
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
 
         motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & gdvKembali.Item(8, gdvKembali.CurrentRow.Index).Value, "")
-        MsgBox("Motor " & gdvKembali.Item(2, gdvKembali.CurrentRow.Index).Value) & " sudah berhasil dikembalikan")
+        MsgBox("Motor " & gdvKembali.Item(2, gdvKembali.CurrentRow.Index).Value & " sudah berhasil dikembalikan")
     End Sub
 
     Private Sub ListPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListPelangganToolStripMenuItem.Click

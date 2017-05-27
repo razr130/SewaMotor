@@ -313,6 +313,8 @@ Partial Public Class InvoiceSewaDataSet
         
         Private columntotal_harga As Global.System.Data.DataColumn
         
+        Private columntotal_denda As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -469,6 +471,14 @@ Partial Public Class InvoiceSewaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property total_dendaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotal_denda
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -505,9 +515,25 @@ Partial Public Class InvoiceSewaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddViewNotaPeminjamanRow(ByVal no_detalil As Integer, ByVal no_order As Integer, ByVal id As Integer, ByVal namaPelanggan As String, ByVal no_ktp As String, ByVal id_motor As Integer, ByVal plat As String, ByVal jenis As String, ByVal merek As String, ByVal tgl_sewa As Date, ByVal tgl_kembali As Date, ByVal id_karyawan As Integer, ByVal namaKaryawan As String, ByVal harga As Integer, ByVal total_harga As Integer) As ViewNotaPeminjamanRow
+        Public Overloads Function AddViewNotaPeminjamanRow( _
+                    ByVal no_detalil As Integer,  _
+                    ByVal no_order As Integer,  _
+                    ByVal id As Integer,  _
+                    ByVal namaPelanggan As String,  _
+                    ByVal no_ktp As String,  _
+                    ByVal id_motor As Integer,  _
+                    ByVal plat As String,  _
+                    ByVal jenis As String,  _
+                    ByVal merek As String,  _
+                    ByVal tgl_sewa As Date,  _
+                    ByVal tgl_kembali As Date,  _
+                    ByVal id_karyawan As Integer,  _
+                    ByVal namaKaryawan As String,  _
+                    ByVal harga As Integer,  _
+                    ByVal total_harga As Integer,  _
+                    ByVal total_denda As Integer) As ViewNotaPeminjamanRow
             Dim rowViewNotaPeminjamanRow As ViewNotaPeminjamanRow = CType(Me.NewRow,ViewNotaPeminjamanRow)
-            Dim columnValuesArray() As Object = New Object() {no_detalil, no_order, id, namaPelanggan, no_ktp, id_motor, plat, jenis, merek, tgl_sewa, tgl_kembali, id_karyawan, namaKaryawan, harga, total_harga}
+            Dim columnValuesArray() As Object = New Object() {no_detalil, no_order, id, namaPelanggan, no_ktp, id_motor, plat, jenis, merek, tgl_sewa, tgl_kembali, id_karyawan, namaKaryawan, harga, total_harga, total_denda}
             rowViewNotaPeminjamanRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowViewNotaPeminjamanRow)
             Return rowViewNotaPeminjamanRow
@@ -545,6 +571,7 @@ Partial Public Class InvoiceSewaDataSet
             Me.columnnamaKaryawan = MyBase.Columns("namaKaryawan")
             Me.columnharga = MyBase.Columns("harga")
             Me.columntotal_harga = MyBase.Columns("total_harga")
+            Me.columntotal_denda = MyBase.Columns("total_denda")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -580,6 +607,8 @@ Partial Public Class InvoiceSewaDataSet
             MyBase.Columns.Add(Me.columnharga)
             Me.columntotal_harga = New Global.System.Data.DataColumn("total_harga", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntotal_harga)
+            Me.columntotal_denda = New Global.System.Data.DataColumn("total_denda", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal_denda)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("ViewNotaPeminjamanKey1", New Global.System.Data.DataColumn() {Me.columnno_detalil}, false))
             Me.columnno_detalil.AllowDBNull = false
             Me.columnno_detalil.Unique = true
@@ -953,6 +982,21 @@ Partial Public Class InvoiceSewaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property total_denda() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableViewNotaPeminjaman.total_dendaColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total_denda' in table 'ViewNotaPeminjaman' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableViewNotaPeminjaman.total_dendaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsidNull() As Boolean
             Return Me.IsNull(Me.tableViewNotaPeminjaman.idColumn)
         End Function
@@ -1105,6 +1149,18 @@ Partial Public Class InvoiceSewaDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Settotal_hargaNull()
             Me(Me.tableViewNotaPeminjaman.total_hargaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Istotal_dendaNull() As Boolean
+            Return Me.IsNull(Me.tableViewNotaPeminjaman.total_dendaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Settotal_dendaNull()
+            Me(Me.tableViewNotaPeminjaman.total_dendaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1289,6 +1345,7 @@ Namespace InvoiceSewaDataSetTableAdapters
             tableMapping.ColumnMappings.Add("namaKaryawan", "namaKaryawan")
             tableMapping.ColumnMappings.Add("harga", "harga")
             tableMapping.ColumnMappings.Add("total_harga", "total_harga")
+            tableMapping.ColumnMappings.Add("total_denda", "total_denda")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         

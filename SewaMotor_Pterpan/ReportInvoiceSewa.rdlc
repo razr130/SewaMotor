@@ -710,7 +710,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Rp " &amp; Fields!total_harga.Value</Value>
+                <Value>="Rp " &amp; (Fields!total_harga.Value - Fields!total_denda.Value)</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1046,6 +1046,10 @@
         </Field>
         <Field Name="total_harga">
           <DataField>total_harga</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="total_denda">
+          <DataField>total_denda</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>

@@ -34,6 +34,7 @@
               <Mapping SourceColumn="namaKaryawan" DataSetColumn="namaKaryawan" />
               <Mapping SourceColumn="harga" DataSetColumn="harga" />
               <Mapping SourceColumn="total_harga" DataSetColumn="total_harga" />
+              <Mapping SourceColumn="total_denda" DataSetColumn="total_denda" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -99,6 +100,7 @@
               </xs:element>
               <xs:element name="harga" msprop:Generator_ColumnVarNameInTable="columnharga" msprop:Generator_ColumnPropNameInRow="harga" msprop:Generator_ColumnPropNameInTable="hargaColumn" msprop:Generator_UserColumnName="harga" type="xs:int" minOccurs="0" />
               <xs:element name="total_harga" msprop:Generator_ColumnVarNameInTable="columntotal_harga" msprop:Generator_ColumnPropNameInRow="total_harga" msprop:Generator_ColumnPropNameInTable="total_hargaColumn" msprop:Generator_UserColumnName="total_harga" type="xs:int" minOccurs="0" />
+              <xs:element name="total_denda" msprop:Generator_ColumnVarNameInTable="columntotal_denda" msprop:Generator_ColumnPropNameInRow="total_denda" msprop:Generator_ColumnPropNameInTable="total_dendaColumn" msprop:Generator_UserColumnName="total_denda" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

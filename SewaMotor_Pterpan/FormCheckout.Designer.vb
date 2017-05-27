@@ -39,11 +39,12 @@ Partial Class FormCheckout
         'ReportViewer1
         '
         Me.ReportViewer1.AutoSize = True
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         ReportDataSource1.Name = "InvoiceSewaDataSet"
         ReportDataSource1.Value = Me.ViewNotaPeminjamanBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportInvoiceSewa.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(10, 27)
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ShowBackButton = False
         Me.ReportViewer1.ShowExportButton = False
@@ -53,7 +54,7 @@ Partial Class FormCheckout
         Me.ReportViewer1.ShowRefreshButton = False
         Me.ReportViewer1.ShowStopButton = False
         Me.ReportViewer1.ShowZoomControl = False
-        Me.ReportViewer1.Size = New System.Drawing.Size(711, 468)
+        Me.ReportViewer1.Size = New System.Drawing.Size(729, 507)
         Me.ReportViewer1.TabIndex = 38
         '
         'menuStrip1

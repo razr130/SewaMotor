@@ -710,7 +710,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!total_harga.Value</Value>
+                <Value>="Rp " &amp; Fields!total_harga.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -721,9 +721,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
         <Top>1.9659in</Top>
-        <Left>6.40761in</Left>
+        <Left>6.1472in</Left>
         <Height>0.25in</Height>
-        <Width>0.97222in</Width>
+        <Width>1.23263in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -753,9 +753,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
         <Top>1.9659in</Top>
-        <Left>5.37983in</Left>
+        <Left>5.22358in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>0.89584in</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>

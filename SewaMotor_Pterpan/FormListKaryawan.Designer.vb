@@ -254,6 +254,7 @@ Partial Class FormListKaryawan
         Me.Controls.Add(Me.groupDaftarPelanggan)
         Me.Controls.Add(Me.label2)
         Me.Name = "FormListKaryawan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormListKaryawan"
         Me.groupDaftarPelanggan.ResumeLayout(False)
         Me.groupDaftarPelanggan.PerformLayout()

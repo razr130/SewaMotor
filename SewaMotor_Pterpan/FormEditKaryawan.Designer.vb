@@ -348,6 +348,7 @@ Partial Class FormEditKaryawan
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupBox1)
         Me.Name = "FormEditKaryawan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormEditKaryawan"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()

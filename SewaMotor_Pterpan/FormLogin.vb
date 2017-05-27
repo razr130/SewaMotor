@@ -26,6 +26,7 @@ Public Class FormLogin
             Dim nama As New FormUtama()
             nama.username = txtUsername.Text
             GlobalVariables.UserName = txtUsername.Text
+            GlobalVariables.Role = 0
             nama.Show()
             Me.Visible = True
                 txtUsername.Text = ""

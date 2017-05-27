@@ -81,7 +81,7 @@
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
         Me.Close()
         Dim back As New FormListKaryawan()
-        back.ShowDialog()
+        back.Show()
 
     End Sub
 

@@ -42,12 +42,17 @@
     '/////BUTTON/////
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
         Edit()
+        Me.Close()
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Delete()
+        Dim kar As New FormListKaryawan
+        kar.Show()
+        Me.Close()
     End Sub
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         Add()
+        Me.Close()
     End Sub
 
     '/////TextBox/////
@@ -93,7 +98,7 @@
     Private Sub Edit()
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value
         Dim editkaryawan As New FormEditKaryawan(idKaryawan)
-        editkaryawan.ShowDialog()
+        editkaryawan.Show()
         dgvKaryawan.DataSource = karyawan.getBS()
     End Sub
     Private Sub Delete()

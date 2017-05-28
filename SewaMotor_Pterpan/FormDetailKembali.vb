@@ -18,6 +18,8 @@ Public Class FormDetailKembali
     Public harga1 As Integer
     Private id As Integer
     Dim dr As SqlDataReader
+    Private jumlahklik As Integer = 0
+    Private jumlahbaris As Integer
 
     Private _noorder As Integer
     Public Property noorder() As Integer
@@ -64,6 +66,7 @@ Public Class FormDetailKembali
 
         harga1 = Integer.Parse(txtHargaSewa.Text)
         txtHargaSewa.Text = FormatCurrency(harga1)
+        jumlahbaris = gdvKembali.RowCount
     End Sub
 
     Private Sub gdvKembali_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gdvKembali.CellMouseDoubleClick
@@ -83,6 +86,13 @@ Public Class FormDetailKembali
 
         motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & gdvKembali.Item(8, gdvKembali.CurrentRow.Index).Value, "")
         MsgBox("Motor " & gdvKembali.Item(2, gdvKembali.CurrentRow.Index).Value & " sudah berhasil dikembalikan")
+        jumlahklik += 1
+
+        If jumlahklik = jumlahbaris Then
+            btnSelesai.Enabled = True
+        ElseIf jumlahklik > jumlahbaris Then
+            MsgBox("Semua motor sudah dikembalikan")
+        End If
 
 
 

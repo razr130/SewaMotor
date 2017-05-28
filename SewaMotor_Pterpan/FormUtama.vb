@@ -170,14 +170,20 @@
 
     End Sub
     Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles logOutToolStripMenuItem.Click
-        Dim result As Integer = MessageBox.Show("Apakah anda sudah selesai bertransaksi ?", "Konfirmasi", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-            MsgBox("Silahkan menuju ke kasir untuk mencetak nota")
+        If GlobalVariables.Role > 0 Then
             FormLogin.Show()
             Me.Close()
         Else
+            Dim result As Integer = MessageBox.Show("Apakah anda sudah selesai bertransaksi ?", "Konfirmasi", MessageBoxButtons.YesNo)
+            If result = DialogResult.Yes Then
+                MsgBox("Silahkan menuju ke kasir untuk mencetak nota")
+                FormLogin.Show()
+                Me.Close()
+            Else
 
+            End If
         End If
+
 
     End Sub
 

@@ -148,16 +148,17 @@ Partial Class FormDetailKembali
         Me.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSimpan.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSimpan.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSimpan.Location = New System.Drawing.Point(146, 334)
+        Me.btnSimpan.Location = New System.Drawing.Point(103, 334)
         Me.btnSimpan.Name = "btnSimpan"
-        Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
+        Me.btnSimpan.Size = New System.Drawing.Size(118, 23)
         Me.btnSimpan.TabIndex = 10
-        Me.btnSimpan.Text = "Kembalikan"
+        Me.btnSimpan.Text = "Kembalikan Motor"
         Me.btnSimpan.UseVisualStyleBackColor = False
         '
         'btnSelesai
         '
         Me.btnSelesai.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnSelesai.Enabled = False
         Me.btnSelesai.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSelesai.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSelesai.ForeColor = System.Drawing.SystemColors.ControlLightLight

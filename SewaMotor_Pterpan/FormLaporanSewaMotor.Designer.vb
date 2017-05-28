@@ -27,7 +27,6 @@ Partial Class FormLaporanSewaMotor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLaporanSewaMotor))
         Me.Oder_DetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SewaMotorDataSource = New SewaMotor_Pterpan.SewaMotorDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,6 +38,7 @@ Partial Class FormLaporanSewaMotor
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Oder_DetailTableAdapter = New SewaMotor_Pterpan.SewaMotorDataSourceTableAdapters.Oder_DetailTableAdapter()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SewaMotorDataSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuStrip1.SuspendLayout()
@@ -53,25 +53,6 @@ Partial Class FormLaporanSewaMotor
         '
         Me.SewaMotorDataSource.DataSetName = "SewaMotorDataSource"
         Me.SewaMotorDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ReportViewer1
-        '
-        ReportDataSource1.Name = "OrderDetailDataSet"
-        ReportDataSource1.Value = Me.Oder_DetailBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportSewaMotor.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(12, 27)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ShowBackButton = False
-        Me.ReportViewer1.ShowContextMenu = False
-        Me.ReportViewer1.ShowExportButton = False
-        Me.ReportViewer1.ShowFindControls = False
-        Me.ReportViewer1.ShowPageNavigationControls = False
-        Me.ReportViewer1.ShowRefreshButton = False
-        Me.ReportViewer1.ShowStopButton = False
-        Me.ReportViewer1.ShowZoomControl = False
-        Me.ReportViewer1.Size = New System.Drawing.Size(861, 296)
-        Me.ReportViewer1.TabIndex = 0
         '
         'menuStrip1
         '
@@ -152,6 +133,25 @@ Partial Class FormLaporanSewaMotor
         '
         Me.Oder_DetailTableAdapter.ClearBeforeFill = True
         '
+        'ReportViewer1
+        '
+        ReportDataSource1.Name = "OrderDetailDataSet"
+        ReportDataSource1.Value = Me.Oder_DetailBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportSewaMotor.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(12, 27)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ShowBackButton = False
+        Me.ReportViewer1.ShowContextMenu = False
+        Me.ReportViewer1.ShowExportButton = False
+        Me.ReportViewer1.ShowFindControls = False
+        Me.ReportViewer1.ShowPageNavigationControls = False
+        Me.ReportViewer1.ShowRefreshButton = False
+        Me.ReportViewer1.ShowStopButton = False
+        Me.ReportViewer1.ShowZoomControl = False
+        Me.ReportViewer1.Size = New System.Drawing.Size(861, 296)
+        Me.ReportViewer1.TabIndex = 0
+        '
         'FormLaporanSewaMotor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -181,8 +181,8 @@ Partial Class FormLaporanSewaMotor
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents Oder_DetailBindingSource As BindingSource
     Friend WithEvents SewaMotorDataSource As SewaMotorDataSource
     Friend WithEvents Oder_DetailTableAdapter As SewaMotorDataSourceTableAdapters.Oder_DetailTableAdapter
+    Private WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
 End Class

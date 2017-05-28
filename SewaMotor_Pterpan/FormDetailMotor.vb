@@ -194,10 +194,12 @@
             Dim ada, adaorder, adakaryawanhari, adakaryawansesi As Integer
             ada = customer.getBS.Find("email", GlobalVariables.UserName)
             adakaryawanhari = karyawan.getBS.Find("hari_kerja", hari)
-            adakaryawansesi = karyawan.getBS.Find("sesi_kerja", sesi)
+
             customer.getBS.Filter = "email='" & GlobalVariables.UserName & "'"
             karyawan.getBS.Filter = "hari_kerja='" & hari & "' AND sesi_kerja=" & sesi
             If adakaryawanhari >= 0 Then
+                karyawan.getBS.Filter = "hari_kerja='" & hari & "'"
+                adakaryawansesi = karyawan.getBS.Find("sesi_kerja", sesi)
                 If adakaryawansesi >= 0 Then
                     If ada >= 0 Then
                         id = customer.getBS.Current("id")

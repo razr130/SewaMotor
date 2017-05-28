@@ -22,7 +22,7 @@ Partial Class FormUtama
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUtama))
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,9 +43,9 @@ Partial Class FormUtama
         Me.dgvMotor = New System.Windows.Forms.DataGridView()
         Me.lblHalo = New System.Windows.Forms.Label()
         Me.btnPengembalian = New System.Windows.Forms.Button()
-        Me.btnDenda = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ListDendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,7 +80,7 @@ Partial Class FormUtama
         '
         'ToolsToolStripMenuItem
         '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem, Me.ListDendaToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
@@ -199,14 +199,14 @@ Partial Class FormUtama
         Me.dgvMotor.AllowUserToAddRows = False
         Me.dgvMotor.AllowUserToDeleteRows = False
         Me.dgvMotor.AllowUserToOrderColumns = True
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvMotor.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvMotor.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvMotor.Location = New System.Drawing.Point(12, 207)
         Me.dgvMotor.Name = "dgvMotor"
@@ -231,27 +231,13 @@ Partial Class FormUtama
         Me.btnPengembalian.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPengembalian.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPengembalian.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnPengembalian.Location = New System.Drawing.Point(255, 423)
+        Me.btnPengembalian.Location = New System.Drawing.Point(236, 462)
         Me.btnPengembalian.Name = "btnPengembalian"
         Me.btnPengembalian.Size = New System.Drawing.Size(115, 23)
         Me.btnPengembalian.TabIndex = 14
         Me.btnPengembalian.Text = "Pengembalian"
         Me.btnPengembalian.UseVisualStyleBackColor = False
         Me.btnPengembalian.Visible = False
-        '
-        'btnDenda
-        '
-        Me.btnDenda.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnDenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDenda.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDenda.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDenda.Location = New System.Drawing.Point(376, 423)
-        Me.btnDenda.Name = "btnDenda"
-        Me.btnDenda.Size = New System.Drawing.Size(85, 23)
-        Me.btnDenda.TabIndex = 14
-        Me.btnDenda.Text = "Denda"
-        Me.btnDenda.UseVisualStyleBackColor = False
-        Me.btnDenda.Visible = False
         '
         'PictureBox1
         '
@@ -268,19 +254,24 @@ Partial Class FormUtama
         Me.GroupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(7, 174)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(554, 241)
+        Me.GroupBox1.Size = New System.Drawing.Size(554, 278)
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pilih Motor"
+        '
+        'ListDendaToolStripMenuItem
+        '
+        Me.ListDendaToolStripMenuItem.Name = "ListDendaToolStripMenuItem"
+        Me.ListDendaToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.ListDendaToolStripMenuItem.Text = "List Denda"
         '
         'FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(572, 465)
+        Me.ClientSize = New System.Drawing.Size(572, 496)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.btnDenda)
         Me.Controls.Add(Me.btnPengembalian)
         Me.Controls.Add(Me.lblHalo)
         Me.Controls.Add(Me.txtCari)
@@ -321,9 +312,9 @@ Partial Class FormUtama
     Public WithEvents dgvMotor As DataGridView
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents btnDenda As Button
     Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents LaporanKeterlambatanMotorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListDendaToolStripMenuItem As ToolStripMenuItem
 End Class

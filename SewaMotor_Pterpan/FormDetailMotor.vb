@@ -206,7 +206,7 @@
                         adaorder = pesan.getBS.Find("tgl_order", tanggal.Date.ToString("yyyy-MM-dd"))
                         'MsgBox("Index adaorder : " & adaorder.ToString)
                         If adaorder < 0 Then
-                            MsgBox("bikin baru")
+                            'MsgBox("bikin baru")
 
                             id_karyawan = karyawan.getBS.Current("id_karyawan")
                             pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
@@ -226,7 +226,7 @@
 
                             MsgBox("Motor merek " & merek & " telah berhasil disewa")
                         Else
-                            MsgBox("tambah detail")
+                            'MsgBox("tambah detail")
                             idorder = pesan.getBS.Current("no_order")
                             If cbWaktu.SelectedItem = "Hari" Then
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))

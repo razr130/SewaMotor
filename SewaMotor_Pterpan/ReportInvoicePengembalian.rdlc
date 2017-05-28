@@ -1125,10 +1125,10 @@
         <DataSetName>DendaDataSet</DataSetName>
         <Filters>
           <Filter>
-            <FilterExpression>=Fields!id_motor.Value</FilterExpression>
+            <FilterExpression>=Fields!no_order.Value</FilterExpression>
             <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue>=Parameters!paraIdMotor.Value</FilterValue>
+              <FilterValue>=Parameters!paraNomorOrder.Value</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
@@ -1707,6 +1707,10 @@
         </Field>
         <Field Name="id_motor">
           <DataField>id_motor</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="no_order">
+          <DataField>no_order</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>

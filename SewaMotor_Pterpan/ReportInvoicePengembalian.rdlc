@@ -2,27 +2,6 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Line Name="Line1">
-        <Left>0.23958in</Left>
-        <Height>0in</Height>
-        <Width>7.73958in</Width>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Line Name="Line2">
-        <Top>0.02778in</Top>
-        <Height>0in</Height>
-        <Width>9.01041in</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
       <Textbox Name="Textbox10">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -38,11 +17,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>0.4302in</Top>
-        <Left>0.47705in</Left>
+        <Top>0.26861in</Top>
+        <Left>0.4618in</Left>
         <Height>0.25in</Height>
         <Width>1.15625in</Width>
-        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -70,11 +48,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>0.4302in</Top>
-        <Left>1.68886in</Left>
+        <Top>0.26861in</Top>
+        <Left>1.67361in</Left>
         <Height>0.25in</Height>
         <Width>3.52083in</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -100,11 +78,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>0.6802in</Top>
-        <Left>0.47705in</Left>
+        <Top>0.51861in</Top>
+        <Left>0.4618in</Left>
         <Height>0.25in</Height>
         <Width>1.14237in</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -132,11 +110,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>0.6802in</Top>
-        <Left>1.68886in</Left>
+        <Top>0.51861in</Top>
+        <Left>1.67361in</Left>
         <Height>0.25in</Height>
         <Width>1.14583in</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -692,11 +670,11 @@
             </FilterValues>
           </Filter>
         </Filters>
-        <Top>1.30742in</Top>
-        <Left>0.47705in</Left>
+        <Top>1.18526in</Top>
+        <Left>0.4375in</Left>
         <Height>0.5in</Height>
         <Width>6.90278in</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -710,7 +688,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Rp " &amp; (Fields!total_harga.Value)</Value>
+                <Value>="Rp " &amp; (Fields!total_harga.Value - Fields!total_denda.Value)</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -720,11 +698,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.9659in</Top>
-        <Left>6.1472in</Left>
+        <Top>2.44791in</Top>
+        <Left>6.10765in</Left>
         <Height>0.25in</Height>
         <Width>1.23263in</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -752,11 +730,41 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>1.9659in</Top>
-        <Left>5.22358in</Left>
+        <Top>2.44791in</Top>
+        <Left>5.18403in</Left>
         <Height>0.25in</Height>
         <Width>0.89584in</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox58">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Denda</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox58</rd:DefaultName>
+        <Top>1.9918in</Top>
+        <Left>5.20708in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -768,13 +776,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.02208in</Height>
+    <Height>3.71875in</Height>
     <Style />
   </Body>
-  <Width>9.01041in</Width>
+  <Width>9.01042in</Width>
   <Page>
     <PageHeader>
-      <Height>0.7402in</Height>
+      <Height>0.8507in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -785,7 +793,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>NOTA PEMINJAMAN</Value>
+                  <Value>NOTA PENGEMBALIAN</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -796,10 +804,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.16728in</Top>
-          <Left>6.60205in</Left>
+          <Top>0.20139in</Top>
+          <Left>6.34028in</Left>
           <Height>0.28125in</Height>
-          <Width>2.09375in</Width>
+          <Width>2.4375in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -832,8 +840,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.09089in</Top>
-          <Left>0.41802in</Left>
+          <Top>0.20139in</Top>
+          <Left>0.19792in</Left>
           <Height>0.38542in</Height>
           <Width>2.63542in</Width>
           <ZIndex>1</ZIndex>
@@ -869,8 +877,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.4902in</Top>
-          <Left>0.41802in</Left>
+          <Top>0.6007in</Top>
+          <Left>0.19792in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>2</ZIndex>
@@ -899,8 +907,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>0.4902in</Top>
-          <Left>6.58816in</Left>
+          <Top>0.6007in</Top>
+          <Left>6.32639in</Left>
           <Height>0.25in</Height>
           <Width>0.53125in</Width>
           <ZIndex>3</ZIndex>
@@ -933,8 +941,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>0.4902in</Top>
-          <Left>7.1333in</Left>
+          <Top>0.6007in</Top>
+          <Left>6.87153in</Left>
           <Height>0.25in</Height>
           <Width>1.5625in</Width>
           <ZIndex>4</ZIndex>
@@ -955,16 +963,6 @@
         </Border>
       </Style>
     </PageHeader>
-    <PageFooter>
-      <Height>1in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageFooter>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
@@ -972,111 +970,6 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="InvoiceSewaDataSet">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>8d4952ef-eefd-4aea-94dd-e983a3be3bb1</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="InvoiceSewaDataSet">
-      <Query>
-        <DataSourceName>InvoiceSewaDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="no_detalil">
-          <DataField>no_detalil</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="no_order">
-          <DataField>no_order</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="id">
-          <DataField>id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="namaPelanggan">
-          <DataField>namaPelanggan</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="no_ktp">
-          <DataField>no_ktp</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="id_motor">
-          <DataField>id_motor</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="plat">
-          <DataField>plat</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="jenis">
-          <DataField>jenis</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="merek">
-          <DataField>merek</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="tgl_sewa">
-          <DataField>tgl_sewa</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="tgl_kembali">
-          <DataField>tgl_kembali</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="id_karyawan">
-          <DataField>id_karyawan</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="namaKaryawan">
-          <DataField>namaKaryawan</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="harga">
-          <DataField>harga</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="total_harga">
-          <DataField>total_harga</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="total_denda">
-          <DataField>total_denda</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>InvoiceSewaDataSet</rd:DataSetName>
-        <rd:SchemaPath>E:\Task\UKDW\Semester 6\Pemrograman Terintegrasi Terapan\Program\SewaMotor\SewaMotor_Pterpan\InvoiceSewaDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>ViewNotaPeminjaman</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ViewNotaPeminjamanTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
-  <ReportParameters>
-    <ReportParameter Name="paraNomorKTP">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="paraNamaPelanggan">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="paraNomorOrder">
-      <DataType>Integer</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>f31ef4e8-09a6-4e28-807c-897c3d914d86</rd:ReportID>
+  <rd:ReportID>38a2fed7-214b-4ac8-995e-e6c1051a7907</rd:ReportID>
 </Report>

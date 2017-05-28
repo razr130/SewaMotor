@@ -390,6 +390,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportInvoicePengembalian.rdlc" />
     <EmbeddedResource Include="ReportInvoiceSewa.rdlc" />
     <EmbeddedResource Include="ReportTerlambatKembali.rdlc" />
     <EmbeddedResource Include="ReportSewaMotor.rdlc">

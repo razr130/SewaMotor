@@ -54,6 +54,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -88,6 +89,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -122,6 +124,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -156,6 +159,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -190,6 +194,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -224,6 +229,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -475,6 +481,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <VerticalAlign>Middle</VerticalAlign>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -619,7 +626,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.76264in</Top>
-        <Left>4.10937in</Left>
+        <Left>4.23784in</Left>
         <Height>0.25in</Height>
         <Width>0.53125in</Width>
         <ZIndex>2</ZIndex>
@@ -651,7 +658,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.76264in</Top>
-        <Left>5.40846in</Left>
+        <Left>5.53693in</Left>
         <Height>0.25in</Height>
         <Width>0.48264in</Width>
         <ZIndex>3</ZIndex>
@@ -681,7 +688,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>0.76264in</Top>
-        <Left>5.8911in</Left>
+        <Left>6.01957in</Left>
         <Height>0.25in</Height>
         <Width>0.57292in</Width>
         <ZIndex>4</ZIndex>
@@ -702,7 +709,18 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!FilterMonth.Value</Value>
+                <Value>=Switch(Parameters!FilterMonth.Value=1,"Januari",
+Parameters!FilterMonth.Value=2,"Februari",
+Parameters!FilterMonth.Value=3,"Maret",
+Parameters!FilterMonth.Value=4,"April",
+Parameters!FilterMonth.Value=5,"Mei",
+Parameters!FilterMonth.Value=6,"Juni",
+Parameters!FilterMonth.Value=7,"Juli",
+Parameters!FilterMonth.Value=8,"Agustus",
+Parameters!FilterMonth.Value=9,"September",
+Parameters!FilterMonth.Value=10,"Oktober",
+Parameters!FilterMonth.Value=11,"November",
+Parameters!FilterMonth.Value=12,"Desember")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -711,7 +729,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>0.76264in</Top>
-        <Left>4.65451in</Left>
+        <Left>4.78298in</Left>
         <Height>0.25in</Height>
         <Width>0.68451in</Width>
         <ZIndex>5</ZIndex>

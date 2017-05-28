@@ -83,6 +83,14 @@ Public Class FormDetailKembali
 
         motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & gdvKembali.Item(8, gdvKembali.CurrentRow.Index).Value, "")
         MsgBox("Motor " & gdvKembali.Item(2, gdvKembali.CurrentRow.Index).Value & " sudah berhasil dikembalikan")
+
+        'Panggil Invoice Pengembalian
+        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  namaPelanggan, no_ktp FROM ViewNotaPeminjaman WHERE no_order='" & GlobalVariables.NoNota & "'")
+        Dim namaPel = infoPelanggan.getBS.Current("namaPelanggan")
+        Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
+        Dim notaKembali As New FormCheckoutPengembalian(GlobalVariables.NoNota, namaPel, noKTP)
+        notaKembali.ShowDialog()
+
     End Sub
 
     Private Sub ListPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListPelangganToolStripMenuItem.Click

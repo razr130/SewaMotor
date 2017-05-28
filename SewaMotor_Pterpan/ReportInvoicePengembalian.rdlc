@@ -617,6 +617,7 @@
                               <Value>=(Fields!harga.Value)*(DateDiff(DateInterval.Day,Fields!tgl_sewa.Value,Fields!tgl_kembali.Value))</Value>
                               <Style>
                                 <FontFamily>BatangChe</FontFamily>
+                                <Format>'Rp'#,0;('Rp'#,0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -635,6 +636,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -692,8 +694,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Rp " &amp; (Fields!total_harga.Value - Fields!total_denda.Value)</Value>
-                <Style />
+                <Value>=(First(Fields!total_harga.Value,"InvoicePengembalianDataSet") - First(Fields!total_denda.Value,"InvoicePengembalianDataSet"))</Value>
+                <Style>
+                  <FontFamily>BatangChe</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Format>'Rp'#,0;('Rp'#,0)</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -715,6 +722,7 @@
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
         </Style>
       </Textbox>
       <Textbox Name="Textbox5">
@@ -725,7 +733,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Total Bayar:</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -782,7 +792,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>ID Motor</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -812,7 +824,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Jenis Denda</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -842,7 +856,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Harga</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -872,7 +888,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Jumlah</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -902,7 +920,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>SubTotal</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -937,10 +957,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!id_motor.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>BatangChe</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>id_motor1</rd:DefaultName>
@@ -967,7 +991,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!nama_denda.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>BatangChe</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -997,10 +1023,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!harga.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>BatangChe</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>harga1</rd:DefaultName>
@@ -1027,10 +1057,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!jumlah.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>BatangChe</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>jumlah</rd:DefaultName>
@@ -1056,11 +1090,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Fields!harga*Fields!jumlah)</Value>
-                              <Style />
+                              <Value>=(Fields!harga.Value*Fields!jumlah.Value)</Value>
+                              <Style>
+                                <FontFamily>BatangChe</FontFamily>
+                                <Format>'Rp'#,0;('Rp'#,0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox43</rd:DefaultName>
@@ -1073,6 +1112,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1129,7 +1169,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox31</rd:DefaultName>
-        <Top>1.85638in</Top>
+        <Top>1.8043in</Top>
         <Left>0.4618in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
@@ -1151,8 +1191,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Rp " &amp; (Fields!total_denda.Value)</Value>
-                <Style />
+                <Value>=First(Fields!total_denda.Value,"InvoicePengembalianDataSet")</Value>
+                <Style>
+                  <FontFamily>BatangChe</FontFamily>
+                  <Format>'Rp'#,0;('Rp'#,0)</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -1174,6 +1217,7 @@
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
         </Style>
       </Textbox>
       <Textbox Name="Textbox16">

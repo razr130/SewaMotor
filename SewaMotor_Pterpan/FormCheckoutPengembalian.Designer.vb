@@ -22,22 +22,58 @@ Partial Class FormCheckoutPengembalian
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.ViewDendaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DendaDataSource = New SewaMotor_Pterpan.DendaDataSource()
+        Me.ViewNotaPeminjamanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.InvoiceSewaDataSet = New SewaMotor_Pterpan.InvoiceSewaDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewDendaTableAdapter = New SewaMotor_Pterpan.DendaDataSourceTableAdapters.ViewDendaTableAdapter()
+        Me.ViewNotaPeminjamanTableAdapter = New SewaMotor_Pterpan.InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter()
+        CType(Me.ViewDendaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DendaDataSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'ViewDendaBindingSource
+        '
+        Me.ViewDendaBindingSource.DataMember = "ViewDenda"
+        Me.ViewDendaBindingSource.DataSource = Me.DendaDataSource
+        '
+        'DendaDataSource
+        '
+        Me.DendaDataSource.DataSetName = "DendaDataSource"
+        Me.DendaDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ViewNotaPeminjamanBindingSource
+        '
+        Me.ViewNotaPeminjamanBindingSource.DataMember = "ViewNotaPeminjaman"
+        Me.ViewNotaPeminjamanBindingSource.DataSource = Me.InvoiceSewaDataSet
+        '
+        'InvoiceSewaDataSet
+        '
+        Me.InvoiceSewaDataSet.DataSetName = "InvoiceSewaDataSet"
+        Me.InvoiceSewaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
         Me.ReportViewer1.AutoSize = True
-        ReportDataSource2.Name = "InvoiceSewaDataSet"
-        ReportDataSource2.Value = Nothing
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        ReportDataSource1.Name = "DendaDataSet"
+        ReportDataSource1.Value = Me.ViewDendaBindingSource
+        ReportDataSource2.Name = "InvoicePengembalianDataSet"
+        ReportDataSource2.Value = Me.ViewNotaPeminjamanBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.InvoiceSewa.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(12, 27)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportInvoicePengembalian.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 24)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ShowBackButton = False
         Me.ReportViewer1.ShowExportButton = False
@@ -47,8 +83,8 @@ Partial Class FormCheckoutPengembalian
         Me.ReportViewer1.ShowRefreshButton = False
         Me.ReportViewer1.ShowStopButton = False
         Me.ReportViewer1.ShowZoomControl = False
-        Me.ReportViewer1.Size = New System.Drawing.Size(802, 468)
-        Me.ReportViewer1.TabIndex = 39
+        Me.ReportViewer1.Size = New System.Drawing.Size(993, 442)
+        Me.ReportViewer1.TabIndex = 40
         '
         'menuStrip1
         '
@@ -56,8 +92,8 @@ Partial Class FormCheckoutPengembalian
         Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(826, 24)
-        Me.menuStrip1.TabIndex = 40
+        Me.menuStrip1.Size = New System.Drawing.Size(993, 24)
+        Me.menuStrip1.TabIndex = 41
         Me.menuStrip1.Text = "menuStrip1"
         '
         'homeToolStripMenuItem
@@ -77,15 +113,27 @@ Partial Class FormCheckoutPengembalian
         Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.logOutToolStripMenuItem.Text = "Logout"
         '
+        'ViewDendaTableAdapter
+        '
+        Me.ViewDendaTableAdapter.ClearBeforeFill = True
+        '
+        'ViewNotaPeminjamanTableAdapter
+        '
+        Me.ViewNotaPeminjamanTableAdapter.ClearBeforeFill = True
+        '
         'FormCheckoutPengembalian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(826, 506)
-        Me.Controls.Add(Me.menuStrip1)
+        Me.ClientSize = New System.Drawing.Size(993, 466)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Controls.Add(Me.menuStrip1)
         Me.Name = "FormCheckoutPengembalian"
         Me.Text = "FormCheckoutPengembalian"
+        CType(Me.ViewDendaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DendaDataSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -93,8 +141,14 @@ Partial Class FormCheckoutPengembalian
 
     End Sub
 
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Private WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewDendaBindingSource As BindingSource
+    Friend WithEvents DendaDataSource As DendaDataSource
+    Friend WithEvents ViewNotaPeminjamanBindingSource As BindingSource
+    Friend WithEvents InvoiceSewaDataSet As InvoiceSewaDataSet
+    Friend WithEvents ViewDendaTableAdapter As DendaDataSourceTableAdapters.ViewDendaTableAdapter
+    Friend WithEvents ViewNotaPeminjamanTableAdapter As InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter
 End Class

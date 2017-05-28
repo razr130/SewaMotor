@@ -61,7 +61,9 @@
         Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
 
         '//LOAD INVOICE
+
         Dim invoice As New FormCheckout(idOrder, namaPel, noKTP)
+        'Dim invoice As New FormCheckoutPengembalian(idOrder, namaPel, noKTP)
         invoice.ShowDialog()
 
     End Sub

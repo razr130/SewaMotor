@@ -22,6 +22,7 @@ Partial Class FormEditPelanggan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditPelanggan))
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.label1 = New System.Windows.Forms.Label()
         Me.btnBatal = New System.Windows.Forms.Button()
@@ -339,6 +340,7 @@ Partial Class FormEditPelanggan
         Me.ClientSize = New System.Drawing.Size(378, 351)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormEditPelanggan"
         Me.Text = "FormEditPelanggan"
         Me.groupBox2.ResumeLayout(False)

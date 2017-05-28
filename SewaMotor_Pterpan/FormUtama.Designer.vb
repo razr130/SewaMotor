@@ -291,6 +291,7 @@ Partial Class FormUtama
         Me.Controls.Add(Me.dgvMotor)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormUtama"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormUtama"

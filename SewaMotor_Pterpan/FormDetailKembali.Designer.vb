@@ -22,6 +22,7 @@ Partial Class FormDetailKembali
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormDetailKembali))
         Me.gdvKembali = New System.Windows.Forms.DataGridView()
         Me.txtNoOrder = New System.Windows.Forms.TextBox()
         Me.txtNamaCustomer = New System.Windows.Forms.TextBox()
@@ -268,6 +269,7 @@ Partial Class FormDetailKembali
         Me.Controls.Add(Me.txtNamaCustomer)
         Me.Controls.Add(Me.txtNoOrder)
         Me.Controls.Add(Me.gdvKembali)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormDetailKembali"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormDetailKembali"

@@ -22,6 +22,7 @@ Partial Class FormEditMotor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditMotor))
         Me.btnBatal2 = New System.Windows.Forms.Button()
         Me.label1 = New System.Windows.Forms.Label()
         Me.label3 = New System.Windows.Forms.Label()
@@ -211,6 +212,7 @@ Partial Class FormEditMotor
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(252, 355)
         Me.Controls.Add(Me.groupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormEditMotor"
         Me.Text = "FormEditMotor"
         Me.groupBox1.ResumeLayout(False)

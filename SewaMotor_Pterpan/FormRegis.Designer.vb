@@ -22,6 +22,7 @@ Partial Class FormRegis
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormRegis))
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.groupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtAlamat = New System.Windows.Forms.TextBox()
@@ -317,6 +318,7 @@ Partial Class FormRegis
         Me.ClientSize = New System.Drawing.Size(391, 347)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormRegis"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"

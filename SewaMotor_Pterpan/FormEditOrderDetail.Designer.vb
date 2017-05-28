@@ -22,6 +22,7 @@ Partial Class FormEditOrderDetail
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditOrderDetail))
         Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dtTglSewa = New System.Windows.Forms.DateTimePicker()
         Me.label9 = New System.Windows.Forms.Label()
@@ -302,6 +303,7 @@ Partial Class FormEditOrderDetail
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.label2)
         Me.Controls.Add(Me.groupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormEditOrderDetail"
         Me.Text = "FormEditOrderDetail"
         Me.menuStrip1.ResumeLayout(False)

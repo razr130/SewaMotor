@@ -22,6 +22,7 @@ Partial Class FormTambahKaryawan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTambahKaryawan))
         Me.label1 = New System.Windows.Forms.Label()
         Me.btnBatal = New System.Windows.Forms.Button()
         Me.txtEmail = New System.Windows.Forms.TextBox()
@@ -347,6 +348,7 @@ Partial Class FormTambahKaryawan
         Me.ClientSize = New System.Drawing.Size(373, 356)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormTambahKaryawan"
         Me.Text = "FormTambahKaryawan"
         Me.groupBox1.ResumeLayout(False)

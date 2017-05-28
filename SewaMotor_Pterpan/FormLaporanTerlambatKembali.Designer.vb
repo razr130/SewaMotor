@@ -24,6 +24,7 @@ Partial Class FormLaporanTerlambatKembali
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLaporanTerlambatKembali))
         Me.ViewTerlambatKembaliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MotorTerlambatDataSet = New SewaMotor_Pterpan.MotorTerlambatDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -158,6 +159,7 @@ Partial Class FormLaporanTerlambatKembali
         Me.ClientSize = New System.Drawing.Size(1142, 328)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormLaporanTerlambatKembali"
         Me.Text = "FormLaporanTerlambatKembali"
         CType(Me.ViewTerlambatKembaliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

@@ -23,7 +23,7 @@ Partial Class FormListKaryawan
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormListKaryawan))
         Me.groupDaftarPelanggan = New System.Windows.Forms.GroupBox()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
@@ -139,14 +139,6 @@ Partial Class FormListKaryawan
         Me.dgvKaryawan.AllowUserToAddRows = False
         Me.dgvKaryawan.AllowUserToDeleteRows = False
         Me.dgvKaryawan.AllowUserToOrderColumns = True
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvKaryawan.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvKaryawan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvKaryawan.Location = New System.Drawing.Point(11, 55)
         Me.dgvKaryawan.Name = "dgvKaryawan"
@@ -262,6 +254,7 @@ Partial Class FormListKaryawan
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupDaftarPelanggan)
         Me.Controls.Add(Me.label2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormListKaryawan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormListKaryawan"

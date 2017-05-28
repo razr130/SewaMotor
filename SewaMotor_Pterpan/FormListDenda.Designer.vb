@@ -23,6 +23,7 @@ Partial Class FormListDenda
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormListDenda))
         Me.dgvDenda = New System.Windows.Forms.DataGridView()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
@@ -200,6 +201,7 @@ Partial Class FormListDenda
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.dgvDenda)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormListDenda"
         Me.Text = "FormListDenda"
         CType(Me.dgvDenda, System.ComponentModel.ISupportInitialize).EndInit()

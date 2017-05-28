@@ -22,6 +22,7 @@ Partial Class FormEditDenda
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditDenda))
         Me.btnBatal = New System.Windows.Forms.Button()
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -102,6 +103,7 @@ Partial Class FormEditDenda
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtHarga)
         Me.Controls.Add(Me.txtNama)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormEditDenda"
         Me.Text = "FormEditDenda"
         Me.ResumeLayout(False)

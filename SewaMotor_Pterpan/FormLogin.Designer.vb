@@ -159,6 +159,7 @@ Partial Class FormLogin
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.btnLogIn)
         Me.Controls.Add(Me.menuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormLogin"

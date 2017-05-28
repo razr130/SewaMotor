@@ -9,7 +9,7 @@
               <Width>0.98958in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.73958in</Width>
+              <Width>0.875in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.84375in</Width>
@@ -21,7 +21,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.08333in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -406,7 +406,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(IsNothing(Fields!tgl_pengembalian.Value),DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Today),DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value)) &amp; " hari"</Value>
+                              <Value>=IIf(IsNothing(Fields!tgl_pengembalian.Value),
+IIf((DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Today))&gt;=0,DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Today) &amp; " hari", "-"),
+DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value)) &amp; " hari"</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -447,7 +449,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>1.1875in</Size>
+                <Size>0.61458in</Size>
                 <CellContents>
                   <Textbox Name="Textbox29">
                     <CanGrow>true</CanGrow>
@@ -497,7 +499,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1.1875in</Size>
+                <Size>0.61458in</Size>
                 <CellContents>
                   <Textbox Name="id_motor">
                     <CanGrow>true</CanGrow>
@@ -557,7 +559,7 @@
         <Top>1.08208in</Top>
         <Left>0.24875in</Left>
         <Height>0.75in</Height>
-        <Width>6.69791in</Width>
+        <Width>6.34374in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -727,7 +729,7 @@
     <Height>3.58333in</Height>
     <Style />
   </Body>
-  <Width>7.07291in</Width>
+  <Width>6.97916in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

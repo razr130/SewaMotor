@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DendaDataSource" targetNamespace="http://tempuri.org/DendaDataSource.xsd" xmlns:mstns="http://tempuri.org/DendaDataSource.xsd" xmlns="http://tempuri.org/DendaDataSource.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="StrConn" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="StrConn (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SewaMotor_Pterpan.My.MySettings.GlobalReference.Default.StrConn" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewDendaTableAdapter" GeneratorDataComponentClassName="ViewDendaTableAdapter" Name="ViewDenda" UserDataComponentName="ViewDendaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StrConn (MySettings)" DbObjectName="SewaMotor.dbo.ViewDenda" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT no_detail, id_denda, nama_denda, harga, jumlah FROM dbo.ViewDenda</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="no_detail" DataSetColumn="no_detail" />
+              <Mapping SourceColumn="id_denda" DataSetColumn="id_denda" />
+              <Mapping SourceColumn="nama_denda" DataSetColumn="nama_denda" />
+              <Mapping SourceColumn="harga" DataSetColumn="harga" />
+              <Mapping SourceColumn="jumlah" DataSetColumn="jumlah" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DendaDataSource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DendaDataSource" msprop:Generator_UserDSName="DendaDataSource">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewDenda" msprop:Generator_TableClassName="ViewDendaDataTable" msprop:Generator_TableVarName="tableViewDenda" msprop:Generator_TablePropName="ViewDenda" msprop:Generator_RowDeletingName="ViewDendaRowDeleting" msprop:Generator_RowChangingName="ViewDendaRowChanging" msprop:Generator_RowEvHandlerName="ViewDendaRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewDendaRowDeleted" msprop:Generator_UserTableName="ViewDenda" msprop:Generator_RowChangedName="ViewDendaRowChanged" msprop:Generator_RowEvArgName="ViewDendaRowChangeEvent" msprop:Generator_RowClassName="ViewDendaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="no_detail" msprop:Generator_ColumnVarNameInTable="columnno_detail" msprop:Generator_ColumnPropNameInRow="no_detail" msprop:Generator_ColumnPropNameInTable="no_detailColumn" msprop:Generator_UserColumnName="no_detail" type="xs:int" minOccurs="0" />
+              <xs:element name="id_denda" msprop:Generator_ColumnVarNameInTable="columnid_denda" msprop:Generator_ColumnPropNameInRow="id_denda" msprop:Generator_ColumnPropNameInTable="id_dendaColumn" msprop:Generator_UserColumnName="id_denda" type="xs:int" minOccurs="0" />
+              <xs:element name="nama_denda" msprop:Generator_ColumnVarNameInTable="columnnama_denda" msprop:Generator_ColumnPropNameInRow="nama_denda" msprop:Generator_ColumnPropNameInTable="nama_dendaColumn" msprop:Generator_UserColumnName="nama_denda" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="harga" msprop:Generator_ColumnVarNameInTable="columnharga" msprop:Generator_ColumnPropNameInRow="harga" msprop:Generator_ColumnPropNameInTable="hargaColumn" msprop:Generator_UserColumnName="harga" type="xs:int" minOccurs="0" />
+              <xs:element name="jumlah" msprop:Generator_ColumnVarNameInTable="columnjumlah" msprop:Generator_ColumnPropNameInRow="jumlah" msprop:Generator_ColumnPropNameInTable="jumlahColumn" msprop:Generator_UserColumnName="jumlah" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

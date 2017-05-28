@@ -98,6 +98,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSewaMotor2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DendaDataSource.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DendaDataSource.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormCheckout.Designer.vb">
       <DependentUpon>FormCheckout.vb</DependentUpon>
     </Compile>
@@ -408,6 +413,17 @@
     </None>
     <None Include="DataSetSewaMotor2.xss">
       <DependentUpon>DataSetSewaMotor2.xsd</DependentUpon>
+    </None>
+    <None Include="DendaDataSource.xsc">
+      <DependentUpon>DendaDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="DendaDataSource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DendaDataSource.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DendaDataSource.xss">
+      <DependentUpon>DendaDataSource.xsd</DependentUpon>
     </None>
     <None Include="InvoiceSewaDataSet.xsc">
       <DependentUpon>InvoiceSewaDataSet.xsd</DependentUpon>

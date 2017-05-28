@@ -1324,7 +1324,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!namaKaryawan.Value</Value>
+                <Value>=First(Fields!namaKaryawan.Value, "InvoicePengembalianDataSet")</Value>
                 <Style />
               </TextRun>
             </TextRuns>

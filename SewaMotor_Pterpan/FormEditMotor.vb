@@ -57,6 +57,7 @@
         Dim utama As New FormUtama
         utama.dgvMotor.DataSource = Nothing
         utama.dgvMotor.DataSource = utama.motor.getBS
+        utama.Show()
         Me.Close()
     End Sub
 

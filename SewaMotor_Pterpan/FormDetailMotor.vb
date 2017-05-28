@@ -17,6 +17,7 @@
     Public idorder As Integer
     Public tglkembali As System.DateTime
     Dim value As Integer
+    Dim merek As String
 
     Public iddetail As Integer
 
@@ -161,7 +162,7 @@
 
     Private Sub btnSewa_Click(sender As Object, e As EventArgs) Handles btnSewa.Click
         Dim result As Integer = MessageBox.Show("Apakah anda yakin ingin memesan motor merek " & txtMerek.Text & " untuk tanggal " & dtsewa.Value.Date.Day.ToString() & " ?", "Konfirmasi", MessageBoxButtons.YesNo)
-
+        merek = txtMerek.Text
         If result = DialogResult.Yes Then
             tanggal = DateTime.Now
             If tanggal.DayOfWeek = 1 Then
@@ -176,7 +177,7 @@
                 hari = "Jumat"
             ElseIf tanggal.DayOfWeek = 6 Then
                 hari = "Sabtu"
-            ElseIf tanggal.DayOfWeek = 7 Then
+            ElseIf tanggal.DayOfWeek = 0 Then
                 hari = "Minggu"
             End If
 
@@ -205,7 +206,7 @@
                         adaorder = pesan.getBS.Find("tgl_order", tanggal.Date.ToString("yyyy-MM-dd"))
                         'MsgBox("Index adaorder : " & adaorder.ToString)
                         If adaorder < 0 Then
-                            MsgBox("bikin baru")
+                            'MsgBox("bikin baru")
 
                             id_karyawan = karyawan.getBS.Current("id_karyawan")
                             pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
@@ -223,9 +224,9 @@
                             detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES((SELECT no_order from Pesan where id = " & id & " AND tgl_order ='" & tanggal.Date.ToString("yyyy-MM-dd") & "')," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & 1 & ")", "Berhasil tambah")
                             edit.isiDataTable("UPDATE Motor SET status=" & 1 & " WHERE id_motor=" & idmotor, "")
 
-
+                            MsgBox("Motor merek " & merek & " telah berhasil disewa")
                         Else
-                            MsgBox("tambah detail")
+                            'MsgBox("tambah detail")
                             idorder = pesan.getBS.Current("no_order")
                             If cbWaktu.SelectedItem = "Hari" Then
                                 tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))
@@ -244,7 +245,7 @@
                             pesan.isiDataTable("UPDATE Pesan SET total_harga=" & hargaall & " WHERE id=" & id & " AND tgl_order='" & tanggal.Date.ToString("yyyy-MM-dd") & "'", "")
                             edit.isiDataTable("UPDATE Motor SET status=" & 1 & " WHERE id_motor=" & idmotor, "")
 
-
+                            MsgBox("Motor merek " & merek & " telah berhasil disewa")
 
                         End If
 
@@ -263,7 +264,7 @@
 
 
         End If
-        MsgBox("Motor merek " & txtMerek.Text & " telah berhasil disewa")
+
         FormUtama.Show()
         Me.Close()
     End Sub

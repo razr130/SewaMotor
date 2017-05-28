@@ -6,7 +6,8 @@ Public Class FormLogin
 
 
     Private Sub lnkRegis_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkRegis.LinkClicked
-        FormRegis.ShowDialog()
+        FormRegis.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnLogIn_Click(sender As Object, e As EventArgs) Handles btnLogIn.Click

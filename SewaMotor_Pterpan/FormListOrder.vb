@@ -56,13 +56,16 @@
     Public Sub Print()
         '//Pick ROW ID
         idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value
-        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  namaPelanggan, no_ktp FROM ViewNotaPeminjaman WHERE no_order='" & idOrder & "'")
+        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  * FROM ViewNotaPeminjaman WHERE no_order='" & idOrder & "'")
         Dim namaPel = infoPelanggan.getBS.Current("namaPelanggan")
         Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
+        Dim namaKar = infoPelanggan.getBS.Current("namaKaryawan")
+        Dim totalBayar = infoPelanggan.getBS.Current("total_harga")
+        Dim totalDenda = infoPelanggan.getBS.Current("total_denda")
 
         '//LOAD INVOICE
 
-        Dim invoice As New FormCheckout(idOrder, namaPel, noKTP)
+        Dim invoice As New FormCheckout(idOrder, namaPel, noKTP, namaKar, totalBayar, totalDenda)
         'Dim invoice As New FormCheckoutPengembalian(idOrder, namaPel, noKTP)
         invoice.ShowDialog()
 

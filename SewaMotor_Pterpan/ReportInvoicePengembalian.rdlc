@@ -703,7 +703,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=(First(Fields!total_harga.Value,"InvoicePengembalianDataSet") - First(Fields!total_denda.Value,"InvoicePengembalianDataSet"))</Value>
+                <Value>=Parameters!paraTotalBayar.Value</Value>
                 <Style>
                   <FontFamily>BatangChe</FontFamily>
                   <FontSize>16pt</FontSize>
@@ -1174,7 +1174,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!total_denda.Value,"InvoicePengembalianDataSet")</Value>
+                <Value>=Parameters!paraTotalDenda.Value</Value>
                 <Style>
                   <FontFamily>BatangChe</FontFamily>
                   <Format>'Rp'#,0;('Rp'#,0)</Format>
@@ -1324,7 +1324,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!namaKaryawan.Value, "InvoicePengembalianDataSet")</Value>
+                <Value>=Parameters!paraNamaKaryawan.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1801,6 +1801,18 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="paraNomorKTP">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paraNamaKaryawan">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paraTotalBayar">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paraTotalDenda">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

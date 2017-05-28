@@ -120,10 +120,13 @@ Public Class FormDetailKembali
 
     Private Sub btnSelesai_Click(sender As Object, e As EventArgs) Handles btnSelesai.Click
         'Panggil Invoice Pengembalian
-        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  namaPelanggan, no_ktp FROM ViewNotaPeminjaman WHERE no_order='" & GlobalVariables.NoNota & "'")
+        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  * FROM ViewNotaPeminjaman WHERE no_order='" & GlobalVariables.NoNota & "'")
         Dim namaPel = infoPelanggan.getBS.Current("namaPelanggan")
         Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
-        Dim notaKembali As New FormCheckoutPengembalian(GlobalVariables.NoNota, namaPel, noKTP)
+        Dim namaKar = infoPelanggan.getBS.Current("namaKaryawan")
+        Dim totalBayar As Integer = infoPelanggan.getBS.Current("total_harga")
+        Dim totalDenda As Integer = infoPelanggan.getBS.Current("total_denda")
+        Dim notaKembali As New FormCheckoutPengembalian(GlobalVariables.NoNota, namaPel, noKTP, namaKar, totalBayar, totalDenda)
         notaKembali.ShowDialog()
         FormUtama.Show()
         Me.Close()

@@ -50,6 +50,7 @@ Partial Class FormCheckout
         'ReportViewer1
         '
         Me.ReportViewer1.AutoSize = True
+        Me.ReportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         ReportDataSource1.Name = "InvoiceSewaDataSet"
         ReportDataSource1.Value = Me.ViewNotaPeminjamanBindingSource
@@ -57,15 +58,15 @@ Partial Class FormCheckout
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportInvoiceSewa.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Padding = New System.Windows.Forms.Padding(0, 22, 0, 0)
         Me.ReportViewer1.ShowBackButton = False
         Me.ReportViewer1.ShowExportButton = False
         Me.ReportViewer1.ShowFindControls = False
         Me.ReportViewer1.ShowPageNavigationControls = False
-        Me.ReportViewer1.ShowPrintButton = False
         Me.ReportViewer1.ShowRefreshButton = False
         Me.ReportViewer1.ShowStopButton = False
         Me.ReportViewer1.ShowZoomControl = False
-        Me.ReportViewer1.Size = New System.Drawing.Size(729, 507)
+        Me.ReportViewer1.Size = New System.Drawing.Size(993, 587)
         Me.ReportViewer1.TabIndex = 38
         '
         'menuStrip1
@@ -74,7 +75,7 @@ Partial Class FormCheckout
         Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(729, 24)
+        Me.menuStrip1.Size = New System.Drawing.Size(993, 24)
         Me.menuStrip1.TabIndex = 39
         Me.menuStrip1.Text = "menuStrip1"
         '
@@ -104,7 +105,7 @@ Partial Class FormCheckout
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(729, 507)
+        Me.ClientSize = New System.Drawing.Size(993, 587)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

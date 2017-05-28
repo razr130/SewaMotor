@@ -724,7 +724,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Rp " &amp; (Fields!total_harga.Value)</Value>
+                <Value>=Parameters!paraTotalBayar.Value - Parameters!paraTotalDenda.Value</Value>
                 <Style>
                   <FontFamily>BatangChe</FontFamily>
                   <FontSize>16pt</FontSize>
@@ -950,7 +950,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!namaKaryawan.Value</Value>
+                <Value>=Parameters!paraNamaKaryawan.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -961,9 +961,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
         <Top>3.90438in</Top>
-        <Left>1.24825in</Left>
+        <Left>0.9045in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>1.72533in</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -1430,6 +1430,18 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="paraNomorOrder">
+      <DataType>Integer</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paraNamaKaryawan">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paraTotalBayar">
+      <DataType>Integer</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paraTotalDenda">
       <DataType>Integer</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

@@ -22,6 +22,7 @@ Partial Class FormDenda
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormDenda))
         Me.cbDenda = New System.Windows.Forms.ComboBox()
         Me.txtTglPengembalian = New System.Windows.Forms.TextBox()
         Me.txtJumlahDenda = New System.Windows.Forms.TextBox()
@@ -177,6 +178,7 @@ Partial Class FormDenda
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormDenda"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormDenda"

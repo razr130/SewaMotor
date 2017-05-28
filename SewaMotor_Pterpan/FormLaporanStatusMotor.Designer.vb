@@ -24,6 +24,7 @@ Partial Class FormLaporanStatusMotor
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLaporanStatusMotor))
         Me.MotorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SewaMotorDataSource = New SewaMotor_Pterpan.SewaMotorDataSource()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -158,6 +159,7 @@ Partial Class FormLaporanStatusMotor
         Me.ClientSize = New System.Drawing.Size(877, 332)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormLaporanStatusMotor"
         Me.Text = "FormLaporanStatusMotor"
         CType(Me.MotorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

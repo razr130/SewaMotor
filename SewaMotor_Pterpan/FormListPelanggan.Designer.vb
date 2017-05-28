@@ -23,6 +23,7 @@ Partial Class FormListPelanggan
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormListPelanggan))
         Me.groupDaftarPelanggan = New System.Windows.Forms.GroupBox()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.label1 = New System.Windows.Forms.Label()
@@ -233,6 +234,7 @@ Partial Class FormListPelanggan
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupDaftarPelanggan)
         Me.Controls.Add(Me.label2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormListPelanggan"
         Me.Text = "FormDaftarPelanggan"
         Me.groupDaftarPelanggan.ResumeLayout(False)

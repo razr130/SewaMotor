@@ -22,6 +22,8 @@ Partial Class FormListDenda
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormListDenda))
         Me.dgvDenda = New System.Windows.Forms.DataGridView()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
@@ -43,9 +45,20 @@ Partial Class FormListDenda
         '
         'dgvDenda
         '
+        Me.dgvDenda.AllowUserToAddRows = False
+        Me.dgvDenda.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDenda.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvDenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDenda.Location = New System.Drawing.Point(12, 40)
         Me.dgvDenda.Name = "dgvDenda"
+        Me.dgvDenda.ReadOnly = True
         Me.dgvDenda.Size = New System.Drawing.Size(302, 258)
         Me.dgvDenda.TabIndex = 0
         '
@@ -188,6 +201,7 @@ Partial Class FormListDenda
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.dgvDenda)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormListDenda"
         Me.Text = "FormListDenda"
         CType(Me.dgvDenda, System.ComponentModel.ISupportInitialize).EndInit()

@@ -263,6 +263,7 @@
 
 
         End If
+        MsgBox("Motor merek " & txtMerek.Text & " telah berhasil disewa")
         FormUtama.Show()
         Me.Close()
     End Sub

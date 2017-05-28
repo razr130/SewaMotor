@@ -22,6 +22,7 @@ Partial Class FormEditKaryawan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditKaryawan))
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.radioKaryawan = New System.Windows.Forms.RadioButton()
@@ -347,6 +348,7 @@ Partial Class FormEditKaryawan
         Me.ClientSize = New System.Drawing.Size(370, 350)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormEditKaryawan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormEditKaryawan"

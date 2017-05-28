@@ -105,9 +105,8 @@
         kembali.Show()
         Me.Close()
     End Sub
-    Private Sub btnDenda_Click(sender As Object, e As EventArgs) Handles btnDenda.Click
-        FormListDenda.Show()
-        Me.Close()
+    Private Sub btnDenda_Click(sender As Object, e As EventArgs) 
+
     End Sub
 
     '/////TEXTBOX/////
@@ -175,5 +174,8 @@
         Me.Close()
     End Sub
 
-
+    Private Sub ListDendaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListDendaToolStripMenuItem.Click
+        FormListDenda.Show()
+        Me.Close()
+    End Sub
 End Class

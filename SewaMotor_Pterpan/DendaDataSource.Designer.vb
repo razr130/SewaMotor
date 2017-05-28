@@ -283,8 +283,6 @@ Partial Public Class DendaDataSource
     Partial Public Class ViewDendaDataTable
         Inherits Global.System.Data.TypedTableBase(Of ViewDendaRow)
         
-        Private columnno_detail As Global.System.Data.DataColumn
-        
         Private columnid_denda As Global.System.Data.DataColumn
         
         Private columnnama_denda As Global.System.Data.DataColumn
@@ -292,6 +290,10 @@ Partial Public Class DendaDataSource
         Private columnharga As Global.System.Data.DataColumn
         
         Private columnjumlah As Global.System.Data.DataColumn
+        
+        Private columnno_detalil As Global.System.Data.DataColumn
+        
+        Private columnid_motor As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -330,14 +332,6 @@ Partial Public Class DendaDataSource
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property no_detailColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnno_detail
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property id_dendaColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnid_denda
@@ -365,6 +359,22 @@ Partial Public Class DendaDataSource
         Public ReadOnly Property jumlahColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnjumlah
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property no_detalilColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnno_detalil
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property id_motorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_motor
             End Get
         End Property
         
@@ -405,12 +415,18 @@ Partial Public Class DendaDataSource
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddViewDendaRow(ByVal no_detail As Integer, ByVal id_denda As Integer, ByVal nama_denda As String, ByVal harga As Integer, ByVal jumlah As Integer) As ViewDendaRow
+        Public Overloads Function AddViewDendaRow(ByVal id_denda As Integer, ByVal nama_denda As String, ByVal harga As Integer, ByVal jumlah As Integer, ByVal no_detalil As Integer, ByVal id_motor As Integer) As ViewDendaRow
             Dim rowViewDendaRow As ViewDendaRow = CType(Me.NewRow,ViewDendaRow)
-            Dim columnValuesArray() As Object = New Object() {no_detail, id_denda, nama_denda, harga, jumlah}
+            Dim columnValuesArray() As Object = New Object() {id_denda, nama_denda, harga, jumlah, no_detalil, id_motor}
             rowViewDendaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowViewDendaRow)
             Return rowViewDendaRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByno_detalil(ByVal no_detalil As Integer) As ViewDendaRow
+            Return CType(Me.Rows.Find(New Object() {no_detalil}),ViewDendaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -430,18 +446,17 @@ Partial Public Class DendaDataSource
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnno_detail = MyBase.Columns("no_detail")
             Me.columnid_denda = MyBase.Columns("id_denda")
             Me.columnnama_denda = MyBase.Columns("nama_denda")
             Me.columnharga = MyBase.Columns("harga")
             Me.columnjumlah = MyBase.Columns("jumlah")
+            Me.columnno_detalil = MyBase.Columns("no_detalil")
+            Me.columnid_motor = MyBase.Columns("id_motor")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnno_detail = New Global.System.Data.DataColumn("no_detail", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnno_detail)
             Me.columnid_denda = New Global.System.Data.DataColumn("id_denda", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid_denda)
             Me.columnnama_denda = New Global.System.Data.DataColumn("nama_denda", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -450,7 +465,14 @@ Partial Public Class DendaDataSource
             MyBase.Columns.Add(Me.columnharga)
             Me.columnjumlah = New Global.System.Data.DataColumn("jumlah", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnjumlah)
+            Me.columnno_detalil = New Global.System.Data.DataColumn("no_detalil", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnno_detalil)
+            Me.columnid_motor = New Global.System.Data.DataColumn("id_motor", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_motor)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnno_detalil}, true))
             Me.columnnama_denda.MaxLength = 20
+            Me.columnno_detalil.AllowDBNull = false
+            Me.columnno_detalil.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -597,21 +619,6 @@ Partial Public Class DendaDataSource
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property no_detail() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableViewDenda.no_detailColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'no_detail' in table 'ViewDenda' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableViewDenda.no_detailColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property id_denda() As Integer
             Get
                 Try 
@@ -672,15 +679,29 @@ Partial Public Class DendaDataSource
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isno_detailNull() As Boolean
-            Return Me.IsNull(Me.tableViewDenda.no_detailColumn)
-        End Function
+        Public Property no_detalil() As Integer
+            Get
+                Return CType(Me(Me.tableViewDenda.no_detalilColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableViewDenda.no_detalilColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setno_detailNull()
-            Me(Me.tableViewDenda.no_detailColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property id_motor() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableViewDenda.id_motorColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'id_motor' in table 'ViewDenda' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableViewDenda.id_motorColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -728,6 +749,18 @@ Partial Public Class DendaDataSource
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetjumlahNull()
             Me(Me.tableViewDenda.jumlahColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isid_motorNull() As Boolean
+            Return Me.IsNull(Me.tableViewDenda.id_motorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setid_motorNull()
+            Me(Me.tableViewDenda.id_motorColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -897,11 +930,12 @@ Namespace DendaDataSourceTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "ViewDenda"
-            tableMapping.ColumnMappings.Add("no_detail", "no_detail")
             tableMapping.ColumnMappings.Add("id_denda", "id_denda")
             tableMapping.ColumnMappings.Add("nama_denda", "nama_denda")
             tableMapping.ColumnMappings.Add("harga", "harga")
             tableMapping.ColumnMappings.Add("jumlah", "jumlah")
+            tableMapping.ColumnMappings.Add("no_detalil", "no_detalil")
+            tableMapping.ColumnMappings.Add("id_motor", "id_motor")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -918,7 +952,7 @@ Namespace DendaDataSourceTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT no_detail, id_denda, nama_denda, harga, jumlah FROM dbo.ViewDenda"
+            Me._commandCollection(0).CommandText = "SELECT * FROM dbo.ViewDenda"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

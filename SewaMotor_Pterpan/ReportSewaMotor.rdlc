@@ -407,7 +407,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=IIf(IsNothing(Fields!tgl_pengembalian.Value),
-IIf((DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Today))&gt;=0,DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Today) &amp; " hari", "-"),
+IIf((DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Today))&gt;=0,DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Today), "-"),
 DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value)) &amp; " hari"</Value>
                               <Style />
                             </TextRun>
@@ -589,7 +589,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
         <Top>0.2175in</Top>
         <Left>0.24875in</Left>
         <Height>0.375in</Height>
-        <Width>6.69791in</Width>
+        <Width>6.34374in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -619,7 +619,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.76264in</Top>
-        <Left>4.59201in</Left>
+        <Left>4.10937in</Left>
         <Height>0.25in</Height>
         <Width>0.53125in</Width>
         <ZIndex>2</ZIndex>
@@ -651,7 +651,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.76264in</Top>
-        <Left>5.8911in</Left>
+        <Left>5.40846in</Left>
         <Height>0.25in</Height>
         <Width>0.48264in</Width>
         <ZIndex>3</ZIndex>
@@ -681,7 +681,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>0.76264in</Top>
-        <Left>6.37374in</Left>
+        <Left>5.8911in</Left>
         <Height>0.25in</Height>
         <Width>0.57292in</Width>
         <ZIndex>4</ZIndex>
@@ -711,7 +711,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>0.76264in</Top>
-        <Left>5.13715in</Left>
+        <Left>4.65451in</Left>
         <Height>0.25in</Height>
         <Width>0.68451in</Width>
         <ZIndex>5</ZIndex>
@@ -729,7 +729,7 @@ DateDiff(DateInterval.Day,Fields!tgl_kembali.Value,Fields!tgl_pengembalian.Value
     <Height>3.58333in</Height>
     <Style />
   </Body>
-  <Width>6.97916in</Width>
+  <Width>6.89583in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

@@ -1123,6 +1123,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DendaDataSet</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!id_motor.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>=Parameters!paraIdMotor.Value</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>2.09597in</Top>
         <Left>0.4618in</Left>
         <Height>0.5in</Height>
@@ -1813,6 +1822,10 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="paraTotalDenda">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paraIdMotor">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

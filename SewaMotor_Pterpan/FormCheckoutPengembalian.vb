@@ -6,6 +6,7 @@
     Dim paraNamaKar As Microsoft.Reporting.WinForms.ReportParameter
     Dim paraTotalBayar As Microsoft.Reporting.WinForms.ReportParameter
     Dim paraTotalDenda As Microsoft.Reporting.WinForms.ReportParameter
+    Dim paraIdMotor As Microsoft.Reporting.WinForms.ReportParameter
     Dim headerParams As Microsoft.Reporting.WinForms.ReportParameter()
 
     Private Sub FormCheckoutPengembalian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -20,7 +21,7 @@
         ReportViewer1.RefreshReport()
     End Sub
 
-    Public Sub New(ByVal no_order As Integer, ByVal nama_pel As String, ByVal noKTP As String, ByVal nama_kar As String, ByVal totalBayar As Integer, ByVal totalDenda As Integer)
+    Public Sub New(ByVal no_order As Integer, ByVal nama_pel As String, ByVal noKTP As String, ByVal nama_kar As String, ByVal totalBayar As Integer, ByVal totalDenda As Integer, ByVal idMotor As Integer)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -32,7 +33,8 @@
         paraNamaKar = New Microsoft.Reporting.WinForms.ReportParameter("paraNamaKaryawan", nama_kar)
         paraTotalBayar = New Microsoft.Reporting.WinForms.ReportParameter("paraTotalBayar", totalBayar)
         paraTotalDenda = New Microsoft.Reporting.WinForms.ReportParameter("paraTotalDenda", totalDenda)
-        headerParams = {paraNoOrder, paraNamaPel, paraNoKTP, paraNamaKar, paraTotalBayar, paraTotalDenda}
+        paraIdMotor = New Microsoft.Reporting.WinForms.ReportParameter("paraIdMotor", idMotor)
+        headerParams = {paraNoOrder, paraNamaPel, paraNoKTP, paraNamaKar, paraTotalBayar, paraTotalDenda, paraIdMotor}
     End Sub
 
     Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click

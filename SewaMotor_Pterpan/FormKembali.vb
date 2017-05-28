@@ -32,4 +32,12 @@
         FormUtama.Show()
         Me.Close()
     End Sub
+
+    Private Sub txtNoNota_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNoNota.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
 End Class

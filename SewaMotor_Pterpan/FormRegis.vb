@@ -12,7 +12,7 @@ Public Class FormRegis
         txtAlamat.Clear()
         DtTglLahir.Value = Date.Today
         txtNoKTP.Clear()
-
+        Me.Close()
     End Sub
 
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click

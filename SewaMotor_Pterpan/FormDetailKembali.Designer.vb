@@ -152,7 +152,7 @@ Partial Class FormDetailKembali
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 10
-        Me.btnSimpan.Text = "Simpan"
+        Me.btnSimpan.Text = "Kembalikan"
         Me.btnSimpan.UseVisualStyleBackColor = False
         '
         'btnSelesai

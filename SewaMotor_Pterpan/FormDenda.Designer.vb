@@ -41,6 +41,7 @@ Partial Class FormDenda
         '
         'cbDenda
         '
+        Me.cbDenda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbDenda.FormattingEnabled = True
         Me.cbDenda.Location = New System.Drawing.Point(64, 32)
         Me.cbDenda.Name = "cbDenda"

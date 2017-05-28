@@ -92,6 +92,7 @@ Partial Class FormDetailMotor
         '
         'cbWaktu
         '
+        Me.cbWaktu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbWaktu.FormattingEnabled = True
         Me.cbWaktu.Items.AddRange(New Object() {"Hari", "Minggu", "Bulan", "Tahun"})
         Me.cbWaktu.Location = New System.Drawing.Point(370, 107)
@@ -145,6 +146,7 @@ Partial Class FormDetailMotor
         '
         'txtHarga
         '
+        Me.txtHarga.Enabled = False
         Me.txtHarga.Location = New System.Drawing.Point(347, 167)
         Me.txtHarga.Name = "txtHarga"
         Me.txtHarga.Size = New System.Drawing.Size(100, 20)
@@ -310,6 +312,7 @@ Partial Class FormDetailMotor
         '
         'cbJaminan
         '
+        Me.cbJaminan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbJaminan.FormattingEnabled = True
         Me.cbJaminan.Items.AddRange(New Object() {"KTP", "KTM", "SIM"})
         Me.cbJaminan.Location = New System.Drawing.Point(370, 138)

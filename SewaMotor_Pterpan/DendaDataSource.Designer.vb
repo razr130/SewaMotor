@@ -295,6 +295,8 @@ Partial Public Class DendaDataSource
         
         Private columnid_motor As Global.System.Data.DataColumn
         
+        Private columnno_order As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -379,6 +381,14 @@ Partial Public Class DendaDataSource
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property no_orderColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnno_order
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -415,9 +425,9 @@ Partial Public Class DendaDataSource
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddViewDendaRow(ByVal id_denda As Integer, ByVal nama_denda As String, ByVal harga As Integer, ByVal jumlah As Integer, ByVal no_detalil As Integer, ByVal id_motor As Integer) As ViewDendaRow
+        Public Overloads Function AddViewDendaRow(ByVal id_denda As Integer, ByVal nama_denda As String, ByVal harga As Integer, ByVal jumlah As Integer, ByVal no_detalil As Integer, ByVal id_motor As Integer, ByVal no_order As Integer) As ViewDendaRow
             Dim rowViewDendaRow As ViewDendaRow = CType(Me.NewRow,ViewDendaRow)
-            Dim columnValuesArray() As Object = New Object() {id_denda, nama_denda, harga, jumlah, no_detalil, id_motor}
+            Dim columnValuesArray() As Object = New Object() {id_denda, nama_denda, harga, jumlah, no_detalil, id_motor, no_order}
             rowViewDendaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowViewDendaRow)
             Return rowViewDendaRow
@@ -452,6 +462,7 @@ Partial Public Class DendaDataSource
             Me.columnjumlah = MyBase.Columns("jumlah")
             Me.columnno_detalil = MyBase.Columns("no_detalil")
             Me.columnid_motor = MyBase.Columns("id_motor")
+            Me.columnno_order = MyBase.Columns("no_order")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -469,6 +480,8 @@ Partial Public Class DendaDataSource
             MyBase.Columns.Add(Me.columnno_detalil)
             Me.columnid_motor = New Global.System.Data.DataColumn("id_motor", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid_motor)
+            Me.columnno_order = New Global.System.Data.DataColumn("no_order", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnno_order)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnno_detalil}, true))
             Me.columnnama_denda.MaxLength = 20
             Me.columnno_detalil.AllowDBNull = false
@@ -705,6 +718,21 @@ Partial Public Class DendaDataSource
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property no_order() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableViewDenda.no_orderColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'no_order' in table 'ViewDenda' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableViewDenda.no_orderColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isid_dendaNull() As Boolean
             Return Me.IsNull(Me.tableViewDenda.id_dendaColumn)
         End Function
@@ -761,6 +789,18 @@ Partial Public Class DendaDataSource
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setid_motorNull()
             Me(Me.tableViewDenda.id_motorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isno_orderNull() As Boolean
+            Return Me.IsNull(Me.tableViewDenda.no_orderColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setno_orderNull()
+            Me(Me.tableViewDenda.no_orderColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -936,6 +976,7 @@ Namespace DendaDataSourceTableAdapters
             tableMapping.ColumnMappings.Add("jumlah", "jumlah")
             tableMapping.ColumnMappings.Add("no_detalil", "no_detalil")
             tableMapping.ColumnMappings.Add("id_motor", "id_motor")
+            tableMapping.ColumnMappings.Add("no_order", "no_order")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         

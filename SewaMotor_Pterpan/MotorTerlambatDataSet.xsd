@@ -9,10 +9,10 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewTerlambatKembaliTableAdapter" GeneratorDataComponentClassName="ViewTerlambatKembaliTableAdapter" Name="ViewTerlambatKembali" UserDataComponentName="ViewTerlambatKembaliTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="StrConn (MySettings)" DbObjectName="SewaMotor.dbo.ViewTerlambatKembali" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="StrConn (MySettings)" DbObjectName="SewaMotor.dbo.ViewTerlambatKembali" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT no_order, nmPel, no_ktp, email, notelp, alamat, nmKar, tgl_sewa, tgl_kembali, id_motor, plat, jenis, merek FROM dbo.ViewTerlambatKembali</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM dbo.ViewTerlambatKembali</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -20,18 +20,18 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="no_order" DataSetColumn="no_order" />
-              <Mapping SourceColumn="nmPel" DataSetColumn="nmPel" />
               <Mapping SourceColumn="no_ktp" DataSetColumn="no_ktp" />
               <Mapping SourceColumn="email" DataSetColumn="email" />
               <Mapping SourceColumn="notelp" DataSetColumn="notelp" />
               <Mapping SourceColumn="alamat" DataSetColumn="alamat" />
-              <Mapping SourceColumn="nmKar" DataSetColumn="nmKar" />
               <Mapping SourceColumn="tgl_sewa" DataSetColumn="tgl_sewa" />
               <Mapping SourceColumn="tgl_kembali" DataSetColumn="tgl_kembali" />
               <Mapping SourceColumn="id_motor" DataSetColumn="id_motor" />
               <Mapping SourceColumn="plat" DataSetColumn="plat" />
               <Mapping SourceColumn="jenis" DataSetColumn="jenis" />
               <Mapping SourceColumn="merek" DataSetColumn="merek" />
+              <Mapping SourceColumn="namaPelanggan" DataSetColumn="namaPelanggan" />
+              <Mapping SourceColumn="namaKaryawan" DataSetColumn="namaKaryawan" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -43,17 +43,10 @@
   <xs:element name="MotorTerlambatDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MotorTerlambatDataSet" msprop:Generator_UserDSName="MotorTerlambatDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ViewTerlambatKembali" msprop:Generator_TableClassName="ViewTerlambatKembaliDataTable" msprop:Generator_TableVarName="tableViewTerlambatKembali" msprop:Generator_TablePropName="ViewTerlambatKembali" msprop:Generator_RowDeletingName="ViewTerlambatKembaliRowDeleting" msprop:Generator_RowChangingName="ViewTerlambatKembaliRowChanging" msprop:Generator_RowEvHandlerName="ViewTerlambatKembaliRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewTerlambatKembaliRowDeleted" msprop:Generator_UserTableName="ViewTerlambatKembali" msprop:Generator_RowChangedName="ViewTerlambatKembaliRowChanged" msprop:Generator_RowEvArgName="ViewTerlambatKembaliRowChangeEvent" msprop:Generator_RowClassName="ViewTerlambatKembaliRow">
+        <xs:element name="ViewTerlambatKembali" msprop:Generator_TableClassName="ViewTerlambatKembaliDataTable" msprop:Generator_TableVarName="tableViewTerlambatKembali" msprop:Generator_RowChangedName="ViewTerlambatKembaliRowChanged" msprop:Generator_TablePropName="ViewTerlambatKembali" msprop:Generator_RowDeletingName="ViewTerlambatKembaliRowDeleting" msprop:Generator_RowChangingName="ViewTerlambatKembaliRowChanging" msprop:Generator_RowEvHandlerName="ViewTerlambatKembaliRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewTerlambatKembaliRowDeleted" msprop:Generator_RowClassName="ViewTerlambatKembaliRow" msprop:Generator_UserTableName="ViewTerlambatKembali" msprop:Generator_RowEvArgName="ViewTerlambatKembaliRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="no_order" msprop:Generator_ColumnVarNameInTable="columnno_order" msprop:Generator_ColumnPropNameInRow="no_order" msprop:Generator_ColumnPropNameInTable="no_orderColumn" msprop:Generator_UserColumnName="no_order" type="xs:int" />
-              <xs:element name="nmPel" msprop:Generator_ColumnVarNameInTable="columnnmPel" msprop:Generator_ColumnPropNameInRow="nmPel" msprop:Generator_ColumnPropNameInTable="nmPelColumn" msprop:Generator_UserColumnName="nmPel" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="no_ktp" msprop:Generator_ColumnVarNameInTable="columnno_ktp" msprop:Generator_ColumnPropNameInRow="no_ktp" msprop:Generator_ColumnPropNameInTable="no_ktpColumn" msprop:Generator_UserColumnName="no_ktp" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -82,13 +75,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nmKar" msprop:Generator_ColumnVarNameInTable="columnnmKar" msprop:Generator_ColumnPropNameInRow="nmKar" msprop:Generator_ColumnPropNameInTable="nmKarColumn" msprop:Generator_UserColumnName="nmKar" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="tgl_sewa" msprop:Generator_ColumnVarNameInTable="columntgl_sewa" msprop:Generator_ColumnPropNameInRow="tgl_sewa" msprop:Generator_ColumnPropNameInTable="tgl_sewaColumn" msprop:Generator_UserColumnName="tgl_sewa" type="xs:dateTime" minOccurs="0" />
               <xs:element name="tgl_kembali" msprop:Generator_ColumnVarNameInTable="columntgl_kembali" msprop:Generator_ColumnPropNameInRow="tgl_kembali" msprop:Generator_ColumnPropNameInTable="tgl_kembaliColumn" msprop:Generator_UserColumnName="tgl_kembali" type="xs:dateTime" minOccurs="0" />
               <xs:element name="id_motor" msprop:Generator_ColumnVarNameInTable="columnid_motor" msprop:Generator_ColumnPropNameInRow="id_motor" msprop:Generator_ColumnPropNameInTable="id_motorColumn" msprop:Generator_UserColumnName="id_motor" type="xs:int" minOccurs="0" />
@@ -110,6 +96,20 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="namaPelanggan" msprop:Generator_ColumnVarNameInTable="columnnamaPelanggan" msprop:Generator_ColumnPropNameInRow="namaPelanggan" msprop:Generator_ColumnPropNameInTable="namaPelangganColumn" msprop:Generator_UserColumnName="namaPelanggan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="namaKaryawan" msprop:Generator_ColumnVarNameInTable="columnnamaKaryawan" msprop:Generator_ColumnPropNameInRow="namaKaryawan" msprop:Generator_ColumnPropNameInTable="namaKaryawanColumn" msprop:Generator_UserColumnName="namaKaryawan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

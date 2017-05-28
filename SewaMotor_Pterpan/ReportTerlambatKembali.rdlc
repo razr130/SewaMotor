@@ -661,14 +661,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nmPel">
+                    <Textbox Name="namaPelanggan">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nmPel.Value</Value>
+                              <Value>=Fields!namaPelanggan.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -677,7 +677,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nmPel</rd:DefaultName>
+                      <rd:DefaultName>namaPelanggan</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -885,14 +885,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nmKar">
+                    <Textbox Name="namaKaryawan">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nmKar.Value</Value>
+                              <Value>=Fields!namaKaryawan.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -901,7 +901,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nmKar</rd:DefaultName>
+                      <rd:DefaultName>namaKaryawan</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -993,10 +993,6 @@
           <DataField>no_order</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="nmPel">
-          <DataField>nmPel</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="no_ktp">
           <DataField>no_ktp</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1011,10 +1007,6 @@
         </Field>
         <Field Name="alamat">
           <DataField>alamat</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="nmKar">
-          <DataField>nmKar</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="tgl_sewa">
@@ -1039,6 +1031,14 @@
         </Field>
         <Field Name="merek">
           <DataField>merek</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="namaPelanggan">
+          <DataField>namaPelanggan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="namaKaryawan">
+          <DataField>namaKaryawan</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

@@ -285,8 +285,6 @@ Partial Public Class MotorTerlambatDataSet
         
         Private columnno_order As Global.System.Data.DataColumn
         
-        Private columnnmPel As Global.System.Data.DataColumn
-        
         Private columnno_ktp As Global.System.Data.DataColumn
         
         Private columnemail As Global.System.Data.DataColumn
@@ -294,8 +292,6 @@ Partial Public Class MotorTerlambatDataSet
         Private columnnotelp As Global.System.Data.DataColumn
         
         Private columnalamat As Global.System.Data.DataColumn
-        
-        Private columnnmKar As Global.System.Data.DataColumn
         
         Private columntgl_sewa As Global.System.Data.DataColumn
         
@@ -308,6 +304,10 @@ Partial Public Class MotorTerlambatDataSet
         Private columnjenis As Global.System.Data.DataColumn
         
         Private columnmerek As Global.System.Data.DataColumn
+        
+        Private columnnamaPelanggan As Global.System.Data.DataColumn
+        
+        Private columnnamaKaryawan As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -354,14 +354,6 @@ Partial Public Class MotorTerlambatDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property nmPelColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnnmPel
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property no_ktpColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnno_ktp
@@ -389,14 +381,6 @@ Partial Public Class MotorTerlambatDataSet
         Public ReadOnly Property alamatColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnalamat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property nmKarColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnnmKar
             End Get
         End Property
         
@@ -449,6 +433,22 @@ Partial Public Class MotorTerlambatDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property namaPelangganColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnamaPelanggan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property namaKaryawanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnamaKaryawan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -485,9 +485,9 @@ Partial Public Class MotorTerlambatDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddViewTerlambatKembaliRow(ByVal no_order As Integer, ByVal nmPel As String, ByVal no_ktp As String, ByVal email As String, ByVal notelp As String, ByVal alamat As String, ByVal nmKar As String, ByVal tgl_sewa As Date, ByVal tgl_kembali As Date, ByVal id_motor As Integer, ByVal plat As String, ByVal jenis As String, ByVal merek As String) As ViewTerlambatKembaliRow
+        Public Overloads Function AddViewTerlambatKembaliRow(ByVal no_order As Integer, ByVal no_ktp As String, ByVal email As String, ByVal notelp As String, ByVal alamat As String, ByVal tgl_sewa As Date, ByVal tgl_kembali As Date, ByVal id_motor As Integer, ByVal plat As String, ByVal jenis As String, ByVal merek As String, ByVal namaPelanggan As String, ByVal namaKaryawan As String) As ViewTerlambatKembaliRow
             Dim rowViewTerlambatKembaliRow As ViewTerlambatKembaliRow = CType(Me.NewRow,ViewTerlambatKembaliRow)
-            Dim columnValuesArray() As Object = New Object() {no_order, nmPel, no_ktp, email, notelp, alamat, nmKar, tgl_sewa, tgl_kembali, id_motor, plat, jenis, merek}
+            Dim columnValuesArray() As Object = New Object() {no_order, no_ktp, email, notelp, alamat, tgl_sewa, tgl_kembali, id_motor, plat, jenis, merek, namaPelanggan, namaKaryawan}
             rowViewTerlambatKembaliRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowViewTerlambatKembaliRow)
             Return rowViewTerlambatKembaliRow
@@ -517,18 +517,18 @@ Partial Public Class MotorTerlambatDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnno_order = MyBase.Columns("no_order")
-            Me.columnnmPel = MyBase.Columns("nmPel")
             Me.columnno_ktp = MyBase.Columns("no_ktp")
             Me.columnemail = MyBase.Columns("email")
             Me.columnnotelp = MyBase.Columns("notelp")
             Me.columnalamat = MyBase.Columns("alamat")
-            Me.columnnmKar = MyBase.Columns("nmKar")
             Me.columntgl_sewa = MyBase.Columns("tgl_sewa")
             Me.columntgl_kembali = MyBase.Columns("tgl_kembali")
             Me.columnid_motor = MyBase.Columns("id_motor")
             Me.columnplat = MyBase.Columns("plat")
             Me.columnjenis = MyBase.Columns("jenis")
             Me.columnmerek = MyBase.Columns("merek")
+            Me.columnnamaPelanggan = MyBase.Columns("namaPelanggan")
+            Me.columnnamaKaryawan = MyBase.Columns("namaKaryawan")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -536,8 +536,6 @@ Partial Public Class MotorTerlambatDataSet
         Private Sub InitClass()
             Me.columnno_order = New Global.System.Data.DataColumn("no_order", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnno_order)
-            Me.columnnmPel = New Global.System.Data.DataColumn("nmPel", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnmPel)
             Me.columnno_ktp = New Global.System.Data.DataColumn("no_ktp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnno_ktp)
             Me.columnemail = New Global.System.Data.DataColumn("email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -546,8 +544,6 @@ Partial Public Class MotorTerlambatDataSet
             MyBase.Columns.Add(Me.columnnotelp)
             Me.columnalamat = New Global.System.Data.DataColumn("alamat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnalamat)
-            Me.columnnmKar = New Global.System.Data.DataColumn("nmKar", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnmKar)
             Me.columntgl_sewa = New Global.System.Data.DataColumn("tgl_sewa", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntgl_sewa)
             Me.columntgl_kembali = New Global.System.Data.DataColumn("tgl_kembali", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
@@ -560,18 +556,22 @@ Partial Public Class MotorTerlambatDataSet
             MyBase.Columns.Add(Me.columnjenis)
             Me.columnmerek = New Global.System.Data.DataColumn("merek", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmerek)
+            Me.columnnamaPelanggan = New Global.System.Data.DataColumn("namaPelanggan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnamaPelanggan)
+            Me.columnnamaKaryawan = New Global.System.Data.DataColumn("namaKaryawan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnamaKaryawan)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnno_order}, true))
             Me.columnno_order.AllowDBNull = false
             Me.columnno_order.Unique = true
-            Me.columnnmPel.MaxLength = 50
             Me.columnno_ktp.MaxLength = 16
             Me.columnemail.MaxLength = 50
             Me.columnnotelp.MaxLength = 20
             Me.columnalamat.MaxLength = 50
-            Me.columnnmKar.MaxLength = 50
             Me.columnplat.MaxLength = 8
             Me.columnjenis.MaxLength = 20
             Me.columnmerek.MaxLength = 20
+            Me.columnnamaPelanggan.MaxLength = 50
+            Me.columnnamaKaryawan.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -729,21 +729,6 @@ Partial Public Class MotorTerlambatDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property nmPel() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableViewTerlambatKembali.nmPelColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'nmPel' in table 'ViewTerlambatKembali' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableViewTerlambatKembali.nmPelColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property no_ktp() As String
             Get
                 Try 
@@ -799,21 +784,6 @@ Partial Public Class MotorTerlambatDataSet
             End Get
             Set
                 Me(Me.tableViewTerlambatKembali.alamatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property nmKar() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableViewTerlambatKembali.nmKarColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'nmKar' in table 'ViewTerlambatKembali' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableViewTerlambatKembali.nmKarColumn) = value
             End Set
         End Property
         
@@ -909,15 +879,33 @@ Partial Public Class MotorTerlambatDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsnmPelNull() As Boolean
-            Return Me.IsNull(Me.tableViewTerlambatKembali.nmPelColumn)
-        End Function
+        Public Property namaPelanggan() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableViewTerlambatKembali.namaPelangganColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'namaPelanggan' in table 'ViewTerlambatKembali' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableViewTerlambatKembali.namaPelangganColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetnmPelNull()
-            Me(Me.tableViewTerlambatKembali.nmPelColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property namaKaryawan() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableViewTerlambatKembali.namaKaryawanColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'namaKaryawan' in table 'ViewTerlambatKembali' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableViewTerlambatKembali.namaKaryawanColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -965,18 +953,6 @@ Partial Public Class MotorTerlambatDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetalamatNull()
             Me(Me.tableViewTerlambatKembali.alamatColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsnmKarNull() As Boolean
-            Return Me.IsNull(Me.tableViewTerlambatKembali.nmKarColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetnmKarNull()
-            Me(Me.tableViewTerlambatKembali.nmKarColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1049,6 +1025,30 @@ Partial Public Class MotorTerlambatDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetmerekNull()
             Me(Me.tableViewTerlambatKembali.merekColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsnamaPelangganNull() As Boolean
+            Return Me.IsNull(Me.tableViewTerlambatKembali.namaPelangganColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetnamaPelangganNull()
+            Me(Me.tableViewTerlambatKembali.namaPelangganColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsnamaKaryawanNull() As Boolean
+            Return Me.IsNull(Me.tableViewTerlambatKembali.namaKaryawanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetnamaKaryawanNull()
+            Me(Me.tableViewTerlambatKembali.namaKaryawanColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1219,18 +1219,18 @@ Namespace MotorTerlambatDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "ViewTerlambatKembali"
             tableMapping.ColumnMappings.Add("no_order", "no_order")
-            tableMapping.ColumnMappings.Add("nmPel", "nmPel")
             tableMapping.ColumnMappings.Add("no_ktp", "no_ktp")
             tableMapping.ColumnMappings.Add("email", "email")
             tableMapping.ColumnMappings.Add("notelp", "notelp")
             tableMapping.ColumnMappings.Add("alamat", "alamat")
-            tableMapping.ColumnMappings.Add("nmKar", "nmKar")
             tableMapping.ColumnMappings.Add("tgl_sewa", "tgl_sewa")
             tableMapping.ColumnMappings.Add("tgl_kembali", "tgl_kembali")
             tableMapping.ColumnMappings.Add("id_motor", "id_motor")
             tableMapping.ColumnMappings.Add("plat", "plat")
             tableMapping.ColumnMappings.Add("jenis", "jenis")
             tableMapping.ColumnMappings.Add("merek", "merek")
+            tableMapping.ColumnMappings.Add("namaPelanggan", "namaPelanggan")
+            tableMapping.ColumnMappings.Add("namaKaryawan", "namaKaryawan")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -1247,8 +1247,7 @@ Namespace MotorTerlambatDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT no_order, nmPel, no_ktp, email, notelp, alamat, nmKar, tgl_sewa, tgl_kemba"& _ 
-                "li, id_motor, plat, jenis, merek FROM dbo.ViewTerlambatKembali"
+            Me._commandCollection(0).CommandText = "SELECT * FROM dbo.ViewTerlambatKembali"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

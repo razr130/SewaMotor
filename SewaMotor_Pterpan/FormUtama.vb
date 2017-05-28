@@ -36,7 +36,7 @@
             btnTambah.Visible = True
             btnUbah.Visible = True
             btnDelete.Visible = True
-            btnDenda.Visible = True
+
             btnPengembalian.Visible = True
             ReportToolStripMenuItem.Visible = True
 
@@ -45,7 +45,7 @@
             btnTambah.Visible = True
             btnUbah.Visible = True
             btnDelete.Visible = True
-            btnDenda.Visible = True
+
             btnPengembalian.Visible = True
             ReportToolStripMenuItem.Visible = True
             ToolsToolStripMenuItem.Visible = True
@@ -105,7 +105,7 @@
         kembali.Show()
         Me.Close()
     End Sub
-    Private Sub btnDenda_Click(sender As Object, e As EventArgs) 
+    Private Sub btnDenda_Click(sender As Object, e As EventArgs)
 
     End Sub
 

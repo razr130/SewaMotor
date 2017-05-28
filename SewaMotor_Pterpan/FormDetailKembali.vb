@@ -69,7 +69,7 @@ Public Class FormDetailKembali
     Private Sub gdvKembali_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gdvKembali.CellMouseDoubleClick
         'Me.Height = 691
 
-        Dim denda As New FormDenda(noorder, gdvKembali.Item(5, gdvKembali.CurrentRow.Index).Value, gdvKembali.Item(1, gdvKembali.CurrentRow.Index).Value, harga1)
+        Dim denda As New FormDenda(gdvKembali.Item(5, gdvKembali.CurrentRow.Index).Value, gdvKembali.Item(1, gdvKembali.CurrentRow.Index).Value, harga1)
         denda.Show()
         Me.Close()
 
@@ -84,12 +84,7 @@ Public Class FormDetailKembali
         motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & gdvKembali.Item(8, gdvKembali.CurrentRow.Index).Value, "")
         MsgBox("Motor " & gdvKembali.Item(2, gdvKembali.CurrentRow.Index).Value & " sudah berhasil dikembalikan")
 
-        'Panggil Invoice Pengembalian
-        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  namaPelanggan, no_ktp FROM ViewNotaPeminjaman WHERE no_order='" & GlobalVariables.NoNota & "'")
-        Dim namaPel = infoPelanggan.getBS.Current("namaPelanggan")
-        Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
-        Dim notaKembali As New FormCheckoutPengembalian(GlobalVariables.NoNota, namaPel, noKTP)
-        notaKembali.ShowDialog()
+
 
     End Sub
 
@@ -124,16 +119,15 @@ Public Class FormDetailKembali
     End Sub
 
     Private Sub btnSelesai_Click(sender As Object, e As EventArgs) Handles btnSelesai.Click
+        'Panggil Invoice Pengembalian
+        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  namaPelanggan, no_ktp FROM ViewNotaPeminjaman WHERE no_order='" & GlobalVariables.NoNota & "'")
+        Dim namaPel = infoPelanggan.getBS.Current("namaPelanggan")
+        Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
+        Dim notaKembali As New FormCheckoutPengembalian(GlobalVariables.NoNota, namaPel, noKTP)
+        notaKembali.ShowDialog()
         FormUtama.Show()
         Me.Close()
     End Sub
 
-    'Public Sub ambilharga()
-    '    txtNoOrder.DataBindings.Clear()
-    '    txtNamaCustomer.DataBindings.Clear()
-    '    txtNamaKaryawan.DataBindings.Clear()
-    '    '  Dim dendaaa As New FormDenda()
-    '    txtFinalPrice.Text = FormDenda.txtfinal.Text
 
-    'End Sub
 End Class

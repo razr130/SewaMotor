@@ -57,10 +57,10 @@ Public Class FormDenda
 
     End Sub
 
-    Public Sub New(noorder As Integer, tgl As System.DateTime, nodetail As Integer, harga As Integer)
+    Public Sub New(tgl As System.DateTime, nodetail As Integer, harga As Integer)
 
         ' This call is required by the designer.
-        idsementara = noorder
+
         date1 = tgl
         iddetail = nodetail
         price = harga
@@ -117,9 +117,10 @@ Public Class FormDenda
         End If
         jenis_denda.getBS.Filter = "id_denda=" & id
         adadenda = jenis_denda.getBS.Find("no_detail", iddetail)
-        jumlah = jenis_denda.getBS.Current("jumlah")
+
         'MsgBox(jumlah.ToString)
         If adadenda >= 0 Then
+            jumlah = jenis_denda.getBS.Current("jumlah")
             jumlah2 = jumlah + Integer.Parse(txtJumlahDenda.Text)
             denda.isiDataTable("UPDATE jenis_denda SET jumlah=" & jumlah2 & " WHERE id_denda=" & id & " AND no_detail=" & iddetail, "Informasi denda ditambah")
 
@@ -131,17 +132,17 @@ Public Class FormDenda
         hargatotal2 = hargatotal + price
 
         detail.isiDataTable("UPDATE Oder_Detail SET tgl_pengembalian='" & tanggal.Date.ToString("yyyy-MM-dd") & "' WHERE no_detalil=" & iddetail, "")
-        pesan.getBS.Filter = "no_order=" & idsementara
+        pesan.getBS.Filter = "no_order=" & GlobalVariables.NoNota
         If pesan.getBS.Current("total_denda") = 0 Then
 
-            pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargatotal & ", total_harga=" & hargatotal2 & " WHERE no_order=" & idsementara, "")
+            pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargatotal & ", total_harga=" & hargatotal2 & " WHERE no_order=" & GlobalVariables.NoNota, "")
         Else
 
             hargatotal3 = pesan.getBS.Current("total_denda")
             hargadendafinal = hargatotal3 + hargatotal
             hargatotalfinal = price + hargatotal
 
-            pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargadendafinal & ", total_harga=" & hargatotalfinal & " WHERE no_order=" & idsementara, "")
+            pesan.isiDataTable("UPDATE Pesan SET total_denda=" & hargadendafinal & ", total_harga=" & hargatotalfinal & " WHERE no_order=" & GlobalVariables.NoNota, "")
 
         End If
 

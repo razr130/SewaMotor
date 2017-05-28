@@ -22,6 +22,7 @@ Partial Class FormDetailKembali
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormDetailKembali))
         Me.gdvKembali = New System.Windows.Forms.DataGridView()
         Me.txtNoOrder = New System.Windows.Forms.TextBox()
@@ -54,6 +55,14 @@ Partial Class FormDetailKembali
         '
         Me.gdvKembali.AllowUserToAddRows = False
         Me.gdvKembali.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gdvKembali.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.gdvKembali.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gdvKembali.Location = New System.Drawing.Point(14, 128)
         Me.gdvKembali.Name = "gdvKembali"
@@ -143,7 +152,7 @@ Partial Class FormDetailKembali
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 10
-        Me.btnSimpan.Text = "Simpan"
+        Me.btnSimpan.Text = "Kembalikan"
         Me.btnSimpan.UseVisualStyleBackColor = False
         '
         'btnSelesai

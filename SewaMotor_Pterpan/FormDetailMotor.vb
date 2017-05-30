@@ -114,6 +114,11 @@
         End If
         hargaall = Integer.Parse(txtHarga.Text)
         txtHarga.Text = FormatCurrency(hargaall)
+
+        txtCustomer.Enabled = True
+        txtTelp.Enabled = True
+        txtKTP.Enabled = True
+
     End Sub
 
     Private Sub cbWaktu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWaktu.SelectedIndexChanged, cbJaminan.SelectedIndexChanged

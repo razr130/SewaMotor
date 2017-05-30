@@ -326,6 +326,7 @@ Partial Class FormDetailMotor
         '
         'txtCustomer
         '
+        Me.txtCustomer.Enabled = False
         Me.txtCustomer.Location = New System.Drawing.Point(367, 194)
         Me.txtCustomer.Name = "txtCustomer"
         Me.txtCustomer.Size = New System.Drawing.Size(102, 20)
@@ -416,6 +417,7 @@ Partial Class FormDetailMotor
         '
         'txtKTP
         '
+        Me.txtKTP.Enabled = False
         Me.txtKTP.Location = New System.Drawing.Point(367, 221)
         Me.txtKTP.Name = "txtKTP"
         Me.txtKTP.Size = New System.Drawing.Size(102, 20)
@@ -441,6 +443,7 @@ Partial Class FormDetailMotor
         '
         'txtTelp
         '
+        Me.txtTelp.Enabled = False
         Me.txtTelp.Location = New System.Drawing.Point(367, 247)
         Me.txtTelp.Name = "txtTelp"
         Me.txtTelp.Size = New System.Drawing.Size(102, 20)

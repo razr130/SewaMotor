@@ -49,15 +49,32 @@
         dgvKaryawan.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft
         dgvKaryawan.Columns(6).HeaderText = "Role"
         dgvKaryawan.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+
     End Sub
 
     '/////BUTTON/////
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
-        Edit()
-        Me.Close()
+        If GlobalVariables.Role > 2 Then
+            MsgBox("Anda tidak berhak mengubah data karyawan")
+        ElseIf GlobalVariables.Role = 2 Then
+            If dgvKaryawan.Item(1, dgvKaryawan.CurrentRow.Index).Value = "superadmin" Then
+                MsgBox("Anda tidak boleh mengubah data superadmin")
+            Else
+                Edit()
+                Me.Close()
+            End If
+        ElseIf GlobalVariables.Role = 1 Then
+            Edit()
+            Me.Close()
+        End If
+
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+
         Delete()
+
 
     End Sub
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
@@ -74,6 +91,7 @@
         idKaryawan = dgvKaryawan.Item(0, dgvKaryawan.CurrentRow.Index).Value
     End Sub
     Private Sub dgvKaryawan_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvKaryawan.CellContentDoubleClick
+
         Edit()
     End Sub
     Private Sub dgvKaryawan_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvKaryawan.KeyDown
@@ -126,15 +144,38 @@
         If result = DialogResult.No Then
 
         ElseIf result = DialogResult.Yes Then
-            Try
-                karyawan.isiDataTable("DELETE FROM karyawan WHERE id_karyawan=" & idKaryawan, "karyawan " & namakaryawan & " berhasil dihapus!")
-                MessageBox.Show("Data karyawan " & namakaryawan & "berhasil dihapus!", "Informasi", MessageBoxButtons.OK)
-            Catch ex As Exception
-                MessageBox.Show("Karyawan tidak dapat dihapus!")
-            End Try
-            Me.Close()
-            Dim kar As New FormListKaryawan
-            kar.Show()
+            If GlobalVariables.Role = 2 Then
+                If dgvKaryawan.Item(1, dgvKaryawan.CurrentRow.Index).Value = "superadmin" Or dgvKaryawan.Item(1, dgvKaryawan.CurrentRow.Index).Value = "admin" Then
+                    MsgBox("Tidak boleh menghapus superadmin atau admin")
+                Else
+                    Try
+                        karyawan.isiDataTable("DELETE FROM karyawan WHERE id_karyawan=" & idKaryawan, "karyawan " & namakaryawan & " berhasil dihapus!")
+                        MessageBox.Show("Data karyawan " & namakaryawan & "berhasil dihapus!", "Informasi", MessageBoxButtons.OK)
+                    Catch ex As Exception
+                        MessageBox.Show("Karyawan tidak dapat dihapus!")
+                    End Try
+                    Me.Close()
+                    Dim kar As New FormListKaryawan
+                    kar.Show()
+                End If
+            ElseIf GlobalVariables.Role = 1 Then
+                If dgvKaryawan.Item(1, dgvKaryawan.CurrentRow.Index).Value = "superadmin" Then
+                    MsgBox("Tidak boleh menghapus superadmin")
+                Else
+                    Try
+                        karyawan.isiDataTable("DELETE FROM karyawan WHERE id_karyawan=" & idKaryawan, "karyawan " & namakaryawan & " berhasil dihapus!")
+                        MessageBox.Show("Data karyawan " & namakaryawan & "berhasil dihapus!", "Informasi", MessageBoxButtons.OK)
+                    Catch ex As Exception
+                        MessageBox.Show("Karyawan tidak dapat dihapus!")
+                    End Try
+                    Me.Close()
+                    Dim kar As New FormListKaryawan
+                    kar.Show()
+                End If
+            Else
+                MsgBox("Anda tidak berhak menghapus karyawan")
+            End If
+
         End If
     End Sub
 

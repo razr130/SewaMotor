@@ -21,9 +21,7 @@
         FormUtama.Show()
     End Sub
 
-    Private Sub PengembalianToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PengembalianToolStripMenuItem.Click
-        FormKembali.Show()
-    End Sub
+
 
     Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles logOutToolStripMenuItem.Click
         GlobalVariables.UserName = ""
@@ -31,30 +29,11 @@
         Me.Close()
     End Sub
 
-    Private Sub PerHariToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerHariToolStripMenuItem.Click
-        Dim filter As New FormFilterLaporanPerHari()
-        filter.Show()
+    Private Sub PengembalianToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PengembalianToolStripMenuItem1.Click
+        FormKembali.Show()
     End Sub
 
-    Private Sub PerBulanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerBulanToolStripMenuItem.Click
-        Dim filter As New FormFilterLaporan("FormLaporanSewaPerBulan")
-        filter.Show()
-    End Sub
-
-    Private Sub PerTahunToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerTahunToolStripMenuItem.Click
-        Dim filter As New FormFilterLaporan("FormLaporanSewaPerTahun")
-        filter.Show()
-    End Sub
-
-    Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanPenyewaanToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub LaporanStatusMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanStatusMotorToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub LaporanKeterlambatanMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanKeterlambatanMotorToolStripMenuItem.Click
-
+    Private Sub PenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenyewaanToolStripMenuItem.Click
+        FormUtama.Show()
     End Sub
 End Class

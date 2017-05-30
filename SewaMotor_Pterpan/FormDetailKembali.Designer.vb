@@ -36,17 +36,9 @@ Partial Class FormDetailKembali
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.btnSelesai = New System.Windows.Forms.Button()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.gdvKembali, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -127,7 +119,7 @@ Partial Class FormDetailKembali
         'txtHargaSewa
         '
         Me.txtHargaSewa.Enabled = False
-        Me.txtHargaSewa.Location = New System.Drawing.Point(145, 292)
+        Me.txtHargaSewa.Location = New System.Drawing.Point(103, 326)
         Me.txtHargaSewa.Name = "txtHargaSewa"
         Me.txtHargaSewa.Size = New System.Drawing.Size(121, 20)
         Me.txtHargaSewa.TabIndex = 8
@@ -136,19 +128,20 @@ Partial Class FormDetailKembali
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(20, 294)
+        Me.Label10.Location = New System.Drawing.Point(13, 328)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(125, 15)
+        Me.Label10.Size = New System.Drawing.Size(86, 15)
         Me.Label10.TabIndex = 7
-        Me.Label10.Text = "Harga Sewa Awal         : "
+        Me.Label10.Text = "Harga Sewa     : "
         '
         'btnSimpan
         '
         Me.btnSimpan.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnSimpan.Enabled = False
         Me.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSimpan.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSimpan.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSimpan.Location = New System.Drawing.Point(103, 334)
+        Me.btnSimpan.Location = New System.Drawing.Point(117, 362)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(118, 23)
         Me.btnSimpan.TabIndex = 10
@@ -158,34 +151,25 @@ Partial Class FormDetailKembali
         'btnSelesai
         '
         Me.btnSelesai.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnSelesai.Enabled = False
         Me.btnSelesai.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSelesai.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSelesai.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSelesai.Location = New System.Drawing.Point(227, 334)
+        Me.btnSelesai.Location = New System.Drawing.Point(241, 362)
         Me.btnSelesai.Name = "btnSelesai"
         Me.btnSelesai.Size = New System.Drawing.Size(75, 23)
         Me.btnSelesai.TabIndex = 10
-        Me.btnSelesai.Text = "Selesai"
+        Me.btnSelesai.Text = "Batal"
         Me.btnSelesai.UseVisualStyleBackColor = False
         '
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.logOutToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(456, 24)
         Me.menuStrip1.TabIndex = 11
         Me.menuStrip1.Text = "menuStrip1"
-        '
-        'homeToolStripMenuItem
-        '
-        Me.homeToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.homeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
-        Me.homeToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.homeToolStripMenuItem.Text = "Home"
         '
         'logOutToolStripMenuItem
         '
@@ -195,60 +179,6 @@ Partial Class FormDetailKembali
         Me.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem"
         Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.logOutToolStripMenuItem.Text = "Logout"
-        '
-        'ToolsToolStripMenuItem
-        '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
-        Me.ToolsToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
-        Me.ToolsToolStripMenuItem.Text = "Tools"
-        '
-        'ListPelangganToolStripMenuItem
-        '
-        Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
-        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
-        '
-        'ListKaryawanToolStripMenuItem
-        '
-        Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
-        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
-        '
-        'ListOrderToolStripMenuItem
-        '
-        Me.ListOrderToolStripMenuItem.Name = "ListOrderToolStripMenuItem"
-        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.ListOrderToolStripMenuItem.Text = "List Order"
-        '
-        'ReportToolStripMenuItem
-        '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem, Me.LaporanKeterlambatanMotorToolStripMenuItem})
-        Me.ReportToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReportToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
-        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.ReportToolStripMenuItem.Text = "Report"
-        '
-        'LaporanPenyewaanToolStripMenuItem
-        '
-        Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
-        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
-        '
-        'LaporanStatusMotorToolStripMenuItem
-        '
-        Me.LaporanStatusMotorToolStripMenuItem.Name = "LaporanStatusMotorToolStripMenuItem"
-        Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
-        '
-        'LaporanKeterlambatanMotorToolStripMenuItem
-        '
-        Me.LaporanKeterlambatanMotorToolStripMenuItem.Name = "LaporanKeterlambatanMotorToolStripMenuItem"
-        Me.LaporanKeterlambatanMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanKeterlambatanMotorToolStripMenuItem.Text = "Laporan Keterlambatan Motor"
         '
         'Label4
         '
@@ -260,12 +190,23 @@ Partial Class FormDetailKembali
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Motor yang dipinjam : "
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(16, 283)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(297, 15)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "* Lakukan double click pada motor yang ingin diberi denda"
+        '
         'FormDetailKembali
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(456, 370)
+        Me.ClientSize = New System.Drawing.Size(456, 402)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.btnSelesai)
@@ -302,15 +243,7 @@ Partial Class FormDetailKembali
     Friend WithEvents btnSimpan As Button
     Friend WithEvents btnSelesai As Button
     Private WithEvents menuStrip1 As MenuStrip
-    Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LaporanKeterlambatanMotorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

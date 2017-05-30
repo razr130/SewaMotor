@@ -37,6 +37,7 @@ Partial Class FormHomepage
         Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PengembalianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,7 +45,7 @@ Partial Class FormHomepage
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem, Me.PengembalianToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem, Me.PengembalianToolStripMenuItem, Me.PenyewaanToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(362, 24)
@@ -144,6 +145,14 @@ Partial Class FormHomepage
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
         '
+        'PenyewaanToolStripMenuItem
+        '
+        Me.PenyewaanToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PenyewaanToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.PenyewaanToolStripMenuItem.Name = "PenyewaanToolStripMenuItem"
+        Me.PenyewaanToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
+        Me.PenyewaanToolStripMenuItem.Text = "Penyewaan"
+        '
         'FormHomepage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -177,4 +186,5 @@ Partial Class FormHomepage
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ListMotorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PengembalianToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PenyewaanToolStripMenuItem As ToolStripMenuItem
 End Class

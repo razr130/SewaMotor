@@ -32,6 +32,29 @@
     End Sub
 
     Private Sub PerHariToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerHariToolStripMenuItem.Click
-        FormLaporanSewaPerHari.Show()
+        Dim filter As New FormFilterLaporanPerHari()
+        filter.Show()
+    End Sub
+
+    Private Sub PerBulanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerBulanToolStripMenuItem.Click
+        Dim filter As New FormFilterLaporan("FormLaporanSewaPerBulan")
+        filter.Show()
+    End Sub
+
+    Private Sub PerTahunToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerTahunToolStripMenuItem.Click
+        Dim filter As New FormFilterLaporan("FormLaporanSewaPerTahun")
+        filter.Show()
+    End Sub
+
+    Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanPenyewaanToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub LaporanStatusMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanStatusMotorToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub LaporanKeterlambatanMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanKeterlambatanMotorToolStripMenuItem.Click
+
     End Sub
 End Class

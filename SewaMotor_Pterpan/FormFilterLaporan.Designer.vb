@@ -70,6 +70,7 @@ Partial Class FormFilterLaporan
         '
         'cbMonth
         '
+        Me.cbMonth.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.cbMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbMonth.FormattingEnabled = True
         Me.cbMonth.Items.AddRange(New Object() {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"})
@@ -80,6 +81,7 @@ Partial Class FormFilterLaporan
         '
         'cbYear
         '
+        Me.cbYear.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.cbYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbYear.FormattingEnabled = True
         Me.cbYear.Location = New System.Drawing.Point(16, 92)
@@ -91,6 +93,7 @@ Partial Class FormFilterLaporan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(165, 174)
         Me.Controls.Add(Me.cbYear)
         Me.Controls.Add(Me.cbMonth)

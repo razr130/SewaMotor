@@ -152,6 +152,12 @@
     <Compile Include="FormFilterLaporan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormFilterLaporanPerHari.Designer.vb">
+      <DependentUpon>FormFilterLaporanPerHari.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormFilterLaporanPerHari.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormHomepage.Designer.vb">
       <DependentUpon>FormHomepage.vb</DependentUpon>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormFilterLaporan.resx">
       <DependentUpon>FormFilterLaporan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFilterLaporanPerHari.resx">
+      <DependentUpon>FormFilterLaporanPerHari.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHomepage.resx">
       <DependentUpon>FormHomepage.vb</DependentUpon>

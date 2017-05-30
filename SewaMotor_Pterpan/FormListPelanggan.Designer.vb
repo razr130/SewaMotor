@@ -36,6 +36,7 @@ Partial Class FormListPelanggan
         Me.label2 = New System.Windows.Forms.Label()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnTambah = New System.Windows.Forms.Button()
         Me.groupDaftarPelanggan.SuspendLayout()
         CType(Me.dgvPelanggan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SewaMotorDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +50,7 @@ Partial Class FormListPelanggan
         Me.groupDaftarPelanggan.Controls.Add(Me.label1)
         Me.groupDaftarPelanggan.Controls.Add(Me.txtCari)
         Me.groupDaftarPelanggan.Controls.Add(Me.btnDelete)
+        Me.groupDaftarPelanggan.Controls.Add(Me.btnTambah)
         Me.groupDaftarPelanggan.Controls.Add(Me.btnUbah)
         Me.groupDaftarPelanggan.Controls.Add(Me.dgvPelanggan)
         Me.groupDaftarPelanggan.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -93,7 +95,7 @@ Partial Class FormListPelanggan
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(92, 322)
+        Me.btnDelete.Location = New System.Drawing.Point(180, 322)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
         Me.btnDelete.TabIndex = 17
@@ -105,7 +107,7 @@ Partial Class FormListPelanggan
         Me.btnUbah.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUbah.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUbah.Location = New System.Drawing.Point(11, 322)
+        Me.btnUbah.Location = New System.Drawing.Point(99, 322)
         Me.btnUbah.Name = "btnUbah"
         Me.btnUbah.Size = New System.Drawing.Size(75, 23)
         Me.btnUbah.TabIndex = 18
@@ -160,6 +162,18 @@ Partial Class FormListPelanggan
         Me.homeToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.homeToolStripMenuItem.Text = "Home"
         '
+        'btnTambah
+        '
+        Me.btnTambah.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTambah.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnTambah.Location = New System.Drawing.Point(18, 322)
+        Me.btnTambah.Name = "btnTambah"
+        Me.btnTambah.Size = New System.Drawing.Size(75, 23)
+        Me.btnTambah.TabIndex = 18
+        Me.btnTambah.Text = "Tambah"
+        Me.btnTambah.UseVisualStyleBackColor = False
+        '
         'FormListPelanggan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -197,4 +211,5 @@ Partial Class FormListPelanggan
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnClose As Button
+    Private WithEvents btnTambah As Button
 End Class

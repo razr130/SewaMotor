@@ -46,7 +46,13 @@
         Edit()
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Delete()
+        Dim result As Integer = MessageBox.Show("Apakah anda yakin ingin menghapus data pelanggan ini ?", "Konfirmasi", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Delete()
+        Else
+
+        End If
+
     End Sub
 
     '/////TextBox/////
@@ -109,6 +115,11 @@
 
     Private Sub dgvPelanggan_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvPelanggan.CellMouseDoubleClick
         idPelanggan = dgvPelanggan.Item(0, dgvPelanggan.CurrentRow.Index).Value
+        Me.Close()
+    End Sub
+
+    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+        FormRegis.Show()
         Me.Close()
     End Sub
 End Class

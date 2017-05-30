@@ -35,9 +35,9 @@ Partial Class FormHomepage
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PengembalianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PengembalianToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,10 +45,10 @@ Partial Class FormHomepage
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem, Me.PengembalianToolStripMenuItem, Me.PenyewaanToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem, Me.PenyewaanToolStripMenuItem, Me.PengembalianToolStripMenuItem1})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
-        Me.menuStrip1.Size = New System.Drawing.Size(362, 24)
+        Me.menuStrip1.Size = New System.Drawing.Size(425, 24)
         Me.menuStrip1.TabIndex = 4
         Me.menuStrip1.Text = "menuStrip1"
         '
@@ -127,24 +127,6 @@ Partial Class FormHomepage
         Me.LaporanKeterlambatanMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
         Me.LaporanKeterlambatanMotorToolStripMenuItem.Text = "Laporan Keterlambatan Motor"
         '
-        'PengembalianToolStripMenuItem
-        '
-        Me.PengembalianToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PengembalianToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.PengembalianToolStripMenuItem.Name = "PengembalianToolStripMenuItem"
-        Me.PengembalianToolStripMenuItem.Size = New System.Drawing.Size(97, 20)
-        Me.PengembalianToolStripMenuItem.Text = "Pengembalian"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(26, 58)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(306, 308)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
-        '
         'PenyewaanToolStripMenuItem
         '
         Me.PenyewaanToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -153,12 +135,30 @@ Partial Class FormHomepage
         Me.PenyewaanToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
         Me.PenyewaanToolStripMenuItem.Text = "Penyewaan"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(54, 58)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(306, 308)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
+        'PengembalianToolStripMenuItem1
+        '
+        Me.PengembalianToolStripMenuItem1.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PengembalianToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.PengembalianToolStripMenuItem1.Name = "PengembalianToolStripMenuItem1"
+        Me.PengembalianToolStripMenuItem1.Size = New System.Drawing.Size(97, 20)
+        Me.PengembalianToolStripMenuItem1.Text = "Pengembalian"
+        '
         'FormHomepage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(362, 404)
+        Me.ClientSize = New System.Drawing.Size(425, 404)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.menuStrip1)
         Me.Name = "FormHomepage"
@@ -185,6 +185,6 @@ Partial Class FormHomepage
     Friend WithEvents LaporanKeterlambatanMotorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ListMotorToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PengembalianToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PenyewaanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PengembalianToolStripMenuItem1 As ToolStripMenuItem
 End Class

@@ -21,13 +21,19 @@
         FormUtama.Show()
     End Sub
 
-    Private Sub PengembalianToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PengembalianToolStripMenuItem.Click
-        FormKembali.Show()
-    End Sub
+
 
     Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles logOutToolStripMenuItem.Click
         GlobalVariables.UserName = ""
         FormLogInKaryawan.Show()
         Me.Close()
+    End Sub
+
+    Private Sub PengembalianToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PengembalianToolStripMenuItem1.Click
+        FormKembali.Show()
+    End Sub
+
+    Private Sub PenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenyewaanToolStripMenuItem.Click
+        FormUtama.Show()
     End Sub
 End Class

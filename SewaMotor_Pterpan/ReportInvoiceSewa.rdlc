@@ -729,6 +729,7 @@
                   <FontFamily>BatangChe</FontFamily>
                   <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <Format>'Rp'#,0;('Rp'#,0)</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -752,6 +753,7 @@
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
         </Style>
       </Textbox>
       <Textbox Name="Textbox5">
@@ -896,7 +898,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.53633in</Top>
+        <Top>2.52244in</Top>
         <Left>0.41802in</Left>
         <Height>0.79167in</Height>
         <Width>8.07986in</Width>

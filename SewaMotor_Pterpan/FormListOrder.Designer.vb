@@ -29,7 +29,6 @@ Partial Class FormListOrder
         Me.btnCetakNota = New System.Windows.Forms.Button()
         Me.lblCari = New System.Windows.Forms.Label()
         Me.txtCari = New System.Windows.Forms.TextBox()
-        Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnUbah = New System.Windows.Forms.Button()
         Me.dgvOrder = New System.Windows.Forms.DataGridView()
         Me.SewaMotorDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -50,7 +49,6 @@ Partial Class FormListOrder
         Me.groupDaftarPelanggan.Controls.Add(Me.btnCetakNota)
         Me.groupDaftarPelanggan.Controls.Add(Me.lblCari)
         Me.groupDaftarPelanggan.Controls.Add(Me.txtCari)
-        Me.groupDaftarPelanggan.Controls.Add(Me.btnDelete)
         Me.groupDaftarPelanggan.Controls.Add(Me.btnUbah)
         Me.groupDaftarPelanggan.Controls.Add(Me.dgvOrder)
         Me.groupDaftarPelanggan.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -100,18 +98,6 @@ Partial Class FormListOrder
         Me.txtCari.Name = "txtCari"
         Me.txtCari.Size = New System.Drawing.Size(306, 20)
         Me.txtCari.TabIndex = 14
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(179, 322)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
-        Me.btnDelete.TabIndex = 17
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = False
         '
         'btnUbah
         '
@@ -203,7 +189,6 @@ Partial Class FormListOrder
     Friend WithEvents btnCetakNota As Button
     Private WithEvents lblCari As Label
     Friend WithEvents txtCari As TextBox
-    Private WithEvents btnDelete As Button
     Private WithEvents btnUbah As Button
     Friend WithEvents dgvOrder As DataGridView
     Friend WithEvents SewaMotorDataSetBindingSource As BindingSource

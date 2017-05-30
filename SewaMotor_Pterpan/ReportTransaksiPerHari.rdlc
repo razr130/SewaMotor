@@ -465,9 +465,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=SUM(=(DateDiff(DateInterval.Day,Fields!tgl_sewa.Value, Fields!tgl_kembali.Value))*Fields!harga.Value)</Value>
+                <Value>=Parameters!paraSubTotal.Value</Value>
                 <Style>
-                  <Format>'Rp'#,0.00;('Rp'#,0.00)</Format>
+                  <Format>'Rp'#,0;('Rp'#,0)</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -528,7 +528,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=FormatDateTime(Parameters!paraTanggalSewa.Value, DateFormat.LongDate)</Value>
+                <Value>=FormatDateTime(Parameters!paraTanggalSewa.Value, DateFormat.ShortDate)</Value>
                 <Style />
               </TextRun>
             </TextRuns>

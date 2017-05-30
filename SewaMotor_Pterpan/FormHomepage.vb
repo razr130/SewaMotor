@@ -36,4 +36,8 @@
     Private Sub PenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenyewaanToolStripMenuItem.Click
         FormUtama.Show()
     End Sub
+
+    Private Sub PerHariToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerHariToolStripMenuItem.Click
+        FormFilterLaporanPerHari.Show()
+    End Sub
 End Class

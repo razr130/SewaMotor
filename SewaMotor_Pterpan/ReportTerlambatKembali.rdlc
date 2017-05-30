@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DAFTAR MOTOR </Value>
+                <Value>DAFTAR MOTOR YANG BELUM KEMBALI</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -23,7 +23,7 @@
         <Top>0.2175in</Top>
         <Left>0.33208in</Left>
         <Height>0.25in</Height>
-        <Width>3.38542in</Width>
+        <Width>4.15625in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -989,10 +989,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>MotorTerlambatDataSet</DataSetName>
-        <Top>0.83555in</Top>
+        <Top>0.73139in</Top>
         <Left>0.33208in</Left>
         <Height>0.73958in</Height>
-        <Width>11.45834in</Width>
+        <Width>11.45833in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1000,36 +1000,6 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>TERLAMBAT KEMBALI</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.48139in</Top>
-        <Left>0.33208in</Left>
-        <Height>0.25in</Height>
-        <Width>2.46875in</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox2">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -1049,7 +1019,7 @@
         <Left>10.29042in</Left>
         <Height>0.25in</Height>
         <Width>0.57292in</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1079,7 +1049,7 @@
         <Left>10.86333in</Left>
         <Height>0.25in</Height>
         <Width>0.92708in</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>

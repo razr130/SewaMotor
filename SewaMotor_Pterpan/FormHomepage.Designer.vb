@@ -35,8 +35,8 @@ Partial Class FormHomepage
         Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PengembalianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.menuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -126,6 +126,14 @@ Partial Class FormHomepage
         Me.LaporanKeterlambatanMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
         Me.LaporanKeterlambatanMotorToolStripMenuItem.Text = "Laporan Keterlambatan Motor"
         '
+        'PengembalianToolStripMenuItem
+        '
+        Me.PengembalianToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PengembalianToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.PengembalianToolStripMenuItem.Name = "PengembalianToolStripMenuItem"
+        Me.PengembalianToolStripMenuItem.Size = New System.Drawing.Size(97, 20)
+        Me.PengembalianToolStripMenuItem.Text = "Pengembalian"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -135,14 +143,6 @@ Partial Class FormHomepage
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
-        '
-        'PengembalianToolStripMenuItem
-        '
-        Me.PengembalianToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PengembalianToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.PengembalianToolStripMenuItem.Name = "PengembalianToolStripMenuItem"
-        Me.PengembalianToolStripMenuItem.Size = New System.Drawing.Size(97, 20)
-        Me.PengembalianToolStripMenuItem.Text = "Pengembalian"
         '
         'FormHomepage
         '

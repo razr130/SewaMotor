@@ -86,8 +86,8 @@
         End If
     End Sub
 
-    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) 
-
+    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Me.Close()
     End Sub
 
     Private Sub katalogToolStripMenuItem_Click(sender As Object, e As EventArgs) 
@@ -96,5 +96,9 @@
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub FormListPelanggan_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        FormHomepage.Show()
     End Sub
 End Class

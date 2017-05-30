@@ -142,7 +142,6 @@
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         Dim edit As New FormDetailMotor(idmotor, username)
         edit.Show()
-        Me.Close()
     End Sub
 
     '/////TOOLTIP/////
@@ -174,7 +173,7 @@
         Laporan.Show()
 
     End Sub
-    Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If GlobalVariables.Role > 0 Then
             FormLogin.Show()
             Me.Close()
@@ -194,7 +193,7 @@
     End Sub
 
     Private Sub FormUtama_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        FormHomepage.Show()
+
     End Sub
     Private Sub HomeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HomeToolStripMenuItem.Click
         Me.Close()

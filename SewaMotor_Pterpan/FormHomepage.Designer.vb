@@ -37,6 +37,10 @@ Partial Class FormHomepage
         Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PengembalianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LaporanTransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PerHariToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PerBulanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PerTahunToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -101,7 +105,7 @@ Partial Class FormHomepage
         '
         'ReportToolStripMenuItem
         '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem, Me.LaporanKeterlambatanMotorToolStripMenuItem})
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem, Me.LaporanKeterlambatanMotorToolStripMenuItem, Me.LaporanTransaksiToolStripMenuItem})
         Me.ReportToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReportToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
@@ -144,6 +148,31 @@ Partial Class FormHomepage
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
         '
+        'LaporanTransaksiToolStripMenuItem
+        '
+        Me.LaporanTransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PerHariToolStripMenuItem, Me.PerBulanToolStripMenuItem, Me.PerTahunToolStripMenuItem})
+        Me.LaporanTransaksiToolStripMenuItem.Name = "LaporanTransaksiToolStripMenuItem"
+        Me.LaporanTransaksiToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
+        Me.LaporanTransaksiToolStripMenuItem.Text = "Laporan Transaksi"
+        '
+        'PerHariToolStripMenuItem
+        '
+        Me.PerHariToolStripMenuItem.Name = "PerHariToolStripMenuItem"
+        Me.PerHariToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PerHariToolStripMenuItem.Text = "per Hari"
+        '
+        'PerBulanToolStripMenuItem
+        '
+        Me.PerBulanToolStripMenuItem.Name = "PerBulanToolStripMenuItem"
+        Me.PerBulanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PerBulanToolStripMenuItem.Text = "per Bulan"
+        '
+        'PerTahunToolStripMenuItem
+        '
+        Me.PerTahunToolStripMenuItem.Name = "PerTahunToolStripMenuItem"
+        Me.PerTahunToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PerTahunToolStripMenuItem.Text = "per Tahun"
+        '
         'FormHomepage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -177,4 +206,8 @@ Partial Class FormHomepage
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ListMotorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PengembalianToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LaporanTransaksiToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PerHariToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PerBulanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PerTahunToolStripMenuItem As ToolStripMenuItem
 End Class

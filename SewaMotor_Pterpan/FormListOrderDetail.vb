@@ -27,22 +27,30 @@
         dgvOrder.DataSource = order.getBS()
         'order.getBS.Filter = "no_order='" & no_order & "'"
 
-        dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
-        dgvOrder.Columns(0).HeaderText = "No.Detail"
-        dgvOrder.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgvOrder.Columns(1).HeaderText = "No.Order"
-        dgvOrder.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgvOrder.Columns(2).HeaderText = "ID Motor"
-        dgvOrder.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgvOrder.Columns(3).HeaderText = "Tanggal Sewa"
-        dgvOrder.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgvOrder.Columns(4).HeaderText = "Tanggal Kembali"
-        dgvOrder.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgvOrder.Columns(5).HeaderText = "Tanggal Dikembalikan"
-        dgvOrder.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgvOrder.Columns(6).HeaderText = "Jumlah"
-        dgvOrder.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+
+
+        dgvOrder.Columns(0).HeaderText = "No.Order"
+        dgvOrder.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(1).HeaderText = "No.Detail"
+        dgvOrder.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(2).HeaderText = "Merek"
+        dgvOrder.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(3).HeaderText = "Nomor Polisi"
+        dgvOrder.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(4).HeaderText = "Tanggal Sewa"
+        dgvOrder.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(5).HeaderText = "Tanggal Kembali"
+        dgvOrder.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(6).HeaderText = "Id Motor"
+        dgvOrder.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(7).HeaderText = "Nama Pelanggan"
+        dgvOrder.Columns(7).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(8).HeaderText = "Nama Karyawan"
+        dgvOrder.Columns(8).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+        dgvOrder.Columns(1).Visible = False
+        dgvOrder.Columns(6).Visible = False
     End Sub
 
     Private Sub txtCari_TextChanged(sender As Object, e As EventArgs) Handles txtCari.TextChanged

@@ -30,4 +30,8 @@
         FormLogInKaryawan.Show()
         Me.Close()
     End Sub
+
+    Private Sub PerHariToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerHariToolStripMenuItem.Click
+        FormLaporanSewaPerHari.Show()
+    End Sub
 End Class

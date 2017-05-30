@@ -7,7 +7,6 @@
 
         ' This call is required by the designer.
         InitializeComponent()
-        MsgBox(tglSewa)
         Dim ambilHarga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DateDiff(day,tgl_sewa,tgl_kembali)*harga) as total_bayar FROM ViewNotaPeminjaman WHERE tgl_sewa ='" & tglSewa.ToString("yyyy/MM/dd") & "'")
         totalbayar = ambilHarga.getBS.Current("total_bayar")
         paraTanggalSewa = New Microsoft.Reporting.WinForms.ReportParameter("paraTanggalSewa", tglSewa)

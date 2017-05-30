@@ -37,10 +37,10 @@ Partial Class FormHomepage
         Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanTransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PerHariToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PerBulanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PengembalianToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PerBulanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -140,8 +140,14 @@ Partial Class FormHomepage
         'PerHariToolStripMenuItem
         '
         Me.PerHariToolStripMenuItem.Name = "PerHariToolStripMenuItem"
-        Me.PerHariToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PerHariToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.PerHariToolStripMenuItem.Text = "per Hari"
+        '
+        'PerBulanToolStripMenuItem
+        '
+        Me.PerBulanToolStripMenuItem.Name = "PerBulanToolStripMenuItem"
+        Me.PerBulanToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.PerBulanToolStripMenuItem.Text = "per Bulan"
         '
         'PenyewaanToolStripMenuItem
         '
@@ -168,12 +174,6 @@ Partial Class FormHomepage
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
-        '
-        'PerBulanToolStripMenuItem
-        '
-        Me.PerBulanToolStripMenuItem.Name = "PerBulanToolStripMenuItem"
-        Me.PerBulanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.PerBulanToolStripMenuItem.Text = "per Bulan"
         '
         'FormHomepage
         '

@@ -40,4 +40,16 @@
     Private Sub PerHariToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerHariToolStripMenuItem.Click
         FormFilterLaporanPerHari.Show()
     End Sub
+
+    Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanPenyewaanToolStripMenuItem.Click
+        FormFilterLaporan.Show()
+    End Sub
+
+    Private Sub LaporanStatusMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanStatusMotorToolStripMenuItem.Click
+        FormLaporanStatusMotor.Show()
+    End Sub
+
+    Private Sub LaporanKeterlambatanMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanKeterlambatanMotorToolStripMenuItem.Click
+        FormLaporanTerlambatKembali.Show()
+    End Sub
 End Class

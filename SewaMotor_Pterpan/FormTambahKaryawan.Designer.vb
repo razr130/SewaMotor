@@ -29,16 +29,12 @@ Partial Class FormTambahKaryawan
         Me.label2 = New System.Windows.Forms.Label()
         Me.btnDaftar = New System.Windows.Forms.Button()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cbSesi = New System.Windows.Forms.ComboBox()
-        Me.CbHariKerja = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.radioKaryawan = New System.Windows.Forms.RadioButton()
         Me.radioAdmin = New System.Windows.Forms.RadioButton()
         Me.txtAlamat = New System.Windows.Forms.TextBox()
         Me.label3 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.label5 = New System.Windows.Forms.Label()
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.txtNama = New System.Windows.Forms.TextBox()
@@ -73,7 +69,7 @@ Partial Class FormTambahKaryawan
         Me.btnBatal.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnBatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBatal.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBatal.Location = New System.Drawing.Point(174, 277)
+        Me.btnBatal.Location = New System.Drawing.Point(174, 221)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(75, 23)
         Me.btnBatal.TabIndex = 9
@@ -101,7 +97,7 @@ Partial Class FormTambahKaryawan
         Me.btnDaftar.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnDaftar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDaftar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDaftar.Location = New System.Drawing.Point(91, 277)
+        Me.btnDaftar.Location = New System.Drawing.Point(91, 221)
         Me.btnDaftar.Name = "btnDaftar"
         Me.btnDaftar.Size = New System.Drawing.Size(75, 23)
         Me.btnDaftar.TabIndex = 8
@@ -110,15 +106,11 @@ Partial Class FormTambahKaryawan
         '
         'groupBox1
         '
-        Me.groupBox1.Controls.Add(Me.cbSesi)
-        Me.groupBox1.Controls.Add(Me.CbHariKerja)
         Me.groupBox1.Controls.Add(Me.GroupBox2)
         Me.groupBox1.Controls.Add(Me.txtAlamat)
         Me.groupBox1.Controls.Add(Me.label3)
-        Me.groupBox1.Controls.Add(Me.Label7)
         Me.groupBox1.Controls.Add(Me.label4)
         Me.groupBox1.Controls.Add(Me.label1)
-        Me.groupBox1.Controls.Add(Me.Label6)
         Me.groupBox1.Controls.Add(Me.label5)
         Me.groupBox1.Controls.Add(Me.txtEmail)
         Me.groupBox1.Controls.Add(Me.txtPass)
@@ -130,28 +122,10 @@ Partial Class FormTambahKaryawan
         Me.groupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.groupBox1.Location = New System.Drawing.Point(12, 33)
         Me.groupBox1.Name = "groupBox1"
-        Me.groupBox1.Size = New System.Drawing.Size(348, 317)
+        Me.groupBox1.Size = New System.Drawing.Size(348, 255)
         Me.groupBox1.TabIndex = 15
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Tambah Karyawan"
-        '
-        'cbSesi
-        '
-        Me.cbSesi.FormattingEnabled = True
-        Me.cbSesi.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.cbSesi.Location = New System.Drawing.Point(119, 239)
-        Me.cbSesi.Name = "cbSesi"
-        Me.cbSesi.Size = New System.Drawing.Size(35, 23)
-        Me.cbSesi.TabIndex = 24
-        '
-        'CbHariKerja
-        '
-        Me.CbHariKerja.FormattingEnabled = True
-        Me.CbHariKerja.Items.AddRange(New Object() {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"})
-        Me.CbHariKerja.Location = New System.Drawing.Point(119, 212)
-        Me.CbHariKerja.Name = "CbHariKerja"
-        Me.CbHariKerja.Size = New System.Drawing.Size(121, 23)
-        Me.CbHariKerja.TabIndex = 24
         '
         'GroupBox2
         '
@@ -202,15 +176,6 @@ Partial Class FormTambahKaryawan
         Me.label3.TabIndex = 13
         Me.label3.Text = "Nama Lengkap"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 216)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(56, 15)
-        Me.Label7.TabIndex = 14
-        Me.Label7.Text = "Hari Kerja"
-        '
         'label4
         '
         Me.label4.AutoSize = True
@@ -219,15 +184,6 @@ Partial Class FormTambahKaryawan
         Me.label4.Size = New System.Drawing.Size(42, 15)
         Me.label4.TabIndex = 14
         Me.label4.Text = "Alamat"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 242)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(26, 15)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "sesi"
         '
         'label5
         '
@@ -345,11 +301,12 @@ Partial Class FormTambahKaryawan
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(373, 356)
+        Me.ClientSize = New System.Drawing.Size(373, 298)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormTambahKaryawan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormTambahKaryawan"
         Me.groupBox1.ResumeLayout(False)
         Me.groupBox1.PerformLayout()
@@ -378,10 +335,6 @@ Partial Class FormTambahKaryawan
     Friend WithEvents radioKaryawan As RadioButton
     Friend WithEvents radioAdmin As RadioButton
     Friend WithEvents SqlConnection1 As SqlClient.SqlConnection
-    Friend WithEvents CbHariKerja As ComboBox
-    Private WithEvents Label7 As Label
-    Private WithEvents Label6 As Label
-    Friend WithEvents cbSesi As ComboBox
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem

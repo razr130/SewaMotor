@@ -94,6 +94,19 @@
             Else
                 karyawan.getBS.Filter = "namaKaryawan Like '" & txtCari.Text & "%'"
             End If
+
+            For baris As Integer = 0 To dgvKaryawan.Rows.Count - 1
+                dgvKaryawan.Columns(6).DisplayIndex = 7
+                dgvKaryawan.Columns(7).DisplayIndex = 6
+                If dgvKaryawan.Rows(baris).Cells(6).Value = 1 Then
+                    dgvKaryawan.Rows(baris).Cells(7).Value = "Super Admin"
+                ElseIf dgvKaryawan.Rows(baris).Cells(6).Value = 2 Then
+                    dgvKaryawan.Rows(baris).Cells(7).Value = "Admin"
+                Else
+                    dgvKaryawan.Rows(baris).Cells(7).Value = "Karyawan"
+                End If
+                dgvKaryawan.Columns(6).Visible = False
+            Next
         End If
     End Sub
     Private Sub Add()
@@ -150,5 +163,9 @@
 
     Private Sub FormListKaryawan_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         FormHomepage.Show()
+    End Sub
+
+    Private Sub homeToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click
+        Me.Close()
     End Sub
 End Class

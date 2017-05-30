@@ -69,7 +69,7 @@
                 order.getBS.Filter = ""
                 dgvOrder.DataSource = order.getBS()
             Else
-                order.getBS.Filter = "no_order = '" & txtCari.Text & "%'"
+                order.getBS.Filter = "no_order = " & txtCari.Text
             End If
         End If
     End Sub

@@ -74,7 +74,7 @@
                 pelanggan.getBS.Filter = ""
                 dgvPelanggan.DataSource = pelanggan.getBS()
             Else
-                pelanggan.getBS.Filter = "nama Like '" & txtCari.Text & "%'"
+                pelanggan.getBS.Filter = "namaPelanggan Like '" & txtCari.Text & "%'"
             End If
         End If
 

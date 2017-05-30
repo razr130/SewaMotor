@@ -56,6 +56,7 @@ Partial Class FormDetailMotor
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblDiskon = New System.Windows.Forms.Label()
         Me.groupBox1.SuspendLayout()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -150,9 +151,9 @@ Partial Class FormDetailMotor
         'txtHarga
         '
         Me.txtHarga.Enabled = False
-        Me.txtHarga.Location = New System.Drawing.Point(347, 171)
+        Me.txtHarga.Location = New System.Drawing.Point(347, 228)
         Me.txtHarga.Name = "txtHarga"
-        Me.txtHarga.Size = New System.Drawing.Size(100, 20)
+        Me.txtHarga.Size = New System.Drawing.Size(102, 20)
         Me.txtHarga.TabIndex = 18
         '
         'label4
@@ -264,6 +265,7 @@ Partial Class FormDetailMotor
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.lblDiskon)
         Me.groupBox1.Controls.Add(Me.txtCustomer)
         Me.groupBox1.Controls.Add(Me.Label11)
         Me.groupBox1.Controls.Add(Me.txthiddenharga)
@@ -302,7 +304,7 @@ Partial Class FormDetailMotor
         '
         'txtCustomer
         '
-        Me.txtCustomer.Location = New System.Drawing.Point(347, 202)
+        Me.txtCustomer.Location = New System.Drawing.Point(347, 167)
         Me.txtCustomer.Name = "txtCustomer"
         Me.txtCustomer.Size = New System.Drawing.Size(102, 20)
         Me.txtCustomer.TabIndex = 30
@@ -310,7 +312,7 @@ Partial Class FormDetailMotor
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(256, 204)
+        Me.Label11.Location = New System.Drawing.Point(256, 169)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(91, 15)
         Me.Label11.TabIndex = 29
@@ -345,7 +347,7 @@ Partial Class FormDetailMotor
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(278, 174)
+        Me.Label10.Location = New System.Drawing.Point(278, 231)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(63, 15)
         Me.Label10.TabIndex = 13
@@ -356,7 +358,7 @@ Partial Class FormDetailMotor
         Me.btnMember.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMember.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnMember.Location = New System.Drawing.Point(358, 230)
+        Me.btnMember.Location = New System.Drawing.Point(358, 195)
         Me.btnMember.Name = "btnMember"
         Me.btnMember.Size = New System.Drawing.Size(87, 26)
         Me.btnMember.TabIndex = 14
@@ -389,6 +391,16 @@ Partial Class FormDetailMotor
         Me.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem"
         Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.logOutToolStripMenuItem.Text = "Logout"
+        '
+        'lblDiskon
+        '
+        Me.lblDiskon.AutoSize = True
+        Me.lblDiskon.Location = New System.Drawing.Point(345, 251)
+        Me.lblDiskon.Name = "lblDiskon"
+        Me.lblDiskon.Size = New System.Drawing.Size(69, 15)
+        Me.lblDiskon.TabIndex = 31
+        Me.lblDiskon.Text = "*Diskon 10%"
+        Me.lblDiskon.Visible = False
         '
         'FormDetailMotor
         '
@@ -445,4 +457,5 @@ Partial Class FormDetailMotor
     Friend WithEvents txtCustomer As TextBox
     Friend WithEvents Label11 As Label
     Private WithEvents btnMember As Button
+    Friend WithEvents lblDiskon As Label
 End Class

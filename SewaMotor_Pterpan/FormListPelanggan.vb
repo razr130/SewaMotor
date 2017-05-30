@@ -29,6 +29,16 @@
         dgvPelanggan.Columns(6).HeaderText = "No.KTP"
         dgvPelanggan.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+        For baris As Integer = 0 To dgvPelanggan.Rows.Count - 1
+
+            If IsDBNull(dgvPelanggan.Rows(baris).Cells(2).Value) Then
+                dgvPelanggan.Rows(baris).Visible = False
+            Else
+
+            End If
+
+        Next
+
     End Sub
 
     '/////BUTTON/////

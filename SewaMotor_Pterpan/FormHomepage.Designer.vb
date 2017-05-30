@@ -36,8 +36,8 @@ Partial Class FormHomepage
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PengembalianToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.menuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -135,6 +135,14 @@ Partial Class FormHomepage
         Me.PenyewaanToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
         Me.PenyewaanToolStripMenuItem.Text = "Penyewaan"
         '
+        'PengembalianToolStripMenuItem1
+        '
+        Me.PengembalianToolStripMenuItem1.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PengembalianToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.PengembalianToolStripMenuItem1.Name = "PengembalianToolStripMenuItem1"
+        Me.PengembalianToolStripMenuItem1.Size = New System.Drawing.Size(97, 20)
+        Me.PengembalianToolStripMenuItem1.Text = "Pengembalian"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -145,14 +153,6 @@ Partial Class FormHomepage
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
         '
-        'PengembalianToolStripMenuItem1
-        '
-        Me.PengembalianToolStripMenuItem1.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PengembalianToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.PengembalianToolStripMenuItem1.Name = "PengembalianToolStripMenuItem1"
-        Me.PengembalianToolStripMenuItem1.Size = New System.Drawing.Size(97, 20)
-        Me.PengembalianToolStripMenuItem1.Text = "Pengembalian"
-        '
         'FormHomepage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -161,6 +161,7 @@ Partial Class FormHomepage
         Me.ClientSize = New System.Drawing.Size(425, 404)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.menuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormHomepage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormHomepage"

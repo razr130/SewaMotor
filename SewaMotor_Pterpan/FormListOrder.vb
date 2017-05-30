@@ -11,6 +11,28 @@
     End Sub
     Private Sub FormListOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvOrder.DataSource = order.getBS()
+
+        dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+        dgvOrder.Columns(0).HeaderText = "No.Order"
+        dgvOrder.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(1).HeaderText = "Id Pelanggan"
+        dgvOrder.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(2).HeaderText = "Id Karyawan"
+        dgvOrder.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(3).HeaderText = "Tanggal Order"
+        dgvOrder.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(4).HeaderText = "Total Denda"
+        dgvOrder.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(5).HeaderText = "Total Harga"
+        dgvOrder.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvOrder.Columns(6).HeaderText = "Jaminan"
+        dgvOrder.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        Me.dgvOrder.Columns(4).DefaultCellStyle.Format = "c"
+        Me.dgvOrder.Columns(5).DefaultCellStyle.Format = "c"
+        'dgvOrder.Columns(4).CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+        'dgvOrder.Columns(5).CellTemplate.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+
     End Sub
 
     '/////DGV/////

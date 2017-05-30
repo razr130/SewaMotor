@@ -27,7 +27,6 @@ Partial Class FormEditPelanggan
         Me.label1 = New System.Windows.Forms.Label()
         Me.btnBatal = New System.Windows.Forms.Button()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.label2 = New System.Windows.Forms.Label()
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.txtAlamat = New System.Windows.Forms.TextBox()
         Me.label3 = New System.Windows.Forms.Label()
@@ -40,10 +39,7 @@ Partial Class FormEditPelanggan
         Me.label7 = New System.Windows.Forms.Label()
         Me.label6 = New System.Windows.Forms.Label()
         Me.groupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtPass = New System.Windows.Forms.TextBox()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtIdPelanggan = New System.Windows.Forms.TextBox()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,7 +63,7 @@ Partial Class FormEditPelanggan
         'label1
         '
         Me.label1.AutoSize = True
-        Me.label1.Location = New System.Drawing.Point(20, 47)
+        Me.label1.Location = New System.Drawing.Point(32, 33)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(37, 15)
         Me.label1.TabIndex = 0
@@ -78,7 +74,7 @@ Partial Class FormEditPelanggan
         Me.btnBatal.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(31, Byte), Integer))
         Me.btnBatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBatal.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBatal.Location = New System.Drawing.Point(275, 271)
+        Me.btnBatal.Location = New System.Drawing.Point(269, 234)
         Me.btnBatal.Name = "btnBatal"
         Me.btnBatal.Size = New System.Drawing.Size(75, 23)
         Me.btnBatal.TabIndex = 9
@@ -87,26 +83,17 @@ Partial Class FormEditPelanggan
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(115, 44)
+        Me.txtEmail.Location = New System.Drawing.Point(127, 30)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(100, 20)
         Me.txtEmail.TabIndex = 4
-        '
-        'label2
-        '
-        Me.label2.AutoSize = True
-        Me.label2.Location = New System.Drawing.Point(20, 73)
-        Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(54, 15)
-        Me.label2.TabIndex = 1
-        Me.label2.Text = "Password"
         '
         'btnSimpan
         '
         Me.btnSimpan.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(31, Byte), Integer))
         Me.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSimpan.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSimpan.Location = New System.Drawing.Point(194, 271)
+        Me.btnSimpan.Location = New System.Drawing.Point(188, 234)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 8
@@ -205,57 +192,27 @@ Partial Class FormEditPelanggan
         Me.groupBox2.Controls.Add(Me.txtNoTelp)
         Me.groupBox2.Controls.Add(Me.label7)
         Me.groupBox2.Controls.Add(Me.label6)
-        Me.groupBox2.Location = New System.Drawing.Point(17, 100)
+        Me.groupBox2.Location = New System.Drawing.Point(12, 61)
         Me.groupBox2.Name = "groupBox2"
         Me.groupBox2.Size = New System.Drawing.Size(331, 165)
         Me.groupBox2.TabIndex = 11
         Me.groupBox2.TabStop = False
         Me.groupBox2.Text = "Data Diri"
         '
-        'txtPass
-        '
-        Me.txtPass.Location = New System.Drawing.Point(115, 70)
-        Me.txtPass.Name = "txtPass"
-        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txtPass.Size = New System.Drawing.Size(100, 20)
-        Me.txtPass.TabIndex = 5
-        '
         'groupBox1
         '
-        Me.groupBox1.Controls.Add(Me.Label8)
         Me.groupBox1.Controls.Add(Me.groupBox2)
         Me.groupBox1.Controls.Add(Me.label1)
         Me.groupBox1.Controls.Add(Me.btnBatal)
-        Me.groupBox1.Controls.Add(Me.txtIdPelanggan)
         Me.groupBox1.Controls.Add(Me.txtEmail)
-        Me.groupBox1.Controls.Add(Me.label2)
         Me.groupBox1.Controls.Add(Me.btnSimpan)
-        Me.groupBox1.Controls.Add(Me.txtPass)
         Me.groupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.groupBox1.Location = New System.Drawing.Point(12, 33)
         Me.groupBox1.Name = "groupBox1"
-        Me.groupBox1.Size = New System.Drawing.Size(357, 308)
+        Me.groupBox1.Size = New System.Drawing.Size(357, 270)
         Me.groupBox1.TabIndex = 15
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Edit Pelanggan"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(20, 22)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(17, 15)
-        Me.Label8.TabIndex = 12
-        Me.Label8.Text = "ID"
-        '
-        'txtIdPelanggan
-        '
-        Me.txtIdPelanggan.BackColor = System.Drawing.SystemColors.Window
-        Me.txtIdPelanggan.Location = New System.Drawing.Point(115, 19)
-        Me.txtIdPelanggan.Name = "txtIdPelanggan"
-        Me.txtIdPelanggan.ReadOnly = True
-        Me.txtIdPelanggan.Size = New System.Drawing.Size(100, 20)
-        Me.txtIdPelanggan.TabIndex = 4
         '
         'menuStrip1
         '
@@ -337,7 +294,7 @@ Partial Class FormEditPelanggan
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(378, 351)
+        Me.ClientSize = New System.Drawing.Size(378, 311)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.groupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -358,7 +315,6 @@ Partial Class FormEditPelanggan
     Private WithEvents label1 As Label
     Private WithEvents btnBatal As Button
     Private WithEvents txtEmail As TextBox
-    Private WithEvents label2 As Label
     Private WithEvents btnSimpan As Button
     Private WithEvents txtAlamat As TextBox
     Private WithEvents label3 As Label
@@ -371,10 +327,7 @@ Partial Class FormEditPelanggan
     Private WithEvents label7 As Label
     Private WithEvents label6 As Label
     Private WithEvents groupBox2 As GroupBox
-    Private WithEvents txtPass As TextBox
     Private WithEvents groupBox1 As GroupBox
-    Private WithEvents Label8 As Label
-    Private WithEvents txtIdPelanggan As TextBox
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem

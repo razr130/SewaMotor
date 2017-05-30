@@ -122,19 +122,23 @@
         Me.Close()
     End Sub
 
-    Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanPenyewaanToolStripMenuItem.Click
+    Private Sub LaporanPenyewaanToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim laporan As New FormFilterLaporan()
         laporan.Show()
         Me.Close()
     End Sub
 
-    Private Sub LaporanStatusMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanStatusMotorToolStripMenuItem.Click
+    Private Sub LaporanStatusMotorToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormLaporanStatusMotor.Show()
         Me.Close()
     End Sub
 
-    Private Sub LaporanKeterlambatanMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanKeterlambatanMotorToolStripMenuItem.Click
+    Private Sub LaporanKeterlambatanMotorToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormLaporanTerlambatKembali.Show()
         Me.Close()
+    End Sub
+
+    Private Sub FormListKaryawan_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        FormHomepage.Show()
     End Sub
 End Class

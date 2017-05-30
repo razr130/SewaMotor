@@ -48,9 +48,7 @@
     Private Sub dgvPelanggan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPelanggan.CellContentClick
         idPelanggan = dgvPelanggan.Item(0, dgvPelanggan.CurrentRow.Index).Value
     End Sub
-    Private Sub dgvPelanggan_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPelanggan.CellContentDoubleClick
-        Edit()
-    End Sub
+
     Private Sub dgvPelanggan_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvPelanggan.KeyDown
         If e.KeyCode = Keys.Enter Then
             Edit()
@@ -87,20 +85,16 @@
         End If
     End Sub
 
-    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) 
-
+    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Me.Close()
     End Sub
 
-    Private Sub katalogToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub katalogToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
-    End Sub
-
-    Private Sub dgvPelanggan_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles dgvPelanggan.MouseDoubleClick
-
     End Sub
 
     Private Sub dgvPelanggan_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvPelanggan.CellMouseDoubleClick

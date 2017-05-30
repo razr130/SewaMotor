@@ -142,6 +142,7 @@
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         Dim edit As New FormDetailMotor(idmotor, username)
         edit.Show()
+        Me.Close()
     End Sub
 
     '/////TOOLTIP/////

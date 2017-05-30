@@ -1,6 +1,7 @@
 ﻿Public Class FormListPelanggan
     Private pelanggan As New Tabel("Pelanggan")
-    Private idPelanggan As Integer
+    Public idPelanggan As Integer
+
 
     '/////LOAD/////
     Public Sub New()
@@ -28,6 +29,16 @@
         dgvPelanggan.Columns(6).HeaderText = "No.KTP"
         dgvPelanggan.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+        For baris As Integer = 0 To dgvPelanggan.Rows.Count - 1
+
+            If IsDBNull(dgvPelanggan.Rows(baris).Cells(2).Value) Then
+                dgvPelanggan.Rows(baris).Visible = False
+            Else
+
+            End If
+
+        Next
+
     End Sub
 
     '/////BUTTON/////
@@ -47,9 +58,7 @@
     Private Sub dgvPelanggan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPelanggan.CellContentClick
         idPelanggan = dgvPelanggan.Item(0, dgvPelanggan.CurrentRow.Index).Value
     End Sub
-    Private Sub dgvPelanggan_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPelanggan.CellContentDoubleClick
-        Edit()
-    End Sub
+
     Private Sub dgvPelanggan_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvPelanggan.KeyDown
         If e.KeyCode = Keys.Enter Then
             Edit()
@@ -90,7 +99,7 @@
         Me.Close()
     End Sub
 
-    Private Sub katalogToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub katalogToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -98,7 +107,8 @@
         Me.Close()
     End Sub
 
-    Private Sub FormListPelanggan_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        FormHomepage.Show()
+    Private Sub dgvPelanggan_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvPelanggan.CellMouseDoubleClick
+        idPelanggan = dgvPelanggan.Item(0, dgvPelanggan.CurrentRow.Index).Value
+        Me.Close()
     End Sub
 End Class

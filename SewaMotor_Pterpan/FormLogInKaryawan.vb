@@ -25,7 +25,7 @@
             GlobalVariables.UserName = txtUsername.Text
             nama.role = role
             GlobalVariables.Role = role
-            nama.Show()
+            FormHomepage.Show()
             Me.Visible = True
             txtUsername.Text = ""
             txtPassword.Text = ""
@@ -34,6 +34,7 @@
             MessageBox.Show("Access Denied")
             txtPassword.Clear()
             txtUsername.Clear()
+            txtUsername.Focus()
             Return
         End If
 
@@ -48,7 +49,7 @@
 
     End Sub
 
-    Private Sub loginToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles loginToolStripMenuItem.Click
+    Private Sub loginToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormLogin.Show()
         Me.Close()
     End Sub

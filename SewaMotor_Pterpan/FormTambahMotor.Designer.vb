@@ -29,42 +29,40 @@ Partial Class FormTambahMotor
         Me.label3 = New System.Windows.Forms.Label()
         Me.txtHarga = New System.Windows.Forms.TextBox()
         Me.txtPlat = New System.Windows.Forms.TextBox()
-        Me.txtStatus = New System.Windows.Forms.TextBox()
         Me.txtNoRangka = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.label7 = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
-        Me.label6 = New System.Windows.Forms.Label()
         Me.txtNoMesin = New System.Windows.Forms.TextBox()
         Me.label5 = New System.Windows.Forms.Label()
         Me.txtMerk = New System.Windows.Forms.TextBox()
         Me.btnSimpan = New System.Windows.Forms.Button()
-        Me.txtJenis = New System.Windows.Forms.TextBox()
+        Me.cbJenis = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.groupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.cbJenis)
         Me.groupBox1.Controls.Add(Me.btnBatal2)
         Me.groupBox1.Controls.Add(Me.label1)
         Me.groupBox1.Controls.Add(Me.label3)
         Me.groupBox1.Controls.Add(Me.txtHarga)
         Me.groupBox1.Controls.Add(Me.txtPlat)
-        Me.groupBox1.Controls.Add(Me.txtStatus)
         Me.groupBox1.Controls.Add(Me.txtNoRangka)
+        Me.groupBox1.Controls.Add(Me.Label6)
         Me.groupBox1.Controls.Add(Me.Label2)
         Me.groupBox1.Controls.Add(Me.label7)
         Me.groupBox1.Controls.Add(Me.label4)
-        Me.groupBox1.Controls.Add(Me.label6)
         Me.groupBox1.Controls.Add(Me.txtNoMesin)
         Me.groupBox1.Controls.Add(Me.label5)
         Me.groupBox1.Controls.Add(Me.txtMerk)
         Me.groupBox1.Controls.Add(Me.btnSimpan)
-        Me.groupBox1.Controls.Add(Me.txtJenis)
         Me.groupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.groupBox1.Location = New System.Drawing.Point(24, 31)
+        Me.groupBox1.Location = New System.Drawing.Point(24, 12)
         Me.groupBox1.Name = "groupBox1"
-        Me.groupBox1.Size = New System.Drawing.Size(237, 298)
+        Me.groupBox1.Size = New System.Drawing.Size(237, 256)
         Me.groupBox1.TabIndex = 26
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Tambah Motor"
@@ -74,7 +72,7 @@ Partial Class FormTambahMotor
         Me.btnBatal2.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnBatal2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBatal2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBatal2.Location = New System.Drawing.Point(124, 244)
+        Me.btnBatal2.Location = New System.Drawing.Point(124, 209)
         Me.btnBatal2.Name = "btnBatal2"
         Me.btnBatal2.Size = New System.Drawing.Size(75, 23)
         Me.btnBatal2.TabIndex = 19
@@ -101,24 +99,18 @@ Partial Class FormTambahMotor
         '
         'txtHarga
         '
-        Me.txtHarga.Location = New System.Drawing.Point(71, 197)
+        Me.txtHarga.Location = New System.Drawing.Point(95, 164)
         Me.txtHarga.Name = "txtHarga"
-        Me.txtHarga.Size = New System.Drawing.Size(100, 20)
+        Me.txtHarga.Size = New System.Drawing.Size(76, 20)
         Me.txtHarga.TabIndex = 18
+        Me.txtHarga.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtPlat
         '
-        Me.txtPlat.Location = New System.Drawing.Point(71, 166)
+        Me.txtPlat.Location = New System.Drawing.Point(71, 135)
         Me.txtPlat.Name = "txtPlat"
         Me.txtPlat.Size = New System.Drawing.Size(100, 20)
         Me.txtPlat.TabIndex = 18
-        '
-        'txtStatus
-        '
-        Me.txtStatus.Location = New System.Drawing.Point(71, 135)
-        Me.txtStatus.Name = "txtStatus"
-        Me.txtStatus.Size = New System.Drawing.Size(100, 20)
-        Me.txtStatus.TabIndex = 18
         '
         'txtNoRangka
         '
@@ -130,7 +122,7 @@ Partial Class FormTambahMotor
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 201)
+        Me.Label2.Location = New System.Drawing.Point(15, 166)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(36, 15)
         Me.Label2.TabIndex = 13
@@ -139,7 +131,7 @@ Partial Class FormTambahMotor
         'label7
         '
         Me.label7.AutoSize = True
-        Me.label7.Location = New System.Drawing.Point(12, 169)
+        Me.label7.Location = New System.Drawing.Point(15, 138)
         Me.label7.Name = "label7"
         Me.label7.Size = New System.Drawing.Size(30, 15)
         Me.label7.TabIndex = 13
@@ -153,15 +145,6 @@ Partial Class FormTambahMotor
         Me.label4.Size = New System.Drawing.Size(52, 15)
         Me.label4.TabIndex = 12
         Me.label4.Text = "No Mesin"
-        '
-        'label6
-        '
-        Me.label6.AutoSize = True
-        Me.label6.Location = New System.Drawing.Point(13, 138)
-        Me.label6.Name = "label6"
-        Me.label6.Size = New System.Drawing.Size(38, 15)
-        Me.label6.TabIndex = 13
-        Me.label6.Text = "Status"
         '
         'txtNoMesin
         '
@@ -191,26 +174,39 @@ Partial Class FormTambahMotor
         Me.btnSimpan.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSimpan.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSimpan.Location = New System.Drawing.Point(33, 244)
+        Me.btnSimpan.Location = New System.Drawing.Point(33, 209)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 14
         Me.btnSimpan.Text = "Simpan"
         Me.btnSimpan.UseVisualStyleBackColor = False
         '
-        'txtJenis
+        'cbJenis
         '
-        Me.txtJenis.Location = New System.Drawing.Point(71, 25)
-        Me.txtJenis.Name = "txtJenis"
-        Me.txtJenis.Size = New System.Drawing.Size(100, 20)
-        Me.txtJenis.TabIndex = 15
+        Me.cbJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbJenis.FormattingEnabled = True
+        Me.cbJenis.Items.AddRange(New Object() {"Bebek", "Laki", "Matic"})
+        Me.cbJenis.Location = New System.Drawing.Point(71, 23)
+        Me.cbJenis.Name = "cbJenis"
+        Me.cbJenis.Size = New System.Drawing.Size(100, 23)
+        Me.cbJenis.TabIndex = 22
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Franklin Gothic Book", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(74, 166)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(20, 15)
+        Me.Label6.TabIndex = 13
+        Me.Label6.Text = "Rp"
         '
         'FormTambahMotor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(288, 358)
+        Me.ClientSize = New System.Drawing.Size(288, 285)
         Me.Controls.Add(Me.groupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormTambahMotor"
@@ -227,15 +223,14 @@ Partial Class FormTambahMotor
     Private WithEvents label3 As Label
     Private WithEvents txtHarga As TextBox
     Private WithEvents txtPlat As TextBox
-    Private WithEvents txtStatus As TextBox
     Private WithEvents txtNoRangka As TextBox
     Private WithEvents Label2 As Label
     Private WithEvents label7 As Label
     Private WithEvents label4 As Label
-    Private WithEvents label6 As Label
     Private WithEvents txtNoMesin As TextBox
     Private WithEvents label5 As Label
     Private WithEvents txtMerk As TextBox
     Private WithEvents btnSimpan As Button
-    Private WithEvents txtJenis As TextBox
+    Friend WithEvents cbJenis As ComboBox
+    Private WithEvents Label6 As Label
 End Class

@@ -203,6 +203,7 @@ Partial Class FormListDenda
         Me.Controls.Add(Me.dgvDenda)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormListDenda"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormListDenda"
         CType(Me.dgvDenda, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menuStrip1.ResumeLayout(False)

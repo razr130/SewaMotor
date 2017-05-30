@@ -28,7 +28,11 @@
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        FormUtama.Show()
         Me.Close()
+    End Sub
+
+    Private Sub FormListDenda_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        FormHomepage.Show()
+        GlobalVariables.UserName = ""
     End Sub
 End Class

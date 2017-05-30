@@ -211,4 +211,9 @@
         FormListDenda.Show()
         Me.Close()
     End Sub
+
+    Private Sub FormUtama_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        GlobalVariables.UserName = ""
+        FormHomepage.Show()
+    End Sub
 End Class

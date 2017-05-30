@@ -22,7 +22,7 @@ Partial Class FormUtama
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUtama))
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
@@ -32,10 +32,12 @@ Partial Class FormUtama
         Me.dgvMotor = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -63,7 +65,7 @@ Partial Class FormUtama
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(174, 423)
+        Me.btnDelete.Location = New System.Drawing.Point(178, 454)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
         Me.btnDelete.TabIndex = 8
@@ -77,7 +79,7 @@ Partial Class FormUtama
         Me.btnUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUbah.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUbah.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUbah.Location = New System.Drawing.Point(93, 423)
+        Me.btnUbah.Location = New System.Drawing.Point(97, 454)
         Me.btnUbah.Name = "btnUbah"
         Me.btnUbah.Size = New System.Drawing.Size(75, 23)
         Me.btnUbah.TabIndex = 9
@@ -91,7 +93,7 @@ Partial Class FormUtama
         Me.btnTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTambah.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTambah.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnTambah.Location = New System.Drawing.Point(12, 423)
+        Me.btnTambah.Location = New System.Drawing.Point(16, 454)
         Me.btnTambah.Name = "btnTambah"
         Me.btnTambah.Size = New System.Drawing.Size(75, 23)
         Me.btnTambah.TabIndex = 10
@@ -104,14 +106,14 @@ Partial Class FormUtama
         Me.dgvMotor.AllowUserToAddRows = False
         Me.dgvMotor.AllowUserToDeleteRows = False
         Me.dgvMotor.AllowUserToOrderColumns = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvMotor.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvMotor.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvMotor.Location = New System.Drawing.Point(17, 207)
         Me.dgvMotor.Name = "dgvMotor"
@@ -122,22 +124,33 @@ Partial Class FormUtama
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 44)
+        Me.PictureBox1.Location = New System.Drawing.Point(154, 30)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(82, 79)
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 101)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(7, 174)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(403, 278)
+        Me.GroupBox1.Size = New System.Drawing.Size(403, 317)
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pilih Motor"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(12, 239)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(226, 15)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "* Double click pada motor yang ingin disewa"
         '
         'menuStrip1
         '
@@ -162,7 +175,7 @@ Partial Class FormUtama
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(421, 460)
+        Me.ClientSize = New System.Drawing.Size(421, 503)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txtCari)
         Me.Controls.Add(Me.label1)
@@ -178,6 +191,8 @@ Partial Class FormUtama
         Me.Text = "FormUtama"
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.menuStrip1.ResumeLayout(False)
         Me.menuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -194,4 +209,5 @@ Partial Class FormUtama
     Friend WithEvents GroupBox1 As GroupBox
     Private WithEvents menuStrip1 As MenuStrip
     Friend WithEvents HomeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label2 As Label
 End Class

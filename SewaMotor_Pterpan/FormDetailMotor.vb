@@ -169,6 +169,8 @@
         ada = customer.getBS.Find("id", pelanggan.idPelanggan)
         customer.getBS.Position = ada
         txtCustomer.Text = customer.getBS.Current("namaPelanggan")
+        txtKTP.Text = customer.getBS.Current("no_ktp")
+        txtTelp.Text = customer.getBS.Current("notelp")
         membergak = True
         lblDiskon.Visible = True
         If membergak = True Then
@@ -213,7 +215,7 @@
                     karyawan.getBS.Position = adakaryawan
                     id_karyawan = karyawan.getBS.Current("id_karyawan")
 
-                    pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
+                    pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan,status) VALUES(" & id & "," & id_karyawan & ",'" & tanggal.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "','Belum dikembalikan')", "Berhasil pesan")
 
                     detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES((SELECT no_order from Pesan where id = " & id & " AND tgl_order ='" & tanggal.Date.ToString("yyyy-MM-dd") & "')," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & 1 & ")", "Berhasil tambah")
                     edit.isiDataTable("UPDATE Motor SET status=" & 1 & " WHERE id_motor=" & idmotor, "")
@@ -243,11 +245,25 @@
 
                 End If
             Else
+                If cbWaktu.SelectedItem = "Hari" Then
+                    tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text))
+                ElseIf cbWaktu.SelectedItem = "Minggu" Then
+                    tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text) * 7)
+                ElseIf cbWaktu.SelectedItem = "Bulan" Then
+                    tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text) * 30)
+                ElseIf cbWaktu.SelectedItem = "Tahun" Then
+                    tglkembali = dtsewa.Value.AddDays(Integer.Parse(txtWaktu.Text) * 365)
+                End If
                 adakaryawan = karyawan.getBS.Find("email", GlobalVariables.UserName)
                 karyawan.getBS.Position = adakaryawan
                 id_karyawan = karyawan.getBS.Current("id_karyawan")
-                customer.isiDataTable("INSERT INTO Pelanggan(namaPelanggan) VALUES('" & txtCustomer.Text & "')", "")
-                pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan) VALUES((SELECT id from Pelanggan WHERE namaPelanggan='" & txtCustomer.Text & "')," & id_karyawan & ",'" & tanggal.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "')", "Berhasil pesan")
+
+                customer.isiDataTable("INSERT INTO Pelanggan(namaPelanggan,notelp,no_ktp) VALUES('" & txtCustomer.Text & "','" & txtTelp.Text & "','" & txtKTP.Text & "')", "")
+
+
+                pesan.isiDataTable("INSERT INTO Pesan(id,id_karyawan,tgl_order,total_denda,total_harga,jaminan,status) VALUES((SELECT id from Pelanggan WHERE namaPelanggan='" & txtCustomer.Text & "')," & id_karyawan & ",'" & tanggal.ToString("yyyy-MM-dd") & "'," & 0 & "," & hargaall & ",'" & cbJaminan.Text & "','Belum dikembalikan')", "Berhasil pesan")
+
+
                 detail.isiDataTable("INSERT INTO Oder_Detail(no_order,id_motor,tgl_sewa,tgl_kembali,jumlah_sewa) VALUES((SELECT no_order from Pesan where id =(SELECT id FROM Pelanggan WHERE namaPelanggan='" & txtCustomer.Text & "') AND tgl_order ='" & tanggal.Date.ToString("yyyy-MM-dd") & "')," & idmotor & ",'" & dtsewa.Value.Date.ToString("yyyy-MM-dd") & "','" & tglkembali.Date.ToString("yyyy-MM-dd") & "'," & 1 & ")", "Berhasil tambah")
                 edit.isiDataTable("UPDATE Motor SET status=" & 1 & " WHERE id_motor=" & idmotor, "")
 

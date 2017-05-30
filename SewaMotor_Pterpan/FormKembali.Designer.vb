@@ -160,6 +160,7 @@ Partial Class FormKembali
         '
         'FormKembali
         '
+        Me.AcceptButton = Me.btnOk
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight

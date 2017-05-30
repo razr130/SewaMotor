@@ -96,16 +96,23 @@ Public Class FormDetailKembali
 
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
+        For baris As Integer = 0 To gdvKembali.Rows.Count - 1
+            motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & gdvKembali.Item(8, gdvKembali.CurrentRow.Index).Value, "")
 
-        motor.isiDataTable("UPDATE Motor SET status=" & 0 & " WHERE id_motor=" & gdvKembali.Item(8, gdvKembali.CurrentRow.Index).Value, "")
-        MsgBox("Motor " & gdvKembali.Item(2, gdvKembali.CurrentRow.Index).Value & " sudah berhasil dikembalikan")
-        jumlahklik += 1
 
-        If jumlahklik = jumlahbaris Then
-            btnSelesai.Enabled = True
-        ElseIf jumlahklik > jumlahbaris Then
-            MsgBox("Semua motor sudah dikembalikan")
-        End If
+        Next
+        MsgBox("Semua motor telah dikembalikan")
+        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  * FROM ViewNotaPeminjaman WHERE no_order='" & GlobalVariables.NoNota & "'")
+        Dim namaPel = infoPelanggan.getBS.Current("namaPelanggan")
+        Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
+        Dim namaKar = infoPelanggan.getBS.Current("namaKaryawan")
+        Dim totalBayar As Integer = infoPelanggan.getBS.Current("total_harga")
+        Dim totalDenda As Integer = infoPelanggan.getBS.Current("total_denda")
+        Dim idMotor As Integer = infoPelanggan.getBS.Current("id_motor")
+        Dim notaKembali As New FormCheckoutPengembalian(GlobalVariables.NoNota, namaPel, noKTP, namaKar, totalBayar, totalDenda, idMotor)
+        notaKembali.ShowDialog()
+        FormUtama.Show()
+        Me.Close()
 
 
 
@@ -143,17 +150,7 @@ Public Class FormDetailKembali
 
     Private Sub btnSelesai_Click(sender As Object, e As EventArgs) Handles btnSelesai.Click
         'Panggil Invoice Pengembalian
-        Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  * FROM ViewNotaPeminjaman WHERE no_order='" & GlobalVariables.NoNota & "'")
-        Dim namaPel = infoPelanggan.getBS.Current("namaPelanggan")
-        Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
-        Dim namaKar = infoPelanggan.getBS.Current("namaKaryawan")
-        Dim totalBayar As Integer = infoPelanggan.getBS.Current("total_harga")
-        Dim totalDenda As Integer = infoPelanggan.getBS.Current("total_denda")
-        Dim idMotor As Integer = infoPelanggan.getBS.Current("id_motor")
-        Dim notaKembali As New FormCheckoutPengembalian(GlobalVariables.NoNota, namaPel, noKTP, namaKar, totalBayar, totalDenda, idMotor)
-        notaKembali.ShowDialog()
-        FormUtama.Show()
-        Me.Close()
+
     End Sub
 
 

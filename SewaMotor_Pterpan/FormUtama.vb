@@ -151,7 +151,7 @@
 
     End Sub
     Private Sub ListKaryawanToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Dim list As New FormListKaryawan(role, namaAkun)
+        Dim list As New FormListKaryawan()
         list.Show()
     End Sub
     Private Sub ListOrderToolStripMenuItem_Click(sender As Object, e As EventArgs)

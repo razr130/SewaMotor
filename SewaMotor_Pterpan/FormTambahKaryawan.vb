@@ -17,28 +17,25 @@
     '/////BUTTON/////
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
 
-        Dim back As New FormListKaryawan()
-        back.Show()
         Me.Close()
     End Sub
     Private Sub btnDaftar_Click(sender As Object, e As EventArgs) Handles btnDaftar.Click
         If txtEmail.Text = "" Or txtPass.Text = "" Or txtNama.Text = "" Or txtAlamat.Text = "" Or txtNoTelp.Text = "" Or (radioKaryawan.Checked = False And radioAdmin.Checked = False) Or (radioKaryawan.Checked = True And radioAdmin.Checked = True) Then
             MsgBox("Harap Diisi Semua")
         Else
-            tambah.isiDataTable("INSERT INTO Karyawan(namaKaryawan,alamat,no_telp,email,password,role,hari_kerja,sesi_kerja) VALUES(
+            tambah.isiDataTable("INSERT INTO Karyawan(namaKaryawan,alamat,no_telp,email,password,role) VALUES(
                                 '" & txtEmail.Text & "',
                                 '" & txtAlamat.Text & "',
                                 '" & txtNoTelp.Text & "',
                                 '" & txtEmail.Text & "',
                                 '" & txtPass.Text & "',
-                                '" & Role() & "',
-                                '" & CbHariKerja.Text & "',
-                                '" & cbSesi.Text & "')",
+                                '" & Role() & "')",
                            "Data Karyawan berhasil ditambah")
-            Dim back As New FormListKaryawan()
-            back.Show()
             Me.Close()
+            Dim listkar As New FormListKaryawan()
+            listkar.Show()
         End If
+
     End Sub
 
     '/////FUNCTION/////

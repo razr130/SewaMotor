@@ -164,6 +164,12 @@
     <Compile Include="FormKembali.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormLaporanSewaPerHari.Designer.vb">
+      <DependentUpon>FormLaporanSewaPerHari.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaporanSewaPerHari.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormLaporanStatusMotor.Designer.vb">
       <DependentUpon>FormLaporanStatusMotor.vb</DependentUpon>
     </Compile>
@@ -353,6 +359,9 @@
     <EmbeddedResource Include="FormKembali.resx">
       <DependentUpon>FormKembali.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLaporanSewaPerHari.resx">
+      <DependentUpon>FormLaporanSewaPerHari.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLaporanStatusMotor.resx">
       <DependentUpon>FormLaporanStatusMotor.vb</DependentUpon>
     </EmbeddedResource>
@@ -420,6 +429,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportStatusMotor.rdlc" />
+    <EmbeddedResource Include="ReportTransaksiPerHari.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSetSewaMotor2.xsc">

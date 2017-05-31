@@ -3,13 +3,13 @@
     Dim paraTotalHarga As New Microsoft.Reporting.WinForms.ReportParameter
     Dim totalbayar As Integer
 
-    Public Sub New(ByVal tglSewa As String)
+    Public Sub New(ByVal tglSewa As Date)
         MsgBox(tglSewa)
         ' This call is required by the designer.
         InitializeComponent()
-        Dim ambilHarga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DateDiff(day,tgl_sewa,tgl_kembali)*harga) as total_bayar FROM ViewNotaPeminjaman WHERE tgl_sewa ='" & tglSewa & "'")
+        Dim ambilHarga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DateDiff(day,tgl_sewa,tgl_kembali)*harga) as total_bayar FROM ViewNotaPeminjaman WHERE tgl_sewa ='" & tglSewa.ToString("yyyy/mm/dd") & "'")
         totalbayar = ambilHarga.getBS.Current("total_bayar")
-        paraTanggalSewa = New Microsoft.Reporting.WinForms.ReportParameter("paraTanggalSewa", tglSewa)
+        paraTanggalSewa = New Microsoft.Reporting.WinForms.ReportParameter("paraTanggalSewa", tglSewa.ToString("yyyy/mm/dd"))
         paraTotalHarga = New Microsoft.Reporting.WinForms.ReportParameter("paraSubTotal", Convert.ToInt32(totalbayar))
     End Sub
 

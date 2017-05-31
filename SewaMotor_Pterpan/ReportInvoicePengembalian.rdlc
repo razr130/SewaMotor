@@ -775,7 +775,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!paraTotalBayar.Value</Value>
+                <Value>=Parameters!paraTotalBayar.Value + Parameters!paraTotalDenda.Value</Value>
                 <Style>
                   <FontFamily>BatangChe</FontFamily>
                   <FontSize>16pt</FontSize>
@@ -1258,7 +1258,7 @@
                 <Value>=Parameters!paraTotalDenda.Value</Value>
                 <Style>
                   <FontFamily>BatangChe</FontFamily>
-                  <Format>'Rp'#,0;('Rp'#,0)</Format>
+                  <Format>'Rp' #,0;('Rp' #,0)</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1488,6 +1488,76 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!paraTotalBayar.Value</Value>
+                <Style>
+                  <FontFamily>BatangChe</FontFamily>
+                  <Format>'Rp' #,0;('Rp' #,0)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>1.8043in</Top>
+        <Left>7.13195in</Left>
+        <Height>0.25in</Height>
+        <Width>1.23263in</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total Sewa</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>1.8043in</Top>
+        <Left>6.20833in</Left>
+        <Height>0.25in</Height>
+        <Width>0.89584in</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -1864,11 +1934,11 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="paraTotalBayar">
-      <DataType>String</DataType>
+      <DataType>Integer</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="paraTotalDenda">
-      <DataType>String</DataType>
+      <DataType>Integer</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="paraNomorDetail">

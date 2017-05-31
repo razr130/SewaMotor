@@ -26,16 +26,16 @@ Partial Class FormCheckoutPengembalian
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.InvoiceSewaDataSet = New SewaMotor_Pterpan.InvoiceSewaDataSet()
+        Me.DendaDataSource = New SewaMotor_Pterpan.DendaDataSource()
         Me.ViewDendaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ViewDendaTableAdapter = New SewaMotor_Pterpan.DendaDataSourceTableAdapters.ViewDendaTableAdapter()
+        Me.InvoiceSewaDataSet = New SewaMotor_Pterpan.InvoiceSewaDataSet()
         Me.ViewNotaPeminjamanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ViewNotaPeminjamanTableAdapter = New SewaMotor_Pterpan.InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter()
-        Me.DendaDataSource = New SewaMotor_Pterpan.DendaDataSource()
-        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewDendaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DendaDataSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewDendaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ReportViewer1
@@ -43,7 +43,9 @@ Partial Class FormCheckoutPengembalian
         Me.ReportViewer1.AutoSize = True
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         ReportDataSource1.Name = "DendaDataSet"
+        ReportDataSource1.Value = Me.ViewDendaBindingSource
         ReportDataSource2.Name = "InvoicePengembalianDataSet"
+        ReportDataSource2.Value = Me.ViewNotaPeminjamanBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportInvoicePengembalian.rdlc"
@@ -61,10 +63,10 @@ Partial Class FormCheckoutPengembalian
         Me.ReportViewer1.Size = New System.Drawing.Size(993, 466)
         Me.ReportViewer1.TabIndex = 40
         '
-        'InvoiceSewaDataSet
+        'DendaDataSource
         '
-        Me.InvoiceSewaDataSet.DataSetName = "InvoiceSewaDataSet"
-        Me.InvoiceSewaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.DendaDataSource.DataSetName = "DendaDataSource"
+        Me.DendaDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ViewDendaBindingSource
         '
@@ -75,6 +77,11 @@ Partial Class FormCheckoutPengembalian
         '
         Me.ViewDendaTableAdapter.ClearBeforeFill = True
         '
+        'InvoiceSewaDataSet
+        '
+        Me.InvoiceSewaDataSet.DataSetName = "InvoiceSewaDataSet"
+        Me.InvoiceSewaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'ViewNotaPeminjamanBindingSource
         '
         Me.ViewNotaPeminjamanBindingSource.DataMember = "ViewNotaPeminjaman"
@@ -84,11 +91,6 @@ Partial Class FormCheckoutPengembalian
         '
         Me.ViewNotaPeminjamanTableAdapter.ClearBeforeFill = True
         '
-        'DendaDataSource
-        '
-        Me.DendaDataSource.DataSetName = "DendaDataSource"
-        Me.DendaDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'FormCheckoutPengembalian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -97,20 +99,20 @@ Partial Class FormCheckoutPengembalian
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "FormCheckoutPengembalian"
         Me.Text = "FormCheckoutPengembalian"
-        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewDendaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DendaDataSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewDendaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InvoiceSewaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewNotaPeminjamanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Private WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents InvoiceSewaDataSet As InvoiceSewaDataSet
     Friend WithEvents ViewDendaBindingSource As BindingSource
     Friend WithEvents DendaDataSource As DendaDataSource
-    Friend WithEvents ViewDendaTableAdapter As DendaDataSourceTableAdapters.ViewDendaTableAdapter
     Friend WithEvents ViewNotaPeminjamanBindingSource As BindingSource
+    Friend WithEvents InvoiceSewaDataSet As InvoiceSewaDataSet
+    Friend WithEvents ViewDendaTableAdapter As DendaDataSourceTableAdapters.ViewDendaTableAdapter
     Friend WithEvents ViewNotaPeminjamanTableAdapter As InvoiceSewaDataSetTableAdapters.ViewNotaPeminjamanTableAdapter
 End Class

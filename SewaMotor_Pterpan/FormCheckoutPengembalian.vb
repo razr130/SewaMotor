@@ -27,13 +27,17 @@
         InitializeComponent()
         Me.no_order = no_order
         ' Add any initialization after the InitializeComponent() call.
+        Dim harga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DATEDIFF(DAY,tgl_sewa,tgl_kembali)*harga) as total_bayar FROM ViewNotaPeminjaman WHERE no_order=" & no_order)
+        Dim totBayar As Integer = harga.getBS.Current("total_bayar")
+        Dim harga2 = New Tabel("ViewDenda", "SELECT SUM(jumlah*harga) as total_denda FROM ViewDenda WHERE no_order =" & no_order)
+        Dim totDenda As Integer = harga2.getBS.Current("total_denda")
         paraNoOrder = New Microsoft.Reporting.WinForms.ReportParameter("paraNomorOrder", no_order)
         paraNamaPel = New Microsoft.Reporting.WinForms.ReportParameter("paraNamaPelanggan", nama_pel)
         paraNoKTP = New Microsoft.Reporting.WinForms.ReportParameter("paraNomorKTP", noKTP)
         paraNamaKar = New Microsoft.Reporting.WinForms.ReportParameter("paraNamaKaryawan", nama_kar)
-        paraTotalBayar = New Microsoft.Reporting.WinForms.ReportParameter("paraTotalBayar", totalBayar)
-        paraTotalDenda = New Microsoft.Reporting.WinForms.ReportParameter("paraTotalDenda", totalDenda)
-        paraIdMotor = New Microsoft.Reporting.WinForms.ReportParameter("paraIdMotor", idMotor)
+        paraTotalBayar = New Microsoft.Reporting.WinForms.ReportParameter("paraTotalBayar", totBayar)
+        paraTotalDenda = New Microsoft.Reporting.WinForms.ReportParameter("paraTotalDenda", totDenda)
+        paraIdMotor = New Microsoft.Reporting.WinForms.ReportParameter("paraNomorDetail", idMotor)
         headerParams = {paraNoOrder, paraNamaPel, paraNoKTP, paraNamaKar, paraTotalBayar, paraTotalDenda, paraIdMotor}
     End Sub
 

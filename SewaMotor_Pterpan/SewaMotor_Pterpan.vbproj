@@ -334,6 +334,11 @@
       <DependentUpon>SewaMotorDataSource.xsd</DependentUpon>
     </Compile>
     <Compile Include="Tabel.vb" />
+    <Compile Include="ViewLaporanDendaDataSource.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewLaporanDendaDataSource.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ViewSewaMotorDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -536,6 +541,17 @@
     </None>
     <None Include="SewaMotorDataSource.xss">
       <DependentUpon>SewaMotorDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="ViewLaporanDendaDataSource.xsc">
+      <DependentUpon>ViewLaporanDendaDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="ViewLaporanDendaDataSource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViewLaporanDendaDataSource.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ViewLaporanDendaDataSource.xss">
+      <DependentUpon>ViewLaporanDendaDataSource.xsd</DependentUpon>
     </None>
     <None Include="ViewSewaMotorDataSet.xsc">
       <DependentUpon>ViewSewaMotorDataSet.xsd</DependentUpon>

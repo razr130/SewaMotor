@@ -1,6 +1,7 @@
 ﻿Public Class FormLaporanSewaPerHari
     Dim paraTanggalSewa As New Microsoft.Reporting.WinForms.ReportParameter
     Dim paraTotalHarga As New Microsoft.Reporting.WinForms.ReportParameter
+    Dim paraTotalDenda As New Microsoft.Reporting.WinForms.ReportParameter
     Dim totalbayar As Integer
 
     Public Sub New(ByVal tglSewa As Date)
@@ -8,10 +9,14 @@
         Dim titip As String = tglSewa.ToString("yyyy/MM/dd")
         ' This call is required by the designer.
         InitializeComponent()
-        Dim ambilHarga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DateDiff(day,tgl_sewa,tgl_kembali)*harga) as total_bayar FROM ViewNotaPeminjaman WHERE tgl_sewa ='" & titip & "'")
+        Dim ambilHarga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DateDiff(day,tgl_sewa,tgl_kembali)*harga) as total_bayar 
+                                    FROM ViewNotaPeminjaman WHERE tgl_sewa ='" & titip & "'")
+        Dim ambilDenda = New Tabel("ViewDenda", "SELECT SUM(harga*jumlah) as total_denda FROM ViewLaporanDenda WHERE tgl_pengembalian = '" & titip & "'")
         totalbayar = ambilHarga.getBS.Current("total_bayar")
+        Dim totalDenda As Integer = ambilDenda.getBS.Current("total_denda")
         paraTanggalSewa = New Microsoft.Reporting.WinForms.ReportParameter("paraTanggalSewa", titip)
         paraTotalHarga = New Microsoft.Reporting.WinForms.ReportParameter("paraSubTotal", Convert.ToInt32(totalbayar))
+        paraTotalDenda = New Microsoft.Reporting.WinForms.ReportParameter("", totalDenda)
     End Sub
 
     Private Sub FormLaporanSewaPerHari_Load(sender As Object, e As EventArgs) Handles MyBase.Load

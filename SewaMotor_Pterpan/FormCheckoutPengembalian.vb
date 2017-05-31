@@ -37,7 +37,7 @@
         headerParams = {paraNoOrder, paraNamaPel, paraNoKTP, paraNamaKar, paraTotalBayar, paraTotalDenda, paraIdMotor}
     End Sub
 
-    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click
+    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 End Class

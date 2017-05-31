@@ -408,10 +408,10 @@
         <DataSetName>LaporanHarianDataSet</DataSetName>
         <Filters>
           <Filter>
-            <FilterExpression>=FormatDateTime(Fields!tgl_sewa.Value,DateFormat.ShortDate).ToString</FilterExpression>
+            <FilterExpression>=FormatDateTime(Fields!tgl_sewa.Value,Dateformat.ShortDate).ToString</FilterExpression>
             <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue>=Parameters!paraTanggalSewa.Value</FilterValue>
+              <FilterValue>=FormatDateTime(Parameters!paraTanggalSewa.Value,dateformat.ShortDate).ToString</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>

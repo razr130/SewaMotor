@@ -52,4 +52,5 @@
     Private Sub LaporanKeterlambatanMotorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanKeterlambatanMotorToolStripMenuItem.Click
         FormLaporanTerlambatKembali.Show()
     End Sub
+
 End Class

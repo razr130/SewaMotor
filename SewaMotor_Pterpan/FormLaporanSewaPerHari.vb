@@ -5,11 +5,12 @@
 
     Public Sub New(ByVal tglSewa As Date)
         MsgBox(tglSewa)
+        Dim titip As String = tglSewa.ToString("yyyy/MM/dd")
         ' This call is required by the designer.
         InitializeComponent()
-        Dim ambilHarga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DateDiff(day,tgl_sewa,tgl_kembali)*harga) as total_bayar FROM ViewNotaPeminjaman WHERE tgl_sewa ='" & tglSewa.ToString("yyyy/mm/dd") & "'")
+        Dim ambilHarga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DateDiff(day,tgl_sewa,tgl_kembali)*harga) as total_bayar FROM ViewNotaPeminjaman WHERE tgl_sewa ='" & titip & "'")
         totalbayar = ambilHarga.getBS.Current("total_bayar")
-        paraTanggalSewa = New Microsoft.Reporting.WinForms.ReportParameter("paraTanggalSewa", tglSewa.ToString("yyyy/mm/dd"))
+        paraTanggalSewa = New Microsoft.Reporting.WinForms.ReportParameter("paraTanggalSewa", titip)
         paraTotalHarga = New Microsoft.Reporting.WinForms.ReportParameter("paraSubTotal", Convert.ToInt32(totalbayar))
     End Sub
 

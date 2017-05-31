@@ -118,12 +118,13 @@ Public Class FormDetailKembali
 
 
             Next
+
             pesan.isiDataTable("UPDATE Pesan SET status='Sudah dikembalikan' WHERE no_order=" & GlobalVariables.NoNota, "")
             MsgBox("Semua motor telah dikembalikan")
             Dim infoPelanggan = New Tabel("ViewNotaPeminjaman", "SELECT  * FROM ViewNotaPeminjaman WHERE no_order='" & GlobalVariables.NoNota & "'")
-            Dim namaPel = infoPelanggan.getBS.Current("namaPelanggan")
-            Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
-            Dim namaKar = infoPelanggan.getBS.Current("namaKaryawan")
+            Dim namaPel As String = infoPelanggan.getBS.Current("namaPelanggan")
+            Dim noKTP As String = infoPelanggan.getBS.Current("no_ktp")
+            Dim namaKar As String = infoPelanggan.getBS.Current("namaKaryawan")
             Dim totalBayar As Integer = infoPelanggan.getBS.Current("total_harga")
             Dim totalDenda As Integer = infoPelanggan.getBS.Current("total_denda")
             Dim idMotor As Integer = infoPelanggan.getBS.Current("id_motor")

@@ -30,7 +30,7 @@
         InitializeComponent()
         idmotor = id
         nama = username
-
+        GlobalVariables.isMember = "NO"
 
     End Sub
 
@@ -183,6 +183,7 @@
             hargaall = hargaall - (hargaall / 10)
             MsgBox("Sebagai member, anda mendapatkan diskon sebesar 10%, harga menjadi : Rp " & hargaall.ToString)
             txtHarga.Text = FormatCurrency(hargaall)
+            GlobalVariables.isMember = "YES"
         End If
     End Sub
 

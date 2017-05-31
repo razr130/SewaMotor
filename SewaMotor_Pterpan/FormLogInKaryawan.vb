@@ -40,7 +40,7 @@
 
 
 
-
+        GlobalVariables.isMember = "NO"
         SendKeys.Send("{ENTER}")
 
     End Sub

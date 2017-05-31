@@ -5,15 +5,16 @@
     Dim paraNoKTP As Microsoft.Reporting.WinForms.ReportParameter
     Dim paraNamaKar As Microsoft.Reporting.WinForms.ReportParameter
     Dim paraTotalBayar As Microsoft.Reporting.WinForms.ReportParameter
-    Dim paraTotalDenda As Microsoft.Reporting.WinForms.ReportParameter
+    Dim paraIsMember As Microsoft.Reporting.WinForms.ReportParameter
 
     Dim headerParams As Microsoft.Reporting.WinForms.ReportParameter()
 
-    Public Sub New(ByVal no_order As Integer, ByVal nama_pel As String, ByVal noKTP As String, ByVal nama_kar As String, ByVal totalBayar As Integer, ByVal totalDenda As Integer)
+    Public Sub New(ByVal no_order As Integer, ByVal nama_pel As String, ByVal noKTP As String, ByVal nama_kar As String, ByVal totalBayar As Integer, ByVal ismember As String)
 
         ' This call is required by the designer.
         InitializeComponent()
         Me.no_order = no_order
+
         ' Add any initialization after the InitializeComponent() call.
         Dim harga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DATEDIFF(DAY, tgl_sewa, Tgl_kembali)*harga) as Harga_Awal FROM dbo.ViewNotaPeminjaman Where no_order = " & no_order)
         Dim total_bayar As Integer = harga.getBS.Current("Harga_Awal")
@@ -22,8 +23,8 @@
         paraNoKTP = New Microsoft.Reporting.WinForms.ReportParameter("paraNomorKTP", noKTP)
         paraNamaKar = New Microsoft.Reporting.WinForms.ReportParameter("paraNamaKaryawan", nama_kar)
         paraTotalBayar = New Microsoft.Reporting.WinForms.ReportParameter("paraTotalBayar", total_bayar)
-        paraTotalDenda = New Microsoft.Reporting.WinForms.ReportParameter("paraTotalDenda", totalDenda)
-        headerParams = {paraNoOrder, paraNamaPel, paraNoKTP, paraNamaKar, paraTotalBayar, paraTotalDenda}
+        paraIsMember = New Microsoft.Reporting.WinForms.ReportParameter("paraIsMember", ismember)
+        headerParams = {paraNoOrder, paraNamaPel, paraNoKTP, paraNamaKar, paraTotalBayar, paraIsMember}
     End Sub
 
 

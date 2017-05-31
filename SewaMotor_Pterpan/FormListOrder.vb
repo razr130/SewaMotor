@@ -81,11 +81,9 @@
         Dim noKTP = infoPelanggan.getBS.Current("no_ktp")
         Dim namaKar = infoPelanggan.getBS.Current("namaKaryawan")
         Dim totalBayar = infoPelanggan.getBS.Current("total_harga")
-        Dim totalDenda = infoPelanggan.getBS.Current("total_denda")
-
         '//LOAD INVOICE
-
-        Dim invoice As New FormCheckout(idOrder, namaPel, noKTP, namaKar, totalBayar, totalDenda)
+        MsgBox(GlobalVariables.isMember)
+        Dim invoice As New FormCheckout(idOrder, namaPel, noKTP, namaKar, totalBayar, GlobalVariables.isMember)
         'Dim invoice As New FormCheckoutPengembalian(idOrder, namaPel, noKTP)
         invoice.ShowDialog()
 

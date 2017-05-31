@@ -797,12 +797,12 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!paraTotalBayar.Value</Value>
+                <Value>=IIf(Parameters!paraIsMember.Value="YES",Parameters!paraTotalBayar.Value * 9/10,Parameters!paraTotalBayar.Value)</Value>
                 <Style>
                   <FontFamily>BatangChe</FontFamily>
                   <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Format>'Rp'#,0;('Rp'#,0)</Format>
+                  <Format>'Rp' #,0;('Rp' #,0)</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -812,7 +812,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.8109in</Top>
+        <Top>2.50161in</Top>
         <Left>6.68192in</Left>
         <Height>0.375in</Height>
         <Width>1.63888in</Width>
@@ -848,7 +848,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>1.8109in</Top>
+        <Top>2.50161in</Top>
         <Left>5.78608in</Left>
         <Height>0.375in</Height>
         <Width>0.89584in</Width>
@@ -914,7 +914,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>2.21688in</Top>
+        <Top>2.92842in</Top>
         <Left>0.41802in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
@@ -971,10 +971,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>2.52244in</Top>
+        <Top>3.10898in</Top>
         <Left>0.41802in</Left>
         <Height>0.79167in</Height>
-        <Width>8.07986in</Width>
+        <Width>7.90278in</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -1003,7 +1003,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>4.58147in</Top>
+        <Top>5.16801in</Top>
         <Left>5.97358in</Left>
         <Height>0.25in</Height>
         <Width>1.67225in</Width>
@@ -1035,7 +1035,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>4.58147in</Top>
+        <Top>5.16801in</Top>
         <Left>0.9045in</Left>
         <Height>0.25in</Height>
         <Width>1.72533in</Width>
@@ -1067,7 +1067,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>3.65438in</Top>
+        <Top>4.24092in</Top>
         <Left>1.43886in</Left>
         <Height>0.25in</Height>
         <Width>0.61458in</Width>
@@ -1099,7 +1099,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>3.65438in</Top>
+        <Top>4.24092in</Top>
         <Left>6.51042in</Left>
         <Height>0.25in</Height>
         <Width>0.61458in</Width>
@@ -1131,7 +1131,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>3.51896in</Top>
+        <Top>4.1055in</Top>
         <Left>2.69927in</Left>
         <Height>0.25in</Height>
         <Width>2.98265in</Width>
@@ -1146,9 +1146,147 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIf(Parameters!paraIsMember.Value="YES", "Harga Awal :"," ")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>1.83841in</Top>
+        <Left>5.78608in</Left>
+        <Height>0.25in</Height>
+        <Width>0.89584in</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIf(Parameters!paraIsMember.Value="YES", "Diskon :"," ")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>2.15786in</Top>
+        <Left>5.78608in</Left>
+        <Height>0.25in</Height>
+        <Width>0.89584in</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIf(Parameters!paraIsMember.Value="YES", Parameters!paraTotalBayar.Value, " ")</Value>
+                <Style>
+                  <Format>'Rp' #,0;('Rp' #,0)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox29</rd:DefaultName>
+        <Top>1.83841in</Top>
+        <Left>6.69581in</Left>
+        <Height>0.25in</Height>
+        <Width>1.62499in</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox31">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIf(Parameters!paraIsMember.Value="YES",Parameters!paraTotalBayar.Value * 1/10," ")</Value>
+                <Style>
+                  <Format>'Rp' #,0;('Rp' #,0)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox31</rd:DefaultName>
+        <Top>2.15786in</Top>
+        <Left>6.69581in</Left>
+        <Height>0.25in</Height>
+        <Width>1.62499in</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>5.41791in</Height>
-    <Style />
+    <Height>5.57416in</Height>
+    <Style>
+      <Border>
+        <Style>Solid</Style>
+      </Border>
+    </Style>
   </Body>
   <Width>9.01041in</Width>
   <Page>
@@ -1456,8 +1594,8 @@
       <DataType>Integer</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="paraTotalDenda">
-      <DataType>Integer</DataType>
+    <ReportParameter Name="paraIsMember">
+      <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>

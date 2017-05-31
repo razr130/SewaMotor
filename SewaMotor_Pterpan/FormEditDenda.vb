@@ -45,4 +45,9 @@
 
         End If
     End Sub
+
+    Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
+        FormListDenda.Show()
+        Me.Close()
+    End Sub
 End Class

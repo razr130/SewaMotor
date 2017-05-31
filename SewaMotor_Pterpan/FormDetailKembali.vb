@@ -129,7 +129,7 @@ Public Class FormDetailKembali
             Dim idMotor As Integer = infoPelanggan.getBS.Current("id_motor")
             Dim notaKembali As New FormCheckoutPengembalian(GlobalVariables.NoNota, namaPel, noKTP, namaKar, totalBayar, totalDenda, idMotor)
             notaKembali.ShowDialog()
-            FormUtama.Show()
+
             Me.Close()
         End If
 

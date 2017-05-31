@@ -1,13 +1,13 @@
 ﻿Public Class FormLaporanSewaPerHari
     Dim paraTanggalSewa As New Microsoft.Reporting.WinForms.ReportParameter
     Dim paraTotalHarga As New Microsoft.Reporting.WinForms.ReportParameter
-    Dim totalbayar As String
+    Dim totalbayar As Integer
 
-    Public Sub New(ByVal tglSewa As Date)
-
+    Public Sub New(ByVal tglSewa As String)
+        MsgBox(tglSewa)
         ' This call is required by the designer.
         InitializeComponent()
-        Dim ambilHarga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DateDiff(day,tgl_sewa,tgl_kembali)*harga) as total_bayar FROM ViewNotaPeminjaman WHERE tgl_sewa ='" & tglSewa.ToString("yyyy/MM/dd") & "'")
+        Dim ambilHarga = New Tabel("ViewNotaPeminjaman", "SELECT SUM(DateDiff(day,tgl_sewa,tgl_kembali)*harga) as total_bayar FROM ViewNotaPeminjaman WHERE tgl_sewa ='" & tglSewa & "'")
         totalbayar = ambilHarga.getBS.Current("total_bayar")
         paraTanggalSewa = New Microsoft.Reporting.WinForms.ReportParameter("paraTanggalSewa", tglSewa)
         paraTotalHarga = New Microsoft.Reporting.WinForms.ReportParameter("paraSubTotal", Convert.ToInt32(totalbayar))

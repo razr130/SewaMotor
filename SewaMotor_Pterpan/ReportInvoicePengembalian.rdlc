@@ -155,6 +155,9 @@
             <TablixColumn>
               <Width>1in</Width>
             </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
@@ -398,6 +401,40 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Sub Total</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -622,7 +659,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Fields!harga.Value)*(DateDiff(DateInterval.Day,Fields!tgl_sewa.Value,Fields!tgl_kembali.Value))</Value>
+                              <Value>=Fields!harga.Value</Value>
                               <Style>
                                 <FontFamily>BatangChe</FontFamily>
                                 <Format>#,0;(#,0)</Format>
@@ -649,12 +686,48 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox23">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Fields!harga.Value)*(DateDiff(DateInterval.Day,Fields!tgl_sewa.Value,Fields!tgl_kembali.Value))</Value>
+                              <Style>
+                                <FontFamily>BatangChe</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -687,7 +760,7 @@
         <Top>1.19915in</Top>
         <Left>0.4618in</Left>
         <Height>0.5in</Height>
-        <Width>6.90278in</Width>
+        <Width>7.90278in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -707,7 +780,7 @@
                   <FontFamily>BatangChe</FontFamily>
                   <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Format>'Rp'#,0;('Rp'#,0)</Format>
+                  <Format>'Rp' #,0;('Rp' #,0)</Format>
                   <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
                 </Style>
               </TextRun>
@@ -719,7 +792,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
         <Top>3.03124in</Top>
-        <Left>5.67535in</Left>
+        <Left>6.67535in</Left>
         <Height>0.375in</Height>
         <Width>1.68923in</Width>
         <ZIndex>5</ZIndex>
@@ -1025,7 +1098,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1311,7 +1383,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
         <Top>3.03124in</Top>
-        <Left>4.77951in</Left>
+        <Left>5.77951in</Left>
         <Height>0.375in</Height>
         <Width>0.89584in</Width>
         <ZIndex>12</ZIndex>
@@ -1799,7 +1871,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="paraIdMotor">
+    <ReportParameter Name="paraNomorDetail">
       <DataType>Integer</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

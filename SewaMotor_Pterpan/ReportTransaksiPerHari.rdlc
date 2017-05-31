@@ -528,7 +528,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=FormatDateTime(Parameters!paraTanggalSewa.Value, DateFormat.ShortDate)</Value>
+                <Value>=Parameters!paraTanggalSewa.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>

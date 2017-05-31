@@ -79,9 +79,28 @@
             If txtCari.Text = "" Then
                 pelanggan.getBS.Filter = ""
                 dgvPelanggan.DataSource = pelanggan.getBS()
+                For baris As Integer = 0 To dgvPelanggan.Rows.Count - 1
+
+                    If IsDBNull(dgvPelanggan.Rows(baris).Cells(2).Value) Then
+                        dgvPelanggan.Rows(baris).Visible = False
+                    Else
+
+                    End If
+
+                Next
             Else
                 pelanggan.getBS.Filter = "namaPelanggan Like '" & txtCari.Text & "%'"
+                'For baris As Integer = 0 To dgvPelanggan.Rows.Count - 1
+
+                '    If IsDBNull(dgvPelanggan.Rows(baris).Cells(2).Value) Then
+                '        dgvPelanggan.Rows(baris).Visible = False
+                '    Else
+
+                '    End If
+
+                'Next
             End If
+
         End If
 
     End Sub

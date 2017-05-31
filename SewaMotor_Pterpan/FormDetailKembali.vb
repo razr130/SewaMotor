@@ -129,7 +129,7 @@ Public Class FormDetailKembali
             Dim idMotor As Integer = infoPelanggan.getBS.Current("id_motor")
             Dim notaKembali As New FormCheckoutPengembalian(GlobalVariables.NoNota, namaPel, noKTP, namaKar, totalBayar, totalDenda, idMotor)
             notaKembali.ShowDialog()
-            FormUtama.Show()
+
             Me.Close()
         End If
 
@@ -170,8 +170,28 @@ Public Class FormDetailKembali
     End Sub
 
     Private Sub btnSelesai_Click(sender As Object, e As EventArgs) Handles btnSelesai.Click
-        FormKembali.Show()
-        Me.Close()
+
+        For baris As Integer = 0 To gdvKembali.Rows.Count - 1
+            nodetail = gdvKembali.Rows(baris).Cells(1).Value
+            Dim ada As Integer
+            ada = jenis_denda.getBS.Find("no_detail", nodetail)
+            If ada >= 0 Then
+                adadendagak += 1
+            End If
+        Next
+        If adadendagak = jumlahbaris Then
+            FormKembali.Show()
+            Me.Close()
+        Else
+            Dim result As Integer = MessageBox.Show("Apakah anda yakin ingin keluar dari form kembali? Proses masih belum selesai", "Konfirmasi", MessageBoxButtons.YesNo)
+            If result = DialogResult.Yes Then
+                FormKembali.Show()
+                Me.Close()
+            Else
+
+            End If
+        End If
+
 
     End Sub
 

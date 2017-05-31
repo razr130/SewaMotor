@@ -24,6 +24,7 @@ Public Class FormRegis
         txtAlamat.Clear()
         DtTglLahir.Value = Date.Today
         txtNoKTP.Clear()
+        FormListPelanggan.Show()
         Me.Close()
 
     End Sub

@@ -50,6 +50,7 @@
 
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
         idOrder = dgvOrder.Item(0, dgvOrder.CurrentRow.Index).Value
+        GlobalVariables.NoNota = idOrder
         Detail()
     End Sub
 

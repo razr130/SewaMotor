@@ -123,6 +123,7 @@ Partial Class FormDetailKembali
         Me.txtHargaSewa.Name = "txtHargaSewa"
         Me.txtHargaSewa.Size = New System.Drawing.Size(121, 20)
         Me.txtHargaSewa.TabIndex = 8
+        Me.txtHargaSewa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label10
         '

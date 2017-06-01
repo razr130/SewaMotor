@@ -67,6 +67,19 @@ Public Class FormDetailKembali
         harga1 = Integer.Parse(txtHargaSewa.Text)
         txtHargaSewa.Text = FormatCurrency(harga1)
         jumlahbaris = gdvKembali.RowCount
+
+        gdvKembali.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+        gdvKembali.Columns(1).HeaderText = "No.Detail"
+        gdvKembali.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        gdvKembali.Columns(2).HeaderText = "Merek"
+        gdvKembali.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        gdvKembali.Columns(3).HeaderText = "Plat"
+        gdvKembali.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        gdvKembali.Columns(4).HeaderText = "Tanggal Sewa"
+        gdvKembali.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        gdvKembali.Columns(5).HeaderText = "Tanggal Kembali"
+        gdvKembali.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
     End Sub
 
     Private Sub gdvKembali_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles gdvKembali.CellMouseDoubleClick

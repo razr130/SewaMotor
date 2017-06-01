@@ -12,6 +12,22 @@
             dgvPelanggan.Columns(6).Visible = False
         End If
 
+        dgvPelanggan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+        dgvPelanggan.Columns(0).HeaderText = "Id Pelanggan"
+        dgvPelanggan.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvPelanggan.Columns(1).HeaderText = "Nama Pelanggan"
+        dgvPelanggan.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvPelanggan.Columns(2).HeaderText = "Tanggal Lahir"
+        dgvPelanggan.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvPelanggan.Columns(3).HeaderText = "Alamat"
+        dgvPelanggan.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvPelanggan.Columns(4).HeaderText = "No.Telp"
+        dgvPelanggan.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvPelanggan.Columns(5).HeaderText = "Email"
+        dgvPelanggan.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvPelanggan.Columns(6).HeaderText = "No.KTP"
+        dgvPelanggan.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
     End Sub
 
     '/////BUTTON/////

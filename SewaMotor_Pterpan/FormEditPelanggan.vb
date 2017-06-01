@@ -12,9 +12,9 @@
     Private Sub FormEditPelanggan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim brs = edit.getBS().Find("id", idPelanggan)
         If brs < 0 Then
-            txtIdPelanggan.Text = ""
+            'txtIdPelanggan.Text = ""
             txtEmail.Text = ""
-            txtPass.Text = ""
+            'txtPass.Text = ""
             txtNama.Text = ""
             txtNoKTP.Text = ""
             DtTglLahir.Text = ""
@@ -29,9 +29,9 @@
     End Sub
 
     Private Sub unBind()
-        txtIdPelanggan.DataBindings.Clear()
+        'txtIdPelanggan.DataBindings.Clear()
         txtEmail.DataBindings.Clear()
-        txtPass.DataBindings.Clear()
+        'txtPass.DataBindings.Clear()
         txtNama.DataBindings.Clear()
         txtNoKTP.DataBindings.Clear()
         DtTglLahir.DataBindings.Clear()
@@ -42,9 +42,9 @@
     Private Sub bind()
         unBind()
 
-        txtIdPelanggan.DataBindings.Add("text", edit.getBS(), "id")
+        'txtIdPelanggan.DataBindings.Add("text", edit.getBS(), "id")
         txtEmail.DataBindings.Add("text", edit.getBS(), "email")
-        txtPass.DataBindings.Add("text", edit.getBS(), "password")
+        'txtPass.DataBindings.Add("text", edit.getBS(), "password")
         txtNama.DataBindings.Add("text", edit.getBS(), "namaPelanggan")
         txtNoKTP.DataBindings.Add("text", edit.getBS(), "no_ktp")
         DtTglLahir.DataBindings.Add("text", edit.getBS(), "ttl")
@@ -55,7 +55,6 @@
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         edit.isiDataTable("UPDATE Pelanggan SET 
                             email='" & txtEmail.Text & "', 
-                            password='" & txtPass.Text & "', 
                             namaPelanggan='" & txtNama.Text & "', 
                             no_ktp='" & txtNoKTP.Text & "', 
                             ttl='" & DtTglLahir.Value.ToString("yyyy/MM/dd") & "',

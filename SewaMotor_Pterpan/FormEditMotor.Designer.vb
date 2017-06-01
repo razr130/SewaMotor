@@ -28,7 +28,6 @@ Partial Class FormEditMotor
         Me.label3 = New System.Windows.Forms.Label()
         Me.txtHarga = New System.Windows.Forms.TextBox()
         Me.txtPlat = New System.Windows.Forms.TextBox()
-        Me.txtStatus = New System.Windows.Forms.TextBox()
         Me.txtNoRangka = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.label7 = New System.Windows.Forms.Label()
@@ -38,8 +37,11 @@ Partial Class FormEditMotor
         Me.label5 = New System.Windows.Forms.Label()
         Me.txtMerk = New System.Windows.Forms.TextBox()
         Me.btnSimpan = New System.Windows.Forms.Button()
-        Me.txtJenis = New System.Windows.Forms.TextBox()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbJenis = New System.Windows.Forms.ComboBox()
+        Me.cbStatus = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtSembunyiStatus = New System.Windows.Forms.TextBox()
         Me.groupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -75,10 +77,11 @@ Partial Class FormEditMotor
         '
         'txtHarga
         '
-        Me.txtHarga.Location = New System.Drawing.Point(71, 197)
+        Me.txtHarga.Location = New System.Drawing.Point(99, 198)
         Me.txtHarga.Name = "txtHarga"
-        Me.txtHarga.Size = New System.Drawing.Size(100, 20)
+        Me.txtHarga.Size = New System.Drawing.Size(72, 20)
         Me.txtHarga.TabIndex = 18
+        Me.txtHarga.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtPlat
         '
@@ -86,13 +89,6 @@ Partial Class FormEditMotor
         Me.txtPlat.Name = "txtPlat"
         Me.txtPlat.Size = New System.Drawing.Size(100, 20)
         Me.txtPlat.TabIndex = 18
-        '
-        'txtStatus
-        '
-        Me.txtStatus.Location = New System.Drawing.Point(71, 135)
-        Me.txtStatus.Name = "txtStatus"
-        Me.txtStatus.Size = New System.Drawing.Size(100, 20)
-        Me.txtStatus.TabIndex = 18
         '
         'txtNoRangka
         '
@@ -172,22 +168,17 @@ Partial Class FormEditMotor
         Me.btnSimpan.Text = "Simpan"
         Me.btnSimpan.UseVisualStyleBackColor = False
         '
-        'txtJenis
-        '
-        Me.txtJenis.Location = New System.Drawing.Point(71, 25)
-        Me.txtJenis.Name = "txtJenis"
-        Me.txtJenis.Size = New System.Drawing.Size(100, 20)
-        Me.txtJenis.TabIndex = 15
-        '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.cbJenis)
+        Me.groupBox1.Controls.Add(Me.cbStatus)
         Me.groupBox1.Controls.Add(Me.btnBatal2)
         Me.groupBox1.Controls.Add(Me.label1)
         Me.groupBox1.Controls.Add(Me.label3)
         Me.groupBox1.Controls.Add(Me.txtHarga)
         Me.groupBox1.Controls.Add(Me.txtPlat)
-        Me.groupBox1.Controls.Add(Me.txtStatus)
         Me.groupBox1.Controls.Add(Me.txtNoRangka)
+        Me.groupBox1.Controls.Add(Me.Label8)
         Me.groupBox1.Controls.Add(Me.Label2)
         Me.groupBox1.Controls.Add(Me.label7)
         Me.groupBox1.Controls.Add(Me.label4)
@@ -196,7 +187,7 @@ Partial Class FormEditMotor
         Me.groupBox1.Controls.Add(Me.label5)
         Me.groupBox1.Controls.Add(Me.txtMerk)
         Me.groupBox1.Controls.Add(Me.btnSimpan)
-        Me.groupBox1.Controls.Add(Me.txtJenis)
+        Me.groupBox1.Controls.Add(Me.txtSembunyiStatus)
         Me.groupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.groupBox1.Location = New System.Drawing.Point(12, 26)
         Me.groupBox1.Name = "groupBox1"
@@ -204,6 +195,42 @@ Partial Class FormEditMotor
         Me.groupBox1.TabIndex = 28
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Edit Motor"
+        '
+        'cbJenis
+        '
+        Me.cbJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbJenis.FormattingEnabled = True
+        Me.cbJenis.Items.AddRange(New Object() {"Bebek", "Laki", "Matic"})
+        Me.cbJenis.Location = New System.Drawing.Point(71, 24)
+        Me.cbJenis.Name = "cbJenis"
+        Me.cbJenis.Size = New System.Drawing.Size(100, 23)
+        Me.cbJenis.TabIndex = 21
+        '
+        'cbStatus
+        '
+        Me.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbStatus.FormattingEnabled = True
+        Me.cbStatus.Items.AddRange(New Object() {"Tersedia", "Tidak Tersedia"})
+        Me.cbStatus.Location = New System.Drawing.Point(71, 133)
+        Me.cbStatus.Name = "cbStatus"
+        Me.cbStatus.Size = New System.Drawing.Size(100, 23)
+        Me.cbStatus.TabIndex = 20
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(76, 201)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(20, 15)
+        Me.Label8.TabIndex = 13
+        Me.Label8.Text = "Rp"
+        '
+        'txtSembunyiStatus
+        '
+        Me.txtSembunyiStatus.Location = New System.Drawing.Point(71, 134)
+        Me.txtSembunyiStatus.Name = "txtSembunyiStatus"
+        Me.txtSembunyiStatus.Size = New System.Drawing.Size(37, 20)
+        Me.txtSembunyiStatus.TabIndex = 22
         '
         'FormEditMotor
         '
@@ -214,6 +241,7 @@ Partial Class FormEditMotor
         Me.Controls.Add(Me.groupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormEditMotor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormEditMotor"
         Me.groupBox1.ResumeLayout(False)
         Me.groupBox1.PerformLayout()
@@ -226,7 +254,6 @@ Partial Class FormEditMotor
     Private WithEvents label3 As Label
     Private WithEvents txtHarga As TextBox
     Private WithEvents txtPlat As TextBox
-    Private WithEvents txtStatus As TextBox
     Private WithEvents txtNoRangka As TextBox
     Private WithEvents Label2 As Label
     Private WithEvents label7 As Label
@@ -236,6 +263,9 @@ Partial Class FormEditMotor
     Private WithEvents label5 As Label
     Private WithEvents txtMerk As TextBox
     Private WithEvents btnSimpan As Button
-    Private WithEvents txtJenis As TextBox
     Private WithEvents groupBox1 As GroupBox
+    Friend WithEvents cbJenis As ComboBox
+    Friend WithEvents cbStatus As ComboBox
+    Friend WithEvents txtSembunyiStatus As TextBox
+    Private WithEvents Label8 As Label
 End Class

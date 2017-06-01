@@ -625,7 +625,7 @@
                               <Value>=(Fields!harga.Value)*(DateDiff(DateInterval.Day,Fields!tgl_sewa.Value,Fields!tgl_kembali.Value))</Value>
                               <Style>
                                 <FontFamily>BatangChe</FontFamily>
-                                <Format>'Rp'#,0;('Rp'#,0)</Format>
+                                <Format>#,0;(#,0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -645,7 +645,6 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1004,6 +1003,7 @@
                               <Value>=Fields!harga.Value</Value>
                               <Style>
                                 <FontFamily>BatangChe</FontFamily>
+                                <Format>#,0;(#,0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1025,6 +1025,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1074,7 +1075,7 @@
                               <Value>=(Fields!harga.Value*Fields!jumlah.Value)</Value>
                               <Style>
                                 <FontFamily>BatangChe</FontFamily>
-                                <Format>'Rp'#,0;('Rp'#,0)</Format>
+                                <Format>#,0;(#,0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1094,7 +1095,6 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1343,7 +1343,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>4.32812in</Top>
+        <Top>4.92187in</Top>
         <Left>5.94097in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
@@ -1390,36 +1390,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox23">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>(......................................)</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>5.00521in</Top>
-        <Left>5.59722in</Left>
-        <Height>0.25in</Height>
-        <Width>1.77083in</Width>
-        <ZIndex>15</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox8">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -1441,7 +1411,7 @@
         <Left>5.32291in</Left>
         <Height>0.25in</Height>
         <Width>2.33646in</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>

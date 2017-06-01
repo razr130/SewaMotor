@@ -30,26 +30,17 @@
         'Me.namaAkun = namaAkun
     End Sub
     Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         If GlobalVariables.Role > 0 Then
             btnTambah.Visible = True
             btnUbah.Visible = True
             btnDelete.Visible = True
-
-
         End If
         If GlobalVariables.Role > 0 And GlobalVariables.Role < 3 Then
             btnTambah.Visible = True
             btnUbah.Visible = True
             btnDelete.Visible = True
-
-
         End If
-
-
         dgvMotor.DataSource = motor.getBS()
-
         If dgvMotor.Columns.Count > 0 Then
             dgvMotor.Columns(0).Visible = False
             dgvMotor.Columns(3).Visible = False
@@ -96,7 +87,6 @@
         Else
             MsgBox("Motor sedang dipinjam")
         End If
-
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Dim nama As String
@@ -113,12 +103,7 @@
                 MsgBox("Motor sedang dipinjam")
             End If
         Else
-
         End If
-
-
-
-
     End Sub
     Private Sub btnPengembalian_Click(sender As Object, e As EventArgs)
         Dim kembali As New FormKembali
@@ -157,7 +142,6 @@
         idmotor = dgvMotor.Item(0, dgvMotor.CurrentRow.Index).Value
         Dim edit As New FormDetailMotor(idmotor, username)
         edit.Show()
-        Me.Close()
     End Sub
 
     '/////TOOLTIP/////
@@ -189,22 +173,18 @@
         Laporan.Show()
 
     End Sub
-    Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles logOutToolStripMenuItem.Click
+    Private Sub logOutToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If GlobalVariables.Role > 0 Then
             FormLogin.Show()
             Me.Close()
         Else
-            Dim result As Integer = MessageBox.Show("Apakah anda sudah selesai bertransaksi ?", "Konfirmasi", MessageBoxButtons.YesNo)
+            Dim result As Integer = MessageBox.Show("Anda yakin akan log out ?", "Konfirmasi", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                MsgBox("Silahkan menuju ke kasir untuk mencetak nota")
                 FormLogin.Show()
                 Me.Close()
             Else
-
             End If
         End If
-
-
     End Sub
 
     Private Sub ListDendaToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -213,7 +193,9 @@
     End Sub
 
     Private Sub FormUtama_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        GlobalVariables.UserName = ""
-        FormHomepage.Show()
+
+    End Sub
+    Private Sub HomeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HomeToolStripMenuItem.Click
+        Me.Close()
     End Sub
 End Class

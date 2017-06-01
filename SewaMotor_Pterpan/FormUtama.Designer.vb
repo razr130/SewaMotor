@@ -22,7 +22,7 @@ Partial Class FormUtama
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUtama))
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
@@ -32,8 +32,8 @@ Partial Class FormUtama
         Me.dgvMotor = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvMotor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuStrip1.SuspendLayout()
@@ -104,14 +104,14 @@ Partial Class FormUtama
         Me.dgvMotor.AllowUserToAddRows = False
         Me.dgvMotor.AllowUserToDeleteRows = False
         Me.dgvMotor.AllowUserToOrderColumns = True
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvMotor.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvMotor.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvMotor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvMotor.Location = New System.Drawing.Point(17, 207)
         Me.dgvMotor.Name = "dgvMotor"
@@ -139,24 +139,23 @@ Partial Class FormUtama
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pilih Motor"
         '
-        'logOutToolStripMenuItem
-        '
-        Me.logOutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.logOutToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.logOutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem"
-        Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
-        Me.logOutToolStripMenuItem.Text = "Logout"
-        '
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.logOutToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(421, 24)
         Me.menuStrip1.TabIndex = 3
         Me.menuStrip1.Text = "menuStrip1"
+        '
+        'HomeToolStripMenuItem
+        '
+        Me.HomeToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HomeToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.HomeToolStripMenuItem.Name = "HomeToolStripMenuItem"
+        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
+        Me.HomeToolStripMenuItem.Text = "Home"
         '
         'FormUtama
         '
@@ -193,6 +192,6 @@ Partial Class FormUtama
     Public WithEvents dgvMotor As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
-    Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
     Private WithEvents menuStrip1 As MenuStrip
+    Friend WithEvents HomeToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormListKaryawan
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormListKaryawan
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormListKaryawan))
@@ -37,15 +37,6 @@ Partial Class FormListKaryawan
         Me.label2 = New System.Windows.Forms.Label()
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListPelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListKaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaporanPenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.groupDaftarPelanggan.SuspendLayout()
         CType(Me.dgvKaryawan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SewaMotorDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,7 +158,7 @@ Partial Class FormListKaryawan
         'menuStrip1
         '
         Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem, Me.logOutToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ReportToolStripMenuItem})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.homeToolStripMenuItem})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
         Me.menuStrip1.Size = New System.Drawing.Size(588, 24)
@@ -181,69 +172,6 @@ Partial Class FormListKaryawan
         Me.homeToolStripMenuItem.Name = "homeToolStripMenuItem"
         Me.homeToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.homeToolStripMenuItem.Text = "Home"
-        '
-        'logOutToolStripMenuItem
-        '
-        Me.logOutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.logOutToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.logOutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem"
-        Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
-        Me.logOutToolStripMenuItem.Text = "Logout"
-        '
-        'ToolsToolStripMenuItem
-        '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListPelangganToolStripMenuItem, Me.ListKaryawanToolStripMenuItem, Me.ListOrderToolStripMenuItem})
-        Me.ToolsToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
-        Me.ToolsToolStripMenuItem.Text = "Tools"
-        '
-        'ListPelangganToolStripMenuItem
-        '
-        Me.ListPelangganToolStripMenuItem.Name = "ListPelangganToolStripMenuItem"
-        Me.ListPelangganToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.ListPelangganToolStripMenuItem.Text = "List Pelanggan"
-        '
-        'ListKaryawanToolStripMenuItem
-        '
-        Me.ListKaryawanToolStripMenuItem.Name = "ListKaryawanToolStripMenuItem"
-        Me.ListKaryawanToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.ListKaryawanToolStripMenuItem.Text = "List Karyawan"
-        '
-        'ListOrderToolStripMenuItem
-        '
-        Me.ListOrderToolStripMenuItem.Name = "ListOrderToolStripMenuItem"
-        Me.ListOrderToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.ListOrderToolStripMenuItem.Text = "List Order"
-        '
-        'ReportToolStripMenuItem
-        '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaporanPenyewaanToolStripMenuItem, Me.LaporanStatusMotorToolStripMenuItem, Me.LaporanKeterlambatanMotorToolStripMenuItem})
-        Me.ReportToolStripMenuItem.Font = New System.Drawing.Font("Franklin Gothic Demi", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReportToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
-        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.ReportToolStripMenuItem.Text = "Report"
-        '
-        'LaporanPenyewaanToolStripMenuItem
-        '
-        Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
-        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
-        '
-        'LaporanStatusMotorToolStripMenuItem
-        '
-        Me.LaporanStatusMotorToolStripMenuItem.Name = "LaporanStatusMotorToolStripMenuItem"
-        Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
-        '
-        'LaporanKeterlambatanMotorToolStripMenuItem
-        '
-        Me.LaporanKeterlambatanMotorToolStripMenuItem.Name = "LaporanKeterlambatanMotorToolStripMenuItem"
-        Me.LaporanKeterlambatanMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanKeterlambatanMotorToolStripMenuItem.Text = "Laporan Keterlambatan Motor"
         '
         'FormListKaryawan
         '
@@ -283,13 +211,4 @@ Partial Class FormListKaryawan
     Friend WithEvents btnClose As Button
     Private WithEvents menuStrip1 As MenuStrip
     Private WithEvents homeToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListPelangganToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListKaryawanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListOrderToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LaporanPenyewaanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LaporanStatusMotorToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LaporanKeterlambatanMotorToolStripMenuItem As ToolStripMenuItem
 End Class

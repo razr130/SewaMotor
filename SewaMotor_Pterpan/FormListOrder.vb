@@ -113,4 +113,11 @@
         dgvOrder.Refresh()
     End Sub
 
+    Private Sub FormListOrder_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        FormHomepage.Show()
+    End Sub
+
+    Private Sub homeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles homeToolStripMenuItem.Click
+        Me.Close()
+    End Sub
 End Class

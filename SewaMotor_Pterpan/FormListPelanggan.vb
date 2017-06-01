@@ -1,6 +1,7 @@
 ﻿Public Class FormListPelanggan
     Private pelanggan As New Tabel("Pelanggan")
-    Private idPelanggan As Integer
+    Public idPelanggan As Integer
+
 
     '/////LOAD/////
     Public Sub New()
@@ -95,6 +96,15 @@
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
+
+    Private Sub dgvPelanggan_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles dgvPelanggan.MouseDoubleClick
+
+    End Sub
+
+    Private Sub dgvPelanggan_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvPelanggan.CellMouseDoubleClick
+        idPelanggan = dgvPelanggan.Item(0, dgvPelanggan.CurrentRow.Index).Value
         Me.Close()
     End Sub
 End Class

@@ -53,6 +53,9 @@ Partial Class FormDetailMotor
         Me.menuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.homeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btnMember = New System.Windows.Forms.Button()
         Me.groupBox1.SuspendLayout()
         Me.menuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -119,7 +122,7 @@ Partial Class FormDetailMotor
         'linkLabel1
         '
         Me.linkLabel1.AutoSize = True
-        Me.linkLabel1.Location = New System.Drawing.Point(14, 237)
+        Me.linkLabel1.Location = New System.Drawing.Point(17, 281)
         Me.linkLabel1.Name = "linkLabel1"
         Me.linkLabel1.Size = New System.Drawing.Size(61, 15)
         Me.linkLabel1.TabIndex = 10
@@ -147,7 +150,7 @@ Partial Class FormDetailMotor
         'txtHarga
         '
         Me.txtHarga.Enabled = False
-        Me.txtHarga.Location = New System.Drawing.Point(347, 167)
+        Me.txtHarga.Location = New System.Drawing.Point(347, 171)
         Me.txtHarga.Name = "txtHarga"
         Me.txtHarga.Size = New System.Drawing.Size(100, 20)
         Me.txtHarga.TabIndex = 18
@@ -237,7 +240,7 @@ Partial Class FormDetailMotor
         Me.btnSewa.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnSewa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSewa.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSewa.Location = New System.Drawing.Point(169, 232)
+        Me.btnSewa.Location = New System.Drawing.Point(164, 272)
         Me.btnSewa.Name = "btnSewa"
         Me.btnSewa.Size = New System.Drawing.Size(154, 29)
         Me.btnSewa.TabIndex = 14
@@ -261,6 +264,8 @@ Partial Class FormDetailMotor
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.TextBox1)
+        Me.groupBox1.Controls.Add(Me.Label11)
         Me.groupBox1.Controls.Add(Me.txthiddenharga)
         Me.groupBox1.Controls.Add(Me.dtsewa)
         Me.groupBox1.Controls.Add(Me.label9)
@@ -280,6 +285,7 @@ Partial Class FormDetailMotor
         Me.groupBox1.Controls.Add(Me.Label10)
         Me.groupBox1.Controls.Add(Me.label5)
         Me.groupBox1.Controls.Add(Me.txtMerek)
+        Me.groupBox1.Controls.Add(Me.btnMember)
         Me.groupBox1.Controls.Add(Me.btnLast)
         Me.groupBox1.Controls.Add(Me.btnNext)
         Me.groupBox1.Controls.Add(Me.btnPrev)
@@ -289,7 +295,7 @@ Partial Class FormDetailMotor
         Me.groupBox1.Font = New System.Drawing.Font("Franklin Gothic Demi", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.groupBox1.Location = New System.Drawing.Point(12, 36)
         Me.groupBox1.Name = "groupBox1"
-        Me.groupBox1.Size = New System.Drawing.Size(461, 286)
+        Me.groupBox1.Size = New System.Drawing.Size(461, 319)
         Me.groupBox1.TabIndex = 25
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Detail Motor"
@@ -323,7 +329,7 @@ Partial Class FormDetailMotor
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(278, 170)
+        Me.Label10.Location = New System.Drawing.Point(278, 174)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(63, 15)
         Me.Label10.TabIndex = 13
@@ -356,12 +362,40 @@ Partial Class FormDetailMotor
         Me.logOutToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.logOutToolStripMenuItem.Text = "Logout"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(256, 204)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(91, 15)
+        Me.Label11.TabIndex = 29
+        Me.Label11.Text = "Nama Customer  "
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(347, 202)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(102, 20)
+        Me.TextBox1.TabIndex = 30
+        '
+        'btnMember
+        '
+        Me.btnMember.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMember.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnMember.Location = New System.Drawing.Point(358, 230)
+        Me.btnMember.Name = "btnMember"
+        Me.btnMember.Size = New System.Drawing.Size(87, 26)
+        Me.btnMember.TabIndex = 14
+        Me.btnMember.Text = "Pilih Member"
+        Me.btnMember.UseVisualStyleBackColor = False
+        '
         'FormDetailMotor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(488, 342)
+        Me.ClientSize = New System.Drawing.Size(488, 367)
         Me.Controls.Add(Me.menuStrip1)
         Me.Controls.Add(Me.label2)
         Me.Controls.Add(Me.groupBox1)
@@ -408,4 +442,7 @@ Partial Class FormDetailMotor
     Private WithEvents logOutToolStripMenuItem As ToolStripMenuItem
     Private WithEvents cbJaminan As ComboBox
     Private WithEvents Label10 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label11 As Label
+    Private WithEvents btnMember As Button
 End Class

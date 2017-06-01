@@ -288,4 +288,10 @@
             End If
         End If
     End Sub
+
+    Private Sub btnMember_Click(sender As Object, e As EventArgs) Handles btnMember.Click
+        Dim pelanggan As New FormListPelanggan
+        pelanggan.ShowDialog()
+        MsgBox(pelanggan.idPelanggan.ToString)
+    End Sub
 End Class

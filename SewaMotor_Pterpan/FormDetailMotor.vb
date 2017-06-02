@@ -278,9 +278,9 @@
 
         ElseIf result = DialogResult.No Then
 
+            Return
 
-
-            End If
+        End If
 
         FormUtama.Show()
         Me.Close()

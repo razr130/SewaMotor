@@ -36,7 +36,6 @@ Partial Class FormHomepage
         Me.LaporanStatusMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanKeterlambatanMotorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanTransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PerHariToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenyewaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PengembalianToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -114,33 +113,26 @@ Partial Class FormHomepage
         'LaporanPenyewaanToolStripMenuItem
         '
         Me.LaporanPenyewaanToolStripMenuItem.Name = "LaporanPenyewaanToolStripMenuItem"
-        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Penyewaan"
+        Me.LaporanPenyewaanToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.LaporanPenyewaanToolStripMenuItem.Text = "Laporan Sewa Per Motor"
         '
         'LaporanStatusMotorToolStripMenuItem
         '
         Me.LaporanStatusMotorToolStripMenuItem.Name = "LaporanStatusMotorToolStripMenuItem"
-        Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Motor"
+        Me.LaporanStatusMotorToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.LaporanStatusMotorToolStripMenuItem.Text = "Laporan Status Inventaris Motor"
         '
         'LaporanKeterlambatanMotorToolStripMenuItem
         '
         Me.LaporanKeterlambatanMotorToolStripMenuItem.Name = "LaporanKeterlambatanMotorToolStripMenuItem"
-        Me.LaporanKeterlambatanMotorToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanKeterlambatanMotorToolStripMenuItem.Text = "Laporan Keterlambatan Motor"
+        Me.LaporanKeterlambatanMotorToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.LaporanKeterlambatanMotorToolStripMenuItem.Text = "Laporan Motor Yang Belum Kembali"
         '
         'LaporanTransaksiToolStripMenuItem
         '
-        Me.LaporanTransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PerHariToolStripMenuItem})
         Me.LaporanTransaksiToolStripMenuItem.Name = "LaporanTransaksiToolStripMenuItem"
-        Me.LaporanTransaksiToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.LaporanTransaksiToolStripMenuItem.Text = "Laporan Transaksi"
-        '
-        'PerHariToolStripMenuItem
-        '
-        Me.PerHariToolStripMenuItem.Name = "PerHariToolStripMenuItem"
-        Me.PerHariToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.PerHariToolStripMenuItem.Text = "per Hari"
+        Me.LaporanTransaksiToolStripMenuItem.Size = New System.Drawing.Size(268, 22)
+        Me.LaporanTransaksiToolStripMenuItem.Text = "Laporan Transaksi Harian"
         '
         'PenyewaanToolStripMenuItem
         '
@@ -203,5 +195,4 @@ Partial Class FormHomepage
     Friend WithEvents PenyewaanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PengembalianToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents LaporanTransaksiToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PerHariToolStripMenuItem As ToolStripMenuItem
 End Class

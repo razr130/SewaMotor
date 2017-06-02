@@ -1111,6 +1111,10 @@ Partial Public Class DataSetSewaMotor2
         
         Private columntotal_harga As Global.System.Data.DataColumn
         
+        Private columnjaminan As Global.System.Data.DataColumn
+        
+        Private columnstatus As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1195,6 +1199,22 @@ Partial Public Class DataSetSewaMotor2
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property jaminanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnjaminan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property statusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstatus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1231,9 +1251,9 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPesanRow(ByVal parentPelangganRowByFK_Order_Pelanggan As PelangganRow, ByVal parentKaryawanRowByFK_Order_Karyawan As KaryawanRow, ByVal tgl_order As Date, ByVal total_denda As Integer, ByVal total_harga As Integer) As PesanRow
+        Public Overloads Function AddPesanRow(ByVal parentPelangganRowByFK_Order_Pelanggan As PelangganRow, ByVal parentKaryawanRowByFK_Order_Karyawan As KaryawanRow, ByVal tgl_order As Date, ByVal total_denda As Integer, ByVal total_harga As Integer, ByVal jaminan As String, ByVal status As String) As PesanRow
             Dim rowPesanRow As PesanRow = CType(Me.NewRow,PesanRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, tgl_order, total_denda, total_harga}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, tgl_order, total_denda, total_harga, jaminan, status}
             If (Not (parentPelangganRowByFK_Order_Pelanggan) Is Nothing) Then
                 columnValuesArray(1) = parentPelangganRowByFK_Order_Pelanggan(0)
             End If
@@ -1274,6 +1294,8 @@ Partial Public Class DataSetSewaMotor2
             Me.columntgl_order = MyBase.Columns("tgl_order")
             Me.columntotal_denda = MyBase.Columns("total_denda")
             Me.columntotal_harga = MyBase.Columns("total_harga")
+            Me.columnjaminan = MyBase.Columns("jaminan")
+            Me.columnstatus = MyBase.Columns("status")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1291,6 +1313,10 @@ Partial Public Class DataSetSewaMotor2
             MyBase.Columns.Add(Me.columntotal_denda)
             Me.columntotal_harga = New Global.System.Data.DataColumn("total_harga", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntotal_harga)
+            Me.columnjaminan = New Global.System.Data.DataColumn("jaminan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnjaminan)
+            Me.columnstatus = New Global.System.Data.DataColumn("status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstatus)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnno_order}, true))
             Me.columnno_order.AutoIncrement = true
             Me.columnno_order.AutoIncrementSeed = -1
@@ -1298,6 +1324,8 @@ Partial Public Class DataSetSewaMotor2
             Me.columnno_order.AllowDBNull = false
             Me.columnno_order.ReadOnly = true
             Me.columnno_order.Unique = true
+            Me.columnjaminan.MaxLength = 10
+            Me.columnstatus.MaxLength = 20
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1437,8 +1465,6 @@ Partial Public Class DataSetSewaMotor2
         
         Private columnid As Global.System.Data.DataColumn
         
-        Private columnnama As Global.System.Data.DataColumn
-        
         Private columnttl As Global.System.Data.DataColumn
         
         Private columnalamat As Global.System.Data.DataColumn
@@ -1447,9 +1473,9 @@ Partial Public Class DataSetSewaMotor2
         
         Private columnemail As Global.System.Data.DataColumn
         
-        Private columnpassword As Global.System.Data.DataColumn
-        
         Private columnno_ktp As Global.System.Data.DataColumn
+        
+        Private columnnamaPelanggan As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1496,14 +1522,6 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property namaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnnama
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property ttlColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnttl
@@ -1536,17 +1554,17 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property passwordColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property no_ktpColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnpassword
+                Return Me.columnno_ktp
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property no_ktpColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property namaPelangganColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnno_ktp
+                Return Me.columnnamaPelanggan
             End Get
         End Property
         
@@ -1587,9 +1605,9 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPelangganRow(ByVal nama As String, ByVal ttl As Date, ByVal alamat As String, ByVal notelp As String, ByVal email As String, ByVal password As String, ByVal no_ktp As String) As PelangganRow
+        Public Overloads Function AddPelangganRow(ByVal ttl As Date, ByVal alamat As String, ByVal notelp As String, ByVal email As String, ByVal no_ktp As String, ByVal namaPelanggan As String) As PelangganRow
             Dim rowPelangganRow As PelangganRow = CType(Me.NewRow,PelangganRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, nama, ttl, alamat, notelp, email, password, no_ktp}
+            Dim columnValuesArray() As Object = New Object() {Nothing, ttl, alamat, notelp, email, no_ktp, namaPelanggan}
             rowPelangganRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPelangganRow)
             Return rowPelangganRow
@@ -1619,13 +1637,12 @@ Partial Public Class DataSetSewaMotor2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnid = MyBase.Columns("id")
-            Me.columnnama = MyBase.Columns("nama")
             Me.columnttl = MyBase.Columns("ttl")
             Me.columnalamat = MyBase.Columns("alamat")
             Me.columnnotelp = MyBase.Columns("notelp")
             Me.columnemail = MyBase.Columns("email")
-            Me.columnpassword = MyBase.Columns("password")
             Me.columnno_ktp = MyBase.Columns("no_ktp")
+            Me.columnnamaPelanggan = MyBase.Columns("namaPelanggan")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1633,8 +1650,6 @@ Partial Public Class DataSetSewaMotor2
         Private Sub InitClass()
             Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid)
-            Me.columnnama = New Global.System.Data.DataColumn("nama", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnama)
             Me.columnttl = New Global.System.Data.DataColumn("ttl", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnttl)
             Me.columnalamat = New Global.System.Data.DataColumn("alamat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -1643,10 +1658,10 @@ Partial Public Class DataSetSewaMotor2
             MyBase.Columns.Add(Me.columnnotelp)
             Me.columnemail = New Global.System.Data.DataColumn("email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnemail)
-            Me.columnpassword = New Global.System.Data.DataColumn("password", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpassword)
             Me.columnno_ktp = New Global.System.Data.DataColumn("no_ktp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnno_ktp)
+            Me.columnnamaPelanggan = New Global.System.Data.DataColumn("namaPelanggan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnamaPelanggan)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
             Me.columnid.AutoIncrementSeed = -1
@@ -1654,12 +1669,11 @@ Partial Public Class DataSetSewaMotor2
             Me.columnid.AllowDBNull = false
             Me.columnid.ReadOnly = true
             Me.columnid.Unique = true
-            Me.columnnama.MaxLength = 50
             Me.columnalamat.MaxLength = 50
             Me.columnnotelp.MaxLength = 20
             Me.columnemail.MaxLength = 50
-            Me.columnpassword.MaxLength = 50
             Me.columnno_ktp.MaxLength = 16
+            Me.columnnamaPelanggan.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1809,10 +1823,6 @@ Partial Public Class DataSetSewaMotor2
         
         Private columntgl_pengembalian As Global.System.Data.DataColumn
         
-        Private columnjumlah_sewa As Global.System.Data.DataColumn
-        
-        Private columnid_denda As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1897,22 +1907,6 @@ Partial Public Class DataSetSewaMotor2
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property jumlah_sewaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnjumlah_sewa
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property id_dendaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnid_denda
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1949,9 +1943,9 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddOder_DetailRow(ByVal parentPesanRowByFK_Oder_Detail_Order As PesanRow, ByVal parentMotorRowByFK_Oder_Detail_Motor As MotorRow, ByVal tgl_sewa As Date, ByVal tgl_kembali As Date, ByVal tgl_pengembalian As Date, ByVal jumlah_sewa As Integer, ByVal id_denda As Integer) As Oder_DetailRow
+        Public Overloads Function AddOder_DetailRow(ByVal parentPesanRowByFK_Oder_Detail_Order As PesanRow, ByVal parentMotorRowByFK_Oder_Detail_Motor As MotorRow, ByVal tgl_sewa As Date, ByVal tgl_kembali As Date, ByVal tgl_pengembalian As Date) As Oder_DetailRow
             Dim rowOder_DetailRow As Oder_DetailRow = CType(Me.NewRow,Oder_DetailRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, tgl_sewa, tgl_kembali, tgl_pengembalian, jumlah_sewa, id_denda}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, tgl_sewa, tgl_kembali, tgl_pengembalian}
             If (Not (parentPesanRowByFK_Oder_Detail_Order) Is Nothing) Then
                 columnValuesArray(1) = parentPesanRowByFK_Oder_Detail_Order(0)
             End If
@@ -1992,8 +1986,6 @@ Partial Public Class DataSetSewaMotor2
             Me.columntgl_sewa = MyBase.Columns("tgl_sewa")
             Me.columntgl_kembali = MyBase.Columns("tgl_kembali")
             Me.columntgl_pengembalian = MyBase.Columns("tgl_pengembalian")
-            Me.columnjumlah_sewa = MyBase.Columns("jumlah_sewa")
-            Me.columnid_denda = MyBase.Columns("id_denda")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2011,10 +2003,6 @@ Partial Public Class DataSetSewaMotor2
             MyBase.Columns.Add(Me.columntgl_kembali)
             Me.columntgl_pengembalian = New Global.System.Data.DataColumn("tgl_pengembalian", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntgl_pengembalian)
-            Me.columnjumlah_sewa = New Global.System.Data.DataColumn("jumlah_sewa", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnjumlah_sewa)
-            Me.columnid_denda = New Global.System.Data.DataColumn("id_denda", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnid_denda)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnno_detalil}, true))
             Me.columnno_detalil.AutoIncrement = true
             Me.columnno_detalil.AutoIncrementSeed = -1
@@ -2161,8 +2149,6 @@ Partial Public Class DataSetSewaMotor2
         
         Private columnid_karyawan As Global.System.Data.DataColumn
         
-        Private columnnama As Global.System.Data.DataColumn
-        
         Private columnalamat As Global.System.Data.DataColumn
         
         Private columnno_telp As Global.System.Data.DataColumn
@@ -2173,9 +2159,7 @@ Partial Public Class DataSetSewaMotor2
         
         Private columnrole As Global.System.Data.DataColumn
         
-        Private columnhari_kerja As Global.System.Data.DataColumn
-        
-        Private columnsesi_kerja As Global.System.Data.DataColumn
+        Private columnnamaKaryawan As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -2222,14 +2206,6 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property namaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnnama
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property alamatColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnalamat
@@ -2270,17 +2246,9 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property hari_kerjaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property namaKaryawanColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnhari_kerja
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property sesi_kerjaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnsesi_kerja
+                Return Me.columnnamaKaryawan
             End Get
         End Property
         
@@ -2321,9 +2289,9 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddKaryawanRow(ByVal nama As String, ByVal alamat As String, ByVal no_telp As String, ByVal email As String, ByVal password As String, ByVal role As Integer, ByVal hari_kerja As String, ByVal sesi_kerja As Integer) As KaryawanRow
+        Public Overloads Function AddKaryawanRow(ByVal alamat As String, ByVal no_telp As String, ByVal email As String, ByVal password As String, ByVal role As Integer, ByVal namaKaryawan As String) As KaryawanRow
             Dim rowKaryawanRow As KaryawanRow = CType(Me.NewRow,KaryawanRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, nama, alamat, no_telp, email, password, role, hari_kerja, sesi_kerja}
+            Dim columnValuesArray() As Object = New Object() {Nothing, alamat, no_telp, email, password, role, namaKaryawan}
             rowKaryawanRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowKaryawanRow)
             Return rowKaryawanRow
@@ -2353,14 +2321,12 @@ Partial Public Class DataSetSewaMotor2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnid_karyawan = MyBase.Columns("id_karyawan")
-            Me.columnnama = MyBase.Columns("nama")
             Me.columnalamat = MyBase.Columns("alamat")
             Me.columnno_telp = MyBase.Columns("no_telp")
             Me.columnemail = MyBase.Columns("email")
             Me.columnpassword = MyBase.Columns("password")
             Me.columnrole = MyBase.Columns("role")
-            Me.columnhari_kerja = MyBase.Columns("hari_kerja")
-            Me.columnsesi_kerja = MyBase.Columns("sesi_kerja")
+            Me.columnnamaKaryawan = MyBase.Columns("namaKaryawan")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2368,8 +2334,6 @@ Partial Public Class DataSetSewaMotor2
         Private Sub InitClass()
             Me.columnid_karyawan = New Global.System.Data.DataColumn("id_karyawan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid_karyawan)
-            Me.columnnama = New Global.System.Data.DataColumn("nama", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnama)
             Me.columnalamat = New Global.System.Data.DataColumn("alamat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnalamat)
             Me.columnno_telp = New Global.System.Data.DataColumn("no_telp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -2380,10 +2344,8 @@ Partial Public Class DataSetSewaMotor2
             MyBase.Columns.Add(Me.columnpassword)
             Me.columnrole = New Global.System.Data.DataColumn("role", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnrole)
-            Me.columnhari_kerja = New Global.System.Data.DataColumn("hari_kerja", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnhari_kerja)
-            Me.columnsesi_kerja = New Global.System.Data.DataColumn("sesi_kerja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnsesi_kerja)
+            Me.columnnamaKaryawan = New Global.System.Data.DataColumn("namaKaryawan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnamaKaryawan)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_karyawan}, true))
             Me.columnid_karyawan.AutoIncrement = true
             Me.columnid_karyawan.AutoIncrementSeed = -1
@@ -2391,12 +2353,11 @@ Partial Public Class DataSetSewaMotor2
             Me.columnid_karyawan.AllowDBNull = false
             Me.columnid_karyawan.ReadOnly = true
             Me.columnid_karyawan.Unique = true
-            Me.columnnama.MaxLength = 50
             Me.columnalamat.MaxLength = 50
             Me.columnno_telp.MaxLength = 12
             Me.columnemail.MaxLength = 50
             Me.columnpassword.MaxLength = 50
-            Me.columnhari_kerja.MaxLength = 10
+            Me.columnnamaKaryawan.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3200,6 +3161,36 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property jaminan() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablePesan.jaminanColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'jaminan' in table 'Pesan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePesan.jaminanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property status() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablePesan.statusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'status' in table 'Pesan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePesan.statusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property PelangganRow() As PelangganRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Order_Pelanggan")),PelangganRow)
@@ -3282,6 +3273,30 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsjaminanNull() As Boolean
+            Return Me.IsNull(Me.tablePesan.jaminanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetjaminanNull()
+            Me(Me.tablePesan.jaminanColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsstatusNull() As Boolean
+            Return Me.IsNull(Me.tablePesan.statusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetstatusNull()
+            Me(Me.tablePesan.statusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function GetOder_DetailRows() As Oder_DetailRow()
             If (Me.Table.ChildRelations("FK_Oder_Detail_Order") Is Nothing) Then
                 Return New Oder_DetailRow(-1) {}
@@ -3314,21 +3329,6 @@ Partial Public Class DataSetSewaMotor2
             End Get
             Set
                 Me(Me.tablePelanggan.idColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property nama() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablePelanggan.namaColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama' in table 'Pelanggan' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePelanggan.namaColumn) = value
             End Set
         End Property
         
@@ -3394,21 +3394,6 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property password() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablePelanggan.passwordColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'password' in table 'Pelanggan' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePelanggan.passwordColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property no_ktp() As String
             Get
                 Try 
@@ -3424,15 +3409,18 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsnamaNull() As Boolean
-            Return Me.IsNull(Me.tablePelanggan.namaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetnamaNull()
-            Me(Me.tablePelanggan.namaColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property namaPelanggan() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablePelanggan.namaPelangganColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'namaPelanggan' in table 'Pelanggan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePelanggan.namaPelangganColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -3484,18 +3472,6 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IspasswordNull() As Boolean
-            Return Me.IsNull(Me.tablePelanggan.passwordColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetpasswordNull()
-            Me(Me.tablePelanggan.passwordColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isno_ktpNull() As Boolean
             Return Me.IsNull(Me.tablePelanggan.no_ktpColumn)
         End Function
@@ -3504,6 +3480,18 @@ Partial Public Class DataSetSewaMotor2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setno_ktpNull()
             Me(Me.tablePelanggan.no_ktpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsnamaPelangganNull() As Boolean
+            Return Me.IsNull(Me.tablePelanggan.namaPelangganColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetnamaPelangganNull()
+            Me(Me.tablePelanggan.namaPelangganColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3620,36 +3608,6 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property jumlah_sewa() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableOder_Detail.jumlah_sewaColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'jumlah_sewa' in table 'Oder_Detail' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableOder_Detail.jumlah_sewaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property id_denda() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableOder_Detail.id_dendaColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'id_denda' in table 'Oder_Detail' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableOder_Detail.id_dendaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property PesanRow() As PesanRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Oder_Detail_Order")),PesanRow)
@@ -3732,30 +3690,6 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isjumlah_sewaNull() As Boolean
-            Return Me.IsNull(Me.tableOder_Detail.jumlah_sewaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setjumlah_sewaNull()
-            Me(Me.tableOder_Detail.jumlah_sewaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isid_dendaNull() As Boolean
-            Return Me.IsNull(Me.tableOder_Detail.id_dendaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setid_dendaNull()
-            Me(Me.tableOder_Detail.id_dendaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Getjenis_dendaRows() As jenis_dendaRow()
             If (Me.Table.ChildRelations("FK_jenis_denda_Oder_Detail") Is Nothing) Then
                 Return New jenis_dendaRow(-1) {}
@@ -3788,21 +3722,6 @@ Partial Public Class DataSetSewaMotor2
             End Get
             Set
                 Me(Me.tableKaryawan.id_karyawanColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property nama() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableKaryawan.namaColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama' in table 'Karyawan' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableKaryawan.namaColumn) = value
             End Set
         End Property
         
@@ -3883,45 +3802,18 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property hari_kerja() As String
+        Public Property namaKaryawan() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableKaryawan.hari_kerjaColumn),String)
+                    Return CType(Me(Me.tableKaryawan.namaKaryawanColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'hari_kerja' in table 'Karyawan' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'namaKaryawan' in table 'Karyawan' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableKaryawan.hari_kerjaColumn) = value
+                Me(Me.tableKaryawan.namaKaryawanColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property sesi_kerja() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableKaryawan.sesi_kerjaColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'sesi_kerja' in table 'Karyawan' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableKaryawan.sesi_kerjaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsnamaNull() As Boolean
-            Return Me.IsNull(Me.tableKaryawan.namaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetnamaNull()
-            Me(Me.tableKaryawan.namaColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -3985,26 +3877,14 @@ Partial Public Class DataSetSewaMotor2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Ishari_kerjaNull() As Boolean
-            Return Me.IsNull(Me.tableKaryawan.hari_kerjaColumn)
+        Public Function IsnamaKaryawanNull() As Boolean
+            Return Me.IsNull(Me.tableKaryawan.namaKaryawanColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Sethari_kerjaNull()
-            Me(Me.tableKaryawan.hari_kerjaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Issesi_kerjaNull() As Boolean
-            Return Me.IsNull(Me.tableKaryawan.sesi_kerjaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setsesi_kerjaNull()
-            Me(Me.tableKaryawan.sesi_kerjaColumn) = Global.System.Convert.DBNull
+        Public Sub SetnamaKaryawanNull()
+            Me(Me.tableKaryawan.namaKaryawanColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5236,6 +5116,8 @@ Namespace DataSetSewaMotor2TableAdapters
             tableMapping.ColumnMappings.Add("tgl_order", "tgl_order")
             tableMapping.ColumnMappings.Add("total_denda", "total_denda")
             tableMapping.ColumnMappings.Add("total_harga", "total_harga")
+            tableMapping.ColumnMappings.Add("jaminan", "jaminan")
+            tableMapping.ColumnMappings.Add("status", "status")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -5245,7 +5127,9 @@ Namespace DataSetSewaMotor2TableAdapters
                 "sNull_tgl_order = 1 AND [tgl_order] IS NULL) OR ([tgl_order] = @Original_tgl_ord"& _ 
                 "er)) AND ((@IsNull_total_denda = 1 AND [total_denda] IS NULL) OR ([total_denda] "& _ 
                 "= @Original_total_denda)) AND ((@IsNull_total_harga = 1 AND [total_harga] IS NUL"& _ 
-                "L) OR ([total_harga] = @Original_total_harga)))"
+                "L) OR ([total_harga] = @Original_total_harga)) AND ((@IsNull_jaminan = 1 AND [ja"& _ 
+                "minan] IS NULL) OR ([jaminan] = @Original_jaminan)) AND ((@IsNull_status = 1 AND"& _ 
+                " [status] IS NULL) OR ([status] = @Original_status)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_no_order", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_order", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5258,36 +5142,48 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_total_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_denda", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_total_harga", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_harga", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_total_harga", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_harga", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_jaminan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jaminan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_jaminan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jaminan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_status", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "status", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_status", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "status", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Pesan] ([id], [id_karyawan], [tgl_order], [total_denda], [tota"& _ 
-                "l_harga]) VALUES (@id, @id_karyawan, @tgl_order, @total_denda, @total_harga);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"S"& _ 
-                "ELECT no_order, id, id_karyawan, tgl_order, total_denda, total_harga FROM Pesan "& _ 
-                "WHERE (no_order = SCOPE_IDENTITY())"
+                "l_harga], [jaminan], [status]) VALUES (@id, @id_karyawan, @tgl_order, @total_den"& _ 
+                "da, @total_harga, @jaminan, @status);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT no_order, id, id_karyawan, tgl_ord"& _ 
+                "er, total_denda, total_harga, jaminan, status FROM Pesan WHERE (no_order = SCOPE"& _ 
+                "_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_karyawan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_karyawan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tgl_order", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_order", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@total_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_denda", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@total_harga", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_harga", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@jaminan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jaminan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@status", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Pesan] SET [id] = @id, [id_karyawan] = @id_karyawan, [tgl_order] = "& _ 
-                "@tgl_order, [total_denda] = @total_denda, [total_harga] = @total_harga WHERE ((["& _ 
-                "no_order] = @Original_no_order) AND ((@IsNull_id = 1 AND [id] IS NULL) OR ([id] "& _ 
-                "= @Original_id)) AND ((@IsNull_id_karyawan = 1 AND [id_karyawan] IS NULL) OR ([i"& _ 
-                "d_karyawan] = @Original_id_karyawan)) AND ((@IsNull_tgl_order = 1 AND [tgl_order"& _ 
-                "] IS NULL) OR ([tgl_order] = @Original_tgl_order)) AND ((@IsNull_total_denda = 1"& _ 
-                " AND [total_denda] IS NULL) OR ([total_denda] = @Original_total_denda)) AND ((@I"& _ 
-                "sNull_total_harga = 1 AND [total_harga] IS NULL) OR ([total_harga] = @Original_t"& _ 
-                "otal_harga)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT no_order, id, id_karyawan, tgl_order, total_denda, total_"& _ 
-                "harga FROM Pesan WHERE (no_order = @no_order)"
+                "@tgl_order, [total_denda] = @total_denda, [total_harga] = @total_harga, [jaminan"& _ 
+                "] = @jaminan, [status] = @status WHERE (([no_order] = @Original_no_order) AND (("& _ 
+                "@IsNull_id = 1 AND [id] IS NULL) OR ([id] = @Original_id)) AND ((@IsNull_id_kary"& _ 
+                "awan = 1 AND [id_karyawan] IS NULL) OR ([id_karyawan] = @Original_id_karyawan)) "& _ 
+                "AND ((@IsNull_tgl_order = 1 AND [tgl_order] IS NULL) OR ([tgl_order] = @Original"& _ 
+                "_tgl_order)) AND ((@IsNull_total_denda = 1 AND [total_denda] IS NULL) OR ([total"& _ 
+                "_denda] = @Original_total_denda)) AND ((@IsNull_total_harga = 1 AND [total_harga"& _ 
+                "] IS NULL) OR ([total_harga] = @Original_total_harga)) AND ((@IsNull_jaminan = 1"& _ 
+                " AND [jaminan] IS NULL) OR ([jaminan] = @Original_jaminan)) AND ((@IsNull_status"& _ 
+                " = 1 AND [status] IS NULL) OR ([status] = @Original_status)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT no_order,"& _ 
+                " id, id_karyawan, tgl_order, total_denda, total_harga, jaminan, status FROM Pesa"& _ 
+                "n WHERE (no_order = @no_order)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_karyawan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_karyawan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tgl_order", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_order", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@total_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_denda", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@total_harga", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_harga", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@jaminan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jaminan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@status", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_no_order", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_order", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -5299,6 +5195,10 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_total_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_denda", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_total_harga", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_harga", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_total_harga", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "total_harga", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_jaminan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jaminan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_jaminan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jaminan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_status", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "status", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_status", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "status", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@no_order", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "no_order", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -5315,8 +5215,7 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT no_order, id, id_karyawan, tgl_order, total_denda, total_harga FROM dbo.Pe"& _ 
-                "san"
+            Me._commandCollection(0).CommandText = "SELECT * FROM dbo.Pesan"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5376,7 +5275,7 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_no_order As Integer, ByVal Original_id As Global.System.Nullable(Of Integer), ByVal Original_id_karyawan As Global.System.Nullable(Of Integer), ByVal Original_tgl_order As Global.System.Nullable(Of Date), ByVal Original_total_denda As Global.System.Nullable(Of Integer), ByVal Original_total_harga As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_no_order As Integer, ByVal Original_id As Global.System.Nullable(Of Integer), ByVal Original_id_karyawan As Global.System.Nullable(Of Integer), ByVal Original_tgl_order As Global.System.Nullable(Of Date), ByVal Original_total_denda As Global.System.Nullable(Of Integer), ByVal Original_total_harga As Global.System.Nullable(Of Integer), ByVal Original_jaminan As String, ByVal Original_status As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_no_order,Integer)
             If (Original_id.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -5413,6 +5312,20 @@ Namespace DataSetSewaMotor2TableAdapters
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
+            If (Original_jaminan Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_jaminan,String)
+            End If
+            If (Original_status Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_status,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5432,7 +5345,7 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal id As Global.System.Nullable(Of Integer), ByVal id_karyawan As Global.System.Nullable(Of Integer), ByVal tgl_order As Global.System.Nullable(Of Date), ByVal total_denda As Global.System.Nullable(Of Integer), ByVal total_harga As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal id As Global.System.Nullable(Of Integer), ByVal id_karyawan As Global.System.Nullable(Of Integer), ByVal tgl_order As Global.System.Nullable(Of Date), ByVal total_denda As Global.System.Nullable(Of Integer), ByVal total_harga As Global.System.Nullable(Of Integer), ByVal jaminan As String, ByVal status As String) As Integer
             If (id.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(id.Value,Integer)
             Else
@@ -5458,6 +5371,16 @@ Namespace DataSetSewaMotor2TableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
+            If (jaminan Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(jaminan,String)
+            End If
+            If (status Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(status,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5477,7 +5400,23 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal id As Global.System.Nullable(Of Integer), ByVal id_karyawan As Global.System.Nullable(Of Integer), ByVal tgl_order As Global.System.Nullable(Of Date), ByVal total_denda As Global.System.Nullable(Of Integer), ByVal total_harga As Global.System.Nullable(Of Integer), ByVal Original_no_order As Integer, ByVal Original_id As Global.System.Nullable(Of Integer), ByVal Original_id_karyawan As Global.System.Nullable(Of Integer), ByVal Original_tgl_order As Global.System.Nullable(Of Date), ByVal Original_total_denda As Global.System.Nullable(Of Integer), ByVal Original_total_harga As Global.System.Nullable(Of Integer), ByVal no_order As Integer) As Integer
+        Public Overloads Overridable Function Update( _
+                    ByVal id As Global.System.Nullable(Of Integer),  _
+                    ByVal id_karyawan As Global.System.Nullable(Of Integer),  _
+                    ByVal tgl_order As Global.System.Nullable(Of Date),  _
+                    ByVal total_denda As Global.System.Nullable(Of Integer),  _
+                    ByVal total_harga As Global.System.Nullable(Of Integer),  _
+                    ByVal jaminan As String,  _
+                    ByVal status As String,  _
+                    ByVal Original_no_order As Integer,  _
+                    ByVal Original_id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_id_karyawan As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_tgl_order As Global.System.Nullable(Of Date),  _
+                    ByVal Original_total_denda As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_total_harga As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_jaminan As String,  _
+                    ByVal Original_status As String,  _
+                    ByVal no_order As Integer) As Integer
             If (id.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(id.Value,Integer)
             Else
@@ -5503,43 +5442,67 @@ Namespace DataSetSewaMotor2TableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_no_order,Integer)
-            If (Original_id.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_id.Value,Integer)
+            If (jaminan Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(jaminan,String)
             End If
-            If (Original_id_karyawan.HasValue = true) Then
+            If (status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(status,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_no_order,Integer)
+            If (Original_id.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_id_karyawan.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_id.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_tgl_order.HasValue = true) Then
+            If (Original_id_karyawan.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_tgl_order.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_id_karyawan.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
-            If (Original_total_denda.HasValue = true) Then
+            If (Original_tgl_order.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_total_denda.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_tgl_order.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
-            If (Original_total_harga.HasValue = true) Then
+            If (Original_total_denda.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_total_harga.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_total_denda.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(no_order,Integer)
+            If (Original_total_harga.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_total_harga.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            End If
+            If (Original_jaminan Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_jaminan,String)
+            End If
+            If (Original_status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_status,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(no_order,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5559,8 +5522,8 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal id As Global.System.Nullable(Of Integer), ByVal id_karyawan As Global.System.Nullable(Of Integer), ByVal tgl_order As Global.System.Nullable(Of Date), ByVal total_denda As Global.System.Nullable(Of Integer), ByVal total_harga As Global.System.Nullable(Of Integer), ByVal Original_no_order As Integer, ByVal Original_id As Global.System.Nullable(Of Integer), ByVal Original_id_karyawan As Global.System.Nullable(Of Integer), ByVal Original_tgl_order As Global.System.Nullable(Of Date), ByVal Original_total_denda As Global.System.Nullable(Of Integer), ByVal Original_total_harga As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(id, id_karyawan, tgl_order, total_denda, total_harga, Original_no_order, Original_id, Original_id_karyawan, Original_tgl_order, Original_total_denda, Original_total_harga, Original_no_order)
+        Public Overloads Overridable Function Update(ByVal id As Global.System.Nullable(Of Integer), ByVal id_karyawan As Global.System.Nullable(Of Integer), ByVal tgl_order As Global.System.Nullable(Of Date), ByVal total_denda As Global.System.Nullable(Of Integer), ByVal total_harga As Global.System.Nullable(Of Integer), ByVal jaminan As String, ByVal status As String, ByVal Original_no_order As Integer, ByVal Original_id As Global.System.Nullable(Of Integer), ByVal Original_id_karyawan As Global.System.Nullable(Of Integer), ByVal Original_tgl_order As Global.System.Nullable(Of Date), ByVal Original_total_denda As Global.System.Nullable(Of Integer), ByVal Original_total_harga As Global.System.Nullable(Of Integer), ByVal Original_jaminan As String, ByVal Original_status As String) As Integer
+            Return Me.Update(id, id_karyawan, tgl_order, total_denda, total_harga, jaminan, status, Original_no_order, Original_id, Original_id_karyawan, Original_tgl_order, Original_total_denda, Original_total_harga, Original_jaminan, Original_status, Original_no_order)
         End Function
     End Class
     
@@ -5692,28 +5655,26 @@ Namespace DataSetSewaMotor2TableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Pelanggan"
             tableMapping.ColumnMappings.Add("id", "id")
-            tableMapping.ColumnMappings.Add("nama", "nama")
             tableMapping.ColumnMappings.Add("ttl", "ttl")
             tableMapping.ColumnMappings.Add("alamat", "alamat")
             tableMapping.ColumnMappings.Add("notelp", "notelp")
             tableMapping.ColumnMappings.Add("email", "email")
-            tableMapping.ColumnMappings.Add("password", "password")
             tableMapping.ColumnMappings.Add("no_ktp", "no_ktp")
+            tableMapping.ColumnMappings.Add("namaPelanggan", "namaPelanggan")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Pelanggan] WHERE (([id] = @Original_id) AND ((@IsNull_nama = 1"& _ 
-                " AND [nama] IS NULL) OR ([nama] = @Original_nama)) AND ((@IsNull_ttl = 1 AND [tt"& _ 
-                "l] IS NULL) OR ([ttl] = @Original_ttl)) AND ((@IsNull_alamat = 1 AND [alamat] IS"& _ 
-                " NULL) OR ([alamat] = @Original_alamat)) AND ((@IsNull_notelp = 1 AND [notelp] I"& _ 
-                "S NULL) OR ([notelp] = @Original_notelp)) AND ((@IsNull_email = 1 AND [email] IS"& _ 
-                " NULL) OR ([email] = @Original_email)) AND ((@IsNull_password = 1 AND [password]"& _ 
-                " IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_no_ktp = 1 AND [no"& _ 
-                "_ktp] IS NULL) OR ([no_ktp] = @Original_no_ktp)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Pelanggan] WHERE (([id] = @Original_id) AND ((@IsNull_namaPela"& _ 
+                "nggan = 1 AND [namaPelanggan] IS NULL) OR ([namaPelanggan] = @Original_namaPelan"& _ 
+                "ggan)) AND ((@IsNull_ttl = 1 AND [ttl] IS NULL) OR ([ttl] = @Original_ttl)) AND "& _ 
+                "((@IsNull_alamat = 1 AND [alamat] IS NULL) OR ([alamat] = @Original_alamat)) AND"& _ 
+                " ((@IsNull_notelp = 1 AND [notelp] IS NULL) OR ([notelp] = @Original_notelp)) AN"& _ 
+                "D ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ("& _ 
+                "(@IsNull_no_ktp = 1 AND [no_ktp] IS NULL) OR ([no_ktp] = @Original_no_ktp)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nama", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nama", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_namaPelanggan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaPelanggan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_namaPelanggan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaPelanggan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ttl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ttl", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ttl", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ttl", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_alamat", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5722,48 +5683,43 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_notelp", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "notelp", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_password", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_no_ktp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_ktp", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_no_ktp", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_ktp", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Pelanggan] ([nama], [ttl], [alamat], [notelp], [email], [passw"& _ 
-                "ord], [no_ktp]) VALUES (@nama, @ttl, @alamat, @notelp, @email, @password, @no_kt"& _ 
-                "p);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, nama, ttl, alamat, notelp, email, password, no_ktp FROM Pelangga"& _ 
-                "n WHERE (id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Pelanggan] ([namaPelanggan], [ttl], [alamat], [notelp], [email"& _ 
+                "], [no_ktp]) VALUES (@namaPelanggan, @ttl, @alamat, @notelp, @email, @no_ktp);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "SELECT id, namaPelanggan, ttl, alamat, notelp, email, no_ktp FROM Pelanggan WHER"& _ 
+                "E (id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nama", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@namaPelanggan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaPelanggan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ttl", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ttl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@alamat", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@notelp", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "notelp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@no_ktp", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_ktp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Pelanggan] SET [nama] = @nama, [ttl] = @ttl, [alamat] = @alamat, [n"& _ 
-                "otelp] = @notelp, [email] = @email, [password] = @password, [no_ktp] = @no_ktp W"& _ 
-                "HERE (([id] = @Original_id) AND ((@IsNull_nama = 1 AND [nama] IS NULL) OR ([nama"& _ 
-                "] = @Original_nama)) AND ((@IsNull_ttl = 1 AND [ttl] IS NULL) OR ([ttl] = @Origi"& _ 
-                "nal_ttl)) AND ((@IsNull_alamat = 1 AND [alamat] IS NULL) OR ([alamat] = @Origina"& _ 
-                "l_alamat)) AND ((@IsNull_notelp = 1 AND [notelp] IS NULL) OR ([notelp] = @Origin"& _ 
-                "al_notelp)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original"& _ 
-                "_email)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Or"& _ 
-                "iginal_password)) AND ((@IsNull_no_ktp = 1 AND [no_ktp] IS NULL) OR ([no_ktp] = "& _ 
-                "@Original_no_ktp)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, nama, ttl, alamat, notelp, email, password, no_"& _ 
-                "ktp FROM Pelanggan WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Pelanggan] SET [namaPelanggan] = @namaPelanggan, [ttl] = @ttl, [ala"& _ 
+                "mat] = @alamat, [notelp] = @notelp, [email] = @email, [no_ktp] = @no_ktp WHERE ("& _ 
+                "([id] = @Original_id) AND ((@IsNull_namaPelanggan = 1 AND [namaPelanggan] IS NUL"& _ 
+                "L) OR ([namaPelanggan] = @Original_namaPelanggan)) AND ((@IsNull_ttl = 1 AND [tt"& _ 
+                "l] IS NULL) OR ([ttl] = @Original_ttl)) AND ((@IsNull_alamat = 1 AND [alamat] IS"& _ 
+                " NULL) OR ([alamat] = @Original_alamat)) AND ((@IsNull_notelp = 1 AND [notelp] I"& _ 
+                "S NULL) OR ([notelp] = @Original_notelp)) AND ((@IsNull_email = 1 AND [email] IS"& _ 
+                " NULL) OR ([email] = @Original_email)) AND ((@IsNull_no_ktp = 1 AND [no_ktp] IS "& _ 
+                "NULL) OR ([no_ktp] = @Original_no_ktp)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, namaPelanggan, ttl, alamat"& _ 
+                ", notelp, email, no_ktp FROM Pelanggan WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nama", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@namaPelanggan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaPelanggan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ttl", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ttl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@alamat", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@notelp", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "notelp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@no_ktp", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_ktp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nama", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nama", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_namaPelanggan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaPelanggan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_namaPelanggan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaPelanggan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ttl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ttl", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ttl", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ttl", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_alamat", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5772,8 +5728,6 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_notelp", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "notelp", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_password", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_no_ktp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_ktp", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_no_ktp", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_ktp", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5792,7 +5746,7 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, nama, ttl, alamat, notelp, email, password, no_ktp FROM dbo.Pelanggan"
+            Me._commandCollection(0).CommandText = "SELECT* FROM dbo.Pelanggan"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5852,14 +5806,14 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_nama As String, ByVal Original_ttl As Global.System.Nullable(Of Date), ByVal Original_alamat As String, ByVal Original_notelp As String, ByVal Original_email As String, ByVal Original_password As String, ByVal Original_no_ktp As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_namaPelanggan As String, ByVal Original_ttl As Global.System.Nullable(Of Date), ByVal Original_alamat As String, ByVal Original_notelp As String, ByVal Original_email As String, ByVal Original_no_ktp As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
-            If (Original_nama Is Nothing) Then
+            If (Original_namaPelanggan Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_nama,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_namaPelanggan,String)
             End If
             If (Original_ttl.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
@@ -5889,19 +5843,12 @@ Namespace DataSetSewaMotor2TableAdapters
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_email,String)
             End If
-            If (Original_password Is Nothing) Then
+            If (Original_no_ktp Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_password,String)
-            End If
-            If (Original_no_ktp Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_no_ktp,String)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_no_ktp,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -5922,11 +5869,11 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal nama As String, ByVal ttl As Global.System.Nullable(Of Date), ByVal alamat As String, ByVal notelp As String, ByVal email As String, ByVal password As String, ByVal no_ktp As String) As Integer
-            If (nama Is Nothing) Then
+        Public Overloads Overridable Function Insert(ByVal namaPelanggan As String, ByVal ttl As Global.System.Nullable(Of Date), ByVal alamat As String, ByVal notelp As String, ByVal email As String, ByVal no_ktp As String) As Integer
+            If (namaPelanggan Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(nama,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(namaPelanggan,String)
             End If
             If (ttl.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(ttl.Value,Date)
@@ -5948,15 +5895,10 @@ Namespace DataSetSewaMotor2TableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = CType(email,String)
             End If
-            If (password Is Nothing) Then
+            If (no_ktp Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(password,String)
-            End If
-            If (no_ktp Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(no_ktp,String)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(no_ktp,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -5977,27 +5919,11 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal nama As String,  _
-                    ByVal ttl As Global.System.Nullable(Of Date),  _
-                    ByVal alamat As String,  _
-                    ByVal notelp As String,  _
-                    ByVal email As String,  _
-                    ByVal password As String,  _
-                    ByVal no_ktp As String,  _
-                    ByVal Original_id As Integer,  _
-                    ByVal Original_nama As String,  _
-                    ByVal Original_ttl As Global.System.Nullable(Of Date),  _
-                    ByVal Original_alamat As String,  _
-                    ByVal Original_notelp As String,  _
-                    ByVal Original_email As String,  _
-                    ByVal Original_password As String,  _
-                    ByVal Original_no_ktp As String,  _
-                    ByVal id As Integer) As Integer
-            If (nama Is Nothing) Then
+        Public Overloads Overridable Function Update(ByVal namaPelanggan As String, ByVal ttl As Global.System.Nullable(Of Date), ByVal alamat As String, ByVal notelp As String, ByVal email As String, ByVal no_ktp As String, ByVal Original_id As Integer, ByVal Original_namaPelanggan As String, ByVal Original_ttl As Global.System.Nullable(Of Date), ByVal Original_alamat As String, ByVal Original_notelp As String, ByVal Original_email As String, ByVal Original_no_ktp As String, ByVal id As Integer) As Integer
+            If (namaPelanggan Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(nama,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(namaPelanggan,String)
             End If
             If (ttl.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ttl.Value,Date)
@@ -6019,67 +5945,55 @@ Namespace DataSetSewaMotor2TableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(email,String)
             End If
-            If (password Is Nothing) Then
+            If (no_ktp Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(password,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(no_ktp,String)
             End If
-            If (no_ktp Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_id,Integer)
+            If (Original_namaPelanggan Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(no_ktp,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_id,Integer)
-            If (Original_nama Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_nama,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_namaPelanggan,String)
             End If
             If (Original_ttl.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ttl.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_ttl.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             If (Original_alamat Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_alamat,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_alamat,String)
             End If
             If (Original_notelp Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_notelp,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_notelp,String)
             End If
             If (Original_email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_email,String)
-            End If
-            If (Original_password Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_password,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_email,String)
             End If
             If (Original_no_ktp Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_no_ktp,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_no_ktp,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(id,Integer)
+            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6099,8 +6013,8 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal nama As String, ByVal ttl As Global.System.Nullable(Of Date), ByVal alamat As String, ByVal notelp As String, ByVal email As String, ByVal password As String, ByVal no_ktp As String, ByVal Original_id As Integer, ByVal Original_nama As String, ByVal Original_ttl As Global.System.Nullable(Of Date), ByVal Original_alamat As String, ByVal Original_notelp As String, ByVal Original_email As String, ByVal Original_password As String, ByVal Original_no_ktp As String) As Integer
-            Return Me.Update(nama, ttl, alamat, notelp, email, password, no_ktp, Original_id, Original_nama, Original_ttl, Original_alamat, Original_notelp, Original_email, Original_password, Original_no_ktp, Original_id)
+        Public Overloads Overridable Function Update(ByVal namaPelanggan As String, ByVal ttl As Global.System.Nullable(Of Date), ByVal alamat As String, ByVal notelp As String, ByVal email As String, ByVal no_ktp As String, ByVal Original_id As Integer, ByVal Original_namaPelanggan As String, ByVal Original_ttl As Global.System.Nullable(Of Date), ByVal Original_alamat As String, ByVal Original_notelp As String, ByVal Original_email As String, ByVal Original_no_ktp As String) As Integer
+            Return Me.Update(namaPelanggan, ttl, alamat, notelp, email, no_ktp, Original_id, Original_namaPelanggan, Original_ttl, Original_alamat, Original_notelp, Original_email, Original_no_ktp, Original_id)
         End Function
     End Class
     
@@ -6237,8 +6151,6 @@ Namespace DataSetSewaMotor2TableAdapters
             tableMapping.ColumnMappings.Add("tgl_sewa", "tgl_sewa")
             tableMapping.ColumnMappings.Add("tgl_kembali", "tgl_kembali")
             tableMapping.ColumnMappings.Add("tgl_pengembalian", "tgl_pengembalian")
-            tableMapping.ColumnMappings.Add("jumlah_sewa", "jumlah_sewa")
-            tableMapping.ColumnMappings.Add("id_denda", "id_denda")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -6249,9 +6161,7 @@ Namespace DataSetSewaMotor2TableAdapters
                 "= @Original_tgl_sewa)) AND ((@IsNull_tgl_kembali = 1 AND [tgl_kembali] IS NULL) "& _ 
                 "OR ([tgl_kembali] = @Original_tgl_kembali)) AND ((@IsNull_tgl_pengembalian = 1 A"& _ 
                 "ND [tgl_pengembalian] IS NULL) OR ([tgl_pengembalian] = @Original_tgl_pengembali"& _ 
-                "an)) AND ((@IsNull_jumlah_sewa = 1 AND [jumlah_sewa] IS NULL) OR ([jumlah_sewa] "& _ 
-                "= @Original_jumlah_sewa)) AND ((@IsNull_id_denda = 1 AND [id_denda] IS NULL) OR "& _ 
-                "([id_denda] = @Original_id_denda)))"
+                "an)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_no_detalil", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_detalil", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_no_order", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_order", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -6264,49 +6174,37 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tgl_kembali", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_kembali", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tgl_pengembalian", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_pengembalian", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tgl_pengembalian", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_pengembalian", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_jumlah_sewa", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jumlah_sewa", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_jumlah_sewa", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jumlah_sewa", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_id_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_denda", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_denda", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Oder_Detail] ([no_order], [id_motor], [tgl_sewa], [tgl_kembali"& _ 
-                "], [tgl_pengembalian], [jumlah_sewa], [id_denda]) VALUES (@no_order, @id_motor, "& _ 
-                "@tgl_sewa, @tgl_kembali, @tgl_pengembalian, @jumlah_sewa, @id_denda);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT no"& _ 
-                "_detalil, no_order, id_motor, tgl_sewa, tgl_kembali, tgl_pengembalian, jumlah_se"& _ 
-                "wa, id_denda FROM Oder_Detail WHERE (no_detalil = SCOPE_IDENTITY())"
+                "], [tgl_pengembalian]) VALUES (@no_order, @id_motor, @tgl_sewa, @tgl_kembali, @t"& _ 
+                "gl_pengembalian);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT no_detalil, no_order, id_motor, tgl_sewa, tgl_kembali,"& _ 
+                " tgl_pengembalian FROM Oder_Detail WHERE (no_detalil = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@no_order", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_order", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_motor", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_motor", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tgl_sewa", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_sewa", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tgl_kembali", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_kembali", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tgl_pengembalian", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_pengembalian", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@jumlah_sewa", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jumlah_sewa", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_denda", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Oder_Detail] SET [no_order] = @no_order, [id_motor] = @id_motor, [t"& _ 
                 "gl_sewa] = @tgl_sewa, [tgl_kembali] = @tgl_kembali, [tgl_pengembalian] = @tgl_pe"& _ 
-                "ngembalian, [jumlah_sewa] = @jumlah_sewa, [id_denda] = @id_denda WHERE (([no_det"& _ 
-                "alil] = @Original_no_detalil) AND ((@IsNull_no_order = 1 AND [no_order] IS NULL)"& _ 
-                " OR ([no_order] = @Original_no_order)) AND ((@IsNull_id_motor = 1 AND [id_motor]"& _ 
-                " IS NULL) OR ([id_motor] = @Original_id_motor)) AND ((@IsNull_tgl_sewa = 1 AND ["& _ 
-                "tgl_sewa] IS NULL) OR ([tgl_sewa] = @Original_tgl_sewa)) AND ((@IsNull_tgl_kemba"& _ 
-                "li = 1 AND [tgl_kembali] IS NULL) OR ([tgl_kembali] = @Original_tgl_kembali)) AN"& _ 
-                "D ((@IsNull_tgl_pengembalian = 1 AND [tgl_pengembalian] IS NULL) OR ([tgl_pengem"& _ 
-                "balian] = @Original_tgl_pengembalian)) AND ((@IsNull_jumlah_sewa = 1 AND [jumlah"& _ 
-                "_sewa] IS NULL) OR ([jumlah_sewa] = @Original_jumlah_sewa)) AND ((@IsNull_id_den"& _ 
-                "da = 1 AND [id_denda] IS NULL) OR ([id_denda] = @Original_id_denda)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT n"& _ 
-                "o_detalil, no_order, id_motor, tgl_sewa, tgl_kembali, tgl_pengembalian, jumlah_s"& _ 
-                "ewa, id_denda FROM Oder_Detail WHERE (no_detalil = @no_detalil)"
+                "ngembalian WHERE (([no_detalil] = @Original_no_detalil) AND ((@IsNull_no_order ="& _ 
+                " 1 AND [no_order] IS NULL) OR ([no_order] = @Original_no_order)) AND ((@IsNull_i"& _ 
+                "d_motor = 1 AND [id_motor] IS NULL) OR ([id_motor] = @Original_id_motor)) AND (("& _ 
+                "@IsNull_tgl_sewa = 1 AND [tgl_sewa] IS NULL) OR ([tgl_sewa] = @Original_tgl_sewa"& _ 
+                ")) AND ((@IsNull_tgl_kembali = 1 AND [tgl_kembali] IS NULL) OR ([tgl_kembali] = "& _ 
+                "@Original_tgl_kembali)) AND ((@IsNull_tgl_pengembalian = 1 AND [tgl_pengembalian"& _ 
+                "] IS NULL) OR ([tgl_pengembalian] = @Original_tgl_pengembalian)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT no_de"& _ 
+                "talil, no_order, id_motor, tgl_sewa, tgl_kembali, tgl_pengembalian FROM Oder_Det"& _ 
+                "ail WHERE (no_detalil = @no_detalil)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@no_order", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_order", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_motor", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_motor", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tgl_sewa", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_sewa", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tgl_kembali", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_kembali", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tgl_pengembalian", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_pengembalian", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@jumlah_sewa", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jumlah_sewa", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_denda", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_no_detalil", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_detalil", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_no_order", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_order", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_no_order", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_order", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -6318,10 +6216,6 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tgl_kembali", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_kembali", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tgl_pengembalian", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_pengembalian", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tgl_pengembalian", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tgl_pengembalian", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_jumlah_sewa", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jumlah_sewa", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_jumlah_sewa", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jumlah_sewa", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_id_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_denda", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_denda", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_denda", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@no_detalil", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "no_detalil", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -6338,8 +6232,8 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT no_detalil, no_order, id_motor, tgl_sewa, tgl_kembali, tgl_pengembalian, j"& _ 
-                "umlah_sewa, id_denda FROM dbo.Oder_Detail"
+            Me._commandCollection(0).CommandText = "SELECT no_detalil, no_order, id_motor, tgl_sewa, tgl_kembali, tgl_pengembalian FR"& _ 
+                "OM dbo.Oder_Detail"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6399,7 +6293,7 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_no_detalil As Integer, ByVal Original_no_order As Global.System.Nullable(Of Integer), ByVal Original_id_motor As Global.System.Nullable(Of Integer), ByVal Original_tgl_sewa As Global.System.Nullable(Of Date), ByVal Original_tgl_kembali As Global.System.Nullable(Of Date), ByVal Original_tgl_pengembalian As Global.System.Nullable(Of Date), ByVal Original_jumlah_sewa As Global.System.Nullable(Of Integer), ByVal Original_id_denda As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_no_detalil As Integer, ByVal Original_no_order As Global.System.Nullable(Of Integer), ByVal Original_id_motor As Global.System.Nullable(Of Integer), ByVal Original_tgl_sewa As Global.System.Nullable(Of Date), ByVal Original_tgl_kembali As Global.System.Nullable(Of Date), ByVal Original_tgl_pengembalian As Global.System.Nullable(Of Date)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_no_detalil,Integer)
             If (Original_no_order.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -6436,20 +6330,6 @@ Namespace DataSetSewaMotor2TableAdapters
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
-            If (Original_jumlah_sewa.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_jumlah_sewa.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_id_denda.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_id_denda.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6469,7 +6349,7 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal no_order As Global.System.Nullable(Of Integer), ByVal id_motor As Global.System.Nullable(Of Integer), ByVal tgl_sewa As Global.System.Nullable(Of Date), ByVal tgl_kembali As Global.System.Nullable(Of Date), ByVal tgl_pengembalian As Global.System.Nullable(Of Date), ByVal jumlah_sewa As Global.System.Nullable(Of Integer), ByVal id_denda As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal no_order As Global.System.Nullable(Of Integer), ByVal id_motor As Global.System.Nullable(Of Integer), ByVal tgl_sewa As Global.System.Nullable(Of Date), ByVal tgl_kembali As Global.System.Nullable(Of Date), ByVal tgl_pengembalian As Global.System.Nullable(Of Date)) As Integer
             If (no_order.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(no_order.Value,Integer)
             Else
@@ -6495,16 +6375,6 @@ Namespace DataSetSewaMotor2TableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (jumlah_sewa.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(jumlah_sewa.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (id_denda.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(id_denda.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6524,23 +6394,7 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal no_order As Global.System.Nullable(Of Integer),  _
-                    ByVal id_motor As Global.System.Nullable(Of Integer),  _
-                    ByVal tgl_sewa As Global.System.Nullable(Of Date),  _
-                    ByVal tgl_kembali As Global.System.Nullable(Of Date),  _
-                    ByVal tgl_pengembalian As Global.System.Nullable(Of Date),  _
-                    ByVal jumlah_sewa As Global.System.Nullable(Of Integer),  _
-                    ByVal id_denda As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_no_detalil As Integer,  _
-                    ByVal Original_no_order As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_id_motor As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_tgl_sewa As Global.System.Nullable(Of Date),  _
-                    ByVal Original_tgl_kembali As Global.System.Nullable(Of Date),  _
-                    ByVal Original_tgl_pengembalian As Global.System.Nullable(Of Date),  _
-                    ByVal Original_jumlah_sewa As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_id_denda As Global.System.Nullable(Of Integer),  _
-                    ByVal no_detalil As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal no_order As Global.System.Nullable(Of Integer), ByVal id_motor As Global.System.Nullable(Of Integer), ByVal tgl_sewa As Global.System.Nullable(Of Date), ByVal tgl_kembali As Global.System.Nullable(Of Date), ByVal tgl_pengembalian As Global.System.Nullable(Of Date), ByVal Original_no_detalil As Integer, ByVal Original_no_order As Global.System.Nullable(Of Integer), ByVal Original_id_motor As Global.System.Nullable(Of Integer), ByVal Original_tgl_sewa As Global.System.Nullable(Of Date), ByVal Original_tgl_kembali As Global.System.Nullable(Of Date), ByVal Original_tgl_pengembalian As Global.System.Nullable(Of Date), ByVal no_detalil As Integer) As Integer
             If (no_order.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(no_order.Value,Integer)
             Else
@@ -6566,67 +6420,43 @@ Namespace DataSetSewaMotor2TableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (jumlah_sewa.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(jumlah_sewa.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (id_denda.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(id_denda.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_no_detalil,Integer)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_no_detalil,Integer)
             If (Original_no_order.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_no_order.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (Original_id_motor.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_no_order.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_id_motor.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_id_motor.HasValue = true) Then
+            If (Original_tgl_sewa.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_id_motor.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_tgl_sewa.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
-            If (Original_tgl_sewa.HasValue = true) Then
+            If (Original_tgl_kembali.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_tgl_sewa.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_tgl_kembali.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
-            If (Original_tgl_kembali.HasValue = true) Then
+            If (Original_tgl_pengembalian.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_tgl_kembali.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_tgl_pengembalian.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
-            If (Original_tgl_pengembalian.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_tgl_pengembalian.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
-            End If
-            If (Original_jumlah_sewa.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_jumlah_sewa.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
-            End If
-            If (Original_id_denda.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_id_denda.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(no_detalil,Integer)
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(no_detalil,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6646,8 +6476,8 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal no_order As Global.System.Nullable(Of Integer), ByVal id_motor As Global.System.Nullable(Of Integer), ByVal tgl_sewa As Global.System.Nullable(Of Date), ByVal tgl_kembali As Global.System.Nullable(Of Date), ByVal tgl_pengembalian As Global.System.Nullable(Of Date), ByVal jumlah_sewa As Global.System.Nullable(Of Integer), ByVal id_denda As Global.System.Nullable(Of Integer), ByVal Original_no_detalil As Integer, ByVal Original_no_order As Global.System.Nullable(Of Integer), ByVal Original_id_motor As Global.System.Nullable(Of Integer), ByVal Original_tgl_sewa As Global.System.Nullable(Of Date), ByVal Original_tgl_kembali As Global.System.Nullable(Of Date), ByVal Original_tgl_pengembalian As Global.System.Nullable(Of Date), ByVal Original_jumlah_sewa As Global.System.Nullable(Of Integer), ByVal Original_id_denda As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(no_order, id_motor, tgl_sewa, tgl_kembali, tgl_pengembalian, jumlah_sewa, id_denda, Original_no_detalil, Original_no_order, Original_id_motor, Original_tgl_sewa, Original_tgl_kembali, Original_tgl_pengembalian, Original_jumlah_sewa, Original_id_denda, Original_no_detalil)
+        Public Overloads Overridable Function Update(ByVal no_order As Global.System.Nullable(Of Integer), ByVal id_motor As Global.System.Nullable(Of Integer), ByVal tgl_sewa As Global.System.Nullable(Of Date), ByVal tgl_kembali As Global.System.Nullable(Of Date), ByVal tgl_pengembalian As Global.System.Nullable(Of Date), ByVal Original_no_detalil As Integer, ByVal Original_no_order As Global.System.Nullable(Of Integer), ByVal Original_id_motor As Global.System.Nullable(Of Integer), ByVal Original_tgl_sewa As Global.System.Nullable(Of Date), ByVal Original_tgl_kembali As Global.System.Nullable(Of Date), ByVal Original_tgl_pengembalian As Global.System.Nullable(Of Date)) As Integer
+            Return Me.Update(no_order, id_motor, tgl_sewa, tgl_kembali, tgl_pengembalian, Original_no_detalil, Original_no_order, Original_id_motor, Original_tgl_sewa, Original_tgl_kembali, Original_tgl_pengembalian, Original_no_detalil)
         End Function
     End Class
     
@@ -6779,31 +6609,27 @@ Namespace DataSetSewaMotor2TableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Karyawan"
             tableMapping.ColumnMappings.Add("id_karyawan", "id_karyawan")
-            tableMapping.ColumnMappings.Add("nama", "nama")
             tableMapping.ColumnMappings.Add("alamat", "alamat")
             tableMapping.ColumnMappings.Add("no_telp", "no_telp")
             tableMapping.ColumnMappings.Add("email", "email")
             tableMapping.ColumnMappings.Add("password", "password")
             tableMapping.ColumnMappings.Add("role", "role")
-            tableMapping.ColumnMappings.Add("hari_kerja", "hari_kerja")
-            tableMapping.ColumnMappings.Add("sesi_kerja", "sesi_kerja")
+            tableMapping.ColumnMappings.Add("namaKaryawan", "namaKaryawan")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Karyawan] WHERE (([id_karyawan] = @Original_id_karyawan) AND ("& _ 
-                "(@IsNull_nama = 1 AND [nama] IS NULL) OR ([nama] = @Original_nama)) AND ((@IsNul"& _ 
-                "l_alamat = 1 AND [alamat] IS NULL) OR ([alamat] = @Original_alamat)) AND ((@IsNu"& _ 
-                "ll_no_telp = 1 AND [no_telp] IS NULL) OR ([no_telp] = @Original_no_telp)) AND (("& _ 
-                "@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@Is"& _ 
-                "Null_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)) "& _ 
-                "AND ((@IsNull_role = 1 AND [role] IS NULL) OR ([role] = @Original_role)) AND ((@"& _ 
-                "IsNull_hari_kerja = 1 AND [hari_kerja] IS NULL) OR ([hari_kerja] = @Original_har"& _ 
-                "i_kerja)) AND ((@IsNull_sesi_kerja = 1 AND [sesi_kerja] IS NULL) OR ([sesi_kerja"& _ 
-                "] = @Original_sesi_kerja)))"
+                "(@IsNull_namaKaryawan = 1 AND [namaKaryawan] IS NULL) OR ([namaKaryawan] = @Orig"& _ 
+                "inal_namaKaryawan)) AND ((@IsNull_alamat = 1 AND [alamat] IS NULL) OR ([alamat] "& _ 
+                "= @Original_alamat)) AND ((@IsNull_no_telp = 1 AND [no_telp] IS NULL) OR ([no_te"& _ 
+                "lp] = @Original_no_telp)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([emai"& _ 
+                "l] = @Original_email)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([p"& _ 
+                "assword] = @Original_password)) AND ((@IsNull_role = 1 AND [role] IS NULL) OR (["& _ 
+                "role] = @Original_role)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_karyawan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_karyawan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nama", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nama", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_namaKaryawan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaKaryawan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_namaKaryawan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaKaryawan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_alamat", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_alamat", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_no_telp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_telp", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -6814,54 +6640,42 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_role", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "role", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_role", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "role", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_hari_kerja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hari_kerja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_hari_kerja", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hari_kerja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sesi_kerja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sesi_kerja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sesi_kerja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sesi_kerja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Karyawan] ([nama], [alamat], [no_telp], [email], [password], ["& _ 
-                "role], [hari_kerja], [sesi_kerja]) VALUES (@nama, @alamat, @no_telp, @email, @pa"& _ 
-                "ssword, @role, @hari_kerja, @sesi_kerja);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_karyawan, nama, alamat, no_"& _ 
-                "telp, email, password, role, hari_kerja, sesi_kerja FROM Karyawan WHERE (id_kary"& _ 
-                "awan = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Karyawan] ([namaKaryawan], [alamat], [no_telp], [email], [pass"& _ 
+                "word], [role]) VALUES (@namaKaryawan, @alamat, @no_telp, @email, @password, @rol"& _ 
+                "e);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_karyawan, namaKaryawan, alamat, no_telp, email, password, role FR"& _ 
+                "OM Karyawan WHERE (id_karyawan = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nama", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@namaKaryawan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaKaryawan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@alamat", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@no_telp", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_telp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@role", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "role", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hari_kerja", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hari_kerja", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sesi_kerja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sesi_kerja", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Karyawan] SET [nama] = @nama, [alamat] = @alamat, [no_telp] = @no_t"& _ 
-                "elp, [email] = @email, [password] = @password, [role] = @role, [hari_kerja] = @h"& _ 
-                "ari_kerja, [sesi_kerja] = @sesi_kerja WHERE (([id_karyawan] = @Original_id_karya"& _ 
-                "wan) AND ((@IsNull_nama = 1 AND [nama] IS NULL) OR ([nama] = @Original_nama)) AN"& _ 
-                "D ((@IsNull_alamat = 1 AND [alamat] IS NULL) OR ([alamat] = @Original_alamat)) A"& _ 
-                "ND ((@IsNull_no_telp = 1 AND [no_telp] IS NULL) OR ([no_telp] = @Original_no_tel"& _ 
-                "p)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email))"& _ 
-                " AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_p"& _ 
-                "assword)) AND ((@IsNull_role = 1 AND [role] IS NULL) OR ([role] = @Original_role"& _ 
-                ")) AND ((@IsNull_hari_kerja = 1 AND [hari_kerja] IS NULL) OR ([hari_kerja] = @Or"& _ 
-                "iginal_hari_kerja)) AND ((@IsNull_sesi_kerja = 1 AND [sesi_kerja] IS NULL) OR (["& _ 
-                "sesi_kerja] = @Original_sesi_kerja)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_karyawan, nama, alamat, no_tel"& _ 
-                "p, email, password, role, hari_kerja, sesi_kerja FROM Karyawan WHERE (id_karyawa"& _ 
-                "n = @id_karyawan)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Karyawan] SET [namaKaryawan] = @namaKaryawan, [alamat] = @alamat, ["& _ 
+                "no_telp] = @no_telp, [email] = @email, [password] = @password, [role] = @role WH"& _ 
+                "ERE (([id_karyawan] = @Original_id_karyawan) AND ((@IsNull_namaKaryawan = 1 AND "& _ 
+                "[namaKaryawan] IS NULL) OR ([namaKaryawan] = @Original_namaKaryawan)) AND ((@IsN"& _ 
+                "ull_alamat = 1 AND [alamat] IS NULL) OR ([alamat] = @Original_alamat)) AND ((@Is"& _ 
+                "Null_no_telp = 1 AND [no_telp] IS NULL) OR ([no_telp] = @Original_no_telp)) AND "& _ 
+                "((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@"& _ 
+                "IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)"& _ 
+                ") AND ((@IsNull_role = 1 AND [role] IS NULL) OR ([role] = @Original_role)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SE"& _ 
+                "LECT id_karyawan, namaKaryawan, alamat, no_telp, email, password, role FROM Kary"& _ 
+                "awan WHERE (id_karyawan = @id_karyawan)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nama", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@namaKaryawan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaKaryawan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@alamat", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@no_telp", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_telp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@role", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "role", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hari_kerja", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hari_kerja", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sesi_kerja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sesi_kerja", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_karyawan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_karyawan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nama", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nama", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nama", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_namaKaryawan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaKaryawan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_namaKaryawan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "namaKaryawan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_alamat", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_alamat", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alamat", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_no_telp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "no_telp", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -6872,10 +6686,6 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_role", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "role", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_role", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "role", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_hari_kerja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hari_kerja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_hari_kerja", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hari_kerja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sesi_kerja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sesi_kerja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sesi_kerja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sesi_kerja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_karyawan", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_karyawan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -6892,8 +6702,7 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id_karyawan, nama, alamat, no_telp, email, password, role, hari_kerja, ses"& _ 
-                "i_kerja FROM dbo.Karyawan"
+            Me._commandCollection(0).CommandText = "SELECT * FROM dbo.Karyawan"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6953,14 +6762,14 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id_karyawan As Integer, ByVal Original_nama As String, ByVal Original_alamat As String, ByVal Original_no_telp As String, ByVal Original_email As String, ByVal Original_password As String, ByVal Original_role As Global.System.Nullable(Of Integer), ByVal Original_hari_kerja As String, ByVal Original_sesi_kerja As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id_karyawan As Integer, ByVal Original_namaKaryawan As String, ByVal Original_alamat As String, ByVal Original_no_telp As String, ByVal Original_email As String, ByVal Original_password As String, ByVal Original_role As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id_karyawan,Integer)
-            If (Original_nama Is Nothing) Then
+            If (Original_namaKaryawan Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_nama,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_namaKaryawan,String)
             End If
             If (Original_alamat Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
@@ -6997,20 +6806,6 @@ Namespace DataSetSewaMotor2TableAdapters
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
-            If (Original_hari_kerja Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_hari_kerja,String)
-            End If
-            If (Original_sesi_kerja.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_sesi_kerja.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
-            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -7030,11 +6825,11 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal nama As String, ByVal alamat As String, ByVal no_telp As String, ByVal email As String, ByVal password As String, ByVal role As Global.System.Nullable(Of Integer), ByVal hari_kerja As String, ByVal sesi_kerja As Global.System.Nullable(Of Integer)) As Integer
-            If (nama Is Nothing) Then
+        Public Overloads Overridable Function Insert(ByVal namaKaryawan As String, ByVal alamat As String, ByVal no_telp As String, ByVal email As String, ByVal password As String, ByVal role As Global.System.Nullable(Of Integer)) As Integer
+            If (namaKaryawan Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(nama,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(namaKaryawan,String)
             End If
             If (alamat Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -7061,16 +6856,6 @@ Namespace DataSetSewaMotor2TableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (hari_kerja Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(hari_kerja,String)
-            End If
-            If (sesi_kerja.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(sesi_kerja.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -7090,29 +6875,11 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal nama As String,  _
-                    ByVal alamat As String,  _
-                    ByVal no_telp As String,  _
-                    ByVal email As String,  _
-                    ByVal password As String,  _
-                    ByVal role As Global.System.Nullable(Of Integer),  _
-                    ByVal hari_kerja As String,  _
-                    ByVal sesi_kerja As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_id_karyawan As Integer,  _
-                    ByVal Original_nama As String,  _
-                    ByVal Original_alamat As String,  _
-                    ByVal Original_no_telp As String,  _
-                    ByVal Original_email As String,  _
-                    ByVal Original_password As String,  _
-                    ByVal Original_role As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_hari_kerja As String,  _
-                    ByVal Original_sesi_kerja As Global.System.Nullable(Of Integer),  _
-                    ByVal id_karyawan As Integer) As Integer
-            If (nama Is Nothing) Then
+        Public Overloads Overridable Function Update(ByVal namaKaryawan As String, ByVal alamat As String, ByVal no_telp As String, ByVal email As String, ByVal password As String, ByVal role As Global.System.Nullable(Of Integer), ByVal Original_id_karyawan As Integer, ByVal Original_namaKaryawan As String, ByVal Original_alamat As String, ByVal Original_no_telp As String, ByVal Original_email As String, ByVal Original_password As String, ByVal Original_role As Global.System.Nullable(Of Integer), ByVal id_karyawan As Integer) As Integer
+            If (namaKaryawan Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(nama,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(namaKaryawan,String)
             End If
             If (alamat Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -7139,74 +6906,50 @@ Namespace DataSetSewaMotor2TableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (hari_kerja Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_id_karyawan,Integer)
+            If (Original_namaKaryawan Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(hari_kerja,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_namaKaryawan,String)
             End If
-            If (sesi_kerja.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(sesi_kerja.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_id_karyawan,Integer)
-            If (Original_nama Is Nothing) Then
+            If (Original_alamat Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_nama,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_alamat,String)
             End If
-            If (Original_alamat Is Nothing) Then
+            If (Original_no_telp Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_alamat,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_no_telp,String)
             End If
-            If (Original_no_telp Is Nothing) Then
+            If (Original_email Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_no_telp,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_email,String)
             End If
-            If (Original_email Is Nothing) Then
+            If (Original_password Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_email,String)
-            End If
-            If (Original_password Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_password,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_password,String)
             End If
             If (Original_role.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_role.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_role.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
-            If (Original_hari_kerja Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_hari_kerja,String)
-            End If
-            If (Original_sesi_kerja.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_sesi_kerja.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(25).Value = CType(id_karyawan,Integer)
+            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(id_karyawan,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -7226,25 +6969,8 @@ Namespace DataSetSewaMotor2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal nama As String,  _
-                    ByVal alamat As String,  _
-                    ByVal no_telp As String,  _
-                    ByVal email As String,  _
-                    ByVal password As String,  _
-                    ByVal role As Global.System.Nullable(Of Integer),  _
-                    ByVal hari_kerja As String,  _
-                    ByVal sesi_kerja As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_id_karyawan As Integer,  _
-                    ByVal Original_nama As String,  _
-                    ByVal Original_alamat As String,  _
-                    ByVal Original_no_telp As String,  _
-                    ByVal Original_email As String,  _
-                    ByVal Original_password As String,  _
-                    ByVal Original_role As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_hari_kerja As String,  _
-                    ByVal Original_sesi_kerja As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(nama, alamat, no_telp, email, password, role, hari_kerja, sesi_kerja, Original_id_karyawan, Original_nama, Original_alamat, Original_no_telp, Original_email, Original_password, Original_role, Original_hari_kerja, Original_sesi_kerja, Original_id_karyawan)
+        Public Overloads Overridable Function Update(ByVal namaKaryawan As String, ByVal alamat As String, ByVal no_telp As String, ByVal email As String, ByVal password As String, ByVal role As Global.System.Nullable(Of Integer), ByVal Original_id_karyawan As Integer, ByVal Original_namaKaryawan As String, ByVal Original_alamat As String, ByVal Original_no_telp As String, ByVal Original_email As String, ByVal Original_password As String, ByVal Original_role As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(namaKaryawan, alamat, no_telp, email, password, role, Original_id_karyawan, Original_namaKaryawan, Original_alamat, Original_no_telp, Original_email, Original_password, Original_role, Original_id_karyawan)
         End Function
     End Class
     
@@ -7477,8 +7203,7 @@ Namespace DataSetSewaMotor2TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id_motor, jenis, merek, no_mesin, no_rangka, status, plat, harga FROM dbo."& _ 
-                "Motor"
+            Me._commandCollection(0).CommandText = "SELECT * FROM dbo.Motor"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

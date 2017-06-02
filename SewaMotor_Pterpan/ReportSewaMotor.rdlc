@@ -491,7 +491,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>OrderDetailDataSet</DataSetName>
+        <DataSetName>OrderDetailDataSet2</DataSetName>
         <Filters>
           <Filter>
             <FilterExpression>=Month(Fields!tgl_sewa.Value)</FilterExpression>
@@ -702,18 +702,18 @@ Parameters!FilterMonth.Value=12,"Desember")</Value>
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SewaMotorDataSource">
+    <DataSource Name="DataSetSewaMotor2">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>da1b8f87-59f0-44d3-ab4d-44673bb1c045</rd:DataSourceID>
+      <rd:DataSourceID>320e5b9f-1ed5-4e1e-82ad-962b2dba76e6</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="OrderDetailDataSet">
+    <DataSet Name="OrderDetailDataSet2">
       <Query>
-        <DataSourceName>SewaMotorDataSource</DataSourceName>
+        <DataSourceName>DataSetSewaMotor2</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -741,14 +741,10 @@ Parameters!FilterMonth.Value=12,"Desember")</Value>
           <DataField>tgl_pengembalian</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="jumlah_sewa">
-          <DataField>jumlah_sewa</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>SewaMotorDataSource</rd:DataSetName>
-        <rd:SchemaPath>E:\Task\UKDW\Semester 6\Pemrograman Terintegrasi Terapan\Program\SewaMotor\SewaMotor_Pterpan\SewaMotorDataSource.xsd</rd:SchemaPath>
+        <rd:DataSetName>DataSetSewaMotor2</rd:DataSetName>
+        <rd:SchemaPath>E:\Task\UKDW\Semester 6\Pemrograman Terintegrasi Terapan\Program\SewaMotor\SewaMotor_Pterpan\DataSetSewaMotor2.xsd</rd:SchemaPath>
         <rd:TableName>Oder_Detail</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

@@ -37,7 +37,7 @@
         FormUtama.Show()
     End Sub
 
-    Private Sub PerHariToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerHariToolStripMenuItem.Click
+    Private Sub PerHariToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormFilterLaporanPerHari.Show()
     End Sub
 
@@ -53,4 +53,7 @@
         FormLaporanTerlambatKembali.Show()
     End Sub
 
+    Private Sub LaporanTransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanTransaksiToolStripMenuItem.Click
+        FormFilterLaporanPerHari.Show()
+    End Sub
 End Class

@@ -26,7 +26,7 @@ Public Class FormLaporanSewaMotor
 
     Private Sub FormLaporan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'SewaMotorDataSource.Oder_Detail' table. You can move, or remove it, as needed.
-        Me.Oder_DetailTableAdapter.Fill(Me.SewaMotorDataSource.Oder_Detail)
+        Me.Oder_DetailTableAdapter.Fill(Me.DataSetSewaMotor2.Oder_Detail)
         For Each para As Microsoft.Reporting.WinForms.ReportParameter In HeaderParams
             ReportViewer1.LocalReport.SetParameters(para)
         Next

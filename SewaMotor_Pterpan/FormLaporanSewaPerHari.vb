@@ -5,7 +5,7 @@
     Dim totalbayar As Integer
 
     Public Sub New(ByVal tglSewa As Date)
-        MsgBox(tglSewa)
+        'MsgBox(tglSewa)
         Dim titip As String = tglSewa.ToString("yyyy/MM/dd")
         ' This call is required by the designer.
         InitializeComponent()
@@ -15,15 +15,18 @@
         totalbayar = ambilHarga.getBS.Current("total_bayar")
         Dim totalDenda As Integer = ambilDenda.getBS.Current("total_denda")
         paraTanggalSewa = New Microsoft.Reporting.WinForms.ReportParameter("paraTanggalSewa", titip)
-        paraTotalHarga = New Microsoft.Reporting.WinForms.ReportParameter("paraSubTotal", Convert.ToInt32(totalbayar))
-        paraTotalDenda = New Microsoft.Reporting.WinForms.ReportParameter("", totalDenda)
+        paraTotalHarga = New Microsoft.Reporting.WinForms.ReportParameter("paraPendapatanSewa", Convert.ToInt32(totalbayar))
+        paraTotalDenda = New Microsoft.Reporting.WinForms.ReportParameter("paraPendapatanDenda", Convert.ToInt32(totalDenda))
     End Sub
 
     Private Sub FormLaporanSewaPerHari_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'ViewLaporanDendaDataSource.ViewLaporanDenda' table. You can move, or remove it, as needed.
+        Me.ViewLaporanDendaTableAdapter.Fill(Me.ViewLaporanDendaDataSource.ViewLaporanDenda)
         'TODO: This line of code loads data into the 'InvoiceSewaDataSet.ViewNotaPeminjaman' table. You can move, or remove it, as needed.
         Me.ViewNotaPeminjamanTableAdapter.Fill(Me.InvoiceSewaDataSet.ViewNotaPeminjaman)
         ReportViewer1.LocalReport.SetParameters(paraTanggalSewa)
         ReportViewer1.LocalReport.SetParameters(paraTotalHarga)
+        ReportViewer1.LocalReport.SetParameters(paraTotalDenda)
         Me.ReportViewer1.RefreshReport()
     End Sub
 

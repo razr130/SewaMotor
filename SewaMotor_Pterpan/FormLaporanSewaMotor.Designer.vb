@@ -25,32 +25,18 @@ Partial Class FormLaporanSewaMotor
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLaporanSewaMotor))
-        Me.Oder_DetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SewaMotorDataSource = New SewaMotor_Pterpan.SewaMotorDataSource()
-        Me.Oder_DetailTableAdapter = New SewaMotor_Pterpan.SewaMotorDataSourceTableAdapters.Oder_DetailTableAdapter()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.DataSetSewaMotor2 = New SewaMotor_Pterpan.DataSetSewaMotor2()
+        Me.Oder_DetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Oder_DetailTableAdapter = New SewaMotor_Pterpan.DataSetSewaMotor2TableAdapters.Oder_DetailTableAdapter()
+        CType(Me.DataSetSewaMotor2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SewaMotorDataSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Oder_DetailBindingSource
-        '
-        Me.Oder_DetailBindingSource.DataMember = "Oder_Detail"
-        Me.Oder_DetailBindingSource.DataSource = Me.SewaMotorDataSource
-        '
-        'SewaMotorDataSource
-        '
-        Me.SewaMotorDataSource.DataSetName = "SewaMotorDataSource"
-        Me.SewaMotorDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Oder_DetailTableAdapter
-        '
-        Me.Oder_DetailTableAdapter.ClearBeforeFill = True
         '
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "OrderDetailDataSet"
+        ReportDataSource1.Name = "OrderDetailDataSet2"
         ReportDataSource1.Value = Me.Oder_DetailBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SewaMotor_Pterpan.ReportSewaMotor.rdlc"
@@ -67,6 +53,20 @@ Partial Class FormLaporanSewaMotor
         Me.ReportViewer1.Size = New System.Drawing.Size(886, 332)
         Me.ReportViewer1.TabIndex = 0
         '
+        'DataSetSewaMotor2
+        '
+        Me.DataSetSewaMotor2.DataSetName = "DataSetSewaMotor2"
+        Me.DataSetSewaMotor2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Oder_DetailBindingSource
+        '
+        Me.Oder_DetailBindingSource.DataMember = "Oder_Detail"
+        Me.Oder_DetailBindingSource.DataSource = Me.DataSetSewaMotor2
+        '
+        'Oder_DetailTableAdapter
+        '
+        Me.Oder_DetailTableAdapter.ClearBeforeFill = True
+        '
         'FormLaporanSewaMotor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -77,13 +77,13 @@ Partial Class FormLaporanSewaMotor
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormLaporanSewaMotor"
         Me.Text = "FormLaporan"
+        CType(Me.DataSetSewaMotor2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Oder_DetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SewaMotorDataSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Oder_DetailBindingSource As BindingSource
-    Friend WithEvents SewaMotorDataSource As SewaMotorDataSource
-    Friend WithEvents Oder_DetailTableAdapter As SewaMotorDataSourceTableAdapters.Oder_DetailTableAdapter
     Private WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents Oder_DetailBindingSource As BindingSource
+    Friend WithEvents DataSetSewaMotor2 As DataSetSewaMotor2
+    Friend WithEvents Oder_DetailTableAdapter As DataSetSewaMotor2TableAdapters.Oder_DetailTableAdapter
 End Class

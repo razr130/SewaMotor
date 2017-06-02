@@ -18,14 +18,14 @@
         End If
         dgvKaryawan.Columns.Add("Role", "Role")
         For baris As Integer = 0 To dgvKaryawan.Rows.Count - 1
-            dgvKaryawan.Columns(6).DisplayIndex = 9
-            dgvKaryawan.Columns(9).DisplayIndex = 6
+            dgvKaryawan.Columns(6).DisplayIndex = 7
+            dgvKaryawan.Columns(7).DisplayIndex = 6
             If dgvKaryawan.Rows(baris).Cells(6).Value = 1 Then
-                dgvKaryawan.Rows(baris).Cells(9).Value = "Super Admin"
+                dgvKaryawan.Rows(baris).Cells(7).Value = "Super Admin"
             ElseIf dgvKaryawan.Rows(baris).Cells(6).Value = 2 Then
-                dgvKaryawan.Rows(baris).Cells(9).Value = "Admin"
+                dgvKaryawan.Rows(baris).Cells(7).Value = "Admin"
             Else
-                dgvKaryawan.Rows(baris).Cells(9).Value = "Karyawan"
+                dgvKaryawan.Rows(baris).Cells(7).Value = "Karyawan"
             End If
             dgvKaryawan.Columns(6).Visible = False
         Next

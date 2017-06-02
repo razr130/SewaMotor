@@ -9,7 +9,7 @@
               <Width>0.60417in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.71875in</Width>
+              <Width>0.99999in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.71875in</Width>
@@ -18,7 +18,7 @@
               <Width>0.79167in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.03125in</Width>
+              <Width>0.75in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.01042in</Width>
@@ -547,9 +547,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>="Rp " &amp; Fields!harga.Value</Value>
+                              <Value>=Fields!harga.Value</Value>
                               <Style>
-                                <Format>'Rp'#,0;('Rp'#,0)</Format>
+                                <Format>'Rp' #,0;('Rp' #,0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -608,7 +608,7 @@
         <Top>1.08902in</Top>
         <Left>0.25917in</Left>
         <Height>0.65625in</Height>
-        <Width>6.87501in</Width>
+        <Width>6.875in</Width>
         <Style>
           <Border>
             <Style>None</Style>
